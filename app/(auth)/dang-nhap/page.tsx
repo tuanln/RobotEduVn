@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/config";
 import { Button } from "@/components/ui/button";
@@ -33,6 +33,7 @@ export default function LoginPage() {
       const userDoc = await getDoc(doc(db, "users", credential.user.uid));
 
       if (!userDoc.exists()) {
+        await signOut(auth);
         setError("Tài khoản chưa được cấu hình. Liên hệ admin.");
         setLoading(false);
         return;

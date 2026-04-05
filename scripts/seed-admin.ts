@@ -26,9 +26,9 @@ const adminAuth = getAuth(app);
 const adminDb = getFirestore(app);
 
 async function seedAdmin() {
-  const email = "admin@robot.edu.vn";
-  const password = "openstem2026";
-  const displayName = "Admin";
+  const email = process.env.ADMIN_EMAIL || "admin@robot.edu.vn";
+  const password = process.env.ADMIN_PASSWORD || "openstem2026";
+  const displayName = process.env.ADMIN_NAME || "Admin";
 
   try {
     let user;

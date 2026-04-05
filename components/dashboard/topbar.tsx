@@ -3,12 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogOut, Menu, LayoutDashboard, Users, Settings } from "lucide-react";
+import { LogOut, Menu } from "lucide-react";
 import { useAuth } from "@/lib/firebase/auth-context";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import { DASHBOARD_NAV_ITEMS } from "@/lib/dashboard/nav-items";
 import type { UserRole } from "@/lib/types/auth";
 
 const ROLE_LABELS: Record<UserRole, string> = {
@@ -18,27 +19,6 @@ const ROLE_LABELS: Record<UserRole, string> = {
   student: "Học sinh",
 };
 
-const NAV_ITEMS = [
-  {
-    label: "Tổng quan",
-    href: "/dashboard",
-    icon: <LayoutDashboard className="h-4 w-4" />,
-    roles: ["admin", "teacher", "parent", "student"] as UserRole[],
-  },
-  {
-    label: "Học sinh",
-    href: "/dashboard/students",
-    icon: <Users className="h-4 w-4" />,
-    roles: ["admin", "teacher"] as UserRole[],
-  },
-  {
-    label: "Cài đặt",
-    href: "/dashboard/settings",
-    icon: <Settings className="h-4 w-4" />,
-    roles: ["admin", "teacher", "parent", "student"] as UserRole[],
-  },
-];
-
 export function Topbar() {
   const { user, signOut } = useAuth();
   const pathname = usePathname();
@@ -46,7 +26,7 @@ export function Topbar() {
 
   if (!user) return null;
 
-  const filteredItems = NAV_ITEMS.filter((item) => item.roles.includes(user.role));
+  const filteredItems = DASHBOARD_NAV_ITEMS.filter((item) => item.roles.includes(user.role));
 
   return (
     <header className="flex h-16 items-center justify-between border-b border-border bg-background px-4">

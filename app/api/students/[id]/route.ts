@@ -1,28 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { adminAuth } from "@/lib/firebase/admin";
-import { getUserDoc } from "@/lib/firestore/users";
+import { verifyAuthAndRole } from "@/lib/api/auth";
 import { getStudent, updateStudent, deleteStudent } from "@/lib/firestore/students";
-
-async function verifyAuthAndRole(request: NextRequest, allowedRoles: string[]) {
-  const authHeader = request.headers.get("Authorization");
-  if (!authHeader?.startsWith("Bearer ")) {
-    return { error: "Unauthorized", status: 401 };
-  }
-
-  try {
-    const token = authHeader.split("Bearer ")[1];
-    const decoded = await adminAuth.verifyIdToken(token);
-    const userDoc = await getUserDoc(decoded.uid);
-
-    if (!userDoc || !allowedRoles.includes(userDoc.role)) {
-      return { error: "Forbidden", status: 403 };
-    }
-
-    return { uid: decoded.uid, userDoc };
-  } catch {
-    return { error: "Invalid token", status: 401 };
-  }
-}
 
 export async function GET(
   request: NextRequest,
@@ -59,7 +37,15 @@ export async function PUT(
   }
 
   const body = await request.json();
-  await updateStudent(id, body);
+  const ALLOWED_FIELDS = [
+    "fullName", "nickname", "dateOfBirth", "gender", "grade",
+    "school", "parentName", "parentPhone", "parentEmail",
+    "currentStage", "makerHubId", "mentorId",
+  ];
+  const sanitized = Object.fromEntries(
+    Object.entries(body).filter(([k]) => ALLOWED_FIELDS.includes(k))
+  );
+  await updateStudent(id, sanitized);
   return NextResponse.json({ ok: true });
 }
 

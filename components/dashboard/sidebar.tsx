@@ -2,41 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Users, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { DASHBOARD_NAV_ITEMS } from "@/lib/dashboard/nav-items";
 import type { UserRole } from "@/lib/types/auth";
-
-interface NavItem {
-  label: string;
-  href: string;
-  icon: React.ReactNode;
-  roles: UserRole[];
-}
-
-const NAV_ITEMS: NavItem[] = [
-  {
-    label: "Tổng quan",
-    href: "/dashboard",
-    icon: <LayoutDashboard className="h-4 w-4" />,
-    roles: ["admin", "teacher", "parent", "student"],
-  },
-  {
-    label: "Học sinh",
-    href: "/dashboard/students",
-    icon: <Users className="h-4 w-4" />,
-    roles: ["admin", "teacher"],
-  },
-  {
-    label: "Cài đặt",
-    href: "/dashboard/settings",
-    icon: <Settings className="h-4 w-4" />,
-    roles: ["admin", "teacher", "parent", "student"],
-  },
-];
 
 export function Sidebar({ role }: { role: UserRole }) {
   const pathname = usePathname();
-  const filteredItems = NAV_ITEMS.filter((item) => item.roles.includes(role));
+  const filteredItems = DASHBOARD_NAV_ITEMS.filter((item) => item.roles.includes(role));
 
   return (
     <aside className="hidden w-56 shrink-0 border-r border-border bg-muted/30 lg:block">

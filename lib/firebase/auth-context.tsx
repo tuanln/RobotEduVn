@@ -18,11 +18,7 @@ interface AuthContextType {
   signOut: () => Promise<void>;
 }
 
-const AuthContext = createContext<AuthContextType>({
-  user: null,
-  loading: true,
-  signOut: async () => {},
-});
+const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
@@ -45,6 +41,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             makerHubId: data.makerHubId,
           });
         } else {
+          // User doc missing — sign out to prevent broken auth state
+          await firebaseSignOut(auth);
           setUser(null);
         }
       } else {
@@ -68,9 +66,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 }
 
-export function useAuth() {
+export function useAuth(): AuthContextType {
   const context = useContext(AuthContext);
-  if (!context) {
+  if (context === null) {
     throw new Error("useAuth must be used within AuthProvider");
   }
   return context;

@@ -182,7 +182,7 @@ export default function StudentDetailPage() {
         </Card>
         <Card>
           <CardContent className="pt-4 text-center">
-            <div className="text-2xl font-bold">{student.badges.length}</div>
+            <div className="text-2xl font-bold">{student.badges?.length ?? 0}</div>
             <p className="text-xs text-muted-foreground">Huy hiệu</p>
           </CardContent>
         </Card>

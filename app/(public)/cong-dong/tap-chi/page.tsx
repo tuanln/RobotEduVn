@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { getArticles } from "@/lib/sheets";
 import { SectionHeader } from "@/components/common/section-header";
+import { CoverImage } from "@/components/common/cover-image";
+import { EmptyState } from "@/components/common/empty-state";
 
 export const metadata: Metadata = {
   title: "Tạp Chí MakerViet",
@@ -33,13 +34,10 @@ export default async function MagazinePage() {
               className="flex flex-col gap-4 rounded-xl border border-border bg-card p-6 sm:flex-row"
             >
               <div className="relative aspect-video flex-shrink-0 overflow-hidden rounded-lg sm:w-48">
-                <Image
+                <CoverImage
                   src={article.coverImage}
                   alt={article.title}
-                  fill
-                  className="object-cover"
                   sizes="200px"
-                  unoptimized
                 />
               </div>
               <div className="flex-1">
@@ -64,9 +62,13 @@ export default async function MagazinePage() {
         </div>
 
         {articles.length === 0 && (
-          <p className="py-20 text-center text-muted-foreground">
-            Chưa có bài viết nào.
-          </p>
+          <EmptyState
+            icon="📰"
+            title="Số đầu tiên đang được biên tập"
+            description="Tạp chí sẽ đăng bài hướng dẫn, dự án và tin tức từ cộng đồng Maker. Bạn muốn viết bài? Gửi ý tưởng cho ban biên tập."
+            actionLabel="Gửi bài viết"
+            actionHref="mailto:lang@makerviet.org?subject=Gửi%20bài%20cho%20Tạp%20chí%20MakerViet"
+          />
         )}
       </div>
     </div>

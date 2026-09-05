@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { STAGES } from "@/lib/data";
+import { STAGES } from "@/lib/content/stages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://robot.edu.vn";

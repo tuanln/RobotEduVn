@@ -10,7 +10,8 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { NAV_ITEMS } from "@/lib/data";
+import { NAV_ITEMS } from "@/lib/content/nav";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -42,17 +43,28 @@ export function Header() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-1 lg:flex">
+          <ThemeToggle />
           <Button asChild>
             <Link href="/hanh-trinh">Bắt Đầu Ngay</Link>
           </Button>
         </div>
 
         {/* Mobile Menu */}
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild className="lg:hidden">
-            <Button variant="ghost" size="icon">
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        <div className="flex items-center gap-1 lg:hidden">
+          <ThemeToggle />
+          <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label={open ? "Đóng menu" : "Mở menu"}
+            >
+              {open ? (
+                <X className="h-5 w-5" aria-hidden />
+              ) : (
+                <Menu className="h-5 w-5" aria-hidden />
+              )}
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-72">
@@ -77,7 +89,8 @@ export function Header() {
               </div>
             </nav>
           </SheetContent>
-        </Sheet>
+          </Sheet>
+        </div>
       </div>
     </header>
   );

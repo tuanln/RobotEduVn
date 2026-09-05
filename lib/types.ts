@@ -41,8 +41,9 @@ export interface MakerHub {
   name: string;
   type: "fpt-shop" | "clb" | "truong-hoc";
   address: string;
-  lat: number;
-  lng: number;
+  /** Tỉnh/thành để nhóm hub trên trang mạng lưới. */
+  city: string;
+  /** Để trống khi hub chưa gửi thông tin — giao diện hiện "Đang cập nhật". */
   mentors: string[];
   schedule: string;
   equipment: string[];

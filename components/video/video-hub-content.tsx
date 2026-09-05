@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { VideoItem, LearningStage } from "@/lib/types";
-import { MOCK_VIDEOS } from "@/lib/data";
+import { VIDEOS } from "@/lib/content/videos";
 import { VideoCard } from "@/components/video/video-card";
 import { VideoFilter } from "@/components/video/video-filter";
 import { useSearchParams } from "next/navigation";
@@ -11,7 +11,7 @@ export function VideoHubContent() {
   const searchParams = useSearchParams();
   const initialStage = (searchParams.get("stage") as LearningStage) || "all";
 
-  const [videos, setVideos] = useState<VideoItem[]>(MOCK_VIDEOS);
+  const [videos, setVideos] = useState<VideoItem[]>(VIDEOS);
   const [selectedStage, setSelectedStage] = useState<LearningStage | "all">(
     initialStage
   );
@@ -59,7 +59,7 @@ export function VideoHubContent() {
       {filtered.length === 0 && (
         <div className="py-20 text-center">
           <p className="text-lg text-muted-foreground">
-            Khong tim thay video nao.
+            Không tìm thấy video nào.
           </p>
           <button
             onClick={() => {
@@ -68,7 +68,7 @@ export function VideoHubContent() {
             }}
             className="mt-2 text-sm text-primary hover:underline"
           >
-            Xoa bo loc
+            Xoá bộ lọc
           </button>
         </div>
       )}

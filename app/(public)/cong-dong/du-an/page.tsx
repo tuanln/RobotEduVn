@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { getArticles } from "@/lib/sheets";
 import { SectionHeader } from "@/components/common/section-header";
+import { CoverImage } from "@/components/common/cover-image";
+import { EmptyState } from "@/components/common/empty-state";
 
 export const metadata: Metadata = {
   title: "Dự Án Nổi Bật",
@@ -27,13 +28,10 @@ export default async function ProjectsPage() {
               className="overflow-hidden rounded-xl border border-border bg-card"
             >
               <div className="relative aspect-video">
-                <Image
+                <CoverImage
                   src={project.coverImage}
                   alt={project.title}
-                  fill
-                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  unoptimized
                 />
               </div>
               <div className="p-6">
@@ -62,9 +60,13 @@ export default async function ProjectsPage() {
         </div>
 
         {projects.length === 0 && (
-          <p className="py-20 text-center text-muted-foreground">
-            Chưa có dự án nào. Hãy là người đầu tiên chia sẻ dự án của bạn!
-          </p>
+          <EmptyState
+            icon="🚀"
+            title="Chưa có dự án nào được đăng"
+            description="Trang này sẽ đăng dự án thật của học sinh và mentor trong cộng đồng. Bạn đã làm được gì thú vị? Gửi cho chúng tôi để trở thành dự án đầu tiên."
+            actionLabel="Gửi dự án của bạn"
+            actionHref="mailto:lang@makerviet.org?subject=Gửi%20dự%20án%20STEM"
+          />
         )}
       </div>
     </div>

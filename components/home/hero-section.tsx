@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { STAGES } from "@/lib/content/stages";
 
 export function HeroSection() {
   return (
@@ -18,7 +19,7 @@ export function HeroSection() {
           </p>
           <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
             Khám Phá{" "}
-            <span className="bg-gradient-to-r from-primary via-emerald-400 to-amber-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-emerald-600 to-amber-600 bg-clip-text text-transparent dark:from-primary dark:via-emerald-400 dark:to-amber-400">
               STEM & Robotics
             </span>{" "}
             Qua Trải Nghiệm
@@ -38,8 +39,28 @@ export function HeroSection() {
               <Link href="/video-hub">Xem Video Hub</Link>
             </Button>
           </div>
-          <p className="mt-6 text-sm text-muted-foreground/60">
-            Mục tiêu: 1 triệu trẻ em Việt Nam tiếp cận STEM & Robot trong 5 năm
+          {/* Nhìn thấy ngay 5 chặng trước khi cuộn xuống */}
+          <ul className="mt-10 flex flex-wrap items-center justify-center gap-2">
+            {STAGES.map((stage, i) => (
+              <li key={stage.slug} className="flex items-center gap-2">
+                <Link
+                  href={`/hanh-trinh/${stage.slug}`}
+                  className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${stage.borderColor} ${stage.bgColor} ${stage.color} hover:brightness-95`}
+                >
+                  <span aria-hidden>{stage.icon}</span>
+                  {stage.titleVi}
+                </Link>
+                {i < STAGES.length - 1 && (
+                  <span className="text-muted-foreground/40" aria-hidden>
+                    &rarr;
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-8 text-sm text-muted-foreground">
+            Mục tiêu 5 năm: 1 triệu trẻ em Việt Nam tiếp cận STEM &amp; Robot
           </p>
         </div>
       </div>

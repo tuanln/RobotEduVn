@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionHeader } from "@/components/common/section-header";
+import { getHubs, getVideos } from "@/lib/sheets";
 
 export const metadata: Metadata = {
   title: "Cộng Đồng",
@@ -50,7 +51,10 @@ const externalLinks = [
   },
 ];
 
-export default function CommunityPage() {
+export default async function CommunityPage() {
+  const [hubs, videos] = await Promise.all([getHubs(), getVideos()]);
+  const cities = new Set(hubs.map((h) => h.city).filter(Boolean));
+
   return (
     <div className="py-16">
       <div className="mx-auto max-w-5xl px-4">
@@ -59,12 +63,12 @@ export default function CommunityPage() {
           subtitle="Kết nối — Chia sẻ — Cùng phát triển"
         />
 
-        {/* Stats */}
+        {/* Số liệu lấy từ dữ liệu thật, không phải con số ước lượng */}
         <div className="mb-12 grid grid-cols-3 gap-4 text-center">
           {[
-            { value: "50+", label: "CLB Robotics" },
-            { value: "34", label: "Tỉnh thành" },
-            { value: "10,000+", label: "Thành viên" },
+            { value: String(hubs.length), label: "Maker Hub" },
+            { value: String(cities.size), label: "Tỉnh thành" },
+            { value: String(videos.length), label: "Video bài học" },
           ].map((stat) => (
             <div
               key={stat.label}

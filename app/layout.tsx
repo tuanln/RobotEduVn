@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
+import { SITE } from "@/lib/site";
+import { JsonLd } from "@/components/common/json-ld";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -9,12 +11,12 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: {
-    default: "Robot.Edu.VN — Giáo Dục STEM & Robot Mở",
-    template: "%s | Robot.Edu.VN",
+    default: `${SITE.name} — ${SITE.tagline}`,
+    template: `%s | ${SITE.name}`,
   },
-  description:
-    "Nền tảng giáo dục STEM & Robot mở cho trẻ em Việt Nam. Học đi đôi với Làm — từ Khám phá đến Chia sẻ. Mục tiêu 1 triệu trẻ em tiếp cận STEM trong 5 năm.",
+  description: SITE.description,
   keywords: [
     "STEM",
     "Robot",
@@ -25,16 +27,23 @@ export const metadata: Metadata = {
     "OpenSTEM",
     "lập trình",
     "ThingBot",
+    "Maker Hub",
+    "Làng Maker",
   ],
   authors: [{ name: "OpenSTEM Foundation" }],
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "vi_VN",
-    url: "https://robot.edu.vn",
-    siteName: "Robot.Edu.VN",
-    title: "Robot.Edu.VN — Giáo Dục STEM & Robot Mở",
-    description:
-      "Nền tảng giáo dục STEM & Robot mở cho trẻ em Việt Nam. Mục tiêu 1 triệu trẻ em tiếp cận STEM trong 5 năm.",
+    url: SITE.url,
+    siteName: SITE.name,
+    title: `${SITE.name} — ${SITE.tagline}`,
+    description: SITE.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE.name} — ${SITE.tagline}`,
+    description: SITE.description,
   },
 };
 
@@ -44,8 +53,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
+    <html lang="vi" suppressHydrationWarning>
+      <head>
+        {/* Đặt theme trước khi trình duyệt vẽ, tránh nháy sáng khi đang ở chế độ tối */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})()`,
+          }}
+        />
+      </head>
       <body className={`${nunito.variable} font-sans antialiased`}>
+        <JsonLd />
         {children}
       </body>
     </html>

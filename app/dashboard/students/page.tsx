@@ -56,9 +56,9 @@ export default function StudentsPage() {
   }
 
   const STATUS_COLORS: Record<string, string> = {
-    active: "bg-green-100 text-green-800",
-    inactive: "bg-gray-100 text-gray-800",
-    graduated: "bg-blue-100 text-blue-800",
+    active: "bg-green-100 text-green-800 dark:bg-green-500/15 dark:text-green-300",
+    inactive: "bg-muted text-muted-foreground",
+    graduated: "bg-blue-100 text-blue-800 dark:bg-blue-500/15 dark:text-blue-300",
   };
 
   return (
@@ -96,7 +96,7 @@ export default function StudentsPage() {
       ) : students.length === 0 ? (
         <Card>
           <CardContent className="py-8 text-center text-muted-foreground">
-            Chưa có học sinh nào. Bấm "Thêm học sinh" để bắt đầu.
+            Chưa có học sinh nào. Bấm &ldquo;Thêm học sinh&rdquo; để bắt đầu.
           </CardContent>
         </Card>
       ) : (

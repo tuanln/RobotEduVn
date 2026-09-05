@@ -1,5 +1,7 @@
 import { VideoItem, Article, MakerHub, LearningStage } from "./types";
-import { MOCK_VIDEOS, MOCK_ARTICLES, MOCK_HUBS } from "./data";
+import { VIDEOS } from "./content/videos";
+import { ARTICLES } from "./content/articles";
+import { HUBS } from "./content/hubs";
 
 const SHEETS_API_KEY = process.env.GOOGLE_SHEETS_API_KEY;
 const SHEETS_ID = process.env.GOOGLE_SHEETS_ID;
@@ -58,7 +60,7 @@ function parseArticles(rows: string[][]): Article[] {
       category: (row[3] || "tin-tuc") as Article["category"],
       content: row[4] || "",
       excerpt: row[5] || "",
-      coverImage: row[6] || "/images/placeholder-project.jpg",
+      coverImage: row[6] || "",
       author: row[7] || "",
       tags: (row[8] || "").split(",").map((t) => t.trim()).filter(Boolean),
       youtubeUrl: row[9] || undefined,
@@ -68,6 +70,10 @@ function parseArticles(rows: string[][]): Article[] {
     .filter((a) => a.published);
 }
 
+/**
+ * Cột sheet "Hubs": id | name | type | address | city | mentors | schedule |
+ * equipment | contact | active
+ */
 function parseHubs(rows: string[][]): MakerHub[] {
   const [, ...dataRows] = rows;
   return dataRows
@@ -76,15 +82,14 @@ function parseHubs(rows: string[][]): MakerHub[] {
       name: row[1] || "",
       type: (row[2] || "clb") as MakerHub["type"],
       address: row[3] || "",
-      lat: parseFloat(row[4] || "0"),
-      lng: parseFloat(row[5] || "0"),
-      mentors: (row[6] || "").split(",").map((m) => m.trim()).filter(Boolean),
-      schedule: row[7] || "",
-      equipment: (row[8] || "").split(",").map((e) => e.trim()).filter(Boolean),
-      contact: row[9] || "",
-      active: row[10]?.toUpperCase() !== "FALSE",
+      city: row[4] || "",
+      mentors: (row[5] || "").split(",").map((m) => m.trim()).filter(Boolean),
+      schedule: row[6] || "",
+      equipment: (row[7] || "").split(",").map((e) => e.trim()).filter(Boolean),
+      contact: row[8] || "",
+      active: row[9]?.toUpperCase() !== "FALSE",
     }))
-    .filter((h) => h.active);
+    .filter((h) => h.active && h.name);
 }
 
 function extractYouTubeId(url: string): string {
@@ -102,19 +107,19 @@ function extractYouTubeId(url: string): string {
 
 export async function getVideos(): Promise<VideoItem[]> {
   const rows = await fetchSheet("Videos");
-  if (!rows) return MOCK_VIDEOS;
+  if (!rows) return VIDEOS;
   return parseVideos(rows);
 }
 
 export async function getArticles(): Promise<Article[]> {
   const rows = await fetchSheet("Articles");
-  if (!rows) return MOCK_ARTICLES;
+  if (!rows) return ARTICLES;
   return parseArticles(rows);
 }
 
 export async function getHubs(): Promise<MakerHub[]> {
   const rows = await fetchSheet("Hubs");
-  if (!rows) return MOCK_HUBS;
+  if (!rows) return HUBS;
   return parseHubs(rows);
 }
 

@@ -31,7 +31,7 @@ const resources = [
   {
     icon: "🏠",
     title: "Mở Maker Hub",
-    desc: "Hướng dẫn mở và vận hành một Maker Hub tại địa phương. Từ không gian đến giáo trình.",
+    desc: "Hướng dẫn mở và vận hành một Maker Hub (Làng Maker) tại địa phương. Từ không gian đến giáo trình.",
     link: "/cong-dong/maker-hub",
   },
 ];

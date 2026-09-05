@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { STAGES } from "@/lib/data";
+import { STAGES } from "@/lib/content/stages";
 import { SectionHeader } from "@/components/common/section-header";
 
 export function LearningJourney() {

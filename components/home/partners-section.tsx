@@ -4,7 +4,7 @@ const partners = [
   { name: "MakerViet", role: "Cộng đồng Maker & Mã nguồn mở" },
   { name: "ThingEdu", role: "Giáo dục STEM & Phần mềm" },
   { name: "Rogo", role: "Robot giáo dục ThingBot" },
-  { name: "FPT Shop", role: "Mạng lưới Maker Hub" },
+  { name: "FPT Shop", role: "Mạng lưới Robot Hub" },
   { name: "FIRST Global", role: "Cuộc thi Robot quốc tế" },
   { name: "OpenSTEM", role: "Tổ chức điều phối" },
 ];

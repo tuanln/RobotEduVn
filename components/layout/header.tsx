@@ -10,7 +10,7 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { NAV_ITEMS } from "@/lib/data";
+import { NAV_ITEMS } from "@/lib/content/nav";
 
 export function Header() {
   const [open, setOpen] = useState(false);

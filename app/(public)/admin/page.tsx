@@ -297,7 +297,7 @@ export default function AdminPage() {
                   { path: "/video-hub", label: "Video Hub" },
                   { path: "/cong-dong/du-an", label: "Dự Án" },
                   { path: "/cong-dong/tap-chi", label: "Tạp Chí" },
-                  { path: "/cong-dong/maker-hub", label: "Maker Hub" },
+                  { path: "/cong-dong/maker-hub", label: "Robot Hub" },
                   { path: "/", label: "Trang Chủ" },
                 ].map((item) => (
                   <Button

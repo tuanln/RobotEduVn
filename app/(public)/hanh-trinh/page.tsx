@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { STAGES } from "@/lib/data";
+import { STAGES } from "@/lib/content/stages";
 import { SectionHeader } from "@/components/common/section-header";
 
 export const metadata: Metadata = {

@@ -11,7 +11,7 @@ const footerLinks = {
   "Cho Giáo Viên": [
     { label: "Tài Liệu Giáo Trình", href: "/cho-mentor" },
     { label: "Cộng Đồng Mentor", href: "/cong-dong" },
-    { label: "Đăng Ký Robot Hub", href: "/cong-dong/maker-hub" },
+    { label: "Đăng Ký Maker Hub", href: "/cong-dong/maker-hub" },
   ],
   "Kết Nối": [
     { label: "Email: lang@makerviet.org", href: "mailto:lang@makerviet.org" },

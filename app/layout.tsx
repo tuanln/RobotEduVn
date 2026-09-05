@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "OpenSTEM",
     "lập trình",
     "ThingBot",
-    "Robot Hub",
+    "Maker Hub",
     "Làng Maker",
   ],
   authors: [{ name: "OpenSTEM Foundation" }],

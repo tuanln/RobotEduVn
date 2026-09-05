@@ -12,7 +12,7 @@ export default async function HomePage() {
 
   // Số liệu suy ra từ dữ liệu thật để không bao giờ lệch với nội dung trên site.
   const stats: ImpactStat[] = [
-    { value: hubs.length, label: "Robot Hub", note: "đang hoạt động" },
+    { value: hubs.length, label: "Maker Hub", note: "đang hoạt động" },
     {
       value: cities.size,
       label: "Tỉnh thành",

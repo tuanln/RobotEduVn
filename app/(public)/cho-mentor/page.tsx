@@ -30,8 +30,8 @@ const resources = [
   },
   {
     icon: "🏠",
-    title: "Mở Robot Hub",
-    desc: "Hướng dẫn mở và vận hành một Robot Hub (Làng Maker) tại địa phương. Từ không gian đến giáo trình.",
+    title: "Mở Maker Hub",
+    desc: "Hướng dẫn mở và vận hành một Maker Hub (Làng Maker) tại địa phương. Từ không gian đến giáo trình.",
     link: "/cong-dong/maker-hub",
   },
 ];
@@ -40,7 +40,7 @@ const steps = [
   "Đăng ký tham gia cộng đồng Mentor qua email lang@makerviet.org",
   "Nhận tài liệu giáo trình và hướng dẫn sử dụng công cụ",
   "Tham gia tập huấn online/offline định kỳ hằng tháng",
-  "Tổ chức lớp học/sinh hoạt tại trường hoặc Robot Hub",
+  "Tổ chức lớp học/sinh hoạt tại trường hoặc Maker Hub",
   "Chia sẻ kinh nghiệm và góp ý cải tiến giáo trình",
 ];
 

@@ -24,7 +24,7 @@ export function CTASection() {
             </Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <Link href="/cong-dong/maker-hub">Tìm Robot Hub Gần Bạn</Link>
+            <Link href="/cong-dong/maker-hub">Tìm Maker Hub Gần Bạn</Link>
           </Button>
         </div>
       </div>

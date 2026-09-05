@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button";
 import type { MakerHub } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "Mạng Lưới Robot Hub",
+  title: "Mạng Lưới Maker Hub",
   description:
-    "Tìm Robot Hub (Làng Maker) gần bạn — không gian sáng tạo STEM & Robot tại FPT Shop và các địa điểm đối tác.",
+    "Tìm Maker Hub (Làng Maker) gần bạn — không gian sáng tạo STEM & Robot tại FPT Shop và các địa điểm đối tác.",
 };
 
 const typeLabels: Record<MakerHub["type"], { label: string; color: string }> = {
@@ -127,7 +127,7 @@ export default async function MakerHubPage() {
     <div className="py-16">
       <div className="mx-auto max-w-5xl px-4">
         <SectionHeader
-          title="Mạng Lưới Robot Hub"
+          title="Mạng Lưới Maker Hub"
           subtitle='"Làng Maker" — không gian sáng tạo STEM & Robot tại địa phương'
         />
 
@@ -177,7 +177,7 @@ export default async function MakerHubPage() {
 
         {hubs.length === 0 && (
           <div className="rounded-2xl border border-dashed border-border py-20 text-center">
-            <p className="text-lg font-medium">Chưa có Robot Hub nào mở cửa</p>
+            <p className="text-lg font-medium">Chưa có Maker Hub nào mở cửa</p>
             <p className="mt-2 text-sm text-muted-foreground">
               Mạng lưới đang được xây dựng. Liên hệ để mở hub đầu tiên tại địa
               phương của bạn.

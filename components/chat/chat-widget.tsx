@@ -9,7 +9,7 @@ import { ChatMessage } from "@/lib/types";
 
 const SUGGESTED_QUESTIONS = [
   "Lộ trình học nào phù hợp con tôi 8 tuổi?",
-  "Robot Hub gần nhất ở đâu?",
+  "Maker Hub gần nhất ở đâu?",
   "Làm sao để đăng ký học STEM?",
   "Triết lý giáo dục của OpenSTEM là gì?",
 ];

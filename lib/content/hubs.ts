@@ -1,7 +1,7 @@
 import { MakerHub } from "@/lib/types";
 
 /**
- * Robot Hub / Làng Maker đang hoạt động — dữ liệu do ban điều phối cung cấp.
+ * Maker Hub / Làng Maker đang hoạt động — dữ liệu do ban điều phối cung cấp.
  * Chỉ ghi những trường đã được xác nhận; lịch sinh hoạt, mentor và thiết bị
  * để trống cho tới khi từng hub gửi thông tin, giao diện sẽ hiện "Đang cập nhật".
  */

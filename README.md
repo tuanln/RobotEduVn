@@ -22,7 +22,7 @@ Mục tiêu 5 năm (2026–2030): 1.000.000 trẻ em Việt Nam tiếp cận STE
 | Chia Sẻ | 15–18 | GitHub, cộng đồng, cuộc thi |
 
 **Các khu vực chính:** Video Hub (video bài học từ kênh MakerViet), Mạng lưới
-Robot Hub (Làng Maker), Tạp chí & Dự án cộng đồng, Trang cho mentor, Triết lý
+Maker Hub (Làng Maker), Tạp chí & Dự án cộng đồng, Trang cho mentor, Triết lý
 Papert, và trợ lý AI "Neo Trẻ" (Gemini).
 
 **Dashboard quản lý học sinh** (`/dashboard`) — hồ sơ, điểm danh, tiến trình;
@@ -59,7 +59,7 @@ Nguồn sự thật là `lib/content/`, và Google Sheet (nếu cấu hình) s�
 ```
 lib/content/stages.ts    5 giai đoạn học (nội dung biên tập, ít đổi)
 lib/content/videos.ts    Video thật từ kênh YouTube MakerViet
-lib/content/hubs.ts      Robot Hub đang hoạt động
+lib/content/hubs.ts      Maker Hub đang hoạt động
 lib/content/articles.ts  Bài tạp chí / dự án (đang rỗng)
 lib/content/nav.ts       Menu điều hướng
 ```

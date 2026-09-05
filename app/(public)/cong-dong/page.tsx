@@ -6,7 +6,7 @@ import { getHubs, getVideos } from "@/lib/sheets";
 export const metadata: Metadata = {
   title: "Cộng Đồng",
   description:
-    "Cộng đồng OpenSTEM — Dự án nổi bật, Tạp chí MakerViet, Mạng lưới Robot Hub, và kết nối STEM.",
+    "Cộng đồng OpenSTEM — Dự án nổi bật, Tạp chí MakerViet, Mạng lưới Maker Hub, và kết nối STEM.",
 };
 
 const sections = [
@@ -26,8 +26,8 @@ const sections = [
   },
   {
     icon: "📍",
-    title: "Mạng Lưới Robot Hub",
-    desc: "Tìm Robot Hub (Làng Maker) gần bạn — tại FPT Shop và các địa điểm đối tác.",
+    title: "Mạng Lưới Maker Hub",
+    desc: "Tìm Maker Hub (Làng Maker) gần bạn — tại FPT Shop và các địa điểm đối tác.",
     href: "/cong-dong/maker-hub",
     color: "border-blue-500/30 bg-blue-500/5",
   },
@@ -66,7 +66,7 @@ export default async function CommunityPage() {
         {/* Số liệu lấy từ dữ liệu thật, không phải con số ước lượng */}
         <div className="mb-12 grid grid-cols-3 gap-4 text-center">
           {[
-            { value: String(hubs.length), label: "Robot Hub" },
+            { value: String(hubs.length), label: "Maker Hub" },
             { value: String(cities.size), label: "Tỉnh thành" },
             { value: String(videos.length), label: "Video bài học" },
           ].map((stat) => (

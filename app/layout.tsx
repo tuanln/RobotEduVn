@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import { ChatWidget } from "@/components/chat/chat-widget";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -49,10 +46,7 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className={`${nunito.variable} font-sans antialiased`}>
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-        <ChatWidget />
+        {children}
       </body>
     </html>
   );

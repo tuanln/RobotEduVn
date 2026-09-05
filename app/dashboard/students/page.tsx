@@ -96,7 +96,7 @@ export default function StudentsPage() {
       ) : students.length === 0 ? (
         <Card>
           <CardContent className="py-8 text-center text-muted-foreground">
-            Chưa có học sinh nào. Bấm "Thêm học sinh" để bắt đầu.
+            Chưa có học sinh nào. Bấm &ldquo;Thêm học sinh&rdquo; để bắt đầu.
           </CardContent>
         </Card>
       ) : (

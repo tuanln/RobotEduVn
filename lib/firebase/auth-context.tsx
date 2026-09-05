@@ -9,7 +9,7 @@ import {
 } from "react";
 import { onAuthStateChanged, signOut as firebaseSignOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "./config";
+import { auth, db, isFirebaseConfigured } from "./config";
 import type { AuthUser, UserRole } from "../types/auth";
 
 interface AuthContextType {
@@ -22,9 +22,13 @@ const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
-  const [loading, setLoading] = useState(true);
+  // Chưa cấu hình Firebase thì không có gì để chờ: coi như chưa đăng nhập ngay,
+  // layout sẽ chuyển hướng sang /dang-nhap — nơi hiển thị hướng dẫn cấu hình.
+  const [loading, setLoading] = useState(isFirebaseConfigured);
 
   useEffect(() => {
+    if (!isFirebaseConfigured()) return;
+
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       if (firebaseUser) {
         const userDocRef = doc(db, "users", firebaseUser.uid);

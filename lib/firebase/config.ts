@@ -11,6 +11,16 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
+/**
+ * Trang public chạy được mà không cần Firebase. Chỉ khu vực đăng nhập /
+ * dashboard mới cần — kiểm tra trước để báo lỗi tử tế thay vì ném lỗi SDK khó hiểu.
+ */
+export function isFirebaseConfigured(): boolean {
+  return Boolean(
+    firebaseConfig.apiKey && firebaseConfig.projectId && firebaseConfig.appId
+  );
+}
+
 let _app: FirebaseApp | undefined;
 let _auth: Auth | undefined;
 let _db: Firestore | undefined;

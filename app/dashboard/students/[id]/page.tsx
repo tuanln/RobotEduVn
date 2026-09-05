@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { auth } from "@/lib/firebase/config";
 import { useAuth } from "@/lib/firebase/auth-context";
@@ -32,11 +32,7 @@ export default function StudentDetailPage() {
   const [error, setError] = useState("");
   const [editData, setEditData] = useState<Partial<Student>>({});
 
-  useEffect(() => {
-    loadStudent();
-  }, [params.id]);
-
-  async function loadStudent() {
+  const loadStudent = useCallback(async function loadStudent() {
     setLoading(true);
     try {
       const token = await auth.currentUser?.getIdToken();
@@ -53,7 +49,11 @@ export default function StudentDetailPage() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [params.id]);
+
+  useEffect(() => {
+    loadStudent();
+  }, [loadStudent]);
 
   async function handleSave() {
     setSaving(true);

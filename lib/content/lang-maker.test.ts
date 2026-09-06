@@ -49,7 +49,7 @@ describe("MUOI_NAM", () => {
   });
 
   it("không dẫn tên miền đã chết makerhanoi.org", () => {
-    const toanBo = MUOI_NAM.map((m) => `${m.chiTiet} ${m.nguon}`).join(" ");
+    const toanBo = MUOI_NAM.map((m) => `${m.tieuDe} ${m.chiTiet} ${m.nguon}`).join(" ");
     expect(toanBo.includes("makerhanoi.org")).toBe(false);
   });
 });

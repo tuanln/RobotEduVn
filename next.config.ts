@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
       { source: "/hanh-trinh/tu-duy", destination: "/hanh-trinh/lam", permanent: true },
       { source: "/hanh-trinh/lap-trinh", destination: "/hanh-trinh/lam", permanent: true },
       { source: "/hanh-trinh/iot-robot", destination: "/hanh-trinh/lam", permanent: true },
+      { source: "/gioi-thieu", destination: "/lang-maker", permanent: true },
     ];
   },
 };

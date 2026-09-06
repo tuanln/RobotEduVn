@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { NHIP, getNhip } from "./nhip";
+import { NHIP, getNhip, nhipKeTiep } from "./nhip";
 import { NHIP_SLUGS } from "./nhip-slug";
 
 const TEN_PHAN_MEM = [
@@ -79,5 +79,16 @@ describe("NHIP", () => {
 describe("getNhip", () => {
   it("trả đúng nhịp theo slug", () => {
     expect(getNhip("chia-se").ten).toBe("Chia sẻ");
+  });
+});
+
+describe("nhipKeTiep", () => {
+  it("trả nhịp kế tiếp theo thứ tự vòng lặp", () => {
+    expect(nhipKeTiep("choi").slug).toBe("lam");
+    expect(nhipKeTiep("lam").slug).toBe("chia-se");
+  });
+
+  it("sau nhịp cuối thì QUAY LẠI nhịp đầu — đây là vòng lặp, không phải thang bậc", () => {
+    expect(nhipKeTiep("chia-se").slug).toBe("choi");
   });
 });

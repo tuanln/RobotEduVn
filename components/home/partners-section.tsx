@@ -6,7 +6,6 @@ const partners = [
   { name: "Rogo", role: "Robot giáo dục ThingBot" },
   { name: "FPT Shop", role: "Mạng lưới Maker Hub" },
   { name: "FIRST Global", role: "Cuộc thi Robot quốc tế" },
-  { name: "OpenSTEM", role: "Tổ chức điều phối" },
 ];
 
 export function PartnersSection() {
@@ -17,7 +16,7 @@ export function PartnersSection() {
           title="Đối Tác & Cộng Đồng"
           subtitle="Mặt trận thống nhất vì giáo dục STEM — Ai có súng dùng súng, ai có gươm dùng gươm"
         />
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
           {partners.map((partner) => (
             <div
               key={partner.name}

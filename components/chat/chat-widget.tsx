@@ -11,7 +11,7 @@ const SUGGESTED_QUESTIONS = [
   "Con tôi 8 tuổi thì bắt đầu thế nào?",
   "Maker Hub gần nhất ở đâu?",
   "Làm sao để đăng ký học STEM?",
-  "Triết lý giáo dục của OpenSTEM là gì?",
+  "Triết lý giáo dục của Làng Maker là gì?",
 ];
 
 export function ChatWidget() {

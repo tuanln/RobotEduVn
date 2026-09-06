@@ -15,7 +15,7 @@ export function HeroSection() {
       <div className="mx-auto max-w-7xl px-4 text-center">
         <div className="mx-auto max-w-3xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary">
-            OpenSTEM Foundation
+            Làng Maker
           </p>
           <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
             Chơi{" "}

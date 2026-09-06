@@ -6,10 +6,13 @@ import { VIDEOS } from "@/lib/content/videos";
 import { VideoCard } from "@/components/video/video-card";
 import { VideoFilter } from "@/components/video/video-filter";
 import { useSearchParams } from "next/navigation";
+import { normalizeNhipSlug } from "@/lib/content/nhip-slug";
 
 export function VideoHubContent() {
   const searchParams = useSearchParams();
-  const initialStage = (searchParams.get("stage") as NhipSlug) || "all";
+  const rawStage = searchParams.get("stage");
+  const initialStage: NhipSlug | "all" =
+    !rawStage || rawStage === "all" ? "all" : normalizeNhipSlug(rawStage);
 
   const [videos, setVideos] = useState<VideoItem[]>(VIDEOS);
   const [selectedStage, setSelectedStage] = useState<NhipSlug | "all">(

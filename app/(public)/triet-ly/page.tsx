@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { SectionHeader } from "@/components/common/section-header";
+import { VongLap } from "@/components/nhip/vong-lap";
+import { DocPapert } from "@/components/nhip/doc-papert";
 
 export const metadata: Metadata = {
   title: "Triết Lý Giáo Dục",
@@ -24,7 +26,7 @@ Mô hình "Làng Maker" tại mọi địa phương — mỗi vùng miền tự 
     quote: '"Trẻ em phát triển tư duy thông qua việc tạo ra sản phẩm hữu hình"',
     content: `Học bằng làm (Learning by Making) — không chỉ đọc sách hay nghe giảng, mà phải tự tay làm, tự tay tạo ra sản phẩm.
 
-Lộ trình 5 bước: Khám Phá → Tư Duy → Lập Trình → IoT & Robot → Chia Sẻ. Mỗi bước xây dựng trên bước trước, từ đơn giản đến phức tạp.
+Vòng lặp ba nhịp: Chơi, Làm, Chia sẻ. Không phải thang bậc phải leo — xong Chia sẻ thì quay lại Chơi ở vòng sau, với câu hỏi khó hơn.
 
 Trẻ em là chủ thể — không phải bình chứa để rót kiến thức vào, mà là những nhà kiến trúc tự xây dựng thế giới tri thức của mình.`,
   },
@@ -40,6 +42,34 @@ Giá trị cốt lõi: Mở — Miễn phí — Công bằng — Độc lập �
   },
 ];
 
+/** Sáu nguyên lý, rút từ thingedu-canon 00-CANON/PHILOSOPHY.md mục 1, 3, 4, 5, 6, 9. */
+const NGUYEN_LY = [
+  {
+    title: "Chạm trước, ký hiệu sau",
+    desc: "Trẻ thao tác với vật thật trước; code và công thức chỉ đến sau, khi đã có trải nghiệm cụ thể để bám vào.",
+  },
+  {
+    title: "Khó mà vui",
+    desc: "Học sâu xảy ra khi việc khó nhưng do chính trẻ chọn làm, đầy hứng thú — không phải khó vì bị ép.",
+  },
+  {
+    title: "Lỗi là thông tin",
+    desc: "Chương trình sai không phải là thua. Trẻ quan sát, đặt giả thuyết, thử lại — người dẫn không sửa hộ, chỉ hỏi ngược.",
+  },
+  {
+    title: "Thế giới thu nhỏ",
+    desc: "Mỗi dự án là một thế giới đủ nhỏ để trẻ làm chủ trọn vẹn, đủ thật để chạy được trên thiết bị thật.",
+  },
+  {
+    title: "Học như trường samba",
+    desc: "Người mới học cạnh người giỏi trong cùng một việc thật, không chia lớp tách biệt theo tuổi hay trình độ.",
+  },
+  {
+    title: "Tách trẻ khỏi màn hình",
+    desc: "Mọi tương tác số đều bắt nguồn từ một hành động vật lý: lắp ráp, thao tác thiết bị, quan sát hiện tượng.",
+  },
+];
+
 export default function PhilosophyPage() {
   return (
     <div className="py-16">
@@ -48,6 +78,15 @@ export default function PhilosophyPage() {
           title="Triết Lý Giáo Dục"
           subtitle="Ba trụ cột định hướng mọi hoạt động của OpenSTEM Foundation"
         />
+
+        <section className="mb-12">
+          <h2 className="mb-4 text-2xl font-bold">Vòng lặp ba nhịp</h2>
+          <p className="mb-6 text-muted-foreground">
+            Cách học ở Làng Maker không phải một thang bậc phải leo, mà là ba nhịp lặp
+            đi lặp lại. Mỗi vòng, thứ trẻ chọn làm lại khó hơn một chút.
+          </p>
+          <VongLap />
+        </section>
 
         <div className="space-y-8">
           {pillars.map((pillar, i) => (
@@ -75,6 +114,22 @@ export default function PhilosophyPage() {
               </div>
             </div>
           ))}
+        </div>
+
+        <section className="mt-12">
+          <h2 className="mb-4 text-2xl font-bold">Sáu nguyên lý dẫn đường</h2>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            {NGUYEN_LY.map((n) => (
+              <div key={n.title} className="rounded-xl border border-border bg-card p-6">
+                <h3 className="font-bold">{n.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{n.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="mt-12">
+          <DocPapert />
         </div>
       </div>
     </div>

@@ -18,20 +18,20 @@ export function HeroSection() {
             OpenSTEM Foundation
           </p>
           <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
-            Khám Phá{" "}
+            Chơi{" "}
             <span className="bg-gradient-to-r from-primary via-emerald-600 to-amber-600 bg-clip-text text-transparent dark:from-primary dark:via-emerald-400 dark:to-amber-400">
-              STEM & Robotics
+              Làm
             </span>{" "}
-            Qua Trải Nghiệm
+            Chia sẻ
           </h1>
           <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-            Học đi đôi với Làm — Mỗi trẻ em là một Nhà Sáng Tạo. Vòng lặp ba
-            nhịp Chơi → Làm → Chia sẻ, theo triết lý Seymour Papert.
+            Ba nhịp lặp lại ở Làng Maker: chơi cho tò mò, bắt tay làm ra thứ
+            chạy được, rồi kể lại cho người khác nghe.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button size="lg" asChild>
               <Link href="/hanh-trinh">
-                Bắt Đầu Hành Trình
+                Xem cách học
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

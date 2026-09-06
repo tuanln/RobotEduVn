@@ -5,7 +5,7 @@ import { NHIP } from "@/lib/content/nhip";
  * Sơ đồ vòng lặp ba nhịp. Điểm bắt buộc theo spec: có đường quay lại từ nhịp
  * cuối về nhịp đầu — đây là thứ phân biệt vòng lặp với thang bậc.
  */
-export function VongLap({ dangO }: { dangO?: string }) {
+export function VongLap() {
   return (
     <div className="relative">
       <ol className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -13,10 +13,7 @@ export function VongLap({ dangO }: { dangO?: string }) {
           <li key={nhip.slug}>
             <Link
               href={`/hanh-trinh/${nhip.slug}`}
-              aria-current={dangO === nhip.slug ? "page" : undefined}
-              className={`flex h-full flex-col rounded-2xl border p-6 transition-all hover:shadow-lg ${nhip.borderColor} ${nhip.bgColor} ${
-                dangO === nhip.slug ? "ring-2 ring-primary ring-offset-2 ring-offset-background" : ""
-              }`}
+              className={`flex h-full flex-col rounded-2xl border p-6 transition-all hover:shadow-lg ${nhip.borderColor} ${nhip.bgColor}`}
             >
               <span className="text-4xl" aria-hidden>
                 {nhip.icon}

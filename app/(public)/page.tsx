@@ -19,7 +19,7 @@ export default async function HomePage() {
       note: [...cities].join(" · ") || "chưa có",
     },
     { value: videos.length, label: "Video bài học", note: "miễn phí" },
-    { value: NHIP.length, label: "Nhịp", note: "Chơi · Làm · Chia sẻ" },
+    { value: NHIP.length, label: "Nhịp", note: "lặp lại, vòng sau khó hơn" },
   ];
 
   return (

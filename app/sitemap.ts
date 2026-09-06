@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { STAGES } from "@/lib/content/stages";
+import { NHIP } from "@/lib/content/nhip";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://robot.edu.vn";
@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/cong-cu",
   ];
 
-  const stagePages = STAGES.map((s) => `/hanh-trinh/${s.slug}`);
+  const stagePages = NHIP.map((s) => `/hanh-trinh/${s.slug}`);
 
   return [...staticPages, ...stagePages].map((path) => ({
     url: `${baseUrl}${path}`,

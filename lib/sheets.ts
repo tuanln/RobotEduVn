@@ -1,7 +1,8 @@
-import { VideoItem, Article, MakerHub, LearningStage } from "./types";
+import { VideoItem, Article, MakerHub } from "./types";
 import { VIDEOS } from "./content/videos";
 import { ARTICLES } from "./content/articles";
 import { HUBS } from "./content/hubs";
+import { normalizeNhipSlug } from "./content/nhip-slug";
 
 const SHEETS_API_KEY = process.env.GOOGLE_SHEETS_API_KEY;
 const SHEETS_ID = process.env.GOOGLE_SHEETS_ID;
@@ -32,7 +33,7 @@ function parseVideos(rows: string[][]): VideoItem[] {
         title: row[1] || "",
         youtubeUrl,
         youtubeId,
-        stage: (row[4] || "kham-pha") as LearningStage,
+        stage: normalizeNhipSlug(row[4]),
         ageRange: row[5] || "",
         tags: (row[6] || "").split(",").map((t) => t.trim()).filter(Boolean),
         description: row[7] || "",

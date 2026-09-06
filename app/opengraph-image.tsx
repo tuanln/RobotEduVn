@@ -54,15 +54,14 @@ export default async function OpengraphImage() {
           Học đi đôi với Làm
         </div>
         <div style={{ marginTop: 24, fontSize: 34, color: "#a7b6c9", maxWidth: 950 }}>
-          Lộ trình STEM &amp; Robot 5 giai đoạn cho trẻ em Việt Nam, từ 4 đến 18 tuổi
+          Vòng lặp ba nhịp Chơi, Làm, Chia sẻ cho trẻ em Việt Nam, từ 4 đến 18 tuổi
         </div>
 
-        <div style={{ marginTop: 56, display: "flex", gap: 16, fontSize: 26, color: "#7dd3a8" }}>
-          <span>Khám Phá</span><span>→</span>
-          <span>Tư Duy</span><span>→</span>
-          <span>Lập Trình</span><span>→</span>
-          <span>IoT &amp; Robot</span><span>→</span>
-          <span>Chia Sẻ</span>
+        <div style={{ marginTop: 56, display: "flex", gap: 16, fontSize: 30, color: "#7dd3a8" }}>
+          <span>Chơi</span><span>»</span>
+          <span>Làm</span><span>»</span>
+          <span>Chia sẻ</span><span>»</span>
+          <span>lặp lại</span>
         </div>
       </div>
     ),

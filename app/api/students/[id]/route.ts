@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAuthAndRole } from "@/lib/api/auth";
 import { getStudent, updateStudent, deleteStudent } from "@/lib/firestore/students";
+import { normalizeNhipSlug } from "@/lib/content/nhip-slug";
 
 export async function GET(
   request: NextRequest,
@@ -45,6 +46,9 @@ export async function PUT(
   const sanitized = Object.fromEntries(
     Object.entries(body).filter(([k]) => ALLOWED_FIELDS.includes(k))
   );
+  if ("currentStage" in sanitized) {
+    sanitized.currentStage = normalizeNhipSlug(sanitized.currentStage as string);
+  }
   await updateStudent(id, sanitized);
   return NextResponse.json({ ok: true });
 }

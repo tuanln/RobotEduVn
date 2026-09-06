@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { STAGES } from "@/lib/content/stages";
+import { NHIP } from "@/lib/content/nhip";
 
 export function HeroSection() {
   return (
@@ -18,20 +18,20 @@ export function HeroSection() {
             OpenSTEM Foundation
           </p>
           <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
-            Khám Phá{" "}
+            Chơi{" "}
             <span className="bg-gradient-to-r from-primary via-emerald-600 to-amber-600 bg-clip-text text-transparent dark:from-primary dark:via-emerald-400 dark:to-amber-400">
-              STEM & Robotics
+              Làm
             </span>{" "}
-            Qua Trải Nghiệm
+            Chia sẻ
           </h1>
           <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-            Học đi đôi với Làm — Mỗi trẻ em là một Nhà Sáng Tạo. Lộ trình 5
-            bước từ Khám phá đến Chia sẻ, theo triết lý Seymour Papert.
+            Ba nhịp lặp lại ở Làng Maker: chơi cho tò mò, bắt tay làm ra thứ
+            chạy được, rồi kể lại cho người khác nghe.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button size="lg" asChild>
               <Link href="/hanh-trinh">
-                Bắt Đầu Hành Trình
+                Xem cách học
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -39,24 +39,32 @@ export function HeroSection() {
               <Link href="/video-hub">Xem Video Hub</Link>
             </Button>
           </div>
-          {/* Nhìn thấy ngay 5 chặng trước khi cuộn xuống */}
+          {/* Nhìn thấy ngay ba nhịp trước khi cuộn xuống */}
           <ul className="mt-10 flex flex-wrap items-center justify-center gap-2">
-            {STAGES.map((stage, i) => (
-              <li key={stage.slug} className="flex items-center gap-2">
+            {NHIP.map((nhip, i) => (
+              <li key={nhip.slug} className="flex items-center gap-2">
                 <Link
-                  href={`/hanh-trinh/${stage.slug}`}
-                  className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${stage.borderColor} ${stage.bgColor} ${stage.color} hover:brightness-95`}
+                  href={`/hanh-trinh/${nhip.slug}`}
+                  className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${nhip.borderColor} ${nhip.bgColor} ${nhip.color} hover:brightness-95`}
                 >
-                  <span aria-hidden>{stage.icon}</span>
-                  {stage.titleVi}
+                  <span aria-hidden>{nhip.icon}</span>
+                  {nhip.ten}
                 </Link>
-                {i < STAGES.length - 1 && (
+                {i < NHIP.length - 1 && (
                   <span className="text-muted-foreground/40" aria-hidden>
                     &rarr;
                   </span>
                 )}
               </li>
             ))}
+            <li className="flex items-center gap-2">
+              <span className="text-muted-foreground/40" aria-hidden>
+                &rarr;
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-dashed border-muted-foreground/40 px-3 py-1.5 text-sm font-medium text-muted-foreground">
+                &#8635; lặp lại
+              </span>
+            </li>
           </ul>
 
           <p className="mt-8 text-sm text-muted-foreground">

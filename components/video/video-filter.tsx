@@ -1,22 +1,19 @@
 "use client";
 
-import { LearningStage } from "@/lib/types";
+import { NhipSlug } from "@/lib/types";
+import { NHIP } from "@/lib/content/nhip";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 
-const stages: { value: LearningStage | "all"; label: string }[] = [
+const stages: { value: NhipSlug | "all"; label: string }[] = [
   { value: "all", label: "Tất cả" },
-  { value: "kham-pha", label: "Khám Phá" },
-  { value: "tu-duy", label: "Tư Duy" },
-  { value: "lap-trinh", label: "Lập Trình" },
-  { value: "iot-robot", label: "IoT & Robot" },
-  { value: "chia-se", label: "Chia Sẻ" },
+  ...NHIP.map((n) => ({ value: n.slug, label: n.ten })),
 ];
 
 interface VideoFilterProps {
-  selectedStage: LearningStage | "all";
+  selectedStage: NhipSlug | "all";
   searchQuery: string;
-  onStageChange: (stage: LearningStage | "all") => void;
+  onStageChange: (stage: NhipSlug | "all") => void;
   onSearchChange: (query: string) => void;
 }
 

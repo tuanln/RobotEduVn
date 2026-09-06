@@ -1,16 +1,12 @@
-export type LearningStage =
-  | "kham-pha"
-  | "tu-duy"
-  | "lap-trinh"
-  | "iot-robot"
-  | "chia-se";
+export type { NhipSlug } from "./content/nhip-slug";
+import type { NhipSlug } from "./content/nhip-slug";
 
 export interface VideoItem {
   id: string;
   title: string;
   youtubeUrl: string;
   youtubeId: string;
-  stage: LearningStage;
+  stage: NhipSlug;
   ageRange: string;
   tags: string[];
   description: string;
@@ -49,23 +45,6 @@ export interface MakerHub {
   equipment: string[];
   contact: string;
   active: boolean;
-}
-
-export interface StageInfo {
-  slug: LearningStage;
-  title: string;
-  titleVi: string;
-  ageRange: string;
-  icon: string;
-  color: string;
-  bgColor: string;
-  borderColor: string;
-  tools: string[];
-  skills: string[];
-  description: string;
-  longDescription: string;
-  badge: string;
-  badgeName: string;
 }
 
 export interface ChatMessage {

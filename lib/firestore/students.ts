@@ -1,5 +1,6 @@
 import { adminDb } from "@/lib/firebase/admin";
 import type { Student, StudentFormData } from "@/lib/types/student";
+import { normalizeNhipSlug } from "@/lib/content/nhip-slug";
 
 const STUDENTS = "students";
 const COUNTERS = "counters";
@@ -38,10 +39,14 @@ export async function listStudents(filters?: {
   query = query.orderBy("createdAt", "desc").limit(100);
 
   const snap = await query.get();
-  let students = snap.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  })) as Student[];
+  let students = snap.docs.map((doc) => {
+    const data = doc.data();
+    return {
+      id: doc.id,
+      ...data,
+      currentStage: normalizeNhipSlug(data.currentStage),
+    } as Student;
+  });
 
   if (filters?.search) {
     const searchLower = filters.search.toLowerCase();
@@ -59,7 +64,12 @@ export async function listStudents(filters?: {
 export async function getStudent(id: string): Promise<Student | null> {
   const snap = await adminDb.collection(STUDENTS).doc(id).get();
   if (!snap.exists) return null;
-  return { id: snap.id, ...snap.data() } as Student;
+  const data = snap.data();
+  return {
+    id: snap.id,
+    ...data,
+    currentStage: normalizeNhipSlug(data?.currentStage),
+  } as Student;
 }
 
 export async function createStudent(data: StudentFormData): Promise<Student> {

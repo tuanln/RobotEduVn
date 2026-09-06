@@ -13,13 +13,12 @@ export function CTASection() {
           Sẵn Sàng Bắt Đầu Hành Trình STEM?
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          Từ 4 tuổi đã có thể bắt đầu. Chọn giai đoạn phù hợp và khám phá ngay
-          — hoàn toàn miễn phí.
+          Từ 4 tuổi đã có thể bắt đầu — bắt đầu từ nhịp Chơi, hoàn toàn miễn phí.
         </p>
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Button size="lg" asChild>
             <Link href="/hanh-trinh">
-              Chọn Lộ Trình Học
+              Xem Cách Học
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

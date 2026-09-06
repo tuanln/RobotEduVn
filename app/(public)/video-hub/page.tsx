@@ -6,7 +6,7 @@ import { VideoHubContent } from "@/components/video/video-hub-content";
 export const metadata: Metadata = {
   title: "Video Hub",
   description:
-    "Video bài học STEM & Robot — từ cơ bản đến nâng cao. Phân loại theo ba nhịp Chơi, Làm, Chia sẻ.",
+    "Video bài học STEM & Robot, phân loại theo ba nhịp Chơi, Làm, Chia sẻ.",
 };
 
 export default function VideoHubPage() {
@@ -15,7 +15,7 @@ export default function VideoHubPage() {
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
           title="Video Hub"
-          subtitle="Video bài học STEM & Robot — từ cơ bản đến nâng cao"
+          subtitle="Video bài học STEM & Robot, phân loại theo ba nhịp Chơi, Làm, Chia sẻ"
         />
         <Suspense
           fallback={

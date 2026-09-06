@@ -11,15 +11,14 @@ Mục tiêu 5 năm (2026–2030): 1.000.000 trẻ em Việt Nam tiếp cận STE
 
 ## Nội dung nền tảng
 
-**Hành trình học 5 giai đoạn** — từ 4 đến 18 tuổi:
+**Vòng lặp ba nhịp Chơi → Làm → Chia sẻ** — từ 4 đến 18 tuổi, không phải thang
+bậc phải leo:
 
-| Giai đoạn | Tuổi | Công cụ |
-|---|---|---|
-| Khám Phá | 4–12 | GCompris |
-| Tư Duy | 8–12 | KTurtle |
-| Lập Trình | 9–12 | Python |
-| IoT & Robot | 10–15 | ThingBot, Arduino, NEO One |
-| Chia Sẻ | 15–18 | GitHub, cộng đồng, cuộc thi |
+| Nhịp | Việc trẻ làm |
+|---|---|
+| Chơi | Chạm, thử ở các trạm trò chơi (Bảo tàng Tò mò) cho đến khi bật ra một câu hỏi |
+| Làm | Bảy buổi cùng người dẫn, theo một trong ba hướng song song (Điều khiển & tư duy máy tính, Lập trình, Robot & IoT) — không xếp hạng |
+| Chia sẻ | Tự đứng lên kể lại hành trình làm, rồi quay ngược về nhịp Chơi cho vòng sau với câu hỏi khó hơn |
 
 **Các khu vực chính:** Video Hub (video bài học từ kênh MakerViet), Mạng lưới
 Maker Hub (Làng Maker), Tạp chí & Dự án cộng đồng, Trang cho mentor, Triết lý
@@ -57,11 +56,12 @@ Thiếu khoá thì tính năng tương ứng tự tắt một cách êm:
 Nguồn sự thật là `lib/content/`, và Google Sheet (nếu cấu hình) sẽ **ghi đè** lúc chạy:
 
 ```
-lib/content/stages.ts    5 giai đoạn học (nội dung biên tập, ít đổi)
-lib/content/videos.ts    Video thật từ kênh YouTube MakerViet
-lib/content/hubs.ts      Maker Hub đang hoạt động
-lib/content/articles.ts  Bài tạp chí / dự án (đang rỗng)
-lib/content/nav.ts       Menu điều hướng
+lib/content/nhip.ts       Ba nhịp Chơi/Làm/Chia sẻ (nội dung biên tập, ít đổi)
+lib/content/nhip-slug.ts  Slug ba nhịp + bản đồ 5 slug cũ → nhịp mới
+lib/content/videos.ts     Video thật từ kênh YouTube MakerViet
+lib/content/hubs.ts       Maker Hub đang hoạt động
+lib/content/articles.ts   Bài tạp chí / dự án (đang rỗng)
+lib/content/nav.ts        Menu điều hướng
 ```
 
 **Quy tắc nội dung: không có dữ liệu mẫu trên bản chạy thật.** Chỗ nào chưa có

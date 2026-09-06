@@ -108,7 +108,7 @@ export default function StudentsPage() {
                   <tr className="border-b bg-muted/50">
                     <th className="px-4 py-3 text-left font-medium">Paper ID</th>
                     <th className="px-4 py-3 text-left font-medium">Họ tên</th>
-                    <th className="px-4 py-3 text-left font-medium">Giai đoạn</th>
+                    <th className="px-4 py-3 text-left font-medium">Nhịp</th>
                     <th className="px-4 py-3 text-left font-medium">Trạng thái</th>
                     <th className="px-4 py-3 text-left font-medium">Sao</th>
                   </tr>

@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 const resources = [
   {
     icon: "📚",
-    title: "Giáo Trình 5 Bước",
-    desc: "Giáo trình đầy đủ cho từng giai đoạn học, từ Khám phá đến Chia sẻ. Có thể tải về và in.",
+    title: "Giáo Trình Ba Nhịp",
+    desc: "Giáo trình cho từng nhịp Chơi, Làm, Chia sẻ. Có thể tải về và in.",
     link: "/hanh-trinh",
   },
   {

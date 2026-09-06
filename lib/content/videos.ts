@@ -108,7 +108,7 @@ export const VIDEOS: VideoItem[] = [
     ageRange: "8-12",
     tags: ["thingedublock", "lập trình khối", "trực quan"],
     description:
-      "Lập trình bằng khối lệnh kéo–thả với ThingEduBlock — bước đệm trước khi viết code chữ.",
+      "Lập trình bằng khối lệnh kéo–thả với ThingEduBlock — một cách ra lệnh cho máy mà không cần gõ chữ.",
     featured: true,
     published: true,
     order: 7,

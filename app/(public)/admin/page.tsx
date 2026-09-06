@@ -144,7 +144,7 @@ export default function AdminPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="mb-1 block text-sm font-medium">
-                      Giai đoạn
+                      Nhịp
                     </label>
                     <select
                       value={videoStage}

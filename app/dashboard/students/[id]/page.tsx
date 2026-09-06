@@ -208,7 +208,7 @@ export default function StudentDetailPage() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="mb-1 block text-sm font-medium">Giai đoạn</label>
+                  <label className="mb-1 block text-sm font-medium">Nhịp</label>
                   <select
                     value={editData.currentStage || ""}
                     onChange={(e) =>
@@ -248,7 +248,7 @@ export default function StudentDetailPage() {
                 <span className="text-muted-foreground">Trường:</span> {student.school || "—"}
               </div>
               <div>
-                <span className="text-muted-foreground">Giai đoạn:</span>{" "}
+                <span className="text-muted-foreground">Nhịp:</span>{" "}
                 <Badge variant="outline">{student.currentStage}</Badge>
               </div>
               <div>

@@ -62,7 +62,7 @@ Trẻ đi giữa các trạm trò chơi, tự chọn trạm mình thích, chơi 
 
 Khi một đứa trẻ quay sang hỏi "sao nó lại chạy được?" thì nhịp Chơi đã xong việc của nó. Câu hỏi đó là thứ kéo trẻ sang nhịp tiếp theo — và nó phải đến từ chính đứa trẻ, không phải từ thời khoá biểu.`,
     taiLangMaker:
-      "Bảo tàng Tò mò mở liên tục tại Làng Maker với năm nhóm trạm chơi. Cửa vào là buổi Hour of STEAM — trải nghiệm miễn phí 60–90 phút cho người mới vào cuối tuần, không cần biết trước gì, không cần mang theo gì.",
+      "Bảo tàng Tò mò mở liên tục tại Làng Maker với năm nhóm trạm chơi. Cửa vào là buổi Hour of STEAM — trải nghiệm miễn phí 60–90 phút cho người mới vào cuối tuần, không cần biết trước gì, không cần mang theo gì. Dẫn trải nghiệm là hai nhân vật Faddy Dế và NEO Tre.",
     huyHieu: "🔍",
     tenHuyHieu: "Người Tò Mò",
     tramChoi: [

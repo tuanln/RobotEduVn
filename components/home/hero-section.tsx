@@ -57,6 +57,14 @@ export function HeroSection() {
                 )}
               </li>
             ))}
+            <li className="flex items-center gap-2">
+              <span className="text-muted-foreground/40" aria-hidden>
+                &rarr;
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-dashed border-muted-foreground/40 px-3 py-1.5 text-sm font-medium text-muted-foreground">
+                &#8635; lặp lại
+              </span>
+            </li>
           </ul>
 
           <p className="mt-8 text-sm text-muted-foreground">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SectionHeader } from "@/components/common/section-header";
 import { VongLap } from "@/components/nhip/vong-lap";
 import { DocPapert } from "@/components/nhip/doc-papert";
+import { getNhip } from "@/lib/content/nhip";
 
 export const metadata: Metadata = {
   title: "Triết Lý Giáo Dục",
@@ -42,20 +43,13 @@ Giá trị cốt lõi: Mở — Miễn phí — Công bằng — Độc lập �
   },
 ];
 
-/** Sáu nguyên lý, rút từ thingedu-canon 00-CANON/PHILOSOPHY.md mục 1, 3, 4, 5, 6, 9. */
+/**
+ * Sáu nguyên lý, rút từ thingedu-canon 00-CANON/PHILOSOPHY.md mục 1, 3, 4, 5, 6, 9.
+ * Ba mục đầu lấy trực tiếp từ `lib/content/nhip.ts` (nguồn sự thật của nhịp Làm)
+ * để tránh chép tay hai bản trôi dạt khỏi nhau.
+ */
 const NGUYEN_LY = [
-  {
-    title: "Chạm trước, ký hiệu sau",
-    desc: "Trẻ thao tác với vật thật trước; code và công thức chỉ đến sau, khi đã có trải nghiệm cụ thể để bám vào.",
-  },
-  {
-    title: "Khó mà vui",
-    desc: "Học sâu xảy ra khi việc khó nhưng do chính trẻ chọn làm, đầy hứng thú — không phải khó vì bị ép.",
-  },
-  {
-    title: "Lỗi là thông tin",
-    desc: "Chương trình sai không phải là thua. Trẻ quan sát, đặt giả thuyết, thử lại — người dẫn không sửa hộ, chỉ hỏi ngược.",
-  },
+  ...(getNhip("lam").nguyenTac ?? []).map((n) => ({ title: n.title, desc: n.desc })),
   {
     title: "Thế giới thu nhỏ",
     desc: "Mỗi dự án là một thế giới đủ nhỏ để trẻ làm chủ trọn vẹn, đủ thật để chạy được trên thiết bị thật.",

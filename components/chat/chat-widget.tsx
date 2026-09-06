@@ -8,7 +8,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChatMessage } from "@/lib/types";
 
 const SUGGESTED_QUESTIONS = [
-  "Lộ trình học nào phù hợp con tôi 8 tuổi?",
+  "Con tôi 8 tuổi thì bắt đầu thế nào?",
   "Maker Hub gần nhất ở đâu?",
   "Làm sao để đăng ký học STEM?",
   "Triết lý giáo dục của OpenSTEM là gì?",
@@ -125,8 +125,8 @@ export function ChatWidget() {
                     Xin chào! Mình là Neo Trẻ AI 🤖
                   </p>
                   <p className="mt-1 text-muted-foreground">
-                    Hỏi mình bất cứ điều gì về STEM, Robot, lộ trình học, hay
-                    cộng đồng Maker nhé!
+                    Hỏi mình bất cứ điều gì về STEM, Robot, cách học ở Làng
+                    Maker, hay cộng đồng Maker nhé!
                   </p>
                 </div>
                 <div className="space-y-2">

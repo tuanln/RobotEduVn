@@ -3,7 +3,7 @@ import { Separator } from "@/components/ui/separator";
 
 const footerLinks = {
   "Khám Phá": [
-    { label: "Hành Trình Học", href: "/hanh-trinh" },
+    { label: "Cách Học", href: "/hanh-trinh" },
     { label: "Triết Lý Papert", href: "/triet-ly" },
     { label: "Công Cụ & Thiết Bị", href: "/cong-cu" },
     { label: "Video Hub", href: "/video-hub" },

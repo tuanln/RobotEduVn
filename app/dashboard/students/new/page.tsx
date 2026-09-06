@@ -197,7 +197,7 @@ export default function NewStudentPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <label className="mb-1 block text-sm font-medium">Giai đoạn hiện tại *</label>
+              <label className="mb-1 block text-sm font-medium">Nhịp hiện tại *</label>
               <select
                 value={currentStage}
                 onChange={(e) => setCurrentStage(e.target.value as NhipSlug)}

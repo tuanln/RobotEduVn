@@ -14,7 +14,8 @@ export function DocPapert() {
         <div>
           <h2 className="text-xl font-bold">Đọc Papert</h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Toàn bộ cách học ở Làng Maker bắt nguồn từ một cuốn sách năm 1980 của
+            Toàn bộ cách học ở Làng Maker bắt nguồn từ một cuốn sách năm 1980
+            (ấn bản 2 năm 1993) của
             Seymour Papert: <em>Mindstorms — Children, Computers, and Powerful
             Ideas</em>. MIT Media Lab đăng công khai bản đầy đủ, miễn phí, với sự
             cho phép của gia đình Papert.

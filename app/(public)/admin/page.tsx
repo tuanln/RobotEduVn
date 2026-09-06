@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { NHIP } from "@/lib/content/nhip";
+import type { NhipSlug } from "@/lib/types";
 
 export default function AdminPage() {
   const [password, setPassword] = useState("");
@@ -14,7 +16,7 @@ export default function AdminPage() {
   // Video form
   const [videoUrl, setVideoUrl] = useState("");
   const [videoTitle, setVideoTitle] = useState("");
-  const [videoStage, setVideoStage] = useState("kham-pha");
+  const [videoStage, setVideoStage] = useState<NhipSlug>("choi");
   const [videoAge, setVideoAge] = useState("");
   const [videoTags, setVideoTags] = useState("");
   const [videoDesc, setVideoDesc] = useState("");
@@ -146,14 +148,14 @@ export default function AdminPage() {
                     </label>
                     <select
                       value={videoStage}
-                      onChange={(e) => setVideoStage(e.target.value)}
+                      onChange={(e) => setVideoStage(e.target.value as NhipSlug)}
                       className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                     >
-                      <option value="kham-pha">Khám Phá (4-12)</option>
-                      <option value="tu-duy">Tư Duy (8-12)</option>
-                      <option value="lap-trinh">Lập Trình (9-12)</option>
-                      <option value="iot-robot">IoT & Robot (10-15)</option>
-                      <option value="chia-se">Chia Sẻ (15-18)</option>
+                      {NHIP.map((nhip) => (
+                        <option key={nhip.slug} value={nhip.slug}>
+                          {nhip.ten}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <div>
@@ -172,7 +174,7 @@ export default function AdminPage() {
                     Tags (phân cách bằng dấu phẩy)
                   </label>
                   <Input
-                    placeholder="python, lap-trinh, co-ban"
+                    placeholder="python, robot, co-ban"
                     value={videoTags}
                     onChange={(e) => setVideoTags(e.target.value)}
                   />

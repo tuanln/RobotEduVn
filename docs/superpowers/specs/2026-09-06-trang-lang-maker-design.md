@@ -157,3 +157,7 @@ Dẫn sang `/cong-dong/maker-hub` (tìm hub gần nhất) và `/hanh-trinh/choi`
 6. Trang `/lang-maker` hiện đủ: 5 vai, câu trích 6/2017, dòng thời gian có căn cứ từng
    mốc, dòng đồ nghề, hai nút cửa vào. Xem thật cả sáng lẫn tối, không lỗi console.
 7. `curl` lại link VTV và fablabs.io trước khi commit — phải 200.
+   ⚠️ **vtv.vn chặn user-agent mặc định của curl** (trả 503 lúc thì 200 lúc). Phải kiểm
+   bằng UA trình duyệt, nếu không sẽ báo trượt oan:
+   `curl -sIL -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36" <url>`
+   Đã xác minh 2026-09-06: với UA trình duyệt thì 200 ổn định 3/3 lần.

@@ -75,7 +75,8 @@ export default function LangMakerPage() {
               <h3 className="font-bold">Sứ mệnh</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Phổ cập STEM và Robot cho 1 triệu trẻ em Việt Nam trong 5 năm,
-                bằng hệ sinh thái giáo dục mở và sản phẩm Made in Vietnam.
+                bằng hệ sinh thái giáo dục mở, sản phẩm Made in Vietnam, và
+                mạng lưới cộng đồng toàn quốc.
               </p>
             </div>
           </div>

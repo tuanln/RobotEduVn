@@ -101,6 +101,27 @@ mềm/thiết bị xuống cuối như chú thích.** Không câu nào mở đ�
   (Thợ học việc → Thợ cả trong phân cấp Coach Maker).
 - Kết nhịp: **quay lại Chơi** ở vòng sau, chủ đề khó hơn.
 
+
+### 3.4 Khối "Đọc Papert" — link sách gốc
+
+Canon `DOMAIN_MAP.md` mục 1 ghi vai trò số một của `robot.edu.vn` là **"phổ cập
+Papert"**, nhưng site hiện không dẫn người đọc tới bất kỳ nguồn gốc nào. Bổ sung
+một khối ở cuối trang Triết Lý:
+
+- **Sách gốc:** Seymour Papert, *Mindstorms: Children, Computers, and Powerful
+  Ideas*, Basic Books, ấn bản 2, 1993.
+- **Hai link đã kiểm tra sống ngày 2026-09-06 (HTTP 200):**
+  - Trang trích dẫn chính thức MIT Media Lab — <https://mindstorms.media.mit.edu/>
+  - Đọc/mượn miễn phí tại Internet Archive — <https://archive.org/details/mindstormschildr0000pape>
+- **Không dẫn bản PDF lậu.** Link `worrydream.com` mà nhiều nơi hay chép đã 404
+  (kiểm tra 2026-09-06); trang MIT không có nút tải PDF.
+- **Một dòng báo trước bản tiếng Việt:** "Bản tiếng Việt đang được cộng đồng
+  dịch, kèm *Chuyện Làng Maker* sau mỗi chương" + nút liên hệ `lang@makerviet.org`
+  để nhận tin khi xong.
+  - **KHÔNG nêu tên người dịch.** Người dịch vòng 1 đang học lớp 8; không đưa tên
+    trẻ em lên trang công khai trừ khi chủ dự án yêu cầu (chốt 2026-09-06).
+  - Không hứa ngày phát hành.
+
 ## 4. Thay đổi kỹ thuật
 
 ### 4.1 Kiểu dữ liệu và nội dung
@@ -147,7 +168,8 @@ Redirect khai trong `next.config.ts` (`redirects()`, `permanent: true`).
 - `app/(public)/cong-cu/page.tsx` — đổi khung thành "đồ nghề trong xưởng", thêm
   câu *công cụ là phương tiện, không phải cấp bậc*; gắn lại thẻ nhịp cho từng công cụ.
 - `app/(public)/triet-ly/page.tsx` — bổ sung vòng lặp ba nhịp, Hard Fun, Errors
-  as Feedback, Microworld, Samba School, physical-first (hiện chỉ có 3 trụ cột).
+  as Feedback, Microworld, Samba School, physical-first (hiện chỉ có 3 trụ cột);
+  thêm khối "Đọc Papert" theo mục 3.4.
 - `lib/gemini.ts` — prompt dựng theo 3 nhịp + 7+1 + HoS.
 - `lib/types/student.ts` và 2 trang dashboard — `currentStage` theo 3 nhịp, kèm
   `normalizeStage()` đọc được giá trị 5-bậc cũ để dữ liệu Firestore cũ không vỡ.
@@ -167,6 +189,7 @@ Redirect khai trong `next.config.ts` (`redirects()`, `permanent: true`).
 - Không thêm ảnh 5 trạm Bảo tàng Tò mò (chưa có ảnh thật) — dùng thẻ chữ + emoji.
 - Không đụng vào dashboard ngoài phần `currentStage`.
 - Không đổi tên "Maker Hub" (đã chốt ở lần sửa trước).
+- Không nêu tên người dịch bản tiếng Việt, không hứa ngày phát hành sách.
 
 ## 6. Nghiệm thu
 
@@ -178,4 +201,5 @@ Redirect khai trong `next.config.ts` (`redirects()`, `permanent: true`).
    3 trang nhịp, `/video-hub` (đủ 3 chip + trạng thái rỗng của Chơi), `/cong-cu`,
    `/triet-ly`. Không lỗi console.
 5. Đọc soát: không trang nào của 3 nhịp mở đầu bằng tên phần mềm; không chỗ nào
-   còn hiện học phí.
+   còn hiện học phí; khối "Đọc Papert" không nêu tên người dịch.
+6. `curl` lại 2 link sách trước khi commit — phải trả 200, không dẫn link chết.

@@ -110,11 +110,21 @@ một khối ở cuối trang Triết Lý:
 
 - **Sách gốc:** Seymour Papert, *Mindstorms: Children, Computers, and Powerful
   Ideas*, Basic Books, ấn bản 2, 1993.
-- **Hai link đã kiểm tra sống ngày 2026-09-06 (HTTP 200):**
-  - Trang trích dẫn chính thức MIT Media Lab — <https://mindstorms.media.mit.edu/>
-  - Đọc/mượn miễn phí tại Internet Archive — <https://archive.org/details/mindstormschildr0000pape>
-- **Không dẫn bản PDF lậu.** Link `worrydream.com` mà nhiều nơi hay chép đã 404
-  (kiểm tra 2026-09-06); trang MIT không có nút tải PDF.
+- **Link chính — bản PDF đầy đủ, miễn phí, hợp pháp** do MIT Media Lab đăng với
+  sự cho phép của gia đình Papert ("The Media Lab is grateful to Seymour Papert's
+  family for allowing us to post the text here"):
+  <https://dam-prod.media.mit.edu/x/2025/01/27/Mindstorms.pdf>
+  - Kiểm tra 2026-09-06: HTTP 200, `application/pdf`, **62.763.910 bytes**, header
+    `%PDF-1.6`. Trùng khít byte với bản đang dùng cho dự án dịch.
+  - ⚠️ File **60 MB** — trên giao diện phải ghi rõ dung lượng cạnh link, đừng để
+    phụ huynh bấm nhầm trên 4G.
+  - ⚠️ Link nằm trên CDN `dam-prod.media.mit.edu`, có thể đổi. Vì vậy **luôn kèm
+    link trang chủ** bên dưới để người đọc tự tìm lại được nếu CDN đổi đường dẫn.
+- **Link trang chính thức (nguồn để đối chiếu):** trang xuất bản của MIT Media Lab
+  <https://www.media.mit.edu/publications/mindstorms/> (HTTP 200, 2026-09-06).
+- **Link dự phòng, đọc trực tuyến không cần tải:** Internet Archive
+  <https://archive.org/details/mindstormschildr0000pape> (HTTP 200, 2026-09-06).
+- **Không dẫn nguồn lậu.** Link `worrydream.com` mà nhiều nơi hay chép đã 404.
 - **Một dòng báo trước bản tiếng Việt:** "Bản tiếng Việt đang được cộng đồng
   dịch, kèm *Chuyện Làng Maker* sau mỗi chương" + nút liên hệ `lang@makerviet.org`
   để nhận tin khi xong.
@@ -202,4 +212,5 @@ Redirect khai trong `next.config.ts` (`redirects()`, `permanent: true`).
    `/triet-ly`. Không lỗi console.
 5. Đọc soát: không trang nào của 3 nhịp mở đầu bằng tên phần mềm; không chỗ nào
    còn hiện học phí; khối "Đọc Papert" không nêu tên người dịch.
-6. `curl` lại 2 link sách trước khi commit — phải trả 200, không dẫn link chết.
+6. `curl` lại cả 3 link sách trước khi commit — phải trả 200, không dẫn link chết;
+   riêng link PDF phải trả `content_type: application/pdf`.

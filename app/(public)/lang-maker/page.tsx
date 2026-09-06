@@ -44,7 +44,8 @@ export default function LangMakerPage() {
             </p>
             <p>
               Câu này có từ ngày đầu, khi làng còn tên là Maker Hanoi:{" "}
-              <strong>đóng góp của bạn, chúng ta cùng chia sẻ.</strong>
+              <strong>&ldquo;Your contributions, we share&rdquo;</strong> — đóng
+              góp của bạn, chúng ta cùng chia sẻ.
             </p>
           </div>
         </section>
@@ -55,7 +56,7 @@ export default function LangMakerPage() {
             <h2 className="text-xl font-bold">Làng Maker là gì?</h2>
             <p className="mt-3 text-muted-foreground">
               Làng Maker là không gian sáng tạo mở, hoạt động phi lợi nhuận, do
-              cộng đồng MakerViet · ThingEdu · Rogo dựng lên sau hơn mười năm làm
+              cộng đồng MakerViet · ThingEdu · Rogo dựng lên sau mười năm làm
               mã nguồn mở và giáo dục STEM tại Việt Nam.
             </p>
             <p className="mt-3 text-muted-foreground">

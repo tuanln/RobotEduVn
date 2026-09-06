@@ -66,7 +66,7 @@ export const TRICH_DAN_2017 = {
   loi: "Tôi muốn tạo ra nhiều lab như Maker Hanoi ở trường học, ở nông thôn, ở các tỉnh của Việt Nam. Mọi bạn trẻ đều cần được chạm vào công nghệ, được có ước mơ của riêng mình. Chúng tôi muốn mang STEM và Robot đến với tất cả mọi người.",
   nguoiNoi: "Tuấn Lê",
   thoiDiem: "6/2017",
-  ghiChu: `Dịch từ nguyên văn tiếng Anh trong slide "Maker Hanoi — Review", lưu trữ Google Drive.`,
+  ghiChu: `Dịch từ nguyên văn tiếng Anh trong slide “Maker Hanoi — Review”, lưu trữ Google Drive.`,
 } as const;
 
 /** Dòng đồ nghề mười năm — bằng chứng vật chất cho luận đề của trang. */
@@ -88,36 +88,36 @@ export const MUOI_NAM: MocThoiGian[] = [
     nam: 2016,
     tieuDe: "Một cái xưởng chung mở cửa ở Hà Nội",
     chiTiet: `Maker Hanoi ra đời, là thành viên mạng lưới FabLab toàn cầu và hoạt động phi lợi nhuận. Khẩu hiệu từ ngày đầu: đóng góp của bạn, chúng ta cùng chia sẻ.`,
-    nguon: `Slide "Maker Hanoi — Review", lưu trữ Google Drive · hồ sơ fablabs.io`,
+    nguon: `Slide “Maker Hanoi — Review”, lưu trữ Google Drive · hồ sơ fablabs.io`,
   },
   {
-    moc: "12/2016",
+    moc: "3/12/2016",
     nam: 2016,
     tieuDe: "Ngày hội IoT đầu tiên do cộng đồng tự làm",
     chiTiet:
       "Vietnam IoT Weekend tổ chức tại toà nhà FPT, Duy Tân, Cầu Giấy — không có ban tổ chức chuyên nghiệp nào, chỉ có những người mê chế tạo.",
-    nguon: `Slide "Maker Hanoi — Review", lưu trữ Google Drive`,
+    nguon: `Slide “Maker Hanoi — Review”, lưu trữ Google Drive`,
   },
   {
     moc: "11/12/2016",
     nam: 2016,
     tieuDe: "Truyền hình quốc gia tìm đến xưởng",
-    chiTiet: `VTV đưa tin "Maker Hanoi — điểm đến của nhiều bạn trẻ yêu thích công nghệ".`,
+    chiTiet: `VTV đưa tin “Maker Hanoi — điểm đến của nhiều bạn trẻ yêu thích công nghệ”.`,
     nguon: "vtv.vn, bản tin công nghệ 11/12/2016 (kiểm còn truy cập được 2026-09-06)",
   },
   {
     moc: "6/2017",
     nam: 2017,
     tieuDe: "Câu nói định hình mười năm sau",
-    chiTiet: `Người sáng lập viết ra điều mình muốn: nhiều lab như thế này ở trường học, ở nông thôn, ở các tỉnh. Chữ "Làng Maker" lúc đó chưa tồn tại.`,
-    nguon: `Slide "Maker Hanoi — Review", lưu trữ Google Drive`,
+    chiTiet: `Người sáng lập viết ra điều mình muốn: nhiều lab như thế này ở trường học, ở nông thôn, ở các tỉnh. Chữ “Làng Maker” lúc đó chưa tồn tại.`,
+    nguon: `Slide “Maker Hanoi — Review”, lưu trữ Google Drive`,
   },
   {
     moc: "1/2018",
     nam: 2018,
     tieuDe: "Vietnam IoT Day — kết nối cộng đồng",
     chiTiet: "Ngày hội thứ hai, tổ chức tại Lương Yên Coworking.",
-    nguon: `Slide "Maker Hanoi — Review", lưu trữ Google Drive`,
+    nguon: `Slide “Maker Hanoi — Review”, lưu trữ Google Drive`,
   },
   {
     moc: "2018",
@@ -133,14 +133,14 @@ export const MUOI_NAM: MocThoiGian[] = [
     tieuDe: "Cuộc Đua Số",
     chiTiet:
       "Cuộc thi xe tự hành trở thành bài toán thật và nguồn dữ liệu cho dòng xe tự hành của cộng đồng.",
-    nguon: `Slide "Maker Hanoi — Review", lưu trữ Google Drive`,
+    nguon: `Slide “Maker Hanoi — Review”, lưu trữ Google Drive`,
   },
   {
     moc: "2020",
     nam: 2020,
     tieuDe: "VIA — xe tự hành mã nguồn mở",
     chiTiet: `Maker Bot 2020 và dự án VIA: xe tự hành mở, kèm bộ mô phỏng, tập dữ liệu do cộng đồng đóng góp, và điều khiển bằng giọng nói tiếng Việt. Cùng năm có Vietnam STEAM Challenge.`,
-    nguon: `Slide "Maker Hanoi — Review" · thư mục Vietnam STEAM Challenge 2020, lưu trữ Google Drive`,
+    nguon: `Slide “Maker Hanoi — Review” · thư mục Vietnam STEAM Challenge 2020, lưu trữ Google Drive`,
   },
   {
     moc: "2021",
@@ -192,9 +192,9 @@ export const MUOI_NAM: MocThoiGian[] = [
   {
     moc: "2026",
     nam: 2026,
-    tieuDe: "Ba Làng Maker mở cửa",
+    tieuDe: "Ba Maker Hub mở cửa",
     chiTiet:
       "190 Xã Đàn và 29 Dương Khuê ở Hà Nội, FPT Shop Quang Trung ở Thanh Hoá. Điều viết ra năm 2017 bắt đầu có địa chỉ.",
-    nguon: "Dữ liệu Maker Hub của chính website này (lib/content/hubs.ts)",
+    nguon: "Danh sách Maker Hub đang hoạt động của chính website này",
   },
 ];

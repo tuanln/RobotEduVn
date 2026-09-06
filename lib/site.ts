@@ -4,7 +4,7 @@ export const SITE = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://robot.edu.vn",
   tagline: "Giáo Dục STEM & Robot Mở",
   description:
-    "Nền tảng giáo dục STEM & Robot mở cho trẻ em Việt Nam. Học đi đôi với Làm — lộ trình 5 giai đoạn từ 4 đến 18 tuổi theo triết lý Seymour Papert.",
+    "Nền tảng giáo dục STEM & Robot mở cho trẻ em Việt Nam. Học đi đôi với Làm — vòng lặp ba nhịp Chơi, Làm, Chia sẻ cho trẻ 4 đến 18 tuổi, theo triết lý Seymour Papert.",
   email: "lang@makerviet.org",
   founders: ["MakerViet", "ThingEdu", "Rogo"],
   social: [

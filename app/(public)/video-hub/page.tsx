@@ -6,7 +6,7 @@ import { VideoHubContent } from "@/components/video/video-hub-content";
 export const metadata: Metadata = {
   title: "Video Hub",
   description:
-    "Video bài học STEM & Robot — từ cơ bản đến nâng cao. Phân loại theo lộ trình học 5 bước.",
+    "Video bài học STEM & Robot — từ cơ bản đến nâng cao. Phân loại theo ba nhịp Chơi, Làm, Chia sẻ.",
 };
 
 export default function VideoHubPage() {

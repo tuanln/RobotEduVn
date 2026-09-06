@@ -58,9 +58,10 @@ export default async function OpengraphImage() {
         </div>
 
         <div style={{ marginTop: 56, display: "flex", gap: 16, fontSize: 30, color: "#7dd3a8" }}>
-          <span>Chơi</span><span>→</span>
-          <span>Làm</span><span>→</span>
-          <span>Chia sẻ</span><span>↻</span>
+          <span>Chơi</span><span>»</span>
+          <span>Làm</span><span>»</span>
+          <span>Chia sẻ</span><span>»</span>
+          <span>lặp lại</span>
         </div>
       </div>
     ),

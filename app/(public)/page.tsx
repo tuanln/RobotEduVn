@@ -1,5 +1,5 @@
 import { getHubs, getVideos } from "@/lib/sheets";
-import { STAGES } from "@/lib/content/stages";
+import { NHIP } from "@/lib/content/nhip";
 import { HeroSection } from "@/components/home/hero-section";
 import { LearningJourney } from "@/components/home/learning-journey";
 import { ImpactStats, type ImpactStat } from "@/components/home/impact-stats";
@@ -19,7 +19,7 @@ export default async function HomePage() {
       note: [...cities].join(" · ") || "chưa có",
     },
     { value: videos.length, label: "Video bài học", note: "miễn phí" },
-    { value: STAGES.length, label: "Giai đoạn", note: "từ 4 đến 18 tuổi" },
+    { value: NHIP.length, label: "Nhịp", note: "Chơi · Làm · Chia sẻ" },
   ];
 
   return (

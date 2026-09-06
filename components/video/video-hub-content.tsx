@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import { VideoItem, LearningStage } from "@/lib/types";
+import { VideoItem, NhipSlug } from "@/lib/types";
 import { VIDEOS } from "@/lib/content/videos";
 import { VideoCard } from "@/components/video/video-card";
 import { VideoFilter } from "@/components/video/video-filter";
@@ -9,10 +9,10 @@ import { useSearchParams } from "next/navigation";
 
 export function VideoHubContent() {
   const searchParams = useSearchParams();
-  const initialStage = (searchParams.get("stage") as LearningStage) || "all";
+  const initialStage = (searchParams.get("stage") as NhipSlug) || "all";
 
   const [videos, setVideos] = useState<VideoItem[]>(VIDEOS);
-  const [selectedStage, setSelectedStage] = useState<LearningStage | "all">(
+  const [selectedStage, setSelectedStage] = useState<NhipSlug | "all">(
     initialStage
   );
   const [searchQuery, setSearchQuery] = useState("");

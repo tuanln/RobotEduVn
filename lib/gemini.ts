@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { HUBS } from "./content/hubs";
-import { STAGES } from "./content/stages";
+import { NHIP } from "./content/nhip";
 
 /**
  * Prompt hệ thống được dựng từ dữ liệu thật trong lib/content để trợ lý không
@@ -11,9 +11,7 @@ function buildSystemPrompt(): string {
     .map((h) => `  - ${h.name} — ${h.address}`)
     .join("\n");
   const cities = [...new Set(HUBS.filter((h) => h.active).map((h) => h.city))];
-  const stageList = STAGES.map(
-    (st) => `  - ${st.titleVi} (${st.ageRange} tuổi): ${st.tools.join(", ")}`
-  ).join("\n");
+  const stageList = NHIP.map((n) => `  - ${n.ten}: ${n.moTaNgan}`).join("\n");
 
   return `Bạn là "Neo Trẻ AI" — trợ lý AI của Robot.edu.vn và OpenSTEM Foundation.
 
@@ -25,7 +23,7 @@ VỀ OPENSTEM:
   2. Triết lý Kiến tạo của Seymour Papert — Học bằng làm (Learning by Making)
   3. Tinh thần Coopertition của FIRST Robotics — Cạnh tranh cộng hưởng
 
-LỘ TRÌNH HỌC 5 GIAI ĐOẠN:
+VÒNG LẶP BA NHỊP CHƠI → LÀM → CHIA SẺ:
 ${stageList}
 
 MẠNG LƯỚI MAKER HUB (Làng Maker) — ĐANG CÓ ${HUBS.filter((h) => h.active).length} HUB tại ${cities.join(", ")}:

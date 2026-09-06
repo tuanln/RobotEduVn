@@ -9,15 +9,10 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import type { LearningStage } from "@/lib/types";
+import type { NhipSlug } from "@/lib/types";
+import { NHIP } from "@/lib/content/nhip";
 
-const STAGES: { value: LearningStage; label: string }[] = [
-  { value: "kham-pha", label: "Khám Phá (4-12)" },
-  { value: "tu-duy", label: "Tư Duy (8-12)" },
-  { value: "lap-trinh", label: "Lập Trình (9-12)" },
-  { value: "iot-robot", label: "IoT & Robot (10-15)" },
-  { value: "chia-se", label: "Chia Sẻ (15-18)" },
-];
+const NHIP_OPTIONS = NHIP.map((n) => ({ value: n.slug, label: n.ten }));
 
 export default function NewStudentPage() {
   const router = useRouter();
@@ -34,7 +29,7 @@ export default function NewStudentPage() {
   const [parentName, setParentName] = useState("");
   const [parentPhone, setParentPhone] = useState("");
   const [parentEmail, setParentEmail] = useState("");
-  const [currentStage, setCurrentStage] = useState<LearningStage>("kham-pha");
+  const [currentStage, setCurrentStage] = useState<NhipSlug>("choi");
   const [makerHubId, setMakerHubId] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
@@ -205,10 +200,10 @@ export default function NewStudentPage() {
               <label className="mb-1 block text-sm font-medium">Giai đoạn hiện tại *</label>
               <select
                 value={currentStage}
-                onChange={(e) => setCurrentStage(e.target.value as LearningStage)}
+                onChange={(e) => setCurrentStage(e.target.value as NhipSlug)}
                 className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
               >
-                {STAGES.map((s) => (
+                {NHIP_OPTIONS.map((s) => (
                   <option key={s.value} value={s.value}>{s.label}</option>
                 ))}
               </select>

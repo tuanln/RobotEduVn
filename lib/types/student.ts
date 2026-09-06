@@ -1,4 +1,4 @@
-import type { LearningStage } from "../types";
+import type { NhipSlug } from "@/lib/types";
 
 export interface Student {
   id: string;
@@ -13,7 +13,7 @@ export interface Student {
   parentPhone?: string;
   parentEmail?: string;
   parentName?: string;
-  currentStage: LearningStage;
+  currentStage: NhipSlug;
   totalStars: number;
   badges: string[];
   streak: number;
@@ -34,7 +34,7 @@ export interface StudentFormData {
   parentPhone?: string;
   parentEmail?: string;
   parentName?: string;
-  currentStage: LearningStage;
+  currentStage: NhipSlug;
   makerHubId: string;
   mentorId?: string;
 }

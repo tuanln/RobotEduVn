@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { STAGES } from "@/lib/content/stages";
+import { NHIP } from "@/lib/content/nhip";
 
 export function HeroSection() {
   return (
@@ -25,8 +25,8 @@ export function HeroSection() {
             Qua Trải Nghiệm
           </h1>
           <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-            Học đi đôi với Làm — Mỗi trẻ em là một Nhà Sáng Tạo. Lộ trình 5
-            bước từ Khám phá đến Chia sẻ, theo triết lý Seymour Papert.
+            Học đi đôi với Làm — Mỗi trẻ em là một Nhà Sáng Tạo. Vòng lặp ba
+            nhịp Chơi → Làm → Chia sẻ, theo triết lý Seymour Papert.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button size="lg" asChild>
@@ -39,18 +39,18 @@ export function HeroSection() {
               <Link href="/video-hub">Xem Video Hub</Link>
             </Button>
           </div>
-          {/* Nhìn thấy ngay 5 chặng trước khi cuộn xuống */}
+          {/* Nhìn thấy ngay ba nhịp trước khi cuộn xuống */}
           <ul className="mt-10 flex flex-wrap items-center justify-center gap-2">
-            {STAGES.map((stage, i) => (
-              <li key={stage.slug} className="flex items-center gap-2">
+            {NHIP.map((nhip, i) => (
+              <li key={nhip.slug} className="flex items-center gap-2">
                 <Link
-                  href={`/hanh-trinh/${stage.slug}`}
-                  className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${stage.borderColor} ${stage.bgColor} ${stage.color} hover:brightness-95`}
+                  href={`/hanh-trinh/${nhip.slug}`}
+                  className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${nhip.borderColor} ${nhip.bgColor} ${nhip.color} hover:brightness-95`}
                 >
-                  <span aria-hidden>{stage.icon}</span>
-                  {stage.titleVi}
+                  <span aria-hidden>{nhip.icon}</span>
+                  {nhip.ten}
                 </Link>
-                {i < STAGES.length - 1 && (
+                {i < NHIP.length - 1 && (
                   <span className="text-muted-foreground/40" aria-hidden>
                     &rarr;
                   </span>

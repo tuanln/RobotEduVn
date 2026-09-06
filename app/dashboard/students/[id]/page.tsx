@@ -11,15 +11,10 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Pencil, Save, Trash2, X } from "lucide-react";
 import Link from "next/link";
 import type { Student } from "@/lib/types/student";
-import type { LearningStage } from "@/lib/types";
+import type { NhipSlug } from "@/lib/types";
+import { NHIP } from "@/lib/content/nhip";
 
-const STAGES: { value: LearningStage; label: string }[] = [
-  { value: "kham-pha", label: "Khám Phá" },
-  { value: "tu-duy", label: "Tư Duy" },
-  { value: "lap-trinh", label: "Lập Trình" },
-  { value: "iot-robot", label: "IoT & Robot" },
-  { value: "chia-se", label: "Chia Sẻ" },
-];
+const NHIP_OPTIONS = NHIP.map((n) => ({ value: n.slug, label: n.ten }));
 
 export default function StudentDetailPage() {
   const params = useParams();
@@ -217,11 +212,11 @@ export default function StudentDetailPage() {
                   <select
                     value={editData.currentStage || ""}
                     onChange={(e) =>
-                      setEditData({ ...editData, currentStage: e.target.value as LearningStage })
+                      setEditData({ ...editData, currentStage: e.target.value as NhipSlug })
                     }
                     className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                   >
-                    {STAGES.map((s) => (
+                    {NHIP_OPTIONS.map((s) => (
                       <option key={s.value} value={s.value}>{s.label}</option>
                     ))}
                   </select>

@@ -4,9 +4,9 @@ import { VideoItem } from "@/lib/types";
  * Video thật từ kênh YouTube MakerViet (https://youtube.com/@makerviet).
  * Toàn bộ ID đã kiểm tra công khai + nhúng được (oEmbed 200) ngày 2026-09-06.
  *
- * Giai đoạn "Khám Phá" và "Lập Trình" hiện chưa có video — cố ý để trống thay vì
- * điền video giả. Bổ sung bằng cách thêm dòng vào Google Sheet "Videos"
- * (xem lib/sheets.ts) hoặc thêm trực tiếp vào mảng dưới đây.
+ * Nhịp Chơi hiện chưa có video — cố ý để trống thay vì điền video giả.
+ * Bổ sung bằng cách thêm dòng vào Google Sheet "Videos" (xem lib/sheets.ts)
+ * hoặc thêm trực tiếp vào mảng dưới đây.
  */
 
 const YT = (id: string) => ({
@@ -21,7 +21,7 @@ export const VIDEOS: VideoItem[] = [
     id: "mv-thingbot-kit-2026",
     title: "Hướng dẫn lắp bộ Kit ThingBot | Phiên bản 2025–2026",
     ...YT("N72W9EYd26I"),
-    stage: "iot-robot",
+    stage: "lam",
     ageRange: "10-15",
     tags: ["thingbot", "lắp ráp", "robot"],
     description:
@@ -35,7 +35,7 @@ export const VIDEOS: VideoItem[] = [
     id: "mv-thingbot-gioi-thieu",
     title: "Giới thiệu bộ Kit ThingBot",
     ...YT("Y9jM5MlzRVY"),
-    stage: "iot-robot",
+    stage: "lam",
     ageRange: "10-15",
     tags: ["thingbot", "giới thiệu", "robot"],
     description:
@@ -49,7 +49,7 @@ export const VIDEOS: VideoItem[] = [
     id: "mv-thingbot-phan-cung",
     title: "Giới thiệu phần cứng ThingBot",
     ...YT("9mNA89_0LQg"),
-    stage: "iot-robot",
+    stage: "lam",
     ageRange: "10-15",
     tags: ["thingbot", "phần cứng", "mạch điện"],
     description:
@@ -63,7 +63,7 @@ export const VIDEOS: VideoItem[] = [
     id: "mv-cobot-lap-rap",
     title: "Hướng dẫn lắp ráp CoBot",
     ...YT("J4CTvk9BN0E"),
-    stage: "iot-robot",
+    stage: "lam",
     ageRange: "10-15",
     tags: ["cobot", "lắp ráp", "cơ khí"],
     description: "Từng bước lắp ráp robot CoBot cho lớp học STEM.",
@@ -76,7 +76,7 @@ export const VIDEOS: VideoItem[] = [
     id: "mv-arduino-bai-1",
     title: "Bài 1: Hello Arduino | Lập trình Arduino",
     ...YT("4SfpeZu1VDc"),
-    stage: "iot-robot",
+    stage: "lam",
     ageRange: "12-18",
     tags: ["arduino", "lập trình nhúng", "bài giảng"],
     description:
@@ -90,7 +90,7 @@ export const VIDEOS: VideoItem[] = [
     id: "mv-arduino-bai-2",
     title: "Bài 2: Lập trình điều khiển động cơ với Arduino",
     ...YT("JTAzVEyW3TU"),
-    stage: "iot-robot",
+    stage: "lam",
     ageRange: "12-18",
     tags: ["arduino", "động cơ", "servo"],
     description:
@@ -104,7 +104,7 @@ export const VIDEOS: VideoItem[] = [
     id: "mv-thingedublock",
     title: "Giới thiệu phần mềm ThingEduBlock",
     ...YT("Tfql_FykiT4"),
-    stage: "tu-duy",
+    stage: "lam",
     ageRange: "8-12",
     tags: ["thingedublock", "lập trình khối", "trực quan"],
     description:

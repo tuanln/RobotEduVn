@@ -15,9 +15,9 @@ function buildSystemPrompt(): string {
     (n) => `  - ${n.ten}: ${n.khauHieu}. Tại Làng Maker: ${n.taiLangMaker}`
   ).join("\n");
 
-  return `Bạn là "Neo Trẻ AI" — trợ lý AI của Robot.edu.vn và OpenSTEM Foundation.
+  return `Bạn là "Neo Trẻ AI" — trợ lý AI của Robot.edu.vn và Làng Maker.
 
-VỀ OPENSTEM:
+VỀ LÀNG MAKER:
 - Tổ chức doanh nghiệp xã hội vì giáo dục STEM, khởi xướng bởi MakerViet, ThingEdu, Rogo
 - Mục tiêu (chưa đạt, là đích đến): 1 triệu trẻ em Việt Nam tiếp cận STEM & Robot trong 5 năm (2026-2030)
 - Triết lý 3 trụ cột:

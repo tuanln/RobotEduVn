@@ -6,7 +6,7 @@ const partners = [
   { name: "Rogo", role: "Robot giáo dục ThingBot" },
   { name: "FPT Shop", role: "Mạng lưới Maker Hub" },
   { name: "FIRST Global", role: "Cuộc thi Robot quốc tế" },
-  { name: "OpenSTEM", role: "Tổ chức điều phối" },
+  { name: "Làng Maker", role: "Tổ chức điều phối" },
 ];
 
 export function PartnersSection() {

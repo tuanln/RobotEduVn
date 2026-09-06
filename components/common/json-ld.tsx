@@ -9,7 +9,7 @@ export function JsonLd() {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     name: SITE.name,
-    alternateName: "OpenSTEM Foundation",
+    alternateName: "Làng Maker",
     url: SITE.url,
     description: SITE.description,
     email: SITE.email,

@@ -20,7 +20,15 @@ describe("NHIP", () => {
 
   it("không mô tả nào mở đầu bằng tên phần mềm", () => {
     for (const nhip of NHIP) {
-      for (const doan of [nhip.moTaNgan, nhip.khauHieu, nhip.taiLangMaker]) {
+      const doans = [
+        nhip.moTaNgan,
+        nhip.khauHieu,
+        nhip.taiLangMaker,
+        nhip.moTaDai,
+        ...(nhip.huong ?? []).map((h) => h.doing),
+        ...(nhip.nguyenTac ?? []).map((n) => n.desc),
+      ];
+      for (const doan of doans) {
         for (const ten of TEN_PHAN_MEM) {
           expect(
             doan.trimStart().startsWith(ten),
@@ -34,7 +42,15 @@ describe("NHIP", () => {
   it("không chỗ nào của nhịp nhắc tới học phí", () => {
     const tuCam = ["học phí", "600k", "600.000", "đồng/tháng", "vnđ"];
     const toanBoChu = NHIP.map((n) =>
-      [n.khauHieu, n.moTaNgan, n.moTaDai, n.taiLangMaker].join(" ")
+      [
+        n.khauHieu,
+        n.moTaNgan,
+        n.moTaDai,
+        n.taiLangMaker,
+        ...(n.huong ?? []).flatMap((h) => [h.title, h.doing, ...h.tools]),
+        ...(n.nguyenTac ?? []).flatMap((nt) => [nt.title, nt.desc]),
+        ...(n.tramChoi ?? []),
+      ].join(" ")
     )
       .join(" ")
       .toLowerCase();

@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/cong-dong/tap-chi",
     "/cong-dong/maker-hub",
     "/triet-ly",
-    "/gioi-thieu",
+    "/lang-maker",
     "/cho-mentor",
     "/cong-cu",
   ];

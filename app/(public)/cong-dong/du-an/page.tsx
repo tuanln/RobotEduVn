@@ -6,7 +6,7 @@ import { EmptyState } from "@/components/common/empty-state";
 
 export const metadata: Metadata = {
   title: "Dự Án Nổi Bật",
-  description: "Các dự án STEM nổi bật từ cộng đồng MakerViet và OpenSTEM.",
+  description: "Các dự án STEM nổi bật từ cộng đồng MakerViet và Làng Maker.",
 };
 
 export default async function ProjectsPage() {

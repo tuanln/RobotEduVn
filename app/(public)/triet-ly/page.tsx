@@ -7,7 +7,7 @@ import { getNhip } from "@/lib/content/nhip";
 export const metadata: Metadata = {
   title: "Triết Lý Giáo Dục",
   description:
-    "Ba trụ cột triết lý của OpenSTEM: Tư tưởng Hồ Chí Minh, Triết lý Kiến tạo Papert, Tinh thần Coopertition FIRST.",
+    "Ba trụ cột triết lý của Làng Maker: Tư tưởng Hồ Chí Minh, Triết lý Kiến tạo Papert, Tinh thần Coopertition FIRST.",
 };
 
 const pillars = [
@@ -70,7 +70,7 @@ export default function PhilosophyPage() {
       <div className="mx-auto max-w-5xl px-4">
         <SectionHeader
           title="Triết Lý Giáo Dục"
-          subtitle="Ba trụ cột định hướng mọi hoạt động của OpenSTEM Foundation"
+          subtitle="Ba trụ cột định hướng mọi hoạt động của Làng Maker"
         />
 
         <section className="mb-12">

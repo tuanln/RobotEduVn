@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator";
 
 const footerLinks = {
   "Khám Phá": [
+    { label: "Làng Maker", href: "/lang-maker" },
     { label: "Cách Học", href: "/hanh-trinh" },
     { label: "Triết Lý Papert", href: "/triet-ly" },
     { label: "Công Cụ & Thiết Bị", href: "/cong-cu" },
@@ -75,7 +76,16 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-xs text-muted-foreground/60">
-            &copy; 2026 OpenSTEM Foundation. Mã nguồn mở — Giáo dục mở.
+            &copy; 2026{" "}
+            <a
+              href="https://de-stem-foundation.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              OpenSTEM Foundation
+            </a>
+            . Mã nguồn mở — Giáo dục mở.
           </p>
           <p className="text-xs text-muted-foreground/60">
             Mục tiêu: 1 triệu trẻ em Việt Nam tiếp cận STEM & Robot

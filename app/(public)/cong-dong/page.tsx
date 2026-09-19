@@ -6,7 +6,7 @@ import { getHubs, getVideos } from "@/lib/sheets";
 export const metadata: Metadata = {
   title: "Cộng Đồng",
   description:
-    "Cộng đồng OpenSTEM — Dự án nổi bật, Tạp chí MakerViet, Mạng lưới Maker Hub, và kết nối STEM.",
+    "Cộng đồng Làng Maker — Dự án nổi bật, Tạp chí MakerViet, Mạng lưới Maker Hub, và kết nối STEM.",
 };
 
 const sections = [
@@ -59,7 +59,7 @@ export default async function CommunityPage() {
     <div className="py-16">
       <div className="mx-auto max-w-5xl px-4">
         <SectionHeader
-          title="Cộng Đồng OpenSTEM"
+          title="Cộng Đồng Làng Maker"
           subtitle="Kết nối — Chia sẻ — Cùng phát triển"
         />
 

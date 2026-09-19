@@ -198,3 +198,79 @@ export const MUOI_NAM: MocThoiGian[] = [
     nguon: "Danh sách Maker Hub đang hoạt động của chính website này",
   },
 ];
+
+/**
+ * Một vai người dẫn ở làng. Khác `VaiLang` ở trên: `VaiLang` mô tả ĐƯỜNG ĐI của
+ * đứa trẻ (dân làng → già làng), còn đây mô tả NGƯỜI DẪN đang làm gì cho trẻ.
+ * Ba trong bốn vai trùng tên với bậc trong thang — đó là chủ ý: người dẫn hôm
+ * nay từng là dân làng.
+ */
+export interface VaiNguoiDan {
+  ten: string;
+  /** Một câu: vai này dẫn ai, làm gì. */
+  dan: string;
+  /** Việc cụ thể ở một buổi học. */
+  viecCuThe: string;
+  /** Có nằm trong quy trình chứng nhận MakerCoach không. */
+  trongThangMakerCoach: boolean;
+}
+
+/**
+ * Một người dẫn có thật. KHÔNG BỊA — mảng MENTORS chỉ được điền bằng danh sách
+ * do ban điều phối cung cấp, và chỉ đăng tên người đã đồng ý.
+ */
+export interface Mentor {
+  ten: string;
+  /** Phải khớp `ten` của một phần tử trong NGUOI_DAN. */
+  vai: string;
+  /** Nghề hoặc chuyên môn riêng, ngoài làng. */
+  nghe: string;
+  /** Dẫn gì, ở hub nào. */
+  danGi: string;
+}
+
+/**
+ * Bốn vai người dẫn. Nguồn: thingedu-canon GLOSSARY mục 47 (Coach Maker) và mục
+ * 48 (thang Già làng → Dân làng), cộng vai Nghệ nhân ở mục 38.
+ * "Bô Lão" là vai riêng do ban điều phối chốt 2026-09-19: đứng ngoài thang, cố
+ * vấn cho làng nhưng không chứng nhận tay nghề — vì vậy `trongThangMakerCoach`
+ * là false, và MakerCoach không cần thêm vai mới.
+ */
+export const NGUOI_DAN: VaiNguoiDan[] = [
+  {
+    ten: "Già Làng",
+    dan: "Dẫn cả làng và chứng nhận tay nghề cho người khác.",
+    viecCuThe:
+      "Không đứng lớp hằng tuần. Xuất hiện ở buổi thứ tám để nghe trẻ trình bày, và là người ký nhận khi một thợ học việc đủ tay nghề thành thợ cả.",
+    trongThangMakerCoach: true,
+  },
+  {
+    ten: "Bô Lão",
+    dan: "Người lớn tuổi có uy tín trong làng, cố vấn chứ không chấm.",
+    viecCuThe:
+      "Ngồi cùng bàn khi làng bàn chuyện lớn — mở điểm mới, xử một việc khó. Không chứng nhận tay nghề, không nằm trong quy trình đào tạo.",
+    trongThangMakerCoach: false,
+  },
+  {
+    ten: "Nghệ nhân",
+    dan: "Người có nghề riêng ngoài làng, ghé qua truyền lại một ngón nghề.",
+    viecCuThe:
+      "Mộc, điện, gốm, may, cơ khí — mỗi người một nghề thật. Đến theo buổi, dạy đúng cái mình làm được, rồi về với xưởng của mình.",
+    trongThangMakerCoach: false,
+  },
+  {
+    ten: "Thợ cả",
+    dan: "Người dẫn buổi học hằng tuần — gần trẻ nhất trong bốn vai.",
+    viecCuThe:
+      "Làm cùng trẻ suốt bảy buổi dự án. Không giảng bài, không sửa hộ; khi robot đi lệch thì hỏi ngược để trẻ tự tìm ra chỗ sai.",
+    trongThangMakerCoach: true,
+  },
+];
+
+/**
+ * Danh sách người dẫn có thật. CỐ Ý ĐỂ TRỐNG cho tới khi ban điều phối gửi danh
+ * sách và từng người đồng ý cho đăng tên. Giao diện hiện trạng thái rỗng tử tế
+ * thay vì tên mẫu — cùng quy tắc "không dữ liệu mẫu trên bản chạy thật" đã áp
+ * cho video, Maker Hub và bài viết.
+ */
+export const MENTORS: Mentor[] = [];

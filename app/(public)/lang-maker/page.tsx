@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import {
+  NGUOI_DAN,
+  MENTORS,
   NGUOI_TRONG_LANG,
   MUOI_NAM,
   DO_NGHE_MUOI_NAM,
@@ -131,7 +133,73 @@ export default function LangMakerPage() {
           </p>
         </section>
 
-        {/* 3. Mười năm */}
+        {/* 3. Người dẫn ở làng */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-bold">Người dẫn ở làng</h2>
+          <p className="mt-2 text-muted-foreground">
+            Bốn vai. Ba trong số đó cũng là bậc trong thang bên trên — người dẫn
+            hôm nay từng là dân làng.
+          </p>
+
+          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {NGUOI_DAN.map((vai) => (
+              <div
+                key={vai.ten}
+                className="rounded-xl border border-border bg-card p-5"
+              >
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="font-bold">{vai.ten}</h3>
+                  {vai.trongThangMakerCoach && (
+                    <span className="flex-shrink-0 rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
+                      có chứng nhận
+                    </span>
+                  )}
+                </div>
+                <p className="mt-2 text-sm font-medium">{vai.dan}</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {vai.viecCuThe}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {MENTORS.length > 0 ? (
+            <div className="mt-6">
+              <h3 className="font-bold">Người dẫn ở các Maker Hub</h3>
+              <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2">
+                {MENTORS.map((m) => (
+                  <div
+                    key={m.ten + m.vai}
+                    className="rounded-xl border border-border bg-card p-5"
+                  >
+                    <h4 className="font-bold">{m.ten}</h4>
+                    <p className="mt-1 text-xs font-medium text-primary">
+                      {m.vai} &bull; {m.nghe}
+                    </p>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {m.danGi}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="mt-6 rounded-xl border border-dashed border-border p-6 text-center">
+              <p className="text-sm text-muted-foreground">
+                Chân dung từng người dẫn đang được các Maker Hub gửi về. Chúng
+                tôi chỉ đăng tên người đã đồng ý.
+              </p>
+              <a
+                href="mailto:lang@makerviet.org?subject=Giới%20thiệu%20người%20dẫn%20ở%20Làng%20Maker"
+                className="mt-2 inline-block text-sm text-primary hover:underline"
+              >
+                Bạn dẫn ở một hub? Giới thiệu mình &rarr;
+              </a>
+            </div>
+          )}
+        </section>
+
+        {/* 4. Mười năm */}
         <section className="mt-12">
           <h2 className="text-2xl font-bold">Mười năm</h2>
 
@@ -185,7 +253,7 @@ export default function LangMakerPage() {
           </div>
         </section>
 
-        {/* 4. Cửa vào */}
+        {/* 5. Cửa vào */}
         <section className="mt-12 rounded-2xl border border-border bg-card p-8 text-center">
           <h2 className="text-xl font-bold">Vào làng thế nào?</h2>
           <p className="mt-2 text-sm text-muted-foreground">

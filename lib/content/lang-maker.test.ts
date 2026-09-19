@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
+  NGUOI_DAN,
+  MENTORS,
   NGUOI_TRONG_LANG,
   MUOI_NAM,
   DO_NGHE_MUOI_NAM,
@@ -67,5 +69,45 @@ describe("TRICH_DAN_2017", () => {
     expect(TRICH_DAN_2017.thoiDiem).toBe("6/2017");
     expect(TRICH_DAN_2017.nguoiNoi.length).toBeGreaterThan(3);
     expect(TRICH_DAN_2017.ghiChu.toLowerCase()).toContain("dịch");
+  });
+});
+
+describe("NGUOI_DAN", () => {
+  it("có đúng bốn vai người dẫn, đúng thứ tự", () => {
+    expect(NGUOI_DAN.map((v) => v.ten)).toEqual([
+      "Già Làng",
+      "Bô Lão",
+      "Nghệ nhân",
+      "Thợ cả",
+    ]);
+  });
+
+  it("chỉ Già Làng và Thợ cả nằm trong thang chứng nhận MakerCoach", () => {
+    const trongThang = NGUOI_DAN.filter((v) => v.trongThangMakerCoach);
+    expect(trongThang.map((v) => v.ten)).toEqual(["Già Làng", "Thợ cả"]);
+  });
+
+  it("mọi vai đều nói được mình dẫn ai và làm việc gì cụ thể", () => {
+    for (const vai of NGUOI_DAN) {
+      expect(vai.dan.length, vai.ten).toBeGreaterThan(20);
+      expect(vai.viecCuThe.length, vai.ten).toBeGreaterThan(40);
+    }
+  });
+});
+
+describe("MENTORS", () => {
+  it("mọi người dẫn có tên đều mang một vai CÓ THẬT trong NGUOI_DAN", () => {
+    const tenVai = NGUOI_DAN.map((v) => v.ten);
+    for (const m of MENTORS) {
+      expect(tenVai, `"${m.ten}" mang vai lạ: ${m.vai}`).toContain(m.vai);
+    }
+  });
+
+  it("không người dẫn nào được để trống tên, nghề hoặc việc dẫn", () => {
+    for (const m of MENTORS) {
+      expect(m.ten.trim().length, "tên rỗng").toBeGreaterThan(0);
+      expect(m.nghe.trim().length, `${m.ten}: nghề rỗng`).toBeGreaterThan(0);
+      expect(m.danGi.trim().length, `${m.ten}: việc dẫn rỗng`).toBeGreaterThan(0);
+    }
   });
 });

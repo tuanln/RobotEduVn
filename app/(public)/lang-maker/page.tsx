@@ -9,6 +9,7 @@ import {
   DO_NGHE_MUOI_NAM,
   TRICH_DAN_2017,
 } from "@/lib/content/lang-maker";
+import { HUBS } from "@/lib/content/hubs";
 import { SectionHeader } from "@/components/common/section-header";
 import { Button } from "@/components/ui/button";
 
@@ -184,6 +185,12 @@ export default function LangMakerPage() {
                     {m.danGi && (
                       <p className="mt-2 text-sm text-muted-foreground">
                         {m.danGi}
+                      </p>
+                    )}
+                    {m.hubId && (
+                      <p className="mt-3 flex items-center gap-1.5 text-xs text-muted-foreground">
+                        <MapPin className="h-3.5 w-3.5 flex-shrink-0" aria-hidden />
+                        {HUBS.find((h) => h.id === m.hubId)?.name ?? ""}
                       </p>
                     )}
                   </div>

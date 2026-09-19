@@ -229,8 +229,14 @@ export interface Mentor {
    * này thay vì bịa.
    */
   nghe?: string;
-  /** Dẫn gì, ở hub nào. Cùng quy tắc như `nghe`. */
+  /** Dẫn gì. Cùng quy tắc như `nghe`. */
   danGi?: string;
+  /**
+   * Hub người này dẫn. Phải khớp `id` của một hub có thật trong
+   * `lib/content/hubs.ts` — liên kết bằng khoá chứ không chép tên, để hub đổi
+   * tên thì thẻ người dẫn đổi theo. Có test canh.
+   */
+  hubId?: string;
 }
 
 /**
@@ -287,15 +293,18 @@ export const MENTORS: Mentor[] = [
     ten: "Đàm Phi Hùng",
     vai: "Bô Lão",
     nghe: "Huấn luyện viên đội tuyển Việt Nam tại FIRST Global Challenge, cựu thành viên đội tuyển",
+    hubId: "hub-hn-xa-dan",
   },
   {
     ten: "Trịnh Trần Viết Hưng",
     vai: "Nghệ nhân",
     nghe: "Thành viên đội tuyển Việt Nam 2022, huy chương đồng thế giới",
+    hubId: "hub-hn-duong-khue",
   },
   {
     ten: "Phạm Việt",
     vai: "Nghệ nhân",
     nghe: "Trọng tài FIRST Tech Challenge Việt Nam, thành viên đội robot Thái Phiên",
+    hubId: "hub-hn-duong-khue",
   },
 ];

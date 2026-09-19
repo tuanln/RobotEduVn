@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { HUBS } from "./hubs";
 import {
   NGUOI_DAN,
   MENTORS,
@@ -124,5 +125,16 @@ describe("MENTORS", () => {
     const dem = (v: string) => MENTORS.filter((m) => m.vai === v).length;
     expect(dem("Già Làng")).toBeLessThanOrEqual(1);
     expect(dem("Bô Lão")).toBeLessThanOrEqual(1);
+  });
+});
+
+describe("MENTORS gắn với Maker Hub", () => {
+  it("mọi hubId đều trỏ tới một hub CÓ THẬT trong hubs.ts", () => {
+    const idThat = HUBS.map((h) => h.id);
+    for (const m of MENTORS) {
+      if (m.hubId !== undefined) {
+        expect(idThat, `"${m.ten}" gắn hub lạ: ${m.hubId}`).toContain(m.hubId);
+      }
+    }
   });
 });

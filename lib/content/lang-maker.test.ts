@@ -103,11 +103,26 @@ describe("MENTORS", () => {
     }
   });
 
-  it("không người dẫn nào được để trống tên, nghề hoặc việc dẫn", () => {
+  it("không người dẫn nào được để trống tên", () => {
     for (const m of MENTORS) {
       expect(m.ten.trim().length, "tên rỗng").toBeGreaterThan(0);
-      expect(m.nghe.trim().length, `${m.ten}: nghề rỗng`).toBeGreaterThan(0);
-      expect(m.danGi.trim().length, `${m.ten}: việc dẫn rỗng`).toBeGreaterThan(0);
     }
+  });
+
+  it("trường tuỳ chọn nào đã điền thì không được là chuỗi rỗng", () => {
+    for (const m of MENTORS) {
+      if (m.nghe !== undefined) {
+        expect(m.nghe.trim().length, `${m.ten}: nghề điền rỗng`).toBeGreaterThan(0);
+      }
+      if (m.danGi !== undefined) {
+        expect(m.danGi.trim().length, `${m.ten}: việc dẫn điền rỗng`).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it("mỗi vai chỉ có một Già Làng và một Bô Lão", () => {
+    const dem = (v: string) => MENTORS.filter((m) => m.vai === v).length;
+    expect(dem("Già Làng")).toBeLessThanOrEqual(1);
+    expect(dem("Bô Lão")).toBeLessThanOrEqual(1);
   });
 });

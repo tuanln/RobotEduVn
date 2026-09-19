@@ -64,7 +64,7 @@ export const NGUOI_TRONG_LANG: VaiLang[] = [
 /** Câu của người sáng lập, viết trước khi có chữ "Làng Maker" nào. */
 export const TRICH_DAN_2017 = {
   loi: "Tôi muốn tạo ra nhiều lab như Maker Hanoi ở trường học, ở nông thôn, ở các tỉnh của Việt Nam. Mọi bạn trẻ đều cần được chạm vào công nghệ, được có ước mơ của riêng mình. Chúng tôi muốn mang STEM và Robot đến với tất cả mọi người.",
-  nguoiNoi: "Tuấn Lê",
+  nguoiNoi: "Lê Ngọc Tuấn",
   thoiDiem: "6/2017",
   ghiChu: `Dịch từ nguyên văn tiếng Anh trong slide “Maker Hanoi — Review”, lưu trữ Google Drive.`,
 } as const;
@@ -223,10 +223,14 @@ export interface Mentor {
   ten: string;
   /** Phải khớp `ten` của một phần tử trong NGUOI_DAN. */
   vai: string;
-  /** Nghề hoặc chuyên môn riêng, ngoài làng. */
-  nghe: string;
-  /** Dẫn gì, ở hub nào. */
-  danGi: string;
+  /**
+   * Nghề hoặc chuyên môn riêng, ngoài làng. Tuỳ chọn: chỉ điền khi ban điều
+   * phối xác nhận, KHÔNG suy đoán. Thẻ nào chưa có thì giao diện bỏ qua dòng
+   * này thay vì bịa.
+   */
+  nghe?: string;
+  /** Dẫn gì, ở hub nào. Cùng quy tắc như `nghe`. */
+  danGi?: string;
 }
 
 /**
@@ -273,4 +277,23 @@ export const NGUOI_DAN: VaiNguoiDan[] = [
  * thay vì tên mẫu — cùng quy tắc "không dữ liệu mẫu trên bản chạy thật" đã áp
  * cho video, Maker Hub và bài viết.
  */
-export const MENTORS: Mentor[] = [];
+export const MENTORS: Mentor[] = [
+  {
+    ten: "Lê Ngọc Tuấn",
+    vai: "Già Làng",
+    nghe: "Người sáng lập Maker Hanoi",
+  },
+  {
+    ten: "Đàm Phi Hùng",
+    vai: "Bô Lão",
+    nghe: "Huấn luyện viên đội tuyển Việt Nam tại FIRST Global Challenge, cựu thành viên đội tuyển",
+  },
+  {
+    ten: "Trịnh Trần Viết Hưng",
+    vai: "Nghệ nhân",
+  },
+  {
+    ten: "Phạm Việt",
+    vai: "Nghệ nhân",
+  },
+];

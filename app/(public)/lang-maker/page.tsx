@@ -174,14 +174,30 @@ export default function LangMakerPage() {
                   >
                     <h4 className="font-bold">{m.ten}</h4>
                     <p className="mt-1 text-xs font-medium text-primary">
-                      {m.vai} &bull; {m.nghe}
+                      {m.vai}
                     </p>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {m.danGi}
-                    </p>
+                    {m.nghe && (
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        {m.nghe}
+                      </p>
+                    )}
+                    {m.danGi && (
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        {m.danGi}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
+              <p className="mt-4 text-center text-sm text-muted-foreground">
+                Danh sách còn đang dài thêm.{" "}
+                <a
+                  href="mailto:lang@makerviet.org?subject=Giới%20thiệu%20người%20dẫn%20ở%20Làng%20Maker"
+                  className="text-primary hover:underline"
+                >
+                  Bạn dẫn ở một hub? Giới thiệu mình &rarr;
+                </a>
+              </p>
             </div>
           ) : (
             <div className="mt-6 rounded-xl border border-dashed border-border p-6 text-center">

@@ -291,9 +291,11 @@ export const MENTORS: Mentor[] = [
   {
     ten: "Trịnh Trần Viết Hưng",
     vai: "Nghệ nhân",
+    nghe: "Thành viên đội tuyển Việt Nam 2022, huy chương đồng thế giới",
   },
   {
     ten: "Phạm Việt",
     vai: "Nghệ nhân",
+    nghe: "Trọng tài FIRST Tech Challenge Việt Nam, thành viên đội robot Thái Phiên",
   },
 ];

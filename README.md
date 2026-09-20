@@ -84,5 +84,8 @@ npx tsx scripts/seed-admin.ts   # tạo tài khoản admin đầu tiên (cần F
 
 ## Tài liệu
 
+- `docs/NHAT_KY_TRIEN_KHAI.md` — **trạng thái chạy thật**: đang phục vụ ở đâu,
+  cấu hình domain, việc còn treo
 - `docs/SETUP_GUIDE.md` — dựng Firebase, Vercel, biến môi trường
 - `docs/specs/` — thiết kế Phase 2 (hồ sơ học sinh, RFID, theo dõi tiến trình)
+- `docs/superpowers/` — spec và kế hoạch thi công từng đợt

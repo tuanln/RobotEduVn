@@ -3,6 +3,7 @@ import { SectionHeader } from "@/components/common/section-header";
 import { VongLap } from "@/components/nhip/vong-lap";
 import { DocPapert } from "@/components/nhip/doc-papert";
 import { DEFAULT_LOCALE, isLocale, type Locale } from "@/lib/i18n/locales";
+import { pathFor } from "@/lib/i18n/routes";
 import { TRIET_LY_EN } from "@/lib/content/triet-ly/en";
 import { TRIET_LY_VI } from "@/lib/content/triet-ly/vi";
 import type { TrietLyContent } from "@/lib/content/triet-ly/types";
@@ -19,7 +20,25 @@ export async function generateMetadata({
   const { locale: rawLocale } = await params;
   const locale = isLocale(rawLocale) ? rawLocale : DEFAULT_LOCALE;
   const { meta } = noiDung(locale);
-  return { title: meta.title, description: meta.description };
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: {
+      canonical: pathFor("philosophy", locale),
+      languages: {
+        vi: pathFor("philosophy", "vi"),
+        en: pathFor("philosophy", "en"),
+        "x-default": pathFor("philosophy", "vi"),
+      },
+    },
+    openGraph: {
+      type: "website",
+      locale: locale === "en" ? "en_US" : "vi_VN",
+      url: pathFor("philosophy", locale),
+      title: meta.title,
+      description: meta.description,
+    },
+  };
 }
 
 export default async function PhilosophyPage({

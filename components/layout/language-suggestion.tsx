@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useSyncExternalStore } from "react";
 import { X } from "lucide-react";
 import type { Locale } from "@/lib/i18n/locales";
-import { alternatePath, routeKeyFromPath } from "@/lib/i18n/routes";
+import { ROUTES, routeKeyFromPath } from "@/lib/i18n/routes";
 import { nenGoiY } from "@/lib/i18n/suggest";
 import { TRANSLATED_ROUTES } from "@/lib/i18n/translated";
 
@@ -50,27 +50,39 @@ export function LanguageSuggestion({ locale }: { locale: Locale }) {
   // localStorage (đổi tab mới cần đọc lại).
   const [vuaDong, setVuaDong] = useState(false);
 
+  let browserLangs: readonly string[] = [];
+  try {
+    browserLangs = navigator.languages ?? [];
+  } catch {
+    // Một số môi trường hạn chế có thể chặn; không có thông tin ngôn ngữ thì
+    // nenGoiY() trả null và dải im lặng — đúng hành vi mong muốn.
+  }
+
   const goiY = laTrinhDuyet
     ? nenGoiY({
         current: locale,
-        browserLangs: navigator.languages ?? [],
+        browserLangs,
         daTuChoi: daTuChoiLuu || vuaDong,
       })
     : null;
 
   if (goiY === null) return null;
 
+  // Tính route key MỘT LẦN, dùng lại cho cả việc lọc theo TRANSLATED_ROUTES
+  // lẫn tra đường dẫn đối ứng (khỏi gọi routeKeyFromPath lần hai bên trong
+  // alternatePath).
+  const key = routeKeyFromPath(pathname);
+
   // Gợi ý sang bản tiếng Việt luôn an toàn (nội dung tiếng Việt luôn có
   // thật). Nhưng gợi ý sang bản tiếng Anh chỉ được làm khi trang đó nằm
   // trong TRANSLATED_ROUTES — nếu không, /en/... trả 200 nhưng chữ vẫn là
   // tiếng Việt, gợi ý lúc đó còn tệ hơn không gợi ý gì (brief chưa lường
   // tới điều này, xem báo cáo Task 11).
-  if (goiY === "en") {
-    const key = routeKeyFromPath(pathname);
-    if (key === null || !TRANSLATED_ROUTES.has(key)) return null;
+  if (goiY === "en" && (key === null || !TRANSLATED_ROUTES.has(key))) {
+    return null;
   }
 
-  const href = alternatePath(pathname, goiY);
+  const href = key === null ? null : ROUTES[key][goiY];
   if (href === null) return null;
 
   const dong = () => {

@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ChatWidget } from "@/components/chat/chat-widget";
+import { LanguageSuggestion } from "@/components/layout/language-suggestion";
 import { DEFAULT_LOCALE, isLocale } from "@/lib/i18n/locales";
 
 export default async function PublicLayout({
@@ -22,6 +23,7 @@ export default async function PublicLayout({
       >
         Bỏ qua menu, tới nội dung chính
       </a>
+      <LanguageSuggestion locale={locale} />
       <Header locale={locale} />
       <main id="noi-dung" className="min-h-screen">
         {children}

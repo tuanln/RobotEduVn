@@ -1,10 +1,13 @@
-import { canonicalPathFromEn, routeKeyFromPath } from "./routes";
+import { canonicalPathFromEn } from "./routes";
 
 /** Đường dẫn middleware không được đụng tới. */
 const BO_QUA = [
   "/api",
   "/dashboard",
   "/dang-nhap",
+  // S-01: trang admin đã dời sang app/(admin)/admin — ngoài cây [locale],
+  // nên KHÔNG được gắn tiền tố /vi nữa (route đó không tồn tại và sẽ 404).
+  "/admin",
   "/_next",
   "/anh",
   "/favicon.ico",
@@ -30,11 +33,14 @@ const DUONG_DAN_KHONG_TON_TAI = "/en/__khong-ton-tai__";
  * Đường dẫn công khai → đường dẫn nội bộ có tiền tố ngôn ngữ.
  *
  * Trả null mang ĐÚNG MỘT nghĩa: "không phải việc của middleware, để Next tự
- * xử" — dùng cho khu quản trị/api/tài nguyên tĩnh, và cho slug tiếng Anh lạ
- * không trùng bất kỳ route tiếng Việt nào (Next tự 404 vì không có thư mục
- * khớp). Với slug tiếng Anh KHÔNG hợp lệ nhưng TRÙNG TÊN một route tiếng
- * Việt thật, middleware chủ động viết lại sang DUONG_DAN_KHONG_TON_TAI để
- * ép 404, thay vì để lọt qua thành URL công khai trùng lặp.
+ * xử" — dùng cho khu quản trị/api/tài nguyên tĩnh. Nhánh /en/* KHÔNG dùng
+ * quy ước này: mặc định TỪ CHỐI. Chỉ khi slug khớp đúng một bản dịch khai
+ * trong ROUTES (canonicalPathFromEn khác null) mới được viết lại; mọi
+ * trường hợp còn lại — kể cả route ĐỘNG chưa dịch như
+ * /en/video-hub/<id-thật> — đều bị ép về DUONG_DAN_KHONG_TON_TAI để Next
+ * 404. Cách này an toàn hơn bản trước (chỉ so khớp route TĨNH bằng
+ * routeKeyFromPath): route động không có trong bảng ROUTES nên trước đây
+ * lọt lưới, trả 200 với nội dung tiếng Việt dưới URL /en/*.
  */
 export function rewriteTarget(pathname: string): string | null {
   if (BO_QUA.some((p) => pathname === p || pathname.startsWith(`${p}/`))) {
@@ -52,15 +58,7 @@ export function rewriteTarget(pathname: string): string | null {
       return canonical === "/" ? "/en" : `/en${canonical}`;
     }
 
-    // Không phải slug tiếng Anh hợp lệ. Nếu phần còn lại (bỏ tiền tố /en)
-    // lại trùng đúng một route tiếng Việt thật, đây là kiểu lọt route ở
-    // trên — ép 404 thay vì cho qua.
-    const phanCon = pathname === "/en" ? "/" : pathname.slice(3);
-    if (routeKeyFromPath(phanCon) !== null) {
-      return DUONG_DAN_KHONG_TON_TAI;
-    }
-
-    return null;
+    return DUONG_DAN_KHONG_TON_TAI;
   }
 
   return pathname === "/" ? "/vi" : `/vi${pathname}`;

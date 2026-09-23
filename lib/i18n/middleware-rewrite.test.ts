@@ -13,31 +13,37 @@ describe("rewriteTarget", () => {
     expect(rewriteTarget("/en/how-we-learn/make")).toBe("/en/hanh-trinh/lam");
   });
 
-  it("slug tiếng Anh không có trong bảng thì trả null — để Next trả 404", () => {
-    expect(rewriteTarget("/en/nothing-here")).toBeNull();
+  it("slug tiếng Anh không có trong bảng thì ép sentinel 404 — mặc định từ chối", () => {
+    // N-04: /en/* mặc định từ chối, không còn nhánh null cho slug lạ.
+    expect(rewriteTarget("/en/nothing-here")).toBe("/en/__khong-ton-tai__");
   });
 
-  it("slug tiếng Việt lọt qua nhánh /en bị chặn — ép 404, không cho qua", () => {
+  it("slug tiếng Việt lọt qua nhánh /en bị chặn — ép đúng sentinel 404", () => {
     // Các route dưới [locale] mang tên thư mục tiếng Việt, nên nếu chỉ trả
     // null thì Next tự khớp "/en/lang-maker" vào đúng trang /lang-maker,
-    // lọt ra URL trùng lặp nội dung (F-01). Phải khác null và khác đường
-    // dẫn hợp lệ để middleware ép 404.
-    const ketQuaLangMaker = rewriteTarget("/en/lang-maker");
-    const ketQuaTrietLy = rewriteTarget("/en/triet-ly");
-    const ketQuaHanhTrinhChoi = rewriteTarget("/en/hanh-trinh/choi");
+    // lọt ra URL trùng lặp nội dung (F-01). Phải ép về sentinel để 404.
+    expect(rewriteTarget("/en/lang-maker")).toBe("/en/__khong-ton-tai__");
+    expect(rewriteTarget("/en/triet-ly")).toBe("/en/__khong-ton-tai__");
+    expect(rewriteTarget("/en/hanh-trinh/choi")).toBe("/en/__khong-ton-tai__");
+  });
 
-    for (const ketQua of [ketQuaLangMaker, ketQuaTrietLy, ketQuaHanhTrinhChoi]) {
-      expect(ketQua).not.toBeNull();
-      expect(ketQua).not.toBe("/en/lang-maker");
-      expect(ketQua).not.toBe("/en/triet-ly");
-      expect(ketQua).not.toBe("/en/hanh-trinh/choi");
-    }
+  it("route ĐỘNG chưa dịch dưới /en bị ép 404 — không lọt lưới như trước N-04", () => {
+    // Trước N-04: canonicalPathFromEn trả null, routeKeyFromPath cũng trả
+    // null (route động không nằm trong ROUTES tĩnh) → middleware trả null
+    // → Next tự khớp /en/video-hub/<id> vào [locale]="en", lọt ra 200 với
+    // nội dung tiếng Việt. Sau N-04, mặc định từ chối nên phải ép sentinel.
+    expect(rewriteTarget("/en/video-hub/bai-viet-that")).toBe(
+      "/en/__khong-ton-tai__"
+    );
   });
 
   it("KHÔNG đụng vào khu quản trị", () => {
     expect(rewriteTarget("/dashboard")).toBeNull();
     expect(rewriteTarget("/dashboard/students")).toBeNull();
     expect(rewriteTarget("/dang-nhap")).toBeNull();
+    // S-01: /admin đã dời ra ngoài cây [locale] (app/(admin)/admin) — gắn
+    // /vi vào sẽ trỏ tới route không tồn tại và 404 oan.
+    expect(rewriteTarget("/admin")).toBeNull();
   });
 
   it("KHÔNG đụng vào api và tài nguyên tĩnh", () => {

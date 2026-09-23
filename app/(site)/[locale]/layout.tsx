@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import "./globals.css";
+import "../../globals.css";
 import { SITE } from "@/lib/site";
 import { JsonLd } from "@/components/common/json-ld";
+import { DEFAULT_LOCALE, LOCALES, isLocale } from "@/lib/i18n/locales";
 
 const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin", "vietnamese"],
   weight: ["400", "600", "700", "800"],
 });
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -47,13 +52,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function SiteRootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: rawLocale } = await params;
+  const locale = isLocale(rawLocale) ? rawLocale : DEFAULT_LOCALE;
+
   return (
-    <html lang="vi" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         {/* Đặt theme trước khi trình duyệt vẽ, tránh nháy sáng khi đang ở chế độ tối */}
         <script

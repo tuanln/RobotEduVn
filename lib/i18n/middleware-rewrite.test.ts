@@ -17,6 +17,23 @@ describe("rewriteTarget", () => {
     expect(rewriteTarget("/en/nothing-here")).toBeNull();
   });
 
+  it("slug tiếng Việt lọt qua nhánh /en bị chặn — ép 404, không cho qua", () => {
+    // Các route dưới [locale] mang tên thư mục tiếng Việt, nên nếu chỉ trả
+    // null thì Next tự khớp "/en/lang-maker" vào đúng trang /lang-maker,
+    // lọt ra URL trùng lặp nội dung (F-01). Phải khác null và khác đường
+    // dẫn hợp lệ để middleware ép 404.
+    const ketQuaLangMaker = rewriteTarget("/en/lang-maker");
+    const ketQuaTrietLy = rewriteTarget("/en/triet-ly");
+    const ketQuaHanhTrinhChoi = rewriteTarget("/en/hanh-trinh/choi");
+
+    for (const ketQua of [ketQuaLangMaker, ketQuaTrietLy, ketQuaHanhTrinhChoi]) {
+      expect(ketQua).not.toBeNull();
+      expect(ketQua).not.toBe("/en/lang-maker");
+      expect(ketQua).not.toBe("/en/triet-ly");
+      expect(ketQua).not.toBe("/en/hanh-trinh/choi");
+    }
+  });
+
   it("KHÔNG đụng vào khu quản trị", () => {
     expect(rewriteTarget("/dashboard")).toBeNull();
     expect(rewriteTarget("/dashboard/students")).toBeNull();

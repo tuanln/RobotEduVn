@@ -7,6 +7,7 @@ import { pathFor } from "@/lib/i18n/routes";
 import { TRIET_LY_EN } from "@/lib/content/triet-ly/en";
 import { TRIET_LY_VI } from "@/lib/content/triet-ly/vi";
 import type { TrietLyContent } from "@/lib/content/triet-ly/types";
+import { ogImages } from "@/lib/seo/metadata";
 
 function noiDung(locale: Locale): TrietLyContent {
   return locale === "en" ? TRIET_LY_EN : TRIET_LY_VI;
@@ -37,6 +38,10 @@ export async function generateMetadata({
       url: pathFor("philosophy", locale),
       title: meta.title,
       description: meta.description,
+      // N-01 vấn đề 2: trang này tự khai openGraph nên GHI ĐÈ toàn bộ
+      // đối tượng openGraph của layout cha (Next không trộn các trường
+      // lồng nhau) — phải tự mang theo images, không thì mất ảnh OG.
+      images: ogImages(meta.title),
     },
   };
 }

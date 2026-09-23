@@ -4,6 +4,7 @@ import "../../globals.css";
 import { SITE } from "@/lib/site";
 import { JsonLd } from "@/components/common/json-ld";
 import { DEFAULT_LOCALE, LOCALES, isLocale } from "@/lib/i18n/locales";
+import { ogImages, twitterImages } from "@/lib/seo/metadata";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -43,11 +44,16 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.name} — ${SITE.tagline}`,
     description: SITE.description,
+    // N-01 vấn đề 1: khai tường minh thay vì trông cậy quy ước tệp
+    // opengraph-image.tsx tự kế thừa — gốc app/ không thuộc cây layout
+    // nào trong hai root layout, nên auto-injection không chạy tới.
+    images: ogImages(`${SITE.name} — ${SITE.tagline}`),
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name} — ${SITE.tagline}`,
     description: SITE.description,
+    images: twitterImages(),
   },
 };
 

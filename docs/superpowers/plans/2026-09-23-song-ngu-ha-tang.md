@@ -2294,6 +2294,178 @@ Gợi ý dựa trên navigator.languages phía trình duyệt, nhớ bằng loca
 
 ---
 
+## Task 12: Hai thành phần dùng chung còn nói tiếng Việt trên trang tiếng Anh
+
+**Vì sao có nhiệm vụ này:** Task 9 đóng xong thì đo thật `/en/philosophy` và thấy nó là
+**trang lai** — phần văn xuôi đúng tiếng Anh, nhưng hai khối dùng chung vẫn nguyên tiếng
+Việt. Đo ngày 2026-09-23 trên bản dựng thật:
+
+```
+Đọc Papert                -> 1 lần      Chia sẻ xong thì quay lại -> 1 lần
+Tải sách bản gốc          -> 1 lần      Bản tiếng Việt            -> 1 lần
+Thợ Làm                   -> 1 lần      Chơi / Làm                -> 2 / 4 lần
+```
+
+Kế hoạch này tuyên bố mục tiêu là "đưa TRỌN một trang đi hết đường sang tiếng Anh, để chứng
+minh khuôn mẫu chạy được". Trang lai thì khuôn mẫu **chưa được chứng minh** cho trường hợp
+khó nhất: thành phần dùng chung lấy dữ liệu từ một mô-đun chỉ có tiếng Việt. Mà `nhip.ts`
+còn nuôi ba trang nhịp của kế hoạch 2 — không giải bây giờ thì kế hoạch 2 vấp ngay ngày đầu
+với tám trang đang dở.
+
+**Files:**
+- Tạo: `lib/content/nhip-nhan/{types.ts,vi.ts,en.ts}` — 12 chuỗi hiển thị của ba nhịp
+- Tạo: `lib/content/doc-papert/{types.ts,vi.ts,en.ts}`
+- Sửa: `components/nhip/vong-lap.tsx`, `components/nhip/doc-papert.tsx`
+- Sửa: `components/home/learning-journey.tsx` (truyền `locale` xuống `VongLap`)
+- Sửa: `app/(site)/[locale]/(public)/page.tsx`, `hanh-trinh/page.tsx`, `triet-ly/page.tsx` — truyền `locale`
+- Test: `lib/content/nhip-nhan/nhip-nhan.test.ts`, `lib/content/doc-papert/doc-papert.test.ts`
+
+**Interfaces:**
+- Consumes: `Locale`, `isLocale`, `DEFAULT_LOCALE`; `pathFor`, `RouteKey`; `missingKeys`, `emptyStringKeys`; `NHIP`, `NhipSlug`
+- Produces: `NHIP_NHAN_VI` / `NHIP_NHAN_EN` kiểu `Record<NhipSlug, NhipNhan>` với `NhipNhan = { ten, khauHieu, moTaNgan, tenHuyHieu }`; `DOC_PAPERT_VI` / `DOC_PAPERT_EN`; `VongLap({ locale })`; `DocPapert({ locale })`
+
+**Ba lỗi phải đóng trong nhiệm vụ này:**
+
+1. **Nhãn ba nhịp.** `vong-lap.tsx` đọc `nhip.ten`, `nhip.khauHieu`, `nhip.moTaNgan`,
+   `nhip.tenHuyHieu` thẳng từ `NHIP` (chỉ tiếng Việt). Bốn trường này chuyển sang mô-đun
+   nhãn có hai bản. **KHÔNG sửa `lib/content/nhip.ts`** — nó là nguồn sự thật của ba trang
+   nhịp và thuộc kế hoạch 2; nhiệm vụ này chỉ thêm một lớp nhãn bên cạnh. `icon`, `huyHieu`,
+   `slug` và các lớp màu vẫn lấy từ `NHIP` vì chúng không phải chữ.
+
+2. **Đường dẫn ghi cứng.** `vong-lap.tsx:15` có `href={`/hanh-trinh/${nhip.slug}`}` — trên
+   trang tiếng Anh, link này ném người đọc về trang tiếng Việt. Phải sinh từ `pathFor`.
+   Ánh xạ slug nhịp sang `RouteKey`: `choi` → `nhipPlay`, `lam` → `nhipMake`,
+   `chia-se` → `nhipShare`.
+
+3. **Toàn bộ chữ trong `doc-papert.tsx`** chuyển sang mô-đun nội dung hai bản. Ba đường
+   link ra ngoài (PDF của MIT, Internet Archive, trang xuất bản MIT Media Lab) và địa chỉ
+   `mailto:` **giữ nguyên, không dịch** — chúng là địa chỉ, không phải văn.
+
+- [ ] **Bước 1: Viết test hỏng cho nhãn ba nhịp**
+
+```ts
+// lib/content/nhip-nhan/nhip-nhan.test.ts
+import { describe, expect, it } from "vitest";
+import { emptyStringKeys, missingKeys } from "@/lib/i18n/parity";
+import { NHIP } from "@/lib/content/nhip";
+import { NHIP_NHAN_EN } from "./en";
+import { NHIP_NHAN_VI } from "./vi";
+
+describe("NHIP_NHAN_VI", () => {
+  it("có nhãn cho đúng ba nhịp, khớp slug trong NHIP", () => {
+    expect(Object.keys(NHIP_NHAN_VI).sort()).toEqual(
+      NHIP.map((n) => n.slug).sort(),
+    );
+  });
+
+  it("giữ nguyên nhãn tiếng Việt đang chạy thật", () => {
+    expect(NHIP_NHAN_VI["choi"].ten).toBe("Chơi");
+    expect(NHIP_NHAN_VI["lam"].ten).toBe("Làm");
+    expect(NHIP_NHAN_VI["chia-se"].ten).toBe("Chia sẻ");
+    expect(NHIP_NHAN_VI["lam"].tenHuyHieu).toBe("Thợ Làm");
+  });
+
+  it("không trường nào bỏ trống", () => {
+    expect(emptyStringKeys(NHIP_NHAN_VI)).toEqual([]);
+  });
+});
+
+describe("NHIP_NHAN_EN", () => {
+  it("không thiếu khoá nào so với bản tiếng Việt", () => {
+    expect(missingKeys(NHIP_NHAN_VI, NHIP_NHAN_EN)).toEqual([]);
+  });
+
+  it("không trường nào bỏ trống", () => {
+    expect(emptyStringKeys(NHIP_NHAN_EN)).toEqual([]);
+  });
+
+  it("thật sự đã dịch, không chép lại bản tiếng Việt", () => {
+    for (const slug of Object.keys(NHIP_NHAN_VI) as (keyof typeof NHIP_NHAN_VI)[]) {
+      expect(NHIP_NHAN_EN[slug].khauHieu).not.toBe(NHIP_NHAN_VI[slug].khauHieu);
+      expect(NHIP_NHAN_EN[slug].moTaNgan).not.toBe(NHIP_NHAN_VI[slug].moTaNgan);
+    }
+  });
+});
+```
+
+- [ ] **Bước 2: Chạy để chắc nó hỏng**
+
+Chạy: `npx vitest run lib/content/nhip-nhan/`
+Kỳ vọng: FAIL — `Failed to resolve import "./en"`
+
+- [ ] **Bước 3: Viết mô-đun nhãn ba nhịp**
+
+`vi.ts` chép **nguyên văn** bốn trường của ba nhịp từ `lib/content/nhip.ts` (dòng 51, 52,
+57, 67 cho `choi`; 78, 79, 84, 94 cho `lam`; 132, 133, 138, 150 cho `chia-se`). Không đổi
+một dấu câu.
+
+`en.ts` dịch, giữ đúng tinh thần: `Chơi` → `Play`, `Làm` → `Make`, `Chia sẻ` → `Share`; tên
+huy hiệu dịch thành danh hiệu nghe tự nhiên trong tiếng Anh (`Người Tò Mò` → `The Curious
+One`, `Thợ Làm` → `The Maker`, `Người Chia Sẻ` → `The Storyteller`).
+
+- [ ] **Bước 4: Chạy lại** — `npx vitest run lib/content/nhip-nhan/` phải PASS.
+
+- [ ] **Bước 5: Test hỏng + mô-đun cho `DocPapert`**
+
+Cùng khuôn mẫu: `types.ts` một interface, `vi.ts` chép nguyên văn từ
+`components/nhip/doc-papert.tsx`, `en.ts` dịch, test dùng `missingKeys` + `emptyStringKeys`
+và một test canh **ba URL cùng địa chỉ mailto giống hệt nhau ở cả hai bản** (địa chỉ không
+phải văn để dịch).
+
+- [ ] **Bước 6: Sửa hai thành phần nhận `locale`**
+
+`VongLap({ locale }: { locale: Locale })` và `DocPapert({ locale }: { locale: Locale })`.
+`VongLap` đổi `href` sang `pathFor` theo ánh xạ ở mục 2 trên.
+
+- [ ] **Bước 7: Truyền `locale` từ mọi nơi gọi**
+
+`learning-journey.tsx` nhận thêm prop `locale` và chuyển tiếp; trang chủ, `hanh-trinh/page.tsx`
+và `triet-ly/page.tsx` đọc `locale` theo đúng mẫu R-05 rồi truyền xuống.
+
+- [ ] **Bước 8: KIỂM CHỨNG — trang tiếng Anh không còn chữ Việt nào**
+
+```bash
+pkill -f "next start" || true
+npm run build && npm start &
+sleep 12
+curl -s -o /dev/null -w '%{http_code}\n' localhost:3000/    # phải 200 TRƯỚC khi đo
+curl -s localhost:3000/en/philosophy \
+  | perl -0777 -pe 's/<script\b[^>]*>.*?<\/script>//gs; s/<style\b[^>]*>.*?<\/style>//gs; s/<[^>]+>/ /g; s/\s+/ /g' \
+  > /tmp/en-phil.txt
+for s in "Đọc Papert" "Tải sách bản gốc" "Chia sẻ xong thì quay lại" "Bản tiếng Việt" "Thợ Làm"; do
+  printf '%s -> %s\n' "$s" "$(grep -o "$s" /tmp/en-phil.txt | wc -l | tr -d ' ')"
+done
+```
+
+Kỳ vọng: **cả năm dòng đều là `0`**.
+
+Ngoại lệ đã duyệt (R-04), vẫn còn tiếng Việt và KHÔNG sửa ở nhiệm vụ này: link nhảy bỏ qua
+menu, chân trang, ChatWidget.
+
+- [ ] **Bước 9: Kiểm link trong sơ đồ vòng lặp trỏ đúng nhánh**
+
+```bash
+curl -s localhost:3000/en/philosophy | grep -o 'href="/en/how-we-learn/[a-z]*"' | sort -u
+curl -s localhost:3000/triet-ly      | grep -o 'href="/hanh-trinh/[a-z-]*"'    | sort -u
+```
+
+Kỳ vọng: dòng đầu ra ba link `/en/how-we-learn/{play,make,share}`; dòng sau ra ba link
+`/hanh-trinh/{choi,lam,chia-se}`. Trang tiếng Anh **không được** chứa link `/hanh-trinh/`.
+
+- [ ] **Bước 10: `npm test`, `npx tsc --noEmit`, `npx eslint .` — tất cả phải sạch, và 14 URL tiếng Việt vẫn 200.**
+
+- [ ] **Bước 11: Commit**
+
+```bash
+git add -A
+git commit -m "feat(i18n): sơ đồ vòng lặp và khối Đọc Papert theo ngôn ngữ
+
+Trang /en/philosophy trước đó là trang lai: văn xuôi tiếng Anh nhưng hai
+khối dùng chung vẫn tiếng Việt, và link vòng lặp ghi cứng sang nhánh Việt."
+```
+
+---
+
 ## Xong kế hoạch 1 — trạng thái đạt được
 
 | Đã có | Chưa có |

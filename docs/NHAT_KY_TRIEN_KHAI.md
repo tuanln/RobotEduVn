@@ -25,6 +25,15 @@ Bản v0 cũ (project `v0-robot-edu`, tiếng Anh, "Where Math is a Playground")
 
 ---
 
+## 23/09/2026 — Spike: nhiều root layout song song (Task 1, hạ tầng song ngữ)
+
+Spike **ĐẠT**: Next 16.1.6 (Turbopack) cho phép hai root layout riêng ở hai route
+group cùng cấp `app/` (không có `app/layout.tsx` chung) — `npm run build` qua,
+`curl` xác nhận `probe-a` trả `<html lang="vi"` và `probe-b` trả `<html lang="en"`.
+Mã thử đã xoá sạch, xem chi tiết `.superpowers/sdd/2026-09-23-song-ngu-ha-tang/task-1-report.md`.
+
+---
+
 ## 20/09/2026 — Đưa bản Làng Maker lên domain chính thức
 
 `robot.edu.vn` trước đó trỏ vào project `v0-robot-edu`, nên mọi lần deploy repo

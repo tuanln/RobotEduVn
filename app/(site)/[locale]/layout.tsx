@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     "học bằng làm",
   ],
   authors: [{ name: "Làng Maker" }],
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "vi_VN",

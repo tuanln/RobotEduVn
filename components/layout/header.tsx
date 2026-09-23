@@ -10,11 +10,15 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { NAV_ITEMS } from "@/lib/content/nav";
+import { navItems } from "@/lib/content/nav";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import type { Locale } from "@/lib/i18n/locales";
+import { pathFor } from "@/lib/i18n/routes";
 
-export function Header() {
+export function Header({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
+  const items = navItems(locale);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
@@ -31,7 +35,7 @@ export function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-1 lg:flex">
-          {NAV_ITEMS.map((item) => (
+          {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -44,14 +48,18 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden items-center gap-1 lg:flex">
+          <LanguageSwitcher locale={locale} />
           <ThemeToggle />
           <Button asChild>
-            <Link href="/hanh-trinh">Bắt Đầu Ngay</Link>
+            <Link href={pathFor("howWeLearn", locale)}>
+              {locale === "vi" ? "Bắt Đầu Ngay" : "Start Here"}
+            </Link>
           </Button>
         </div>
 
         {/* Mobile Menu */}
         <div className="flex items-center gap-1 lg:hidden">
+          <LanguageSwitcher locale={locale} />
           <ThemeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
@@ -70,7 +78,7 @@ export function Header() {
           <SheetContent side="right" className="w-72">
             <SheetTitle className="sr-only">Menu</SheetTitle>
             <nav className="mt-8 flex flex-col gap-1">
-              {NAV_ITEMS.map((item) => (
+              {items.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -82,8 +90,11 @@ export function Header() {
               ))}
               <div className="mt-4 px-4">
                 <Button asChild className="w-full">
-                  <Link href="/hanh-trinh" onClick={() => setOpen(false)}>
-                    Bắt Đầu Ngay
+                  <Link
+                    href={pathFor("howWeLearn", locale)}
+                    onClick={() => setOpen(false)}
+                  >
+                    {locale === "vi" ? "Bắt Đầu Ngay" : "Start Here"}
                   </Link>
                 </Button>
               </div>

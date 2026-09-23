@@ -39,7 +39,7 @@ export default async function PhilosophyPage({
         <section className="mb-12">
           <h2 className="mb-4 text-2xl font-bold">{t.vongLap.heading}</h2>
           <p className="mb-6 text-muted-foreground">{t.vongLap.intro}</p>
-          <VongLap />
+          <VongLap locale={locale} />
         </section>
 
         <div className="space-y-8">
@@ -80,7 +80,7 @@ export default async function PhilosophyPage({
         </section>
 
         <div className="mt-12">
-          <DocPapert />
+          <DocPapert locale={locale} />
         </div>
       </div>
     </div>

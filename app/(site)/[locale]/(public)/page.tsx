@@ -5,8 +5,15 @@ import { LearningJourney } from "@/components/home/learning-journey";
 import { ImpactStats, type ImpactStat } from "@/components/home/impact-stats";
 import { PartnersSection } from "@/components/home/partners-section";
 import { CTASection } from "@/components/home/cta-section";
+import { DEFAULT_LOCALE, isLocale } from "@/lib/i18n/locales";
 
-export default async function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: rawLocale } = await params;
+  const locale = isLocale(rawLocale) ? rawLocale : DEFAULT_LOCALE;
   const [hubs, videos] = await Promise.all([getHubs(), getVideos()]);
   const cities = new Set(hubs.map((h) => h.city).filter(Boolean));
 
@@ -25,7 +32,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection />
-      <LearningJourney />
+      <LearningJourney locale={locale} />
       <ImpactStats stats={stats} />
       <PartnersSection />
       <CTASection />

@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { VongLap } from "@/components/nhip/vong-lap";
 import { SectionHeader } from "@/components/common/section-header";
+import type { Locale } from "@/lib/i18n/locales";
 
-export function LearningJourney() {
+export function LearningJourney({ locale }: { locale: Locale }) {
   return (
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-4">
@@ -11,7 +12,7 @@ export function LearningJourney() {
           subtitle='Theo triết lý Kiến tạo của Seymour Papert — "Học bằng làm"'
         />
 
-        <VongLap />
+        <VongLap locale={locale} />
 
         <div className="mt-8 text-center">
           <Link

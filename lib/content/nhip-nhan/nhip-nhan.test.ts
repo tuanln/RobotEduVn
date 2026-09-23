@@ -21,6 +21,17 @@ describe("NHIP_NHAN_VI", () => {
   it("không trường nào bỏ trống", () => {
     expect(emptyStringKeys(NHIP_NHAN_VI)).toEqual([]);
   });
+
+  it("khớp nguyên văn lib/content/nhip.ts", () => {
+    for (const n of NHIP) {
+      expect(NHIP_NHAN_VI[n.slug]).toEqual({
+        ten: n.ten,
+        khauHieu: n.khauHieu,
+        moTaNgan: n.moTaNgan,
+        tenHuyHieu: n.tenHuyHieu,
+      });
+    }
+  });
 });
 
 describe("NHIP_NHAN_EN", () => {

@@ -3,6 +3,8 @@ import { NHIP } from "@/lib/content/nhip";
 import type { NhipSlug } from "@/lib/content/nhip-slug";
 import { NHIP_NHAN_EN } from "@/lib/content/nhip-nhan/en";
 import { NHIP_NHAN_VI } from "@/lib/content/nhip-nhan/vi";
+import { VONG_LAP_NHAN_EN } from "@/lib/content/vong-lap-nhan/en";
+import { VONG_LAP_NHAN_VI } from "@/lib/content/vong-lap-nhan/vi";
 import type { Locale } from "@/lib/i18n/locales";
 import { pathFor, type RouteKey } from "@/lib/i18n/routes";
 
@@ -17,12 +19,17 @@ function nhanCho(locale: Locale) {
   return locale === "en" ? NHIP_NHAN_EN : NHIP_NHAN_VI;
 }
 
+function quayLaiCho(locale: Locale) {
+  return locale === "en" ? VONG_LAP_NHAN_EN : VONG_LAP_NHAN_VI;
+}
+
 /**
  * Sơ đồ vòng lặp ba nhịp. Điểm bắt buộc theo spec: có đường quay lại từ nhịp
  * cuối về nhịp đầu — đây là thứ phân biệt vòng lặp với thang bậc.
  */
 export function VongLap({ locale }: { locale: Locale }) {
   const nhan = nhanCho(locale);
+  const quayLai = quayLaiCho(locale);
 
   return (
     <div className="relative">
@@ -57,9 +64,7 @@ export function VongLap({ locale }: { locale: Locale }) {
       {/* Đường quay lại — vòng lặp, không phải thang bậc */}
       <p className="mt-6 flex items-center justify-center gap-2 rounded-full border border-dashed border-primary/40 bg-primary/5 px-5 py-3 text-center text-sm">
         <span aria-hidden>↻</span>
-        {locale === "en"
-          ? "Once Share is done, loop back to Play with a harder question"
-          : "Chia sẻ xong thì quay lại Chơi ở vòng sau, với câu hỏi khó hơn"}
+        {quayLai.quayLai}
       </p>
     </div>
   );

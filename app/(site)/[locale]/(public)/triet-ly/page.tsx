@@ -3,12 +3,12 @@ import { SectionHeader } from "@/components/common/section-header";
 import { VongLap } from "@/components/nhip/vong-lap";
 import { DocPapert } from "@/components/nhip/doc-papert";
 import { DEFAULT_LOCALE, isLocale, type Locale } from "@/lib/i18n/locales";
+import { TRIET_LY_EN } from "@/lib/content/triet-ly/en";
 import { TRIET_LY_VI } from "@/lib/content/triet-ly/vi";
 import type { TrietLyContent } from "@/lib/content/triet-ly/types";
 
-// Bản tiếng Anh nối vào ở Task 9.
-function noiDung(_locale: Locale): TrietLyContent {
-  return TRIET_LY_VI;
+function noiDung(locale: Locale): TrietLyContent {
+  return locale === "en" ? TRIET_LY_EN : TRIET_LY_VI;
 }
 
 export async function generateMetadata({

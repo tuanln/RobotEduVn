@@ -39,3 +39,16 @@ describe("emptyStringKeys", () => {
     ]);
   });
 });
+
+describe("bắt được hai kiểu dịch sót thường gặp", () => {
+  it("phải phát hiện bản en hụt một nguyên lý", () => {
+    const vi = { nguyenLy: [{ title: "a" }, { title: "b" }, { title: "c" }] };
+    const en = { nguyenLy: [{ title: "a" }, { title: "b" }] };
+    expect(missingKeys(vi, en)).toEqual(["nguyenLy.2.title"]);
+  });
+
+  it("phải phát hiện bản en để trống một trường", () => {
+    const en = { quote: "", title: "Papert" };
+    expect(emptyStringKeys(en)).toEqual(["quote"]);
+  });
+});

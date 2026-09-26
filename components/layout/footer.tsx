@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
+import type { Locale } from "@/lib/i18n/locales";
 
 const footerLinks = {
   "Khám Phá": [
@@ -28,7 +29,8 @@ const footerLinks = {
   ],
 };
 
-export function Footer() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- locale chưa dùng ở nhiệm vụ này, sẽ dùng khi dịch chân trang (kế hoạch 2)
+export function Footer({ locale }: { locale: Locale }) {
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-4 py-12">

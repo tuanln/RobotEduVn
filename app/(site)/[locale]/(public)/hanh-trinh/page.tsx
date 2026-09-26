@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SectionHeader } from "@/components/common/section-header";
 import { VongLap } from "@/components/nhip/vong-lap";
+import { DEFAULT_LOCALE, isLocale } from "@/lib/i18n/locales";
 
 export const metadata: Metadata = {
   title: "Cách Học Ở Làng Maker",
@@ -8,7 +9,14 @@ export const metadata: Metadata = {
     "Ba nhịp lặp lại: chơi cho tò mò, bắt tay làm ra sản phẩm thật, rồi kể lại cho người khác. Không phải thang bậc — là vòng lặp.",
 };
 
-export default function HanhTrinhPage() {
+export default async function HanhTrinhPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: rawLocale } = await params;
+  const locale = isLocale(rawLocale) ? rawLocale : DEFAULT_LOCALE;
+
   return (
     <div className="py-16">
       <div className="mx-auto max-w-5xl px-4">
@@ -16,7 +24,7 @@ export default function HanhTrinhPage() {
           title="Cách Học Ở Làng Maker"
           subtitle="Ba nhịp lặp đi lặp lại — không ai phải leo bậc, ai cũng đi qua đủ ba"
         />
-        <VongLap />
+        <VongLap locale={locale} />
         <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-muted-foreground">
           Từ 4 đến 18 tuổi đều đi qua đủ ba nhịp này. Khác nhau không nằm ở nhịp
           nào, mà ở độ khó của thứ trẻ chọn làm.

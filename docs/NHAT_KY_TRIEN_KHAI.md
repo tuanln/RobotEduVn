@@ -25,6 +25,78 @@ Bản v0 cũ (project `v0-robot-edu`, tiếng Anh, "Where Math is a Playground")
 
 ---
 
+## 24/09/2026 — Hạ tầng song ngữ Việt–Anh (kế hoạch 1/3) xong
+
+Nhánh `feat/song-ngu-va-hinh-anh`, 22 commit. Cây route `[locale]` + hai root layout +
+middleware dịch slug; trang Triết Lý song ngữ trọn vẹn; hreflang + sitemap hai ngữ; nút
+chuyển ngôn ngữ và dải gợi ý. 136 test. Tám trang còn lại CỐ Ý chưa dịch — kế hoạch 2.
+
+### Hai lỗi có từ trước, phát hiện nhờ đợt này
+
+1. **Mọi trang khai canonical về trang chủ.** `alternates: { canonical: "/" }` trong metadata
+   gốc khiến 13 trang không tự khai metadata đều nói với Google rằng chúng là bản sao của
+   trang chủ. Có trên `main`, tức bản chạy thật cũng dính. Đã gỡ — không canonical thì Google
+   dùng chính URL của trang, luôn đúng hơn canonical sai.
+2. **Trang `admin` nằm trong nhánh công khai**, mật khẩu ghi cứng phía client, và
+   `secret=openstem-revalidate` lộ trong bundle client. Đợt này chỉ DỜI vị trí sang
+   `app/(admin)/admin/` để `/en/admin` không còn tồn tại. **Phần xác thực vẫn chưa sửa —
+   cần vé riêng: xác thực phía máy chủ, xoay `REVALIDATION_SECRET`, gỡ bí mật khỏi mã client.**
+
+### Sáu cái bẫy, ghi để không vấp lại
+
+1. **`pkill -f "next start"` KHÔNG giết được server** — tên tiến trình thật là `next-server`.
+   Đo nhầm trên server cũ cho ra kết quả của mã cũ. Cách đúng:
+   `pkill -f "next-server"; lsof -ti:3000 | xargs kill -9`, xác nhận cổng trống, `curl /`
+   thấy 200 rồi mới đo.
+2. **So HTML bằng `sed 's/<[^>]+>//g'` là sai** — không bóc được nội dung trong `<script>`,
+   mà RSC payload chứa build id sinh ngẫu nhiên mỗi lần build. Dùng `perl -0777` bỏ hẳn
+   `<script>`/`<style>` trước.
+3. **React SSR render `hrefLang` chữ L hoa** (như `charSet`). `grep 'hreflang='` chữ thường
+   ra rỗng dù thẻ đúng. Dùng `grep -i` hoặc đọc thẳng thẻ.
+4. **Nghiệm thu tài nguyên phải là "tải được", không phải "thẻ tồn tại".** `og:image` từng
+   có thẻ nhưng URL trả 404 text/html. Luôn gọi vào URL và kiểm mã trạng thái + content-type.
+5. **Dời cây route thì phải rà mọi tệp quy ước của Next ở gốc `app/`** — `opengraph-image`,
+   `icon`, `apple-icon`, `twitter-image`, `not-found`, `error` — không chỉ `layout.tsx` và
+   `page.tsx`. Bỏ sót `opengraph-image.tsx` làm mất ảnh OG toàn site mà 135 test không bắt.
+6. **`openGraph` của trang GHI ĐÈ của layout, không trộn.** Trang nào tự khai `openGraph`
+   phải tự mang theo `images`. Xem `lib/seo/metadata.ts`.
+7. **Xoá `.next/` sau khi dời route**, nếu không `.next/types/validator.ts` cũ còn trỏ đường
+   dẫn cũ và đẻ ra hàng chục lỗi TypeScript giả.
+8. **Kiểu `params` của Next 16 là `{ locale: string }`**, không thu hẹp về union. Phải
+   `isLocale()` + `DEFAULT_LOCALE`. Và rule `react-hooks/set-state-in-effect` cấm
+   `useEffect`+`setState` — dùng `useSyncExternalStore` (xem `language-suggestion.tsx`).
+
+### Nợ mang sang kế hoạch 2
+
+- **`lib/i18n/translated.ts` là cái van.** Dịch xong trang nào PHẢI thêm khoá vào đó, nếu
+  không trang đã dịch vẫn vô hình với sitemap, hreflang và dải gợi ý. Nên có test hai chiều
+  đối chiếu với sự tồn tại của tệp `en.ts`.
+- **Dịch `footer.tsx` TRƯỚC, không phải sau** — nó hiện trên cả 8 trang; để cuối thì trang
+  đã dịch đầu tiên vẫn trông như chưa dịch.
+- **Rút `generateMetadata` thành hàm dùng chung TRƯỚC khi viết trang thứ hai**, và hàm đó
+  phải gác `TRANSLATED_ROUTES` — chép mẫu Triết Lý sang trang chưa dịch sẽ khai hreflang cho
+  bản dịch không tồn tại.
+- **8 chỗ còn ghi cứng đường dẫn tiếng Việt**: `hero-section.tsx:33,47`, `cta-section.tsx:20`,
+  `learning-journey.tsx:18`, `lang-maker/page.tsx:130,293`, `hanh-trinh/[slug]/page.tsx:46,179`.
+- **`lib/content/glossary.ts` hiện là mã chết** — không nơi nào gọi, và đã trôi khỏi
+  `triet-ly/en.ts` ("Play – Make – Share" vs "Play, Make, Share"). Phải chốt dùng hay bỏ
+  trước khi viết trang dịch tiếp theo.
+- **Không test nào kiểm `ROUTES[*].vi` có thư mục thật.** Đổi tên thư mục → test xanh,
+  production 404. Nên thêm một test `readdirSync`.
+- **`SITE.url` rơi về `https://robot.edu.vn`** khi thiếu biến môi trường, nên trên preview
+  của Vercel thì canonical, hreflang và sitemap đều trỏ về production.
+
+---
+
+## 23/09/2026 — Spike: nhiều root layout song song (Task 1, hạ tầng song ngữ)
+
+Spike **ĐẠT**: Next 16.1.6 (Turbopack) cho phép hai root layout riêng ở hai route
+group cùng cấp `app/` (không có `app/layout.tsx` chung) — `npm run build` qua,
+`curl` xác nhận `probe-a` trả `<html lang="vi"` và `probe-b` trả `<html lang="en"`.
+Mã thử đã xoá sạch, xem chi tiết `.superpowers/sdd/2026-09-23-song-ngu-ha-tang/task-1-report.md`.
+
+---
+
 ## 20/09/2026 — Đưa bản Làng Maker lên domain chính thức
 
 `robot.edu.vn` trước đó trỏ vào project `v0-robot-edu`, nên mọi lần deploy repo

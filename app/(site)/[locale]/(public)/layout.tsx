@@ -1,12 +1,19 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ChatWidget } from "@/components/chat/chat-widget";
+import { LanguageSuggestion } from "@/components/layout/language-suggestion";
+import { DEFAULT_LOCALE, isLocale } from "@/lib/i18n/locales";
 
-export default function PublicLayout({
+export default async function PublicLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale: rawLocale } = await params;
+  const locale = isLocale(rawLocale) ? rawLocale : DEFAULT_LOCALE;
+
   return (
     <>
       {/* Cho người dùng bàn phím nhảy thẳng vào nội dung, bỏ qua 8 mục menu */}
@@ -16,11 +23,12 @@ export default function PublicLayout({
       >
         Bỏ qua menu, tới nội dung chính
       </a>
-      <Header />
+      <LanguageSuggestion locale={locale} />
+      <Header locale={locale} />
       <main id="noi-dung" className="min-h-screen">
         {children}
       </main>
-      <Footer />
+      <Footer locale={locale} />
       <ChatWidget />
     </>
   );

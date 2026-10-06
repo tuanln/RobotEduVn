@@ -3,7 +3,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, RotateCcw } from "lucide-react";
 import { NHIP, getNhip, nhipKeTiep } from "@/lib/content/nhip";
-import { NHIP_SLUGS, type NhipSlug } from "@/lib/content/nhip-slug";
+import {
+  NHIP_ROUTE_KEY,
+  NHIP_SLUGS,
+  type NhipSlug,
+} from "@/lib/content/nhip-slug";
+import { NHIP_NHAN_EN } from "@/lib/content/nhip-nhan/en";
+import { NHIP_NHAN_VI } from "@/lib/content/nhip-nhan/vi";
+import { cachHoc } from "@/lib/content/cach-hoc";
+import { DEFAULT_LOCALE, isLocale } from "@/lib/i18n/locales";
+import { pathFor } from "@/lib/i18n/routes";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { getVideos } from "@/lib/sheets";
 import { Button } from "@/components/ui/button";
 
@@ -18,21 +28,30 @@ function laSlugNhip(slug: string): slug is NhipSlug {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  if (!laSlugNhip(slug)) return { title: "Không tìm thấy" };
-  const nhip = getNhip(slug);
-  return { title: `Nhịp ${nhip.ten}`, description: nhip.moTaNgan };
+  const { locale: raw, slug } = await params;
+  const locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const t = cachHoc(locale);
+  if (!laSlugNhip(slug)) return { title: t.nhan.khongTimThay };
+  const nhan = locale === "en" ? NHIP_NHAN_EN : NHIP_NHAN_VI;
+  return pageMetadata(NHIP_ROUTE_KEY[slug], locale, {
+    title: t.nhip[slug].metaTitle,
+    description: nhan[slug].moTaNgan,
+  });
 }
 
 export default async function NhipPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { locale: raw, slug } = await params;
   if (!laSlugNhip(slug)) notFound();
+  const locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const t = cachHoc(locale);
+  const chu = t.nhip[slug];
+  const nhan = locale === "en" ? NHIP_NHAN_EN : NHIP_NHAN_VI;
 
   const nhip = getNhip(slug);
   const keTiep = nhipKeTiep(slug);
@@ -43,11 +62,11 @@ export default async function NhipPage({
     <div className="py-16">
       <div className="mx-auto max-w-4xl px-4">
         <nav className="mb-8 text-sm text-muted-foreground">
-          <Link href="/hanh-trinh" className="hover:text-foreground">
-            Cách Học Ở Làng Maker
+          <Link href={pathFor("howWeLearn", locale)} className="hover:text-foreground">
+            {t.tieuDe}
           </Link>
           <span className="mx-2" aria-hidden>/</span>
-          <span className={nhip.color}>{nhip.ten}</span>
+          <span className={nhip.color}>{nhan[slug].ten}</span>
         </nav>
 
         <header
@@ -55,18 +74,18 @@ export default async function NhipPage({
         >
           <span className="text-7xl" aria-hidden>{nhip.icon}</span>
           <h1 className={`mt-4 text-4xl font-extrabold ${nhip.color}`}>
-            {nhip.ten}
+            {nhan[slug].ten}
           </h1>
-          <p className="mt-2 text-lg font-medium">{nhip.khauHieu}</p>
+          <p className="mt-2 text-lg font-medium">{nhan[slug].khauHieu}</p>
           <p className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <span aria-hidden>{nhip.huyHieu}</span>
-            {nhip.tenHuyHieu}
+            {nhan[slug].tenHuyHieu}
           </p>
         </header>
 
         <div className="mt-8 space-y-8">
           <section className="rounded-xl border border-border bg-card p-6">
-            {nhip.moTaDai.split("\n\n").map((doan, i) => (
+            {chu.moTaDai.split("\n\n").map((doan, i) => (
               <p key={i} className="mb-3 leading-relaxed text-muted-foreground">
                 {doan}
               </p>
@@ -74,13 +93,13 @@ export default async function NhipPage({
           </section>
 
           <section className="rounded-xl border border-primary/40 bg-primary/5 p-6">
-            <h2 className="text-xl font-bold">Tại Làng Maker</h2>
-            <p className="mt-2 text-muted-foreground">{nhip.taiLangMaker}</p>
+            <h2 className="text-xl font-bold">{t.nhan.taiLangMaker}</h2>
+            <p className="mt-2 text-muted-foreground">{chu.taiLangMaker}</p>
           </section>
 
           {nhip.tramChoi && (
             <section className="rounded-xl border border-border bg-card p-6">
-              <h2 className="text-xl font-bold">Năm nhóm trạm chơi</h2>
+              <h2 className="text-xl font-bold">{t.nhan.namNhomTram}</h2>
               <div className="mt-4 flex flex-wrap gap-2">
                 {nhip.tramChoi.map((tram) => (
                   <span
@@ -92,31 +111,29 @@ export default async function NhipPage({
                 ))}
               </div>
               <p className="mt-4 text-sm text-muted-foreground">
-                Buổi trải nghiệm đầu tiên miễn phí, 60–90 phút, cuối tuần. Không
-                cần biết trước gì, không cần mang theo gì.
+                {t.nhan.buoiDau}
               </p>
             </section>
           )}
 
           {nhip.huong && (
             <section>
-              <h2 className="text-xl font-bold">Ba hướng làm, đi song song</h2>
+              <h2 className="text-xl font-bold">{t.nhan.baHuong}</h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                Không phải ba cấp bậc. Trẻ chọn hướng vừa tay với thứ mình đang
-                muốn làm.
+                {t.nhan.baHuongGhiChu}
               </p>
               <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
-                {nhip.huong.map((h) => (
+                {nhip.huong.map((h, i) => (
                   <div
                     key={h.title}
                     className="flex flex-col rounded-xl border border-border bg-card p-5"
                   >
-                    <h3 className="font-bold">{h.title}</h3>
+                    <h3 className="font-bold">{chu.huong?.[i].title}</h3>
                     <p className="mt-2 flex-1 text-sm text-muted-foreground">
-                      {h.doing}
+                      {chu.huong?.[i].doing}
                     </p>
                     <p className="mt-4 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                      Đồ nghề
+                      {t.nhan.doNghe}
                     </p>
                     <div className="mt-1 flex flex-wrap gap-1">
                       {h.tools.map((tool) => (
@@ -134,11 +151,11 @@ export default async function NhipPage({
             </section>
           )}
 
-          {nhip.nguyenTac && (
+          {chu.nguyenTac && (
             <section>
-              <h2 className="text-xl font-bold">Ba nguyên tắc dẫn buổi học</h2>
+              <h2 className="text-xl font-bold">{t.nhan.baNguyenTac}</h2>
               <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
-                {nhip.nguyenTac.map((nt) => (
+                {chu.nguyenTac.map((nt) => (
                   <div
                     key={nt.title}
                     className="rounded-xl border border-border bg-card p-5"
@@ -155,20 +172,20 @@ export default async function NhipPage({
 
           {coVideo ? (
             <section className="rounded-xl border border-border bg-card p-6 text-center">
-              <h2 className="text-xl font-bold">Video của nhịp này</h2>
+              <h2 className="text-xl font-bold">{t.nhan.videoNhip}</h2>
               <Button asChild className="mt-4">
-                <Link href={`/video-hub?stage=${nhip.slug}`}>
-                  Xem Video Hub <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+                <Link href={`${pathFor("videos", locale)}?stage=${nhip.slug}`}>
+                  {t.nhan.xemVideo} <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
                 </Link>
               </Button>
             </section>
           ) : (
             <section className="rounded-xl border border-dashed border-border p-6 text-center">
               <p className="text-sm text-muted-foreground">
-                Nhịp này chưa có video — vì nó vốn để trải nghiệm trực tiếp.
+                {t.nhan.chuaCoVideo}
               </p>
               <Button asChild variant="outline" className="mt-4">
-                <Link href="/cong-dong/maker-hub">Tìm Maker Hub gần bạn</Link>
+                <Link href={pathFor("makerHubs", locale)}>{t.nhan.timHub}</Link>
               </Button>
             </section>
           )}
@@ -176,11 +193,11 @@ export default async function NhipPage({
           {/* Vòng lặp: sau nhịp cuối thì dẫn ngược về nhịp đầu */}
           <div className="flex justify-end">
             <Button asChild size="lg">
-              <Link href={`/hanh-trinh/${keTiep.slug}`}>
+              <Link href={pathFor(NHIP_ROUTE_KEY[keTiep.slug], locale)}>
                 {slug === "chia-se" ? (
                   <RotateCcw className="mr-2 h-4 w-4" aria-hidden />
                 ) : null}
-                {`Nhịp tiếp theo: ${keTiep.ten}`}
+                {`${t.nhan.nhipTiepTheo} ${nhan[keTiep.slug].ten}`}
                 <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
               </Link>
             </Button>

@@ -6,6 +6,7 @@ import { Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Locale } from "@/lib/i18n/locales";
 import { alternatePath } from "@/lib/i18n/routes";
+import { khung } from "@/lib/content/khung";
 
 /**
  * Chuyển sang ĐÚNG trang tương ứng, không đá về trang chủ (spec mục 2.4).
@@ -37,7 +38,7 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
 
   return (
     <Button variant="ghost" size="sm" asChild>
-      <Link href={href} hrefLang={to} aria-label={`Chuyển sang ${nhan}`}>
+      <Link href={href} hrefLang={to} aria-label={`${khung(locale).chuyenSang} ${nhan}`}>
         <Languages className="h-4 w-4" aria-hidden />
         {nhan}
       </Link>

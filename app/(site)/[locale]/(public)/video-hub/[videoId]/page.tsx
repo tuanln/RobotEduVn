@@ -6,13 +6,15 @@ import { StageBadge } from "@/components/common/stage-badge";
 import { VideoCard } from "@/components/video/video-card";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DEFAULT_LOCALE, isLocale } from "@/lib/i18n/locales";
 
 export default async function VideoDetailPage({
   params,
 }: {
-  params: Promise<{ videoId: string }>;
+  params: Promise<{ locale: string; videoId: string }>;
 }) {
-  const { videoId } = await params;
+  const { locale: raw, videoId } = await params;
+  const locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
   const videos = await getVideos();
   const video = videos.find((v) => v.id === videoId);
 
@@ -39,7 +41,7 @@ export default async function VideoDetailPage({
             <VideoPlayer youtubeId={video.youtubeId} title={video.title} />
             <h1 className="mt-6 text-2xl font-bold">{video.title}</h1>
             <div className="mt-3 flex items-center gap-3">
-              <StageBadge stage={video.stage} />
+              <StageBadge stage={video.stage} locale={locale} />
               <span className="text-sm text-muted-foreground">
                 {video.ageRange} tuổi
               </span>
@@ -66,7 +68,7 @@ export default async function VideoDetailPage({
             <h2 className="mb-4 text-lg font-semibold">Video Liên Quan</h2>
             <div className="space-y-4">
               {related.map((v) => (
-                <VideoCard key={v.id} video={v} />
+                <VideoCard key={v.id} video={v} locale={locale} />
               ))}
             </div>
             {related.length === 0 && (

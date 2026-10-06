@@ -2,8 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { VideoItem } from "@/lib/types";
 import { StageBadge } from "@/components/common/stage-badge";
+import type { Locale } from "@/lib/i18n/locales";
 
-export function VideoCard({ video }: { video: VideoItem }) {
+export function VideoCard({ video, locale }: { video: VideoItem; locale: Locale }) {
   return (
     <Link
       href={`/video-hub/${video.id}`}
@@ -29,7 +30,7 @@ export function VideoCard({ video }: { video: VideoItem }) {
           {video.title}
         </h3>
         <div className="mt-2 flex items-center gap-2">
-          <StageBadge stage={video.stage} />
+          <StageBadge stage={video.stage} locale={locale} />
           <span className="text-xs text-muted-foreground">
             {video.ageRange} tuổi
           </span>

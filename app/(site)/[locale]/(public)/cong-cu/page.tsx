@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SectionHeader } from "@/components/common/section-header";
 import { StageBadge } from "@/components/common/stage-badge";
 import type { NhipSlug } from "@/lib/types";
+import { localeOf } from "@/lib/i18n/params";
 
 export const metadata: Metadata = {
   title: "Công Cụ & Thiết Bị",
@@ -68,7 +69,12 @@ const tools = [
   },
 ];
 
-export default function ToolsPage() {
+export default async function ToolsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const locale = await localeOf(params);
   return (
     <div className="py-16">
       <div className="mx-auto max-w-5xl px-4">
@@ -91,7 +97,7 @@ export default function ToolsPage() {
                 <div className="flex-1">
                   <div className="flex items-center gap-3">
                     <h3 className="text-xl font-bold">{tool.name}</h3>
-                    <StageBadge stage={tool.nhip} />
+                    <StageBadge stage={tool.nhip} locale={locale} />
                   </div>
                   <p className="mt-1 text-xs text-muted-foreground">
                     {tool.type} &bull; {tool.origin}

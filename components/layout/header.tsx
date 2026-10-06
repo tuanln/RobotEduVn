@@ -15,10 +15,12 @@ import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import type { Locale } from "@/lib/i18n/locales";
 import { pathFor } from "@/lib/i18n/routes";
+import { khung } from "@/lib/content/khung";
 
 export function Header({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
   const items = navItems(locale);
+  const t = khung(locale);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
@@ -49,7 +51,7 @@ export function Header({ locale }: { locale: Locale }) {
         {/* Desktop CTA */}
         <div className="hidden items-center gap-1 lg:flex">
           <LanguageSwitcher locale={locale} />
-          <ThemeToggle />
+          <ThemeToggle t={t.theme} />
           <Button asChild>
             <Link href={pathFor("howWeLearn", locale)}>
               {locale === "vi" ? "Bắt Đầu Ngay" : "Start Here"}
@@ -60,13 +62,13 @@ export function Header({ locale }: { locale: Locale }) {
         {/* Mobile Menu */}
         <div className="flex items-center gap-1 lg:hidden">
           <LanguageSwitcher locale={locale} />
-          <ThemeToggle />
+          <ThemeToggle t={t.theme} />
           <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
               size="icon"
-              aria-label={open ? "Đóng menu" : "Mở menu"}
+              aria-label={open ? t.menu.dong : t.menu.mo}
             >
               {open ? (
                 <X className="h-5 w-5" aria-hidden />

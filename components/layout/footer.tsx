@@ -1,43 +1,18 @@
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import type { Locale } from "@/lib/i18n/locales";
+import { pathFor } from "@/lib/i18n/routes";
+import { khung } from "@/lib/content/khung";
 
-const footerLinks = {
-  "Khám Phá": [
-    { label: "Làng Maker", href: "/lang-maker" },
-    { label: "Cách Học", href: "/hanh-trinh" },
-    { label: "Triết Lý Papert", href: "/triet-ly" },
-    { label: "Công Cụ & Thiết Bị", href: "/cong-cu" },
-    { label: "Video Hub", href: "/video-hub" },
-  ],
-  "Cho Giáo Viên": [
-    { label: "Tài Liệu Giáo Trình", href: "/cho-mentor" },
-    { label: "Cộng Đồng Mentor", href: "/cong-dong" },
-    { label: "Đăng Ký Maker Hub", href: "/cong-dong/maker-hub" },
-  ],
-  "Kết Nối": [
-    { label: "Email: lang@makerviet.org", href: "mailto:lang@makerviet.org" },
-    {
-      label: "Facebook: Bình dân học STEM",
-      href: "https://facebook.com/groups/binhdanhocSTEM",
-    },
-    { label: "GitHub: MakerViet", href: "https://github.com/makerviet" },
-    {
-      label: "YouTube: MakerViet",
-      href: "https://youtube.com/@makerviet",
-    },
-  ],
-};
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars -- locale chưa dùng ở nhiệm vụ này, sẽ dùng khi dịch chân trang (kế hoạch 2)
 export function Footer({ locale }: { locale: Locale }) {
+  const t = khung(locale).footer;
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-2">
+            <Link href={pathFor("home", locale)} className="flex items-center gap-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-lg font-bold text-primary-foreground">
                 R
               </div>
@@ -45,24 +20,21 @@ export function Footer({ locale }: { locale: Locale }) {
                 Robot<span className="text-primary">.Edu</span>.VN
               </span>
             </Link>
-            <p className="mt-3 text-sm text-muted-foreground">
-              Nền tảng giáo dục STEM & Robot mở cho trẻ em Việt Nam. Học đi đôi
-              với Làm — mỗi trẻ em là một nhà sáng tạo.
-            </p>
+            <p className="mt-3 text-sm text-muted-foreground">{t.gioiThieu}</p>
             <p className="mt-2 text-xs text-muted-foreground/60">
-              Khởi xướng bởi MakerViet &bull; ThingEdu &bull; Rogo
+              {t.khoiXuong} MakerViet &bull; ThingEdu &bull; Rogo
             </p>
           </div>
 
           {/* Links */}
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h3 className="mb-3 text-sm font-semibold">{title}</h3>
+          {t.cot.map(({ tieuDe, links }) => (
+            <div key={tieuDe}>
+              <h3 className="mb-3 text-sm font-semibold">{tieuDe}</h3>
               <ul className="space-y-2">
                 {links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.label}>
                     <Link
-                      href={link.href}
+                      href={link.route ? pathFor(link.route, locale) : (link.href ?? "")}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {link.label}
@@ -87,11 +59,9 @@ export function Footer({ locale }: { locale: Locale }) {
             >
               OpenSTEM Foundation
             </a>
-            . Mã nguồn mở — Giáo dục mở.
+            {t.banQuyen}
           </p>
-          <p className="text-xs text-muted-foreground/60">
-            Mục tiêu: 1 triệu trẻ em Việt Nam tiếp cận STEM & Robot
-          </p>
+          <p className="text-xs text-muted-foreground/60">{t.mucTieu}</p>
         </div>
       </div>
     </footer>

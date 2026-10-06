@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { SectionHeader } from "@/components/common/section-header";
 import { VideoHubContent } from "@/components/video/video-hub-content";
+import { localeOf } from "@/lib/i18n/params";
 
 export const metadata: Metadata = {
   title: "Video Hub",
@@ -9,7 +10,12 @@ export const metadata: Metadata = {
     "Video bài học STEM & Robot, phân loại theo ba nhịp Chơi, Làm, Chia sẻ.",
 };
 
-export default function VideoHubPage() {
+export default async function VideoHubPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const locale = await localeOf(params);
   return (
     <div className="py-16">
       <div className="mx-auto max-w-7xl px-4">
@@ -24,7 +30,7 @@ export default function VideoHubPage() {
             </div>
           }
         >
-          <VideoHubContent />
+          <VideoHubContent locale={locale} />
         </Suspense>
       </div>
     </div>

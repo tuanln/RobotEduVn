@@ -7,8 +7,9 @@ import { VideoCard } from "@/components/video/video-card";
 import { VideoFilter } from "@/components/video/video-filter";
 import { useSearchParams } from "next/navigation";
 import { normalizeNhipSlug } from "@/lib/content/nhip-slug";
+import type { Locale } from "@/lib/i18n/locales";
 
-export function VideoHubContent() {
+export function VideoHubContent({ locale }: { locale: Locale }) {
   const searchParams = useSearchParams();
   const rawStage = searchParams.get("stage");
   const initialStage: NhipSlug | "all" =
@@ -55,7 +56,7 @@ export function VideoHubContent() {
 
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((video) => (
-          <VideoCard key={video.id} video={video} />
+          <VideoCard key={video.id} video={video} locale={locale} />
         ))}
       </div>
 

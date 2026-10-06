@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { SectionHeader } from "@/components/common/section-header";
 import { VongLap } from "@/components/nhip/vong-lap";
 import { DocPapert } from "@/components/nhip/doc-papert";
-import { DEFAULT_LOCALE, isLocale, type Locale } from "@/lib/i18n/locales";
-import { pathFor } from "@/lib/i18n/routes";
+import type { Locale } from "@/lib/i18n/locales";
+import { localeOf } from "@/lib/i18n/params";
 import { TRIET_LY_EN } from "@/lib/content/triet-ly/en";
 import { TRIET_LY_VI } from "@/lib/content/triet-ly/vi";
 import type { TrietLyContent } from "@/lib/content/triet-ly/types";
-import { ogImages } from "@/lib/seo/metadata";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 
 function noiDung(locale: Locale): TrietLyContent {
   return locale === "en" ? TRIET_LY_EN : TRIET_LY_VI;
@@ -18,32 +18,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale: rawLocale } = await params;
-  const locale = isLocale(rawLocale) ? rawLocale : DEFAULT_LOCALE;
-  const { meta } = noiDung(locale);
-  return {
-    title: meta.title,
-    description: meta.description,
-    alternates: {
-      canonical: pathFor("philosophy", locale),
-      languages: {
-        vi: pathFor("philosophy", "vi"),
-        en: pathFor("philosophy", "en"),
-        "x-default": pathFor("philosophy", "vi"),
-      },
-    },
-    openGraph: {
-      type: "website",
-      locale: locale === "en" ? "en_US" : "vi_VN",
-      url: pathFor("philosophy", locale),
-      title: meta.title,
-      description: meta.description,
-      // N-01 vấn đề 2: trang này tự khai openGraph nên GHI ĐÈ toàn bộ
-      // đối tượng openGraph của layout cha (Next không trộn các trường
-      // lồng nhau) — phải tự mang theo images, không thì mất ảnh OG.
-      images: ogImages(meta.title),
-    },
-  };
+  const locale = await localeOf(params);
+  return pageMetadata("philosophy", locale, noiDung(locale).meta);
 }
 
 export default async function PhilosophyPage({
@@ -51,8 +27,7 @@ export default async function PhilosophyPage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale: rawLocale } = await params;
-  const locale = isLocale(rawLocale) ? rawLocale : DEFAULT_LOCALE;
+  const locale = await localeOf(params);
   const t = noiDung(locale);
 
   return (

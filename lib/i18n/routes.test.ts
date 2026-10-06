@@ -6,6 +6,7 @@ import {
   pathFor,
   ROUTES,
   routeKeyFromPath,
+  videoPath,
 } from "./routes";
 
 describe("ROUTES", () => {
@@ -111,5 +112,15 @@ describe("canonicalPathFromEn", () => {
 
   it("đường dẫn tiếng Anh lạ thì trả null", () => {
     expect(canonicalPathFromEn("/en/nothing-here")).toBeNull();
+  });
+
+  it("alternatePath hiểu trang video", () => {
+    expect(alternatePath("/video-hub/abc", "en")).toBe("/en/videos/abc");
+    expect(alternatePath("/en/videos/abc", "vi")).toBe("/video-hub/abc");
+  });
+
+  it("videoPath", () => {
+    expect(videoPath("abc", "vi")).toBe("/video-hub/abc");
+    expect(videoPath("abc", "en")).toBe("/en/videos/abc");
   });
 });

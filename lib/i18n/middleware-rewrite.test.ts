@@ -60,4 +60,20 @@ describe("rewriteTarget", () => {
     expect(rewriteTarget("/anh/hero.webp")).toBeNull();
     expect(rewriteTarget("/manifest.webmanifest")).toBeNull();
   });
+
+  it("trang video tiếng Anh viết lại về route video-hub", () => {
+    expect(rewriteTarget("/en/videos/mv-thingbot-kit-2026")).toBe(
+      "/en/video-hub/mv-thingbot-kit-2026",
+    );
+  });
+
+  it("đường dẫn video tiếng Việt giả dưới /en vẫn 404", () => {
+    expect(rewriteTarget("/en/video-hub/mv-thingbot-kit-2026")).toBe(
+      "/en/__khong-ton-tai__",
+    );
+  });
+
+  it("id video không được chứa dấu / (chặn /en/videos/a/b)", () => {
+    expect(rewriteTarget("/en/videos/a/b")).toBe("/en/__khong-ton-tai__");
+  });
 });

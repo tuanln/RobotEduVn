@@ -26,6 +26,20 @@ export const ROUTES = {
 
 export type RouteKey = keyof typeof ROUTES;
 
+/** Route động duy nhất cần dịch: trang một video. id không chứa "/". */
+const VIDEO = { vi: "/video-hub/", en: "/en/videos/" } as const;
+const ID_HOP_LE = /^[^/]+$/;
+
+export function videoPath(id: string, locale: Locale): string {
+  return `${VIDEO[locale]}${id}`;
+}
+
+function videoId(path: string, locale: Locale): string | null {
+  if (!path.startsWith(VIDEO[locale])) return null;
+  const id = path.slice(VIDEO[locale].length);
+  return ID_HOP_LE.test(id) ? id : null;
+}
+
 export function pathFor(key: RouteKey, locale: Locale): string {
   return ROUTES[key][locale];
 }
@@ -48,7 +62,9 @@ export function routeKeyFromPath(path: string): RouteKey | null {
 
 export function alternatePath(path: string, to: Locale): string | null {
   const key = routeKeyFromPath(path);
-  return key ? ROUTES[key][to] : null;
+  if (key) return ROUTES[key][to];
+  const id = videoId(tidy(path), "vi") ?? videoId(tidy(path), "en");
+  return id === null ? null : videoPath(id, to);
 }
 
 /** `/en/maker-village` → `/lang-maker`. Middleware dùng để viết lại đường dẫn. */
@@ -57,5 +73,6 @@ export function canonicalPathFromEn(enPath: string): string | null {
   for (const key of Object.keys(ROUTES) as RouteKey[]) {
     if (ROUTES[key].en === wanted) return ROUTES[key].vi;
   }
-  return null;
+  const id = videoId(wanted, "en");
+  return id === null ? null : videoPath(id, "vi");
 }

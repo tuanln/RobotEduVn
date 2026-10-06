@@ -4,6 +4,8 @@ import "../../globals.css";
 import { SITE } from "@/lib/site";
 import { JsonLd } from "@/components/common/json-ld";
 import { DEFAULT_LOCALE, LOCALES, isLocale } from "@/lib/i18n/locales";
+import { localeOf } from "@/lib/i18n/params";
+import { khung } from "@/lib/content/khung";
 import { ogImages, twitterImages } from "@/lib/seo/metadata";
 
 const nunito = Nunito({
@@ -16,46 +18,40 @@ export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE.url),
-  title: {
-    default: `${SITE.name} — ${SITE.tagline}`,
-    template: `%s | ${SITE.name}`,
-  },
-  description: SITE.description,
-  keywords: [
-    "STEM",
-    "Robot",
-    "giáo dục",
-    "trẻ em",
-    "Việt Nam",
-    "MakerViet",
-    "Làng Maker",
-    "Maker Hub",
-    "Chơi Làm Chia sẻ",
-    "Seymour Papert",
-    "học bằng làm",
-  ],
-  authors: [{ name: "Làng Maker" }],
-  openGraph: {
-    type: "website",
-    locale: "vi_VN",
-    url: SITE.url,
-    siteName: SITE.name,
-    title: `${SITE.name} — ${SITE.tagline}`,
-    description: SITE.description,
-    // N-01 vấn đề 1: khai tường minh thay vì trông cậy quy ước tệp
-    // opengraph-image.tsx tự kế thừa — gốc app/ không thuộc cây layout
-    // nào trong hai root layout, nên auto-injection không chạy tới.
-    images: ogImages(`${SITE.name} — ${SITE.tagline}`),
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `${SITE.name} — ${SITE.tagline}`,
-    description: SITE.description,
-    images: twitterImages(),
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const locale = await localeOf(params);
+  const { tagline, description } = khung(locale).site;
+  const title = `${SITE.name} — ${tagline}`;
+  return {
+    metadataBase: new URL(SITE.url),
+    title: { default: title, template: `%s | ${SITE.name}` },
+    description,
+    keywords: khung(locale).site.keywords,
+    authors: [{ name: "Làng Maker" }],
+    openGraph: {
+      type: "website",
+      locale: locale === "en" ? "en_US" : "vi_VN",
+      url: SITE.url,
+      siteName: SITE.name,
+      title,
+      description,
+      // N-01 vấn đề 1: khai tường minh thay vì trông cậy quy ước tệp
+      // opengraph-image.tsx tự kế thừa — gốc app/ không thuộc cây layout
+      // nào trong hai root layout, nên auto-injection không chạy tới.
+      images: ogImages(title),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: twitterImages(),
+    },
+  };
+}
 
 export default async function SiteRootLayout({
   children,

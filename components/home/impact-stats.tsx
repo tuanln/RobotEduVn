@@ -8,6 +8,8 @@ export interface ImpactStat {
   label: string;
   suffix?: string;
   note?: string;
+  /** "vi" khi note là dữ liệu tiếng Việt hiện trên trang tiếng Anh. */
+  noteLang?: "vi";
 }
 
 function useCountUp(end: number, duration = 2000) {
@@ -44,41 +46,63 @@ function useCountUp(end: number, duration = 2000) {
   return { count, ref };
 }
 
-function StatCard({ value, label, suffix, note }: ImpactStat) {
+function StatCard({
+  value,
+  label,
+  suffix,
+  note,
+  noteLang,
+  soLocale,
+}: ImpactStat & { soLocale: string }) {
   const { count, ref } = useCountUp(value);
 
   return (
     <div ref={ref} className="text-center">
       <div className="text-4xl font-extrabold text-primary md:text-5xl">
-        {count.toLocaleString("vi-VN")}
+        {count.toLocaleString(soLocale)}
         {suffix}
       </div>
       <p className="mt-2 text-sm font-medium">{label}</p>
       {note && (
-        <p className="mt-1 text-xs text-muted-foreground">{note}</p>
+        <p lang={noteLang} className="mt-1 text-xs text-muted-foreground">
+          {note}
+        </p>
       )}
     </div>
   );
 }
 
-export function ImpactStats({ stats }: { stats: ImpactStat[] }) {
+export function ImpactStats({
+  stats,
+  tieuDe,
+  phuDe,
+  mucTieuDam,
+  mucTieuThan,
+  locale,
+}: {
+  stats: ImpactStat[];
+  tieuDe: string;
+  phuDe: string;
+  mucTieuDam: string;
+  mucTieuThan: string;
+  locale: "vi" | "en";
+}) {
+  const soLocale = locale === "en" ? "en-US" : "vi-VN";
   return (
     <section className="border-y border-border bg-card py-20">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
-          title="Hiện Trạng Mạng Lưới"
-          subtitle="Những con số đang có thật — cập nhật theo dữ liệu của nền tảng"
+          title={tieuDe}
+          subtitle={phuDe}
         />
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((stat) => (
-            <StatCard key={stat.label} {...stat} />
+            <StatCard key={stat.label} {...stat} soLocale={soLocale} />
           ))}
         </div>
 
         <p className="mx-auto mt-12 max-w-2xl rounded-xl border border-dashed border-primary/40 bg-primary/5 px-6 py-4 text-center text-sm">
-          <span className="font-semibold">Mục tiêu 5 năm:</span> 1.000.000 trẻ
-          em Việt Nam được tiếp cận STEM &amp; Robot. Đây là đích đến, không
-          phải số đã đạt.
+          <span className="font-semibold">{mucTieuDam}</span> {mucTieuThan}
         </p>
       </div>
     </section>

@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import type { KhungContent } from "@/lib/content/khung/types";
 
 /**
  * Chuyển sáng/tối. Lựa chọn lưu ở localStorage; lần đầu vào thì theo cài đặt
@@ -20,7 +21,7 @@ function subscribe(onChange: () => void) {
 
 const isDarkNow = () => document.documentElement.classList.contains("dark");
 
-export function ThemeToggle() {
+export function ThemeToggle({ t }: { t: KhungContent["theme"] }) {
   // Máy chủ không biết theme của người dùng — coi như sáng, MutationObserver
   // sẽ đồng bộ ngay sau khi hydrate.
   const isDark = useSyncExternalStore(subscribe, isDarkNow, () => false);
@@ -35,7 +36,7 @@ export function ThemeToggle() {
     }
   }
 
-  const label = isDark ? "Chuyển sang giao diện sáng" : "Chuyển sang giao diện tối";
+  const label = isDark ? t.sangSang : t.sangToi;
 
   return (
     <Button variant="ghost" size="icon" onClick={toggle} aria-label={label} title={label}>

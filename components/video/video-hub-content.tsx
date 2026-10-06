@@ -7,8 +7,16 @@ import { VideoCard } from "@/components/video/video-card";
 import { VideoFilter } from "@/components/video/video-filter";
 import { useSearchParams } from "next/navigation";
 import { normalizeNhipSlug } from "@/lib/content/nhip-slug";
+import type { Locale } from "@/lib/i18n/locales";
+import type { VideoContent } from "@/lib/content/video/types";
 
-export function VideoHubContent() {
+export function VideoHubContent({
+  locale,
+  t,
+}: {
+  locale: Locale;
+  t: VideoContent;
+}) {
   const searchParams = useSearchParams();
   const rawStage = searchParams.get("stage");
   const initialStage: NhipSlug | "all" =
@@ -51,18 +59,21 @@ export function VideoHubContent() {
         searchQuery={searchQuery}
         onStageChange={setSelectedStage}
         onSearchChange={setSearchQuery}
+        locale={locale}
+        tatCa={t.tatCa}
+        timKiem={t.timKiem}
       />
 
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((video) => (
-          <VideoCard key={video.id} video={video} />
+          <VideoCard key={video.id} video={video} locale={locale} tuoi={t.tuoi} />
         ))}
       </div>
 
       {filtered.length === 0 && (
         <div className="py-20 text-center">
           <p className="text-lg text-muted-foreground">
-            Không tìm thấy video nào.
+            {t.khongThay}
           </p>
           <button
             onClick={() => {
@@ -71,7 +82,7 @@ export function VideoHubContent() {
             }}
             className="mt-2 text-sm text-primary hover:underline"
           >
-            Xoá bộ lọc
+            {t.xoaLoc}
           </button>
         </div>
       )}

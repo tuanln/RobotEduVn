@@ -1,8 +1,17 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import type { TrangChuContent } from "@/lib/content/trang-chu/types";
+import type { Locale } from "@/lib/i18n/locales";
+import { pathFor } from "@/lib/i18n/routes";
 
-export function CTASection() {
+export function CTASection({
+  t,
+  locale,
+}: {
+  t: TrangChuContent["cta"];
+  locale: Locale;
+}) {
   return (
     <section className="relative overflow-hidden py-20">
       <div className="absolute inset-0 -z-10">
@@ -10,20 +19,20 @@ export function CTASection() {
       </div>
       <div className="mx-auto max-w-3xl px-4 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">
-          Sẵn Sàng Bắt Đầu Hành Trình STEM?
+          {t.tieuDe}
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          Từ 4 tuổi đã có thể bắt đầu — bắt đầu từ nhịp Chơi, hoàn toàn miễn phí.
+          {t.moTa}
         </p>
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Button size="lg" asChild>
-            <Link href="/hanh-trinh">
-              Xem Cách Học
+            <Link href={pathFor("howWeLearn", locale)}>
+              {t.nutCachHoc}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <Link href="/cong-dong/maker-hub">Tìm Maker Hub Gần Bạn</Link>
+            <Link href={pathFor("makerHubs", locale)}>{t.nutHub}</Link>
           </Button>
         </div>
       </div>

@@ -26,6 +26,20 @@ export const ROUTES = {
 
 export type RouteKey = keyof typeof ROUTES;
 
+/** Route động duy nhất cần dịch: trang một video. id không chứa "/". */
+const VIDEO = { vi: "/video-hub/", en: "/en/videos/" } as const;
+const ID_HOP_LE = /^[^/]+$/;
+
+export function videoPath(id: string, locale: Locale): string {
+  return `${VIDEO[locale]}${id}`;
+}
+
+function videoId(path: string, locale: Locale): string | null {
+  if (!path.startsWith(VIDEO[locale])) return null;
+  const id = path.slice(VIDEO[locale].length);
+  return ID_HOP_LE.test(id) ? id : null;
+}
+
 export function pathFor(key: RouteKey, locale: Locale): string {
   return ROUTES[key][locale];
 }
@@ -46,9 +60,34 @@ export function routeKeyFromPath(path: string): RouteKey | null {
   return null;
 }
 
+/**
+ * Đường dẫn nội bộ (sau middleware) → đường dẫn công khai. Trang tĩnh được
+ * prerender ở đường dẫn nội bộ, nên lúc render phía server `usePathname()`
+ * thấy `/en/cong-cu` hoặc `/vi/cong-cu`, còn trình duyệt thấy `/en/tools`
+ * hoặc `/cong-cu`. Đưa cả hai về một dạng để server và client ra cùng href
+ * — nếu không, nút chuyển ngôn ngữ render <button disabled> ở server rồi
+ * <a> ở client, React báo lỗi hydrate và dựng lại cả cây.
+ */
+export function publicPath(path: string): string {
+  const p = tidy(path);
+  if (p === "/vi") return "/";
+  if (p.startsWith("/vi/")) return p.slice(3);
+  if (p.startsWith("/en/") && routeKeyFromPath(p) === null) {
+    const vi = p.slice(3);
+    const key = routeKeyFromPath(vi);
+    if (key) return ROUTES[key].en;
+    const id = videoId(vi, "vi");
+    if (id !== null) return videoPath(id, "en");
+  }
+  return p;
+}
+
 export function alternatePath(path: string, to: Locale): string | null {
-  const key = routeKeyFromPath(path);
-  return key ? ROUTES[key][to] : null;
+  const pub = publicPath(path);
+  const key = routeKeyFromPath(pub);
+  if (key) return ROUTES[key][to];
+  const id = videoId(pub, "vi") ?? videoId(pub, "en");
+  return id === null ? null : videoPath(id, to);
 }
 
 /** `/en/maker-village` → `/lang-maker`. Middleware dùng để viết lại đường dẫn. */
@@ -57,5 +96,6 @@ export function canonicalPathFromEn(enPath: string): string | null {
   for (const key of Object.keys(ROUTES) as RouteKey[]) {
     if (ROUTES[key].en === wanted) return ROUTES[key].vi;
   }
-  return null;
+  const id = videoId(wanted, "en");
+  return id === null ? null : videoPath(id, "vi");
 }

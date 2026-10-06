@@ -1,7 +1,8 @@
 import type { Locale } from "@/lib/i18n/locales";
 
 /**
- * Tám thuật ngữ làng, chốt cách dịch một lần cho cả site (spec 2026-09-23 mục 2.6).
+ * Chín thuật ngữ làng, chốt cách dịch một lần cho cả site (spec 2026-09-23 mục 2.6,
+ * cộng "Bô Lão" do ban điều phối chốt 2026-09-19).
  *
  * Chủ dự án chốt: GIỮ tên tiếng Việt, kèm chú giải tiếng Anh. Không dịch hẳn
  * sang tiếng Anh (mất bản sắc, lại trùng từ vựng đã mòn ở nước ngoài) và không
@@ -26,7 +27,12 @@ export const GLOSSARY = {
     vi: "Nghệ nhân",
     en: "Artisan — a trade master from outside the village; stands beside the ladder, not on it",
   },
-  baNhip: { vi: "Chơi – Làm – Chia sẻ", en: "Play – Make – Share" },
+  boLao: {
+    vi: "Bô Lão",
+    en: "Elder Counsel — advises the village, certifies no one",
+  },
+  // Viết khớp triet-ly/en.ts (kế hoạch 2 chốt: glossary.ts DÙNG, không bỏ).
+  baNhip: { vi: "Chơi – Làm – Chia sẻ", en: "Play, Make, Share" },
   makerHub: { vi: "Maker Hub", en: "Maker Hub" },
 } as const satisfies Record<string, Record<Locale, string>>;
 

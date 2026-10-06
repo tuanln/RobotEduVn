@@ -13,4 +13,17 @@ import type { RouteKey } from "./routes";
  */
 export const TRANSLATED_ROUTES: ReadonlySet<RouteKey> = new Set<RouteKey>([
   "philosophy",
+  "home",
+  "howWeLearn",
+  "nhipPlay",
+  "nhipMake",
+  "nhipShare",
+  "tools",
+  "forMentors",
+  "community",
+  "makerHubs",
+  "projects",
+  "magazine",
+  "videos",
+  "makerVillage",
 ]);

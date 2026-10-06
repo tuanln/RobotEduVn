@@ -28,3 +28,10 @@ export function normalizeNhipSlug(
   }
   return SLUG_CU[key] ?? NHIP_SLUGS[0];
 }
+
+/** Ánh xạ slug nhịp sang khoá route — nguồn sự thật là `lib/i18n/routes.ts`. */
+export const NHIP_ROUTE_KEY = {
+  choi: "nhipPlay",
+  lam: "nhipMake",
+  "chia-se": "nhipShare",
+} as const satisfies Record<NhipSlug, string>;

@@ -4,20 +4,20 @@ import type { DocPapertContent } from "./types";
 export const DOC_PAPERT_EN: DocPapertContent = {
   heading: "Read Papert",
   introPrefix:
-    "The whole way of learning at Làng Maker traces back to a 1980 book (2nd edition 1993) by Seymour Papert: ",
+    "The whole way of learning at Làng Maker traces back to a 1980 book (second edition, 1993) by Seymour Papert: ",
   bookTitle: "Mindstorms — Children, Computers, and Powerful Ideas",
   introSuffix:
-    ". MIT Media Lab has posted the full text publicly, free of charge, with the Papert family's permission.",
+    ". The MIT Media Lab has published the full text, free of charge, with the Papert family’s permission.",
   downloadLabel: "Download the original",
   downloadSize: "(PDF, 60 MB)",
   readOnlineLabel: "Read online, no download needed",
   officialSourceLabel: "Official source:",
-  officialSourceLinkText: "MIT Media Lab's publication page",
-  communityBold: "A Vietnamese translation is being crowd-translated",
-  communityMiddle: " by the community, with a ",
+  officialSourceLinkText: "MIT Media Lab’s publication page",
+  communityBold: "A Vietnamese translation is under way",
+  communityMiddle: " in the community, with a ",
   communityBookTitle: "Làng Maker Story",
   communityAfter:
-    " after every chapter — telling how ten years of Maker Việt have lived out that exact chapter's ideas.",
+    " after every chapter — telling how ten years of Maker Việt have lived out that exact chapter’s ideas.",
   notifyLinkText: "Get notified when the translation is ready",
   links: {
     pdfUrl: "https://dam-prod.media.mit.edu/x/2025/01/27/Mindstorms.pdf",

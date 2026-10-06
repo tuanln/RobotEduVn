@@ -6,15 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChatMessage } from "@/lib/types";
+import type { KhungContent } from "@/lib/content/khung/types";
 
-const SUGGESTED_QUESTIONS = [
-  "Con tôi 8 tuổi thì bắt đầu thế nào?",
-  "Maker Hub gần nhất ở đâu?",
-  "Làm sao để đăng ký học STEM?",
-  "Triết lý giáo dục của Làng Maker là gì?",
-];
-
-export function ChatWidget() {
+/** Chữ nhận qua props từ layout (server) — client không phải nạp cả hai bản. */
+export function ChatWidget({ t }: { t: KhungContent["chat"] }) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
@@ -68,8 +63,7 @@ export function ChatWidget() {
         ...prev,
         {
           role: "assistant",
-          content:
-            "Xin lỗi, có lỗi kết nối. Vui lòng thử lại hoặc liên hệ lang@makerviet.org.",
+          content: t.loiKetNoi,
         },
       ]);
     } finally {
@@ -84,7 +78,7 @@ export function ChatWidget() {
         <button
           onClick={() => setIsOpen(true)}
           className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-lg shadow-primary/25 transition-transform hover:scale-110"
-          aria-label="Mở chat"
+          aria-label={t.moChat}
         >
           <MessageCircle className="h-6 w-6 text-primary-foreground" />
         </button>
@@ -100,10 +94,8 @@ export function ChatWidget() {
                 AI
               </div>
               <div>
-                <h3 className="text-sm font-semibold">Neo Trẻ AI</h3>
-                <p className="text-xs text-muted-foreground">
-                  Trợ lý STEM của bạn
-                </p>
+                <h3 className="text-sm font-semibold">{t.ten}</h3>
+                <p className="text-xs text-muted-foreground">{t.phuDe}</p>
               </div>
             </div>
             <Button
@@ -111,6 +103,7 @@ export function ChatWidget() {
               size="icon"
               className="h-8 w-8"
               onClick={() => setIsOpen(false)}
+              aria-label={t.dongChat}
             >
               <X className="h-4 w-4" />
             </Button>
@@ -121,19 +114,14 @@ export function ChatWidget() {
             {messages.length === 0 && (
               <div className="space-y-3">
                 <div className="rounded-lg bg-muted/50 p-3 text-sm">
-                  <p className="font-medium">
-                    Xin chào! Mình là Neo Trẻ AI 🤖
-                  </p>
-                  <p className="mt-1 text-muted-foreground">
-                    Hỏi mình bất cứ điều gì về STEM, Robot, cách học ở Làng
-                    Maker, hay cộng đồng Maker nhé!
-                  </p>
+                  <p className="font-medium">{t.chao}</p>
+                  <p className="mt-1 text-muted-foreground">{t.moiHoi}</p>
                 </div>
                 <div className="space-y-2">
                   <p className="text-xs font-medium text-muted-foreground">
-                    Câu hỏi gợi ý:
+                    {t.goiYTieuDe}
                   </p>
-                  {SUGGESTED_QUESTIONS.map((q) => (
+                  {t.goiY.map((q) => (
                     <button
                       key={q}
                       onClick={() => sendMessage(q)}
@@ -167,7 +155,7 @@ export function ChatWidget() {
                 <div className="flex justify-start">
                   <div className="flex items-center gap-2 rounded-lg bg-muted/50 px-3 py-2 text-sm text-muted-foreground">
                     <Loader2 className="h-3 w-3 animate-spin" />
-                    Đang suy nghĩ...
+                    {t.dangNghi}
                   </div>
                 </div>
               )}
@@ -187,7 +175,7 @@ export function ChatWidget() {
                 ref={inputRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Nhập câu hỏi..."
+                placeholder={t.placeholder}
                 disabled={isLoading}
                 className="flex-1 text-sm"
               />
@@ -196,6 +184,7 @@ export function ChatWidget() {
                 size="icon"
                 disabled={!input.trim() || isLoading}
                 className="h-9 w-9 flex-shrink-0"
+                aria-label={t.gui}
               >
                 <Send className="h-4 w-4" />
               </Button>

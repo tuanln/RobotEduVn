@@ -2,17 +2,32 @@ import Link from "next/link";
 import Image from "next/image";
 import { VideoItem } from "@/lib/types";
 import { StageBadge } from "@/components/common/stage-badge";
+import type { Locale } from "@/lib/i18n/locales";
+import { videoPath } from "@/lib/i18n/routes";
+import { nhanTuoi } from "@/lib/content/video";
 
-export function VideoCard({ video }: { video: VideoItem }) {
+export function VideoCard({
+  video,
+  locale,
+  tuoi,
+}: {
+  video: VideoItem;
+  locale: Locale;
+  /** Khuôn nhãn độ tuổi đã dịch, xem VideoContent.tuoi. */
+  tuoi: string;
+}) {
+  // Tiêu đề video là dữ liệu YouTube tiếng Việt — trang en đánh dấu lang="vi".
+  const duLieu = locale === "en" ? "vi" : undefined;
   return (
     <Link
-      href={`/video-hub/${video.id}`}
+      href={videoPath(video.id, locale)}
       className="group overflow-hidden rounded-xl border border-border bg-card transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
     >
       <div className="relative aspect-video overflow-hidden">
         <Image
           src={video.thumbnail || `/api/og?title=${encodeURIComponent(video.title)}`}
           alt={video.title}
+          lang={duLieu}
           fill
           className="object-cover transition-transform group-hover:scale-105"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -25,13 +40,16 @@ export function VideoCard({ video }: { video: VideoItem }) {
         </div>
       </div>
       <div className="p-4">
-        <h3 className="line-clamp-2 text-sm font-semibold leading-snug group-hover:text-primary">
+        <h3
+          lang={duLieu}
+          className="line-clamp-2 text-sm font-semibold leading-snug group-hover:text-primary"
+        >
           {video.title}
         </h3>
         <div className="mt-2 flex items-center gap-2">
-          <StageBadge stage={video.stage} />
+          <StageBadge stage={video.stage} locale={locale} />
           <span className="text-xs text-muted-foreground">
-            {video.ageRange} tuổi
+            {nhanTuoi(tuoi, video.ageRange, locale)}
           </span>
         </div>
       </div>

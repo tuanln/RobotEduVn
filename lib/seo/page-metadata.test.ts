@@ -1,5 +1,11 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { pageMetadata } from "./page-metadata";
+
+// Sau kế hoạch 2 mọi route đều đã dịch — giả lập tập chỉ có philosophy để
+// vẫn thử được nhánh "route chưa dịch thì không khai hreflang".
+vi.mock("@/lib/i18n/translated", () => ({
+  TRANSLATED_ROUTES: new Set(["philosophy"]),
+}));
 
 const META = { title: "T", description: "D" };
 
@@ -24,12 +30,8 @@ describe("pageMetadata", () => {
     );
   });
 
-  // Task 6 thêm magazine vào TRANSLATED_ROUTES; khi đó xoá ca này — kế
-  // hoạch 2 dịch hết mọi route nên không còn route chưa dịch để thử.
   it("route chưa dịch thì không khai hreflang", () => {
-    expect(
-      pageMetadata("magazine", "vi", META).alternates?.languages,
-    ).toBeUndefined();
+    expect(pageMetadata("tools", "vi", META).alternates?.languages).toBeUndefined();
   });
 
   it("luôn mang ảnh OG — openGraph của trang ghi đè layout, không trộn", () => {

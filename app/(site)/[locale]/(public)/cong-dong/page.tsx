@@ -2,73 +2,41 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionHeader } from "@/components/common/section-header";
 import { getHubs, getVideos } from "@/lib/sheets";
+import { congDong } from "@/lib/content/cong-dong";
+import { localeOf } from "@/lib/i18n/params";
+import { pathFor } from "@/lib/i18n/routes";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 
-export const metadata: Metadata = {
-  title: "Cộng Đồng",
-  description:
-    "Cộng đồng Làng Maker — Dự án nổi bật, Tạp chí MakerViet, Mạng lưới Maker Hub, và kết nối STEM.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const locale = await localeOf(params);
+  return pageMetadata("community", locale, congDong(locale).tongQuan.meta);
+}
 
-const sections = [
-  {
-    icon: "🚀",
-    title: "Dự Án Nổi Bật",
-    desc: "Các dự án STEM từ cộng đồng: xe tự hành, robot, IoT và nhiều hơn.",
-    href: "/cong-dong/du-an",
-    color: "border-amber-500/30 bg-amber-500/5",
-  },
-  {
-    icon: "📰",
-    title: "Tạp Chí MakerViet",
-    desc: "Bài viết, hướng dẫn và tin tức hàng tháng từ cộng đồng Maker.",
-    href: "/cong-dong/tap-chi",
-    color: "border-emerald-500/30 bg-emerald-500/5",
-  },
-  {
-    icon: "📍",
-    title: "Mạng Lưới Maker Hub",
-    desc: "Tìm Maker Hub (Làng Maker) gần bạn — tại FPT Shop và các địa điểm đối tác.",
-    href: "/cong-dong/maker-hub",
-    color: "border-blue-500/30 bg-blue-500/5",
-  },
-];
-
-const externalLinks = [
-  {
-    name: "Facebook: Bình Dân Học STEM & Robot",
-    url: "https://facebook.com/groups/binhdanhocSTEM",
-    desc: "Nhóm Facebook cho phụ huynh và học sinh",
-  },
-  {
-    name: "YouTube: MakerViet",
-    url: "https://youtube.com/@makerviet",
-    desc: "Video bài học và dự án",
-  },
-  {
-    name: "GitHub: MakerViet",
-    url: "https://github.com/makerviet",
-    desc: "Mã nguồn mở các dự án",
-  },
-];
-
-export default async function CommunityPage() {
+export default async function CommunityPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const locale = await localeOf(params);
+  const t = congDong(locale).tongQuan;
   const [hubs, videos] = await Promise.all([getHubs(), getVideos()]);
   const cities = new Set(hubs.map((h) => h.city).filter(Boolean));
 
   return (
     <div className="py-16">
       <div className="mx-auto max-w-5xl px-4">
-        <SectionHeader
-          title="Cộng Đồng Làng Maker"
-          subtitle="Kết nối — Chia sẻ — Cùng phát triển"
-        />
+        <SectionHeader title={t.tieuDe} subtitle={t.phuDe} />
 
         {/* Số liệu lấy từ dữ liệu thật, không phải con số ước lượng */}
         <div className="mb-12 grid grid-cols-3 gap-4 text-center">
           {[
-            { value: String(hubs.length), label: "Maker Hub" },
-            { value: String(cities.size), label: "Tỉnh thành" },
-            { value: String(videos.length), label: "Video bài học" },
+            { value: String(hubs.length), label: t.soLieu.hub },
+            { value: String(cities.size), label: t.soLieu.tinh },
+            { value: String(videos.length), label: t.soLieu.video },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -86,10 +54,10 @@ export default async function CommunityPage() {
 
         {/* Sections */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {sections.map((section) => (
+          {t.muc.map((section) => (
             <Link
-              key={section.href}
-              href={section.href}
+              key={section.route}
+              href={pathFor(section.route, locale)}
               className={`rounded-xl border ${section.color} p-6 transition-all hover:scale-[1.02] hover:shadow-lg`}
             >
               <span className="text-4xl">{section.icon}</span>
@@ -103,9 +71,9 @@ export default async function CommunityPage() {
 
         {/* External */}
         <div className="mt-12 rounded-2xl border border-border bg-card p-8">
-          <h2 className="text-xl font-bold">Kết Nối Cộng Đồng</h2>
+          <h2 className="text-xl font-bold">{t.ketNoi}</h2>
           <div className="mt-4 space-y-3">
-            {externalLinks.map((link) => (
+            {t.linkNgoai.map((link) => (
               <a
                 key={link.url}
                 href={link.url}

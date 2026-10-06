@@ -20,4 +20,8 @@ export const TRANSLATED_ROUTES: ReadonlySet<RouteKey> = new Set<RouteKey>([
   "nhipShare",
   "tools",
   "forMentors",
+  "community",
+  "makerHubs",
+  "projects",
+  "magazine",
 ]);

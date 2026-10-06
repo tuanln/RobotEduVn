@@ -2,62 +2,41 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/common/section-header";
+import { choMentor } from "@/lib/content/cho-mentor";
+import { localeOf } from "@/lib/i18n/params";
+import { pathFor } from "@/lib/i18n/routes";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 
-export const metadata: Metadata = {
-  title: "Cho Mentor & Giáo Viên",
-  description:
-    "Tài liệu giáo trình, hướng dẫn giảng dạy, và cộng đồng mentor cho giáo viên STEM.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const locale = await localeOf(params);
+  return pageMetadata("forMentors", locale, choMentor(locale).meta);
+}
 
-const resources = [
-  {
-    icon: "📚",
-    title: "Giáo Trình Ba Nhịp",
-    desc: "Giáo trình cho từng nhịp Chơi, Làm, Chia sẻ. Có thể tải về và in.",
-    link: "/hanh-trinh",
-  },
-  {
-    icon: "🎬",
-    title: "Video Hướng Dẫn",
-    desc: "Các video bài giảng mẫu, hướng dẫn sử dụng công cụ và thiết bị giáo dục.",
-    link: "/video-hub",
-  },
-  {
-    icon: "🛠️",
-    title: "Công Cụ & Thiết Bị",
-    desc: "Hướng dẫn sử dụng GCompris, KTurtle, Python, ThingBot, NEO One trong lớp học.",
-    link: "/cong-cu",
-  },
-  {
-    icon: "🏠",
-    title: "Mở Maker Hub",
-    desc: "Hướng dẫn mở và vận hành một Maker Hub (Làng Maker) tại địa phương. Từ không gian đến giáo trình.",
-    link: "/cong-dong/maker-hub",
-  },
-];
+export default async function MentorPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const locale = await localeOf(params);
+  const t = choMentor(locale);
 
-const steps = [
-  "Đăng ký tham gia cộng đồng Mentor qua email lang@makerviet.org",
-  "Nhận tài liệu giáo trình và hướng dẫn sử dụng công cụ",
-  "Tham gia tập huấn online/offline định kỳ hằng tháng",
-  "Tổ chức lớp học/sinh hoạt tại trường hoặc Maker Hub",
-  "Chia sẻ kinh nghiệm và góp ý cải tiến giáo trình",
-];
-
-export default function MentorPage() {
   return (
     <div className="py-16">
       <div className="mx-auto max-w-5xl px-4">
         <SectionHeader
-          title="Cho Mentor & Giáo Viên"
-          subtitle="Tài liệu, công cụ và cộng đồng hỗ trợ giáo viên dạy STEM & Robot"
+          title={t.tieuDe}
+          subtitle={t.phuDe}
         />
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {resources.map((res) => (
+          {t.taiNguyen.map((res) => (
             <Link
               key={res.title}
-              href={res.link}
+              href={pathFor(res.route, locale)}
               className="rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/40 hover:bg-card"
             >
               <span className="text-4xl">{res.icon}</span>
@@ -68,9 +47,9 @@ export default function MentorPage() {
         </div>
 
         <div className="mt-12 rounded-2xl border border-border bg-card p-8">
-          <h2 className="text-2xl font-bold">Cách Trở Thành Mentor</h2>
+          <h2 className="text-2xl font-bold">{t.cachTroThanh}</h2>
           <ol className="mt-6 space-y-4">
-            {steps.map((step, i) => (
+            {t.buoc.map((step, i) => (
               <li key={i} className="flex items-start gap-4">
                 <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary/15 text-sm font-bold text-primary">
                   {i + 1}
@@ -82,7 +61,7 @@ export default function MentorPage() {
           <div className="mt-8 text-center">
             <Button size="lg" asChild>
               <a href="mailto:lang@makerviet.org">
-                Liên Hệ Đăng Ký Mentor
+                {t.nutLienHe}
               </a>
             </Button>
           </div>

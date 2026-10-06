@@ -1,19 +1,13 @@
 import Link from "next/link";
 import { NHIP } from "@/lib/content/nhip";
-import type { NhipSlug } from "@/lib/content/nhip-slug";
+import { NHIP_ROUTE_KEY } from "@/lib/content/nhip-slug";
 import { NHIP_NHAN_EN } from "@/lib/content/nhip-nhan/en";
 import { NHIP_NHAN_VI } from "@/lib/content/nhip-nhan/vi";
 import { VONG_LAP_NHAN_EN } from "@/lib/content/vong-lap-nhan/en";
 import { VONG_LAP_NHAN_VI } from "@/lib/content/vong-lap-nhan/vi";
 import type { Locale } from "@/lib/i18n/locales";
-import { pathFor, type RouteKey } from "@/lib/i18n/routes";
+import { pathFor } from "@/lib/i18n/routes";
 
-/** Ánh xạ slug nhịp sang khoá route — nguồn sự thật là `lib/i18n/routes.ts`. */
-const NHIP_ROUTE_KEY: Record<NhipSlug, RouteKey> = {
-  choi: "nhipPlay",
-  lam: "nhipMake",
-  "chia-se": "nhipShare",
-};
 
 function nhanCho(locale: Locale) {
   return locale === "en" ? NHIP_NHAN_EN : NHIP_NHAN_VI;

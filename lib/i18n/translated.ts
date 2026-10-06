@@ -13,4 +13,5 @@ import type { RouteKey } from "./routes";
  */
 export const TRANSLATED_ROUTES: ReadonlySet<RouteKey> = new Set<RouteKey>([
   "philosophy",
+  "home",
 ]);

@@ -24,4 +24,5 @@ export const TRANSLATED_ROUTES: ReadonlySet<RouteKey> = new Set<RouteKey>([
   "makerHubs",
   "projects",
   "magazine",
+  "videos",
 ]);

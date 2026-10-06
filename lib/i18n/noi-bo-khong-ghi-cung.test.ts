@@ -22,9 +22,7 @@ const FILES = [...tsx("app/(site)"), ...tsx("components")].filter(
   (f) => !f.includes("dashboard"),
 );
 
-// Bật ở Task 9 của kế hoạch 2 — tới lúc đó các trang chưa chuyển sang
-// pathFor() nên test này đỏ theo đúng dự kiến.
-describe.skip("không ghi cứng đường dẫn tiếng Việt trong href", () => {
+describe("không ghi cứng đường dẫn tiếng Việt trong href", () => {
   for (const f of FILES) {
     it(f, () => {
       const src = readFileSync(f, "utf8");

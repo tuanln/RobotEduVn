@@ -77,7 +77,7 @@ export default async function VideoDetailPage({
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Main */}
           <div className="lg:col-span-2">
-            <VideoPlayer youtubeId={video.youtubeId} title={video.title} />
+            <VideoPlayer youtubeId={video.youtubeId} title={video.title} lang={duLieu} />
             <h1 lang={duLieu} className="mt-6 text-2xl font-bold">
               {video.title}
             </h1>

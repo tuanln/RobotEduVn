@@ -60,10 +60,33 @@ export function routeKeyFromPath(path: string): RouteKey | null {
   return null;
 }
 
+/**
+ * Đường dẫn nội bộ (sau middleware) → đường dẫn công khai. Trang tĩnh được
+ * prerender ở đường dẫn nội bộ, nên lúc render phía server `usePathname()`
+ * thấy `/en/cong-cu` hoặc `/vi/cong-cu`, còn trình duyệt thấy `/en/tools`
+ * hoặc `/cong-cu`. Đưa cả hai về một dạng để server và client ra cùng href
+ * — nếu không, nút chuyển ngôn ngữ render <button disabled> ở server rồi
+ * <a> ở client, React báo lỗi hydrate và dựng lại cả cây.
+ */
+export function publicPath(path: string): string {
+  const p = tidy(path);
+  if (p === "/vi") return "/";
+  if (p.startsWith("/vi/")) return p.slice(3);
+  if (p.startsWith("/en/") && routeKeyFromPath(p) === null) {
+    const vi = p.slice(3);
+    const key = routeKeyFromPath(vi);
+    if (key) return ROUTES[key].en;
+    const id = videoId(vi, "vi");
+    if (id !== null) return videoPath(id, "en");
+  }
+  return p;
+}
+
 export function alternatePath(path: string, to: Locale): string | null {
-  const key = routeKeyFromPath(path);
+  const pub = publicPath(path);
+  const key = routeKeyFromPath(pub);
   if (key) return ROUTES[key][to];
-  const id = videoId(tidy(path), "vi") ?? videoId(tidy(path), "en");
+  const id = videoId(pub, "vi") ?? videoId(pub, "en");
   return id === null ? null : videoPath(id, to);
 }
 

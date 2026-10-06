@@ -13,7 +13,7 @@ export interface LinkKhung {
  */
 export interface KhungContent {
   /** Thay SITE.tagline / SITE.description trong metadata gốc. */
-  site: { tagline: string; description: string };
+  site: { tagline: string; description: string; keywords: string[] };
   skipLink: string;
   footer: {
     gioiThieu: string;

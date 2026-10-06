@@ -9,6 +9,20 @@ export const KHUNG_EN: KhungContent = {
     tagline: "Open STEM & Robotics Education",
     description:
       "An open STEM and robotics platform for Vietnamese children. Learning by making — a three-beat loop of Play, Make, Share for ages 4 to 18, rooted in Seymour Papert’s thinking.",
+    keywords: [
+      "STEM",
+      "robotics",
+      "education",
+      "children",
+      "Vietnam",
+      "MakerViet",
+      "Làng Maker",
+      "Maker Village",
+      "Maker Hub",
+      "Play Make Share",
+      "Seymour Papert",
+      "learning by making",
+    ],
   },
   skipLink: "Skip to main content",
   footer: {

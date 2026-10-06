@@ -6,6 +6,19 @@ export const KHUNG_VI: KhungContent = {
     tagline: "Giáo Dục STEM & Robot Mở",
     description:
       "Nền tảng giáo dục STEM & Robot mở cho trẻ em Việt Nam. Học đi đôi với Làm — vòng lặp ba nhịp Chơi, Làm, Chia sẻ cho trẻ 4 đến 18 tuổi, theo triết lý Seymour Papert.",
+    keywords: [
+      "STEM",
+      "Robot",
+      "giáo dục",
+      "trẻ em",
+      "Việt Nam",
+      "MakerViet",
+      "Làng Maker",
+      "Maker Hub",
+      "Chơi Làm Chia sẻ",
+      "Seymour Papert",
+      "học bằng làm",
+    ],
   },
   skipLink: "Bỏ qua menu, tới nội dung chính",
   footer: {

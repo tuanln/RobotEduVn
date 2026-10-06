@@ -2,13 +2,23 @@
 
 import { useState } from "react";
 
-export function VideoPlayer({ youtubeId, title }: { youtubeId: string; title: string }) {
+/** `lang` = "vi" khi tiêu đề video tiếng Việt hiện trên trang tiếng Anh. */
+export function VideoPlayer({
+  youtubeId,
+  title,
+  lang,
+}: {
+  youtubeId: string;
+  title: string;
+  lang?: "vi";
+}) {
   const [loaded, setLoaded] = useState(false);
 
   if (!loaded) {
     return (
       <button
         onClick={() => setLoaded(true)}
+        lang={lang}
         className="group relative aspect-video w-full overflow-hidden rounded-xl bg-card"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -31,6 +41,7 @@ export function VideoPlayer({ youtubeId, title }: { youtubeId: string; title: st
       <iframe
         src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`}
         title={title}
+        lang={lang}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         className="h-full w-full"

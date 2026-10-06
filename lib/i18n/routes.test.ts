@@ -6,6 +6,7 @@ import {
   pathFor,
   ROUTES,
   routeKeyFromPath,
+  publicPath,
   videoPath,
 } from "./routes";
 
@@ -122,5 +123,28 @@ describe("canonicalPathFromEn", () => {
   it("videoPath", () => {
     expect(videoPath("abc", "vi")).toBe("/video-hub/abc");
     expect(videoPath("abc", "en")).toBe("/en/videos/abc");
+  });
+
+  it("publicPath: đường dẫn nội bộ lúc prerender → đường dẫn công khai", () => {
+    // Trang tĩnh được prerender ở đường dẫn nội bộ sau middleware, nên
+    // usePathname() phía server thấy /en/cong-cu thay vì /en/tools.
+    expect(publicPath("/vi")).toBe("/");
+    expect(publicPath("/vi/cong-cu")).toBe("/cong-cu");
+    expect(publicPath("/en/cong-cu")).toBe("/en/tools");
+    expect(publicPath("/en/hanh-trinh/lam")).toBe("/en/how-we-learn/make");
+    expect(publicPath("/en/video-hub/abc")).toBe("/en/videos/abc");
+  });
+
+  it("publicPath giữ nguyên đường dẫn đã công khai", () => {
+    expect(publicPath("/en/tools")).toBe("/en/tools");
+    expect(publicPath("/cong-cu")).toBe("/cong-cu");
+    expect(publicPath("/en")).toBe("/en");
+    expect(publicPath("/")).toBe("/");
+  });
+
+  it("alternatePath đọc được đường dẫn nội bộ — server và client ra cùng href", () => {
+    expect(alternatePath("/en/cong-cu", "vi")).toBe("/cong-cu");
+    expect(alternatePath("/vi/cong-cu", "en")).toBe("/en/tools");
+    expect(alternatePath("/vi", "en")).toBe("/en");
   });
 });

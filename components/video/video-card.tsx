@@ -27,6 +27,7 @@ export function VideoCard({
         <Image
           src={video.thumbnail || `/api/og?title=${encodeURIComponent(video.title)}`}
           alt={video.title}
+          lang={duLieu}
           fill
           className="object-cover transition-transform group-hover:scale-105"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

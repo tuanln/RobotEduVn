@@ -65,9 +65,28 @@ chứa tên riêng và thuật ngữ làng; KHÔNG thêm từ thường.
    có "Loading videos…" — script không thấy thẻ video ở trang danh sách; thẻ được quét qua
    trang một video.
 
+**Sau hai đợt rà độc lập (code + ngôn ngữ), đã sửa thêm:**
+- **Nút chuyển ngôn ngữ sai trong HTML server ở MỌI trang tĩnh** (có từ kế hoạch 1):
+  prerender chạy ở đường dẫn nội bộ nên `usePathname()` thấy `/en/cong-cu`, render
+  `<button disabled>`; client thấy `/en/tools`, render `<a>` → lỗi hydrate, React dựng
+  lại cả cây ở mỗi lần tải trang. Sửa bằng `publicPath()` trong `routes.ts`.
+- **Script quét mù thuộc tính**: `alt` tiếng Việt của ảnh video lọt mà không bị bắt. Lõi quét
+  tách ra `lib/i18n/leak-scan.mjs` (có test), quét thêm alt/title/aria-label/placeholder/
+  meta content — lộ ra cả `keywords` tiếng Việt trên mọi trang `/en`, đã dịch.
+- **Script cho xanh giả với thẻ rỗng**: `<img lang="vi">` không có thẻ đóng nên bị cắt tới
+  cuối trang. Nay thẻ rỗng chỉ bỏ đúng thẻ đó, thiếu thẻ đóng thì ném lỗi.
+- 27 chỗ tiếng Anh: tiêu đề "Using robots to make children" (đọc thành *sinh con*), nhãn
+  ngày dạng d/m (người Mỹ đọc 3/12 là 12 tháng 3 — có test chặn), "guide" thống nhất cho
+  người dẫn, câu Bác Hồ "use" chứ không "bring", sentence case cho H2 và nút.
+- Trang tiếng Việt nay có canonical/hreflang/OG riêng từng trang (trước dùng mặc định gốc).
+
+**Chờ chủ dự án chốt (cả hai bản ngữ):**
+1. "Bốn vai. **Ba** trong số đó cũng là bậc trong thang" — thật ra chỉ Già Làng và Thợ cả là
+   bậc (Nghệ nhân đứng cạnh thang, Bô Lão ngoài thang). Sửa thành "Hai"?
+2. VSC, FARC, GreenBot ở trang Công Cụ — tên đầy đủ là gì để chú giải bản tiếng Anh?
+3. "Già làng" / "Già Làng", "Maker Việt" / "MakerViet", "NEO Tre" / "Neo Trẻ" — chọn một cách viết.
+
 **Nợ còn lại:**
-- Nút chuyển ngôn ngữ render `disabled` trong HTML server ở trang tĩnh (prerender thấy
-  đường dẫn nội bộ `/en/cong-cu`), có từ kế hoạch 1 — cần kiểm sau hydrate trên trình duyệt.
 - Ảnh OG bản tiếng Anh (spec 2.7). Khối "Bản tiếng Việt đang được cộng đồng dịch" chờ chốt.
 - Kế hoạch 3 (69 ảnh + 5 sơ đồ).
 

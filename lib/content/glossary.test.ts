@@ -3,8 +3,13 @@ import { emptyStringKeys } from "@/lib/i18n/parity";
 import { gloss, GLOSSARY } from "./glossary";
 
 describe("GLOSSARY", () => {
-  it("có đủ tám thuật ngữ như spec 2.6", () => {
-    expect(Object.keys(GLOSSARY)).toHaveLength(8);
+  it("có tám thuật ngữ của spec 2.6 cộng Bô Lão (ban điều phối chốt 2026-09-19)", () => {
+    expect(Object.keys(GLOSSARY)).toHaveLength(9);
+    expect(GLOSSARY.boLao.vi).toBe("Bô Lão");
+  });
+
+  it("ba nhịp viết khớp trang Triết Lý bản tiếng Anh", () => {
+    expect(GLOSSARY.baNhip.en).toBe("Play, Make, Share");
   });
 
   it("không thuật ngữ nào bỏ trống", () => {

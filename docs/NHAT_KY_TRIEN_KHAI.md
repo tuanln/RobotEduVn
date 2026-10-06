@@ -25,6 +25,54 @@ Bản v0 cũ (project `v0-robot-edu`, tiếng Anh, "Where Math is a Playground")
 
 ---
 
+## 06/10/2026 — Song ngữ kế hoạch 2/3: 8 trang còn lại + khung trang
+
+Nhánh `feat/song-ngu-tam-trang`. Chủ dự án chụp `/en` thấy còn nhiều chữ tiếng Việt —
+đúng: kế hoạch 1 chỉ dịch Triết Lý. Đợt này dịch nốt khung trang (footer, skip link, chat,
+nhãn nhịp, metadata gốc) và 8 trang, mọi route vào `TRANSLATED_ROUTES`. 258 test.
+
+**Cổng nghiệm thu mới: `npm run check:en`** — đọc HTML thật của 15 trang `/en` (server
+phải đang chạy), bỏ phần tử `lang="vi"`, liệt kê từ có dấu ngoài `lib/i18n/en-allowlist.mjs`.
+Chạy trên bản `main` đang live: **2.082 chỗ rò + `/en/videos/<id>` 404**. Trên nhánh: **0**.
+
+**Quy ước mới:** dữ liệu gốc tiếng Việt (tên hub, địa chỉ, tỉnh, tên người, `nguon`, tiêu đề
+video YouTube, bài viết CMS) hiện trên trang `/en` PHẢI bọc `lang="vi"` — vừa đúng cho trình
+đọc màn hình, vừa là cách script biết đó không phải chỗ dịch sót. Danh sách cho phép chỉ
+chứa tên riêng và thuật ngữ làng; KHÔNG thêm từ thường.
+
+**Đã sửa kèm:**
+- `/en/videos/<id>` trước 404 (middleware từ chối mọi route động) — giờ 200, có metadata
+  riêng, hreflang vi↔en. `shouldNoindex` tách sang `lib/i18n/noindex.ts`.
+- Mọi link nội bộ qua `pathFor()`/`videoPath()`; test `noi-bo-khong-ghi-cung.test.ts` chặn
+  `href="/cong-cu"` ghi cứng (đã phá thử, đỏ). Test `route-dirs.test.ts` chặn đổi tên thư
+  mục route mà quên bảng `ROUTES` (nợ kế hoạch 1).
+- `glossary.ts` chốt DÙNG: thêm Bô Lão, sửa "Play, Make, Share" khớp Triết Lý.
+- Trích dẫn 2017 bản tiếng Anh là NGUYÊN VĂN, tìm được trong slide gốc
+  `My Drive/IoT Lab/VIA Project/Maker Hanoi - Review.pptx`.
+- 15 trang tiếng Việt giống hệt từng chữ so với trước (so HTML thật), trừ `<title>` trang
+  một video: trước là tên site, nay là tên video.
+
+**Bẫy mới:**
+1. **Cổng 3001 trên máy này là đường hầm ssh của dịch vụ khác** (trả 302 → /login). Chạy
+   bản thứ hai thì dùng cổng khác, và luôn `lsof -iTCP:<cổng> -sTCP:LISTEN` trước.
+2. **Turbopack không build được worktree có `node_modules` symlink** ("points out of the
+   filesystem root"). Muốn build `main` để so thì `git checkout main` ngay tại repo.
+3. **vitest bỏ qua kiểu** — xoá `types.ts` không làm test đỏ. Muốn chứng minh test nội dung
+   bắt lỗi thì xoá một khoá trong `en.ts`, đừng xoá kiểu.
+4. **Trang chủ tự khai title có tên site** phải dùng `{ absolute }`, không thì template
+   `%s | Robot.Edu.VN` nhân đôi tên.
+5. **Danh sách `/en/videos` dựng phía client** (Suspense + `useSearchParams`), HTML server chỉ
+   có "Loading videos…" — script không thấy thẻ video ở trang danh sách; thẻ được quét qua
+   trang một video.
+
+**Nợ còn lại:**
+- Nút chuyển ngôn ngữ render `disabled` trong HTML server ở trang tĩnh (prerender thấy
+  đường dẫn nội bộ `/en/cong-cu`), có từ kế hoạch 1 — cần kiểm sau hydrate trên trình duyệt.
+- Ảnh OG bản tiếng Anh (spec 2.7). Khối "Bản tiếng Việt đang được cộng đồng dịch" chờ chốt.
+- Kế hoạch 3 (69 ảnh + 5 sơ đồ).
+
+---
+
 ## 24/09/2026 — Hạ tầng song ngữ Việt–Anh (kế hoạch 1/3) xong
 
 Nhánh `feat/song-ngu-va-hinh-anh`, 22 commit. Cây route `[locale]` + hai root layout +

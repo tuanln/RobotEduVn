@@ -245,7 +245,7 @@ export default async function LangMakerPage({
             </blockquote>
             <figcaption className="mt-3 text-sm text-muted-foreground">
               — <span lang={duLieu}>{TRICH_DAN_2017.nguoiNoi}</span>,{" "}
-              {TRICH_DAN_2017.thoiDiem}. {t.muoiNam.trichDan.ghiChu}
+              {t.muoiNam.trichDan.thoiDiem}. {t.muoiNam.trichDan.ghiChu}
             </figcaption>
           </figure>
 
@@ -256,7 +256,7 @@ export default async function LangMakerPage({
                   className="absolute -left-[1.65rem] top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background"
                   aria-hidden
                 />
-                <p className="text-sm font-bold text-primary">{moc.moc}</p>
+                <p className="text-sm font-bold text-primary">{t.muoiNam.moc[i].moc}</p>
                 <h3 className="mt-1 font-bold">{t.muoiNam.moc[i].tieuDe}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
                   {t.muoiNam.moc[i].chiTiet}

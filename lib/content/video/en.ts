@@ -15,8 +15,8 @@ export const VIDEO_EN: VideoContent = {
   timKiem: "Search videos…",
   khongThay: "No videos found.",
   xoaLoc: "Clear filters",
-  tuoi: "years",
-  lienQuan: "Related Videos",
+  tuoi: "Ages {range}",
+  lienQuan: "Related videos",
   chuaLienQuan: "No related videos yet.",
   quayLai: "Video Hub",
 };

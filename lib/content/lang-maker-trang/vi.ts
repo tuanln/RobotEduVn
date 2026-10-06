@@ -91,8 +91,12 @@ export const LM_VI: LangMakerTrangContent = {
   },
   muoiNam: {
     tieuDe: "Mười năm",
-    trichDan: { loi: TRICH_DAN_2017.loi, ghiChu: TRICH_DAN_2017.ghiChu },
-    moc: MUOI_NAM.map(({ tieuDe, chiTiet }) => ({ tieuDe, chiTiet })),
+    trichDan: {
+      loi: TRICH_DAN_2017.loi,
+      ghiChu: TRICH_DAN_2017.ghiChu,
+      thoiDiem: TRICH_DAN_2017.thoiDiem,
+    },
+    moc: MUOI_NAM.map(({ moc, tieuDe, chiTiet }) => ({ moc, tieuDe, chiTiet })),
     canCu: "Căn cứ:",
     doNghe: {
       tieuDe: "Mười năm làm đồ nghề",

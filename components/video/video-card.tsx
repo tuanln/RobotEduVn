@@ -4,6 +4,7 @@ import { VideoItem } from "@/lib/types";
 import { StageBadge } from "@/components/common/stage-badge";
 import type { Locale } from "@/lib/i18n/locales";
 import { videoPath } from "@/lib/i18n/routes";
+import { nhanTuoi } from "@/lib/content/video";
 
 export function VideoCard({
   video,
@@ -12,7 +13,7 @@ export function VideoCard({
 }: {
   video: VideoItem;
   locale: Locale;
-  /** Hậu tố độ tuổi đã dịch: "tuổi" | "years". */
+  /** Khuôn nhãn độ tuổi đã dịch, xem VideoContent.tuoi. */
   tuoi: string;
 }) {
   // Tiêu đề video là dữ liệu YouTube tiếng Việt — trang en đánh dấu lang="vi".
@@ -47,7 +48,7 @@ export function VideoCard({
         <div className="mt-2 flex items-center gap-2">
           <StageBadge stage={video.stage} locale={locale} />
           <span className="text-xs text-muted-foreground">
-            {video.ageRange} {tuoi}
+            {nhanTuoi(tuoi, video.ageRange, locale)}
           </span>
         </div>
       </div>

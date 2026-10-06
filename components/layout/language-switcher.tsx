@@ -38,7 +38,7 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
 
   return (
     <Button variant="ghost" size="sm" asChild>
-      <Link href={href} hrefLang={to} aria-label={`${khung(locale).chuyenSang} ${nhan}`}>
+      <Link href={href} hrefLang={to} aria-label={`${khung(locale).chuyenSang} ${to === "vi" ? khung(locale).tenTiengViet : nhan}`}>
         <Languages className="h-4 w-4" aria-hidden />
         {nhan}
       </Link>

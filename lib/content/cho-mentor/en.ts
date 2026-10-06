@@ -12,30 +12,30 @@ export const CHO_MENTOR_EN: ChoMentorContent = {
   taiNguyen: [
     {
       icon: "📚",
-      title: "The Three-Beat Curriculum",
-      desc: "A curriculum for each beat — Play, Make, Share. Free to download and print.",
+      title: "The three-beat curriculum",
+      desc: "A curriculum for each beat — Play, Make, Share. Available to download and print.",
       route: "howWeLearn",
     },
     {
       icon: "🎬",
-      title: "How-to Videos",
+      title: "How-to videos",
       desc: "Sample lessons, plus guides to using the educational tools and kit.",
       route: "videos",
     },
     {
       icon: "🛠️",
-      title: "Tools & Kit",
+      title: "Tools & kit",
       desc: "How to use GCompris, KTurtle, Python, ThingBot and NEO One in the classroom.",
       route: "tools",
     },
     {
       icon: "🏠",
       title: "Open a Maker Hub",
-      desc: "How to open and run a Maker Hub (a local Làng Maker, the Maker Village) in your area — from the space to the curriculum.",
+      desc: "How to open and run a Maker Hub — a local branch of Làng Maker (the Maker Village) — in your area, from the space to the curriculum.",
       route: "makerHubs",
     },
   ],
-  cachTroThanh: "How to Become a Mentor",
+  cachTroThanh: "How to become a mentor",
   buoc: [
     "Sign up for the Mentor community by emailing lang@makerviet.org",
     "Receive the curriculum materials and guides to the tools",
@@ -43,5 +43,5 @@ export const CHO_MENTOR_EN: ChoMentorContent = {
     "Run classes or club sessions at your school or a Maker Hub",
     "Share what you learned and help us improve the curriculum",
   ],
-  nutLienHe: "Get in Touch to Become a Mentor",
+  nutLienHe: "Get in touch to become a mentor",
 };

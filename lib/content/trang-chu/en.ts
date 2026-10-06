@@ -15,16 +15,16 @@ export const TRANG_CHU_EN: TrangChuContent = {
     nutCachHoc: "See how we learn",
     nutVideo: "Browse the Video Hub",
     lapLai: "repeat",
-    mucTieu: "Five-year goal: one million Vietnamese children reaching STEM & robotics",
+    mucTieu: "Five-year goal: one million Vietnamese children with access to STEM & robotics",
   },
   baNhip: {
-    tieuDe: "Three Beats, on Repeat",
+    tieuDe: "Three beats on repeat",
     phuDe: "Rooted in Seymour Papert’s constructionism — “learning by making”",
     xemChiTiet: "See how learning works",
   },
   soLieu: {
-    tieuDe: "The Network Today",
-    phuDe: "Real numbers only — pulled straight from the platform’s own data",
+    tieuDe: "The network today",
+    phuDe: "Real numbers only — updated from the platform’s own data",
     hub: { label: "Maker Hubs", note: "open now" },
     tinh: { label: "Provinces", chuaCo: "none yet" },
     video: { label: "Video lessons", note: "free" },
@@ -34,9 +34,9 @@ export const TRANG_CHU_EN: TrangChuContent = {
       "1,000,000 Vietnamese children with access to STEM & robotics. This is where we are heading, not a number we have reached.",
   },
   doiTac: {
-    tieuDe: "Partners & Community",
+    tieuDe: "Partners & community",
     phuDe:
-      "A united front for STEM education — “those with guns bring guns, those with swords bring swords” (Hồ Chí Minh)",
+      "A united front for STEM education — everyone brings what they have, in the spirit of Hồ Chí Minh’s call: “those who have rifles, use rifles; those who have swords, use swords”",
     ds: [
       { name: "MakerViet", role: "Maker community & open source" },
       { name: "ThingEdu", role: "STEM education & software" },
@@ -46,9 +46,9 @@ export const TRANG_CHU_EN: TrangChuContent = {
     ],
   },
   cta: {
-    tieuDe: "Ready to Start Your STEM Journey?",
+    tieuDe: "Ready to start your STEM journey?",
     moTa: "Children can start from age 4 — beginning with the Play beat, completely free.",
-    nutCachHoc: "See How We Learn",
-    nutHub: "Find a Maker Hub Near You",
+    nutCachHoc: "See how we learn",
+    nutHub: "Find a Maker Hub near you",
   },
 };

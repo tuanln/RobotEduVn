@@ -41,4 +41,6 @@ export interface KhungContent {
   menu: { mo: string; dong: string };
   /** Tiền tố aria-label của nút chuyển ngôn ngữ: "Chuyển sang English". */
   chuyenSang: string;
+  /** Tên tiếng Việt trong aria-label — trang en đọc "Switch to Vietnamese". */
+  tenTiengViet: string;
 }

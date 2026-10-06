@@ -46,8 +46,9 @@ export interface LangMakerTrangContent {
   };
   muoiNam: {
     tieuDe: string;
-    trichDan: { loi: string; ghiChu: string };
-    moc: { tieuDe: string; chiTiet: string }[];
+    trichDan: { loi: string; ghiChu: string; thoiDiem: string };
+    /** `moc` là nhãn ngày hiển thị — bản en viết rõ tháng ("3 Dec 2016") vì "3/12" đọc kiểu Mỹ là 12 tháng 3. */
+    moc: { moc: string; tieuDe: string; chiTiet: string }[];
     canCu: string;
     doNghe: { tieuDe: string; moTa: string };
   };

@@ -16,7 +16,7 @@ export const CONG_CU_EN: CongCuContent = {
       name: "GCompris",
       nhip: "choi",
       type: "Software",
-      origin: "International open source",
+      origin: "Open source (international)",
       desc: "A suite of educational software with more than 200 activities: maths, reading, science, geography, music, logic. Completely free, runs on Windows, Linux and Android.",
       features: ["200+ activities", "Free", "Cross-platform", "Vietnamese supported"],
     },
@@ -50,7 +50,7 @@ export const CONG_CU_EN: CongCuContent = {
       type: "Educational computer",
       origin: "Made in Vietnam (ThingEdu)",
       desc: "A compact computer built for education. It runs Linux, supports Python and Scratch, and connects to sensors — an alternative to the Raspberry Pi at a lower cost.",
-      features: ["Made in Vietnam", "Linux", "Low cost", "IoT ready"],
+      features: ["Made in Vietnam", "Linux", "Low cost", "IoT-ready"],
     },
     {
       name: "K12 Maker",

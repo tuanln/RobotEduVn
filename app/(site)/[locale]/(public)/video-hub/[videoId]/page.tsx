@@ -9,7 +9,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_LOCALE, isLocale } from "@/lib/i18n/locales";
 import { pathFor, videoPath } from "@/lib/i18n/routes";
-import { videoChu } from "@/lib/content/video";
+import { nhanTuoi, videoChu } from "@/lib/content/video";
 import { ogImages } from "@/lib/seo/metadata";
 
 export async function generateMetadata({
@@ -84,7 +84,7 @@ export default async function VideoDetailPage({
             <div className="mt-3 flex items-center gap-3">
               <StageBadge stage={video.stage} locale={locale} />
               <span className="text-sm text-muted-foreground">
-                {video.ageRange} {t.tuoi}
+                {nhanTuoi(t.tuoi, video.ageRange, locale)}
               </span>
               {video.tags.length > 0 && (
                 <div lang={duLieu} className="flex gap-1">

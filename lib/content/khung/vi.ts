@@ -77,4 +77,5 @@ export const KHUNG_VI: KhungContent = {
   },
   menu: { mo: "Mở menu", dong: "Đóng menu" },
   chuyenSang: "Chuyển sang",
+  tenTiengViet: "Tiếng Việt",
 };

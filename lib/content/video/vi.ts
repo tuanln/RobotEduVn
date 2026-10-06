@@ -14,7 +14,7 @@ export const VIDEO_VI: VideoContent = {
   timKiem: "Tìm kiếm video...",
   khongThay: "Không tìm thấy video nào.",
   xoaLoc: "Xoá bộ lọc",
-  tuoi: "tuổi",
+  tuoi: "{range} tuổi",
   lienQuan: "Video Liên Quan",
   chuaLienQuan: "Chưa có video liên quan.",
   quayLai: "Video Hub",

@@ -25,7 +25,7 @@ describe("LANG_MAKER_TRANG", () => {
       NGUOI_TRONG_LANG.map(({ ten, laAi }) => ({ ten, laAi })),
     );
     expect(LM_VI.muoiNam.moc).toEqual(
-      MUOI_NAM.map(({ tieuDe, chiTiet }) => ({ tieuDe, chiTiet })),
+      MUOI_NAM.map(({ moc, tieuDe, chiTiet }) => ({ moc, tieuDe, chiTiet })),
     );
     expect(LM_VI.muoiNam.trichDan.loi).toBe(TRICH_DAN_2017.loi);
   });
@@ -67,5 +67,14 @@ describe("LANG_MAKER_TRANG", () => {
   it("thật sự đã dịch", () => {
     expect(LM_EN.muoiNam.moc[0].chiTiet).not.toBe(LM_VI.muoiNam.moc[0].chiTiet);
     expect(LM_EN.laGi.suMenh.noiDung).not.toBe(LM_VI.laGi.suMenh.noiDung);
+  });
+
+  it("nhãn ngày bản en không dùng dạng d/m — người Mỹ đọc 3/12/2016 là 12 tháng 3", () => {
+    const nhan = [...LM_EN.muoiNam.moc.map((m) => m.moc), LM_EN.muoiNam.trichDan.thoiDiem];
+    for (const n of nhan) expect(n, n).not.toMatch(/\d+\/\d+/);
+  });
+
+  it("vi giữ nhãn ngày gốc", () => {
+    expect(LM_VI.muoiNam.moc.map((m) => m.moc)).toEqual(MUOI_NAM.map((m) => m.moc));
   });
 });

@@ -16,7 +16,7 @@ export const CACH_HOC_EN: CachHocContent = {
   phuDe:
     "Three beats, again and again — nobody climbs a ladder, everybody goes through all three",
   ghiChuTuoi:
-    "Everyone from 4 to 18 goes through all three beats. What changes is not which beat you are on, but how hard the thing you choose to build is.",
+    "At Làng Maker (the Maker Village), everyone from 4 to 18 goes through all three beats. What changes is not which beat you are on, but how hard the thing you choose to build is.",
   nhip: {
     choi: {
       metaTitle: "The Play beat",
@@ -26,7 +26,7 @@ Children wander between play stations, pick the ones they like, and stay as long
 
 The moment a child turns round and asks “how does it move like that?”, the Play beat has done its work. That question is what pulls the child into the next beat — and it has to come from the child, not from a timetable.`,
       taiLangMaker:
-        "The Curiosity Museum stays open at Làng Maker (the Maker Village) with five groups of play stations. The way in is Hour of STEAM — a free 60–90 minute weekend session for newcomers: nothing to know in advance, nothing to bring. Two characters, Faddy Dế and NEO Tre, host the visit.",
+        "The Curiosity Museum is always open at Làng Maker (the Maker Village) with five groups of play stations. The way in is an Hour of STEAM session — a free 60–90 minute weekend session for newcomers: nothing to know in advance, nothing to bring. Two characters, Faddy Dế and NEO Tre, host the visit.",
     },
     lam: {
       metaTitle: "The Make beat",
@@ -36,7 +36,7 @@ Over seven sessions the child builds, tests, breaks it, works out why it broke, 
 
 The three directions below are three parallel ways in, not three levels. A ten-year-old can go straight to robots; a fourteen-year-old can start with control. Nobody has to queue up and climb.`,
       taiLangMaker:
-        "Seven project sessions at Làng Maker (the Maker Village) with a Coach Maker, on the 7+1 rule — seven sessions of making and an eighth to share. Every project is a small world, small enough for a child to master completely.",
+        "Seven project sessions at Làng Maker (the Maker Village) with a Coach Maker — one of the village’s trained guides — on the 7+1 rule — seven sessions of making and an eighth to share. Every project is a small world, small enough for a child to master completely.",
       huong: [
         {
           title: "Control & computational thinking",
@@ -78,7 +78,7 @@ Sharing is not graduation. It leads back to the Play beat for the next round, wi
     baHuong: "Three directions, side by side",
     baHuongGhiChu:
       "Not three levels. A child picks the direction that fits what they want to build right now.",
-    doNghe: "Kit",
+    doNghe: "Tools",
     baNguyenTac: "Three rules for guiding a session",
     videoNhip: "Videos for this beat",
     xemVideo: "Browse the Video Hub",

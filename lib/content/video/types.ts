@@ -8,7 +8,7 @@ export interface VideoContent {
   timKiem: string;
   khongThay: string;
   xoaLoc: string;
-  /** Hậu tố sau độ tuổi: "10-15 tuổi". */
+  /** Khuôn nhãn độ tuổi, `{range}` được thay bằng "10-15": "{range} tuổi" | "Ages {range}". */
   tuoi: string;
   lienQuan: string;
   chuaLienQuan: string;

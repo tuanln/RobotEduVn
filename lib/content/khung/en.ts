@@ -14,7 +14,7 @@ export const KHUNG_EN: KhungContent = {
   footer: {
     gioiThieu:
       "An open STEM and robotics platform for Vietnamese children. Learning goes hand in hand with making — every child is a maker.",
-    khoiXuong: "Started by",
+    khoiXuong: "An initiative of",
     cot: [
       {
         tieuDe: "Explore",
@@ -22,7 +22,7 @@ export const KHUNG_EN: KhungContent = {
           { label: "Làng Maker (the Maker Village)", route: "makerVillage" },
           { label: "How We Learn", route: "howWeLearn" },
           { label: "Papert’s Philosophy", route: "philosophy" },
-          { label: "Tools & Kit", route: "tools" },
+          { label: "Tools", route: "tools" },
           { label: "Video Hub", route: "videos" },
         ],
       },
@@ -42,7 +42,7 @@ export const KHUNG_EN: KhungContent = {
             href: "mailto:lang@makerviet.org",
           },
           {
-            label: "Facebook: Bình dân học STEM (our parents’ group)",
+            label: "Facebook: Bình dân học STEM (in Vietnamese)",
             href: "https://facebook.com/groups/binhdanhocSTEM",
           },
           { label: "GitHub: MakerViet", href: "https://github.com/makerviet" },
@@ -51,7 +51,7 @@ export const KHUNG_EN: KhungContent = {
       },
     ],
     banQuyen: ". Open source — open education.",
-    mucTieu: "Goal: one million Vietnamese children reaching STEM & robotics",
+    mucTieu: "Goal: one million Vietnamese children with access to STEM & robotics",
   },
   chat: {
     ten: "Neo Trẻ AI",
@@ -80,4 +80,5 @@ export const KHUNG_EN: KhungContent = {
   },
   menu: { mo: "Open menu", dong: "Close menu" },
   chuyenSang: "Switch to",
+  tenTiengViet: "Vietnamese",
 };

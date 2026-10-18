@@ -36,12 +36,12 @@ export function Header({ locale }: { locale: Locale }) {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center xl:flex">
           {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              className="whitespace-nowrap rounded-md px-1.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
             >
               {item.label}
             </Link>
@@ -49,7 +49,7 @@ export function Header({ locale }: { locale: Locale }) {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-1 xl:flex">
           <LanguageSwitcher locale={locale} />
           <ThemeToggle t={t.theme} />
           <Button asChild>
@@ -60,7 +60,7 @@ export function Header({ locale }: { locale: Locale }) {
         </div>
 
         {/* Mobile Menu */}
-        <div className="flex items-center gap-1 lg:hidden">
+        <div className="flex items-center gap-1 xl:hidden">
           <LanguageSwitcher locale={locale} />
           <ThemeToggle t={t.theme} />
           <Sheet open={open} onOpenChange={setOpen}>

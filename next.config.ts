@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { createMDX } from "fumadocs-mdx/next";
 
 /**
  * Bốn redirect đầu: bốn giai đoạn cũ đã gộp vào ba nhịp (spec 2026-09-06 mục
@@ -19,4 +20,7 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// fumadocs-mdx biên dịch content/khoa-hoc/*.md lúc build (lib/khoa-hoc/source.ts)
+const withMDX = createMDX();
+
+export default withMDX(nextConfig);

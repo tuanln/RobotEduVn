@@ -1,0 +1,15 @@
+{
+  "title": "Maker Việt · Robotics",
+  "description": "Kit K12 Maker, VRC/VORC, FARC, CoBot",
+  "root": true,
+  "pages": [
+    "index",
+    "k12-maker-2025",
+    "vorc-2023",
+    "cobot",
+    "dai-su-robotics",
+    "---Bản cũ (lưu trữ)---",
+    "k12-maker-2024",
+    "k12-maker-2023"
+  ]
+}

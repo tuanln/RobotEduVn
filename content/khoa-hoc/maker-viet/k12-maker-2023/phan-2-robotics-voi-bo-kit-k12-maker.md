@@ -63,7 +63,7 @@ Mạch điều khiển VIA
 
 **2. Mạch công suất (Motor Shield)**
 
-![Mạch công suất VIA](https://via.makerviet.org/vi/docs/2_get_started_with_via_hardware/1_gioi-thieu-mach-via-b/mach_cong_suat.png)
+![Mạch công suất VIA](/hoc-lieu/media/via-mach-cong-suat.webp)
 
 Mạch công suất VIA
 

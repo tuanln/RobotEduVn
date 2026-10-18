@@ -16,7 +16,7 @@ async function status(url, method = "GET") {
   if (!cache.has(key)) {
     cache.set(
       key,
-      fetch(url, { method, redirect: "follow" })
+      fetch(url, { method, redirect: "manual" })
         .then((r) => r.status)
         .catch((e) => `lỗi mạng ${e.message}`),
     );
@@ -83,13 +83,14 @@ for (const [p, h] of html) {
 }
 if (blobDaKiem.size !== 19) errors.push(`dùng ${blobDaKiem.size} tệp Blob, cần 19`);
 
-for (const p of ["/en/khoa-hoc", "/en/khoa-hoc/maker-viet/cobot", "/khoa-hoc/khong-co-trang-nay", "/vi/khoa-hoc/__chi-co-tieng-viet__"]) {
+for (const p of ["/en/khoa-hoc", "/en/khoa-hoc/maker-viet/cobot", "/khoa-hoc/khong-co-trang-nay", "/khoa-hoc/__chi-co-tieng-viet__", "/en/khoa-hoc/__chi-co-tieng-viet__"]) {
   const s = await status(`${BASE}${p}`);
   if (s !== 404) errors.push(`${p} trả ${s}, cần 404`);
 }
 
 for (const q of ["lập trình", "mạch VIA", "động cơ", "ThingBot"]) {
   const r = await fetch(`${BASE}/api/khoa-hoc/tim?query=${encodeURIComponent(q)}`);
+  if (!/s-maxage=\d+/.test(r.headers.get("cache-control") ?? "")) errors.push(`API tìm thiếu Cache-Control s-maxage (CDN không giữ)`);
   const kq = r.ok ? await r.json() : [];
   if (!Array.isArray(kq) || kq.length === 0) errors.push(`tìm "${q}" không ra kết quả (${r.status})`);
   else if (!kq.every((k) => k.url.startsWith("/khoa-hoc"))) errors.push(`tìm "${q}" trả URL ngoài /khoa-hoc`);

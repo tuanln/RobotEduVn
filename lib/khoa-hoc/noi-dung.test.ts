@@ -44,6 +44,13 @@ describe("nội dung thư viện khóa học", () => {
     expect(links.filter(({ url }) => url.startsWith("/hoc-lieu/")).length).toBeGreaterThan(100);
   });
 
+  it("không ảnh nào lấy từ host ngoài — remark-image tải ảnh ngoài lúc build, host đó sập là deploy hỏng", () => {
+    const ngoai = tatCa.flatMap(({ p, text }) =>
+      [...text.matchAll(/!\[[^\]]*\]\((https?:\/\/[^)\s]+)/g)].map((m) => ({ p, url: m[1] })),
+    );
+    expect(ngoai).toEqual([]);
+  });
+
   it("mọi link Blob nằm trong danh sách tệp đã tải lên", () => {
     const blob = links.filter(({ url }) => url.startsWith(BLOB_KHOA_HOC));
     const thieu = blob.filter(({ url }) => !(TEP_BLOB as readonly string[]).includes(url.slice(BLOB_KHOA_HOC.length + 1)));

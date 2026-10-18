@@ -85,7 +85,7 @@ export function TimKiem() {
           </ul>
           {tatCa.length > TOI_DA && (
             <p className="px-3 py-2 text-xs text-muted-foreground">
-              Đang hiện {TOI_DA} trong {tatCa.length} kết quả — gõ thêm từ để thu hẹp.
+              Còn nhiều kết quả hơn — gõ thêm từ để thu hẹp.
             </p>
           )}
         </div>

@@ -2,7 +2,7 @@ import type { Locale } from "@/lib/i18n/locales";
 import { pathFor, type RouteKey } from "@/lib/i18n/routes";
 
 /**
- * Chín mục menu (thêm Khóa Học ở menu tiếng Việt). Nhãn tiếng Việt giữ nguyên bản đang chạy.
+ * Chín mục menu dùng chung hai ngôn ngữ; menu tiếng Việt có thêm Khóa Học (mười mục). Nhãn tiếng Việt giữ nguyên bản đang chạy.
  * Nhãn tiếng Anh giữ "Làng Maker" và "Maker Hub" nguyên tiếng Việt theo
  * quy tắc thuật ngữ (spec 2026-09-23 mục 2.6).
  */

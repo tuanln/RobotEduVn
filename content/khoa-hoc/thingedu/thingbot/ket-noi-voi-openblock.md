@@ -62,7 +62,7 @@ Như các bạn có thể thấy ở phần trên cùng là những thông tin v
 
 ![](/hoc-lieu/media/1d133cc30c923619.webp)
 
-Ở mũi tên số 1, đó là mục ***File ***nơi mà bạn có thể chọn ***New***: tạo project mới, ***Load from your computer*** hoặc lưu về máy tính của bạn ***Save to your computer***. 
+Ở mũi tên số 1, đó là mục ***File*** nơi mà bạn có thể chọn ***New***: tạo project mới, ***Load from your computer*** hoặc lưu về máy tính của bạn ***Save to your computer***. 
 
 Tại vị trí thứ 2, đó chính là thể hiện tên của phần cứng bạn đã chọn.
 
@@ -125,19 +125,19 @@ Trong ***Data***: những khối lệnh nhằm tùy biến dữ liệu đầu ra
 
 ***set led*** – tại chân 1 hoặc 2 và ở 0 – 100 (với 0 là tắt và từ 1 tới 100 là tăng dần độ sáng)
 
-**![](/hoc-lieu/media/4e3e27ac2e07eeee.webp) “read switch” sẽ đọc giá trị của nút nhấn bên hông của ThingBotShield.**
+![](/hoc-lieu/media/4e3e27ac2e07eeee.webp) “read switch” sẽ đọc giá trị của nút nhấn bên hông của ThingBotShield.
 
 **\
 “init PS2 on ThingBot“ khởi tạo kết nối giữa receiver của tay cầm PS2 và ThingBot. ![](/hoc-lieu/media/0bc81707f02b5e25.webp) \
-và LÀ KHỐI BẮT BUỘC KHI MUỐN SỬ DỤNG PS2\**
+và LÀ KHỐI BẮT BUỘC KHI MUỐN SỬ DỤNG PS2**\
 
 Khối ***set*** ***motor*** sẽ bao gồm ô lựa chọn đầu tiên đó chính là set chân động cơ nào giữa từ M1 đến M4 tùy vào vị trí bạn cắm động cơ trên ThingBot, ô lựa chọn thứ 2 đó chính là chọn hướng động cơ sẽ chạy bao gồm ***forward*** – động cơ sẽ khởi động lăn về phía trước, ***backward*** – động cơ sẽ khỏi động lăn ngược lại 
 
 và ***at*** ***speed*** – tại tốc độ từ 0 – 100 và đối với **servo là angle (góc)** từ 0 đến 180\
-1) Đối với động cơ **180 độ**: sẽ sử dụng từ góc **0 - 180**, servo sẽ quay tới góc đó. Tuy nhiên, với động cơ SG92 thì phần lớn sẽ ko quay đủ 180 độ do **giới hạn vật lý của chính servo (thường là 0-160 độ). **\
+1) Đối với động cơ **180 độ**: sẽ sử dụng từ góc **0 - 180**, servo sẽ quay tới góc đó. Tuy nhiên, với động cơ SG92 thì phần lớn sẽ ko quay đủ 180 độ do **giới hạn vật lý của chính servo (thường là 0-160 độ).** \
 2) Đối với động cơ **360 độ:**
 
-- **Khoảng** **0-75 **sẽ** giảm tốc dần theo chiều kim đồng hồ**
+- **Khoảng** **0-75** sẽ **giảm tốc dần theo chiều kim đồng hồ**
 - **Khoảng 75-85** sẽ **dừng hẳn**
 - **Khoảng \>= 85** sẽ **tăng tốc dần theo ngược chiều kim đồng hồ**
 

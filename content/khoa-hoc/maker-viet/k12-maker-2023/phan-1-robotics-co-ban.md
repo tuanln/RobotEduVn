@@ -26,7 +26,7 @@ Một mẫu robot của BostonDynamics
  \
 Robot của đội Việt Nam tham dự giải đấu FGC
 
-**2. Các thành phần của robot\**
+**2. Các thành phần của robot**\
 
 Một chú Robot được tạo nên từ 3 phần cơ bản bao gồm: điện tử, cơ khí và lập trình. Để dễ hình dung hơn, chúng ta có thể tưởng tượng robot cũng giống như cơ thể một con người:
 

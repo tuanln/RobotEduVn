@@ -25,17 +25,17 @@ Một mẫu robot của BostonDynamics
  \
 Robot của đội Việt Nam tham dự giải đấu FGC
 
-**2. Các thành phần của robot\**
+**2. Các thành phần của robot**\
 
 Một chú Robot được tạo nên từ 3 phần cơ bản bao gồm: điện tử, cơ khí và lập trình. Để dễ hình dung hơn, chúng ta có thể tưởng tượng robot cũng giống như cơ thể một con người:
 
-- **Điện tử: **các thành phần điện tử trong robot có thể kể đến như mạch điều khiển - ví như bộ não của robot; các cảm biến - ví như giác quan của robot; các hệ thống mạch điện tử, dây dẫn -  ví như mạch máu, dây thần kinh trong cơ thể giúp truyền năng lượng, tín hiệu giữa các cơ quan trong "cơ thể" của robot...  
+- **Điện tử:** các thành phần điện tử trong robot có thể kể đến như mạch điều khiển - ví như bộ não của robot; các cảm biến - ví như giác quan của robot; các hệ thống mạch điện tử, dây dẫn -  ví như mạch máu, dây thần kinh trong cơ thể giúp truyền năng lượng, tín hiệu giữa các cơ quan trong "cơ thể" của robot...  
 - **Cơ khí:** là các cơ cấu cơ khí, động cơ (cơ cấu chấp hành) giúp robot di chuyển, vận động; cơ khí trong robot có thể ví như cơ bắp, chân tay, khung xương và da thịt của con người, cần phải chắc khỏe, linh hoạt và chính xác để thực hiện hiệu quả các nhiệm vụ. 
 - **Lập trình:** lập trình có thể được hiểu là công việc "hướng dẫn" robot thực hiện các nhiệm vụ theo mong muốn của con người. Người lập trình robot cần viết ra các chương trình và nạp vào vi điều khiển (tức bộ não của robot) để giúp robot đọc được các tín hiệu điều khiển, kết hợp các tín hiệu từ hệ thống cảm biến (nếu có) để điều khiển các cơ cấu cơ khí chuyển động theo đúng yêu cầu nhiệm vụ đề ra.
 
 **Một phần không thể thiếu** để robot có thể hoạt động được chính là phần **nguồn điện**, cung cấp năng lượng cho robot. Nguồn điện của robot quan trọng giống như trái tim của con người. Thông thường, robot sẽ được trang bị nguồn điện là pin hoặc ắc quy.
 
-**3. Học chế tạo robot với bộ kit K12 Maker để bắt đầu hành trình trở thành chuyên gia robotics\**
+**3. Học chế tạo robot với bộ kit K12 Maker để bắt đầu hành trình trở thành chuyên gia robotics**\
 
 Như chúng ta đã biết, robot là một sản phẩm đòi hỏi kiến thức chuyên môn ở cả 3 lĩnh vực cơ khí, điện tử và lập trình. Đó cũng là thử thách lớn nhất với các bạn trẻ mới bắt đầu học về robot.
 
@@ -85,7 +85,7 @@ Trong điều khiển robot, sẽ có các vi mạch điện tử (IC) chuyên d
 
 ![Động cơ DC 555](/hoc-lieu/media/7c8f1eecbb50a9e6.webp)
 
-Động cơ DC trong bộ kit K12 Maker là loại **động cơ 555 **(tên gọi bắt nguồn từ kích thước của động cơ), có điện áp hoạt động **12V**, tốc độ từ **30, 180, 300, 1500 RPM** (được thay đổi tùy theo đối tượng sử dụng bộ kit)
+Động cơ DC trong bộ kit K12 Maker là loại **động cơ 555** (tên gọi bắt nguồn từ kích thước của động cơ), có điện áp hoạt động **12V**, tốc độ từ **30, 180, 300, 1500 RPM** (được thay đổi tùy theo đối tượng sử dụng bộ kit)
 
 Trong quá trình làm robot, ngoài **tốc độ** của động cơ, bạn cũng cần quan tâm tới **gia tốc/lực kéo** của động cơ. Hai giá trị này thường tỉ lệ nghịch với nhau, tốc độ quay càng cao, lực kéo càng yếu và ngược lại. Tuy nhiên, chúng ta hoàn toàn có thể kiểm soát vấn đề này bằng cách sử dụng các giải pháp như **hộp số,** thay đổi **tỉ số truyền** của các cơ cấu truyền động như **nhông - xích, puly - dây curoa**... Chúng ta sẽ cùng tìm hiểu sâu hơn về các giải pháp này ở những phần sau.
 

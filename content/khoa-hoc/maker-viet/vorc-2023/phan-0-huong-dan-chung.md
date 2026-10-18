@@ -4,7 +4,6 @@ title: "Phần 0: Hướng dẫn chung"
 
 ## Sổ tay đào tạo chương trình VORC 2023
 
-**\**
 
 SỔ TAY ĐÀO TẠO DÀNH CHO CHƯƠNG TRÌNH VORC 2023
 

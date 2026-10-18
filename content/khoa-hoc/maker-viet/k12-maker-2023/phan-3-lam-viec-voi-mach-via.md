@@ -8,11 +8,11 @@ Phần này hướng dẫn các kỹ thuật cơ bản để làm việc với m
 
 Có nhiều cách để bạn cấp nguồn cho mạch VIA B, tùy theo trường hợp sử dụng các bạn có thể lựa chọn:
 
-**1. CẤP NGUỒN 5V: **Cấp nguồn qua cổng USB Type-C bằng cáp USB Type-C kết nối với máy tính
+**1. CẤP NGUỒN 5V:** Cấp nguồn qua cổng USB Type-C bằng cáp USB Type-C kết nối với máy tính
 
 ***Lưu ý:*** Cấp nguồn 5V chỉ cho phép bạn nạp code và kiểm tra mạch điều khiển. Để sử dụng khối mạch công suất, cần cấp nguồn 12V theo cách bên dưới
 
-**2. CẤP NGUỒN 12V: **Bạn có thể lựa chọn 1 trong 2 cách sau:
+**2. CẤP NGUỒN 12V:** Bạn có thể lựa chọn 1 trong 2 cách sau:
 
 - **Cấp nguồn qua cổng cấp nguồn DC 12V (jack XT-60) trên mạch công suất.** (đây là cách tiện lợi và an toàn nhất do pin lipo được cung cấp trong bộ kit K12 Maker sử dụng cùng loại jack)\
   **Lưu ý:** chỉ sử dụng jack chuyển đổi XT60 cung cấp cùng bộ kit K12 Maker để cấp nguồn cho mạch công suất VIA phiên bản cho VRC 2023. 

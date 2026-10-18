@@ -2,16 +2,22 @@ import { describe, expect, it } from "vitest";
 import { navItems } from "./nav";
 
 describe("navItems", () => {
-  it("có đủ chín mục ở cả hai ngôn ngữ", () => {
-    expect(navItems("vi")).toHaveLength(9);
+  it("tiếng Việt mười mục, tiếng Anh chín mục (Khóa Học chỉ có bản Việt)", () => {
+    expect(navItems("vi")).toHaveLength(10);
     expect(navItems("en")).toHaveLength(9);
+  });
+
+  it("Khóa Học đứng ngay sau Cách Học, chỉ ở menu tiếng Việt", () => {
+    expect(navItems("vi")[2]).toEqual({ label: "Khóa Học", href: "/khoa-hoc" });
+    expect(navItems("en").map((i) => i.href)).not.toContain("/khoa-hoc");
+    expect(navItems("en").map((i) => i.href)).not.toContain("/en/khoa-hoc");
   });
 
   it("giữ nguyên nhãn và đường dẫn tiếng Việt đang chạy", () => {
     const vi = navItems("vi");
     expect(vi[0]).toEqual({ label: "Trang Chủ", href: "/" });
     expect(vi[1]).toEqual({ label: "Cách Học", href: "/hanh-trinh" });
-    expect(vi[2]).toEqual({ label: "Làng Maker", href: "/lang-maker" });
+    expect(vi[3]).toEqual({ label: "Làng Maker", href: "/lang-maker" });
   });
 
   it("bản tiếng Anh dùng đường dẫn có tiền tố /en", () => {

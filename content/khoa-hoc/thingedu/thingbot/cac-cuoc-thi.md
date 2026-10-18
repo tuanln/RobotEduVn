@@ -4,7 +4,7 @@ title: "Các cuộc thi"
 
 ## Cuộc thi GreenSTEM 2025
 
-**Mọi thông tin về cuộc thi có thể được truy cập [tại đây](https://greenstemchallenge.com/)\**
+**Mọi thông tin về cuộc thi có thể được truy cập [tại đây](https://greenstemchallenge.com/)**\
 
 **Những câu hỏi thường gặp về cuộc thi GreenSTEM Challenge 2025**
 

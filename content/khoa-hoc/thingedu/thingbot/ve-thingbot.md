@@ -38,7 +38,7 @@ Ngoài ra, ThingBot còn có thể kết nối với máy tính nhúng Pi, giú
 
 **5)** Nút bật tắt nguồn
 
-**6) **Chân kết nối nguồn (có kí hiệu chân + và chân - , tối đa nguồn nhận 9V)
+**6)** Chân kết nối nguồn (có kí hiệu chân + và chân - , tối đa nguồn nhận 9V)
 
 **7)** 5 Cặp chân kết nối với servo, đa cảm biến (bất kể cảm biến nào có 3 chân kết nối) theo thứ tự GND - 5V - S1, S2, S3, S4, S5 (chân âm - chân dương - chân tín hiệu)
 
@@ -52,20 +52,20 @@ Ngoài ra, ThingBot còn có thể kết nối với máy tính nhúng Pi, giú
 
 ## Bộ kit ThingBot 2024
 
-**Link Youtube video về bộ kit ThingBot:\
+**Link Youtube video về bộ kit ThingBot:**\
 [Giới thiệu bộ Kit ThingBot](https://www.youtube.com/watch?v=Y9jM5MlzRVY "Giới thiệu bộ Kit ThingBot")
 
 Code mẫu như trong video:\
 ![](/hoc-lieu/media/de1550e8093148ac.webp)
 
-ThingBot sẽ đi kèm 1 bộ kit với:**\
+**ThingBot sẽ đi kèm 1 bộ kit với:**\
 **1 servo SG90 360 (kèm tay servo) và 1 servo SG90 180 (kèm tay servo)** với dây màu vàng là chân tín hiệu (cắm vào chân S1-S5), dây đỏ là dây nguồn dương (chân 5V), dây nâu là dây nguồn âm (chân GND)
 
-Đối với bộ kit đang sử dụng động cơ **servo SG90 360 và 180 **(phân biệt với 180 độ bằng cách xoay thử) với chân pin cắm hướng mặt có lỗ hở ra ngoài theo chuẩn quy tắc chung\
+Đối với bộ kit đang sử dụng động cơ **servo SG90 360 và 180** (phân biệt với 180 độ bằng cách xoay thử) với chân pin cắm hướng mặt có lỗ hở ra ngoài theo chuẩn quy tắc chung\
 ![](/hoc-lieu/media/af01c184084e8b3f.webp)
 
 **4 động cơ DC giảm tốc 1:48 (kèm ốc)**\
-Điện áp: 3-12VDC, khuyến nghị ở giải điện áp (6-8VDC)**\
+Điện áp: 3-12VDC, khuyến nghị ở giải điện áp (6-8VDC)\
 ![](/hoc-lieu/media/4e3b9b032685d968.webp)
 
 1 mạch ThingBot\
@@ -88,21 +88,18 @@ Kí hiệu đầu âm hoặc dương được in sẵn trên pin và bộ sạc.
 1 tay cầm PS2 và đầu nhận tín hiệu (Receiver)\
 ![](/hoc-lieu/media/df8f1b1dad5acb26.webp)
 
-\**
 **Bạn có thể gắn bất cứ động cơ nào có dải điện áp hoạt động từ 5V đến 9V**
 
 ## Bộ kit ThingBot 2025
 
 **Link video cách lắp bộ kit ThingBot 2025**
 
-**<https://www.youtube.com/watch?v=N72W9EYd26I>\**
-
-**\**
+<https://www.youtube.com/watch?v=N72W9EYd26I>
 
 **ThingBot sẽ đi kèm 1 bộ kit với:**\
 **1 servo SG92R (kèm tay servo) và 1 servo MG995R/MG996 (kèm tay servo)** với dây màu vàng là chân tín hiệu (cắm vào chân S1-S5), dây đỏ là dây nguồn dương (chân 5V), dây nâu là dây nguồn âm (chân GND)
 
-Đối với bộ kit đang sử dụng động cơ **servo SG90 360 và 180 **(phân biệt với 180 độ bằng cách xoay thử) với chân pin cắm hướng mặt có lỗ hở ra ngoài theo chuẩn quy tắc chung.\
+Đối với bộ kit đang sử dụng động cơ **servo SG90 360 và 180** (phân biệt với 180 độ bằng cách xoay thử) với chân pin cắm hướng mặt có lỗ hở ra ngoài theo chuẩn quy tắc chung.\
 ![](/hoc-lieu/media/af01c184084e8b3f.webp)
 
 **Servo MG995R/ MG996**
@@ -110,20 +107,21 @@ Kí hiệu đầu âm hoặc dương được in sẵn trên pin và bộ sạc.
 ![](/hoc-lieu/media/c9bd9654da8a0b77.webp)
 
 **4 động cơ DC giảm tốc 1:48 (kèm ốc)**\
-Điện áp: 3-12VDC, khuyến nghị ở giải điện áp (6-8VDC)**\
+Điện áp: 3-12VDC, khuyến nghị ở giải điện áp (6-8VDC)\
 ![](/hoc-lieu/media/4e3b9b032685d968.webp)
 
-1 mạch ThingBot**
+**1 mạch ThingBot**
 
 ![](/hoc-lieu/media/9ec07ac1d98e465b.webp)
 
-**Khung mica **+ 4 bánh **![](/hoc-lieu/media/4362ae016f47fb14.webp)![](/hoc-lieu/media/a0e0a83452cc0c2c.webp)![](/hoc-lieu/media/b06a11367234fd72.webp)**
+**Khung mica** + 4 bánh\
+![](/hoc-lieu/media/4362ae016f47fb14.webp)![](/hoc-lieu/media/a0e0a83452cc0c2c.webp)![](/hoc-lieu/media/b06a11367234fd72.webp)
 
 **Cơ cấu in 3D\
 ![](/hoc-lieu/media/470c02ff85c1001f.webp)\
 1 khay 2 pin 18650**
 
-**![](/hoc-lieu/media/9478d97a3df2aaf0.webp)
+![](/hoc-lieu/media/9478d97a3df2aaf0.webp)
 
 Pin 18650 - 2 viên\
 ![](/hoc-lieu/media/c9b8c9971efce08b.webp)
@@ -134,7 +132,7 @@ Lưu ý: khi các bạn cắm pin hãy nhớ cắm đúng đầu âm và dương
 Kí hiệu đầu âm hoặc dương được in sẵn trên pin và bộ sạc.
 
 1 tay cầm PS2 và đầu nhận tín hiệu (Receiver)\
-![](/hoc-lieu/media/df8f1b1dad5acb26.webp)**
+![](/hoc-lieu/media/df8f1b1dad5acb26.webp)
 
 **Dây 6 Pin**
 
@@ -147,21 +145,18 @@ Kí hiệu đầu âm hoặc dương được in sẵn trên pin và bộ sạc.
 **Nếu bạn muốn xem video thì đây nhé:**\
 [https://www.youtube.com/watch?v=Tfql_FykiT4](https://www.youtube.com/watch?v=Tfql_FykiT4 "https://www.youtube.com/watch?v=Tfql_FykiT4")
 
-**\**
 
 **Còn nếu bạn muốn đọc thì phần dưới sẽ giống hệt như trong video**
 
-**Link cài đặt mới nhất của OpenBlock: **<https://github.com/thingedublock/thingedublock-desktop/releases/tag/v1.0.2>****
+**Link cài đặt mới nhất của OpenBlock:** <https://github.com/thingedublock/thingedublock-desktop/releases/tag/v1.0.2>
 
-**\**
 
 **Hiện tại, OpenBlock chỉ hỗ trợ trên hệ điều hành Windows và bạn có thể tải về.**
 
 ![1_setup](/hoc-lieu/media/4ae6dff3e730ba3a.webp)
 
-**Lưu ý: Chọn đúng phiên bản Windows (x32 hoặc x64).  **
+**Lưu ý: Chọn đúng phiên bản Windows (x32 hoặc x64).**  
 
-**\**
 
 **Sau đó bạn sẽ cần phải cài đặt gói hỗ trợ phần mềm bằng link dưới đây:**\
 **<https://github.com/thingblock/thingblock-external-resources/releases/tag/v1.3.0>\
@@ -183,7 +178,7 @@ Hãy chọn file .exe và tải về nhé!**
 ![4_setup](/hoc-lieu/media/18cae82b8ff89f0e.webp)
 
 Đối với gói hỗ trợ phần mềm thì chúng ta sẽ cài đặt theo các bước sau nhé:\
-Sau khi tải về, bạn hãy chạy file .exe vừa tải và bấm **Install: **![](/hoc-lieu/media/e655a241f23d8a99.webp)
+Sau khi tải về, bạn hãy chạy file .exe vừa tải và bấm **Install:** ![](/hoc-lieu/media/e655a241f23d8a99.webp)
 
 Cài xong, các bạn sẽ thấy hiện lên 1 cửa sổ như thế này:\
 ![](/hoc-lieu/media/26cef37a2958182a.webp)

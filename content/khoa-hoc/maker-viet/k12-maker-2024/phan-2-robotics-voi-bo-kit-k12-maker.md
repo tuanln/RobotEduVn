@@ -73,7 +73,7 @@ Mạch công suất VIA
 - Các cổng giao tiếp mở rộng: 1 cổng I2C, 1 cổng SPI
 - Header GPIO mở rộng: 6 chân GPIO, 2 chân cấp nguồn 5V-GND
 
-**Bạn có thể tìm hiểu các thông tin chi tiết hơn về dự án VIA và phần cứng của VIA tại trang web chính thức của dự án VIA: **\
+**Bạn có thể tìm hiểu các thông tin chi tiết hơn về dự án VIA và phần cứng của VIA tại trang web chính thức của dự án VIA:** \
 [https://via.makerviet.org/vi/docs/2_get_started_with_via_hardware/1_gioi-thieu-mach-via-b/](https://via.makerviet.org/vi/docs/2_get_started_with_via_hardware/1_gioi-thieu-mach-via-b/)
 
 ## 2.3. Sử dụng pin và lưu ý an toàn

@@ -119,9 +119,9 @@ Kết nối pin vào mạch VIA thông qua jack chuyển đổi XT60 như hình 
 
 **Cảnh báo: tuyệt đối không vừa sử dụng, vừa sạc pin**
 
-**Mẹo nhỏ: **trong quá trình sử dụng robot, bạn có thể cắm cả bộ đo pin vào pin để tiện theo dõi điện áp của pin
+**Mẹo nhỏ:** trong quá trình sử dụng robot, bạn có thể cắm cả bộ đo pin vào pin để tiện theo dõi điện áp của pin
 
-**Lưu ý: **chỉ sử dụng jack chuyển đổi XT60 cung cấp cùng bộ kit K12 Maker để cấp nguồn cho mạch công suất VIA phiên bản cho FARC 2025.
+**Lưu ý:** chỉ sử dụng jack chuyển đổi XT60 cung cấp cùng bộ kit K12 Maker để cấp nguồn cho mạch công suất VIA phiên bản cho FARC 2025.
 
 ## 2.4. Sử dụng phụ kiện gá
 

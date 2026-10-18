@@ -21,7 +21,7 @@ Hãy kết nối mạch với pin (2 viên pin to) thông qua chân nguồn và 
 
 ![](/hoc-lieu/media/5e969982a20b4fcb.webp)
 
-**Giải thích: **\
+**Giải thích:** \
 "***When arduino begin**"* là lệnh bắt buộc để khởi tạo chương trình
 
 "**init ThingBot**" là lệnh bắt buộc để khởi tạo kết nối với mạch ThingBot
@@ -32,7 +32,6 @@ go "**forward**": tiến lên phía trước (hoặc bạn có thể chỉnh th�
 
 at "**100**": bạn có thể chỉnh tốc độ từ 0 - 100.
 
-**\**
 
 **2) Làm sao để động cơ dừng?**
 
@@ -42,13 +41,13 @@ Sau phần 1) bạn sẽ thấy khi này động cơ sẽ quay liên tục, n�
 
 ![](/hoc-lieu/media/f210a66567db1bb7.webp)
 
-**Giải thích: **
+**Giải thích:** 
 
 Chúng ta set động cơ M1 chạy với tốc độ 100 trong 5s rồi set động cơ M1 chạy với tốc độ 0 (dừng)
 
 Khối "wait 5 seconds" được gọi là delay - ta có thể hiểu trong trường hợp này động cơ sẽ chạy trong 5s và hết 5s sẽ thực hiện khối lệnh tiếp theo.
 
-****\****
+\
 
 **3) Lặp lại hành động**
 
@@ -56,7 +55,7 @@ Bạn muốn động cơ có thể lặp lại chuyển động trước đó th
 
 Khối này sẽ giúp cho tất cả các khối lệnh được đặt bên trong nó sẽ được chạy tuần tự và lặp lại với số lần mà bạn muốn.
 
-**Ví dụ: **
+**Ví dụ:** 
 
 ![](/hoc-lieu/media/aa52b8461f3f3ca1.webp)
 
@@ -66,7 +65,6 @@ Khối "repeat" sẽ giúp bạn lặp lại tất cả các khối bên trong c
 
 Trong đoạn code trên, động cơ sẽ chạy ở tốc độ 100 trong 5s rồi dừng 2s rồi sẽ lặp lại tất cả 10 lần nữa.
 
-**\**
 
 **4)Vậy còn lặp lại mãi mãi thì sao?**
 
@@ -76,9 +74,7 @@ Trong đoạn code trên, động cơ sẽ chạy ở tốc độ 100 trong 5s r
 
 ![](/hoc-lieu/media/20a2cf0ced78d0ed.webp)
 
-**\**
-
-****5) LED trên ThingBot**\**
+**5) LED trên ThingBot**
 
 Trên ThingBot sẽ có 2 led xanh biển và vàng để có thể lập trình nháy led hoặc để test kết nối giữa mạch và OpenBlock
 
@@ -94,10 +90,10 @@ Bạn có thể thử kết nối Switch với các thành phần khác nhé!
 ![](/hoc-lieu/media/192855dedd5ff428.webp)\
 Ở đây chúng ta có thể thấy, với code này, sẽ có thể bấm nút và led 1 sẽ sáng đèn.
 
-**7) Trên Thingbot cũng sẽ còn có cả còi mini (Mini Buzzer) **\
+**7) Trên Thingbot cũng sẽ còn có cả còi mini (Mini Buzzer)** \
 ![](/hoc-lieu/media/e264c540b92b94c0.webp)\
 Bạn cũng có thể thử với buzzer nhé, giá trị của còi sẽ từ 0 - 100 là tối đa.\
-**Code mẫu: **\
+**Code mẫu:** \
 ![](/hoc-lieu/media/05a31bc24f2cea0e.webp)\
 Code này sẽ bật còi buzzer và còi sẽ kêu liên tục
 
@@ -138,7 +134,7 @@ Chúng ta sẽ cần:
 
 Cũng giống như bên trên các bạn nhé!
 
-**Code mẫu: **
+**Code mẫu:** 
 
 ![](/hoc-lieu/media/2fb9efa62afb6c1d.webp)
 
@@ -160,16 +156,15 @@ Giải thích 1 cách dễ hiểu và ngắn gọn thì động cơ servo giốn
 
 ![](/hoc-lieu/media/223507bf99e5f9d6.webp)
 
-**6) Hãy thử**** kết nối tay PS2 với ThingBot nhé!**
+**6) Hãy thử** **kết nối tay PS2 với ThingBot nhé!**
 
 **Chúng ta sẽ cần:**
 
-- **Khung **
-- ******Mạch ThingBot******
-- ******Pin ******
+- **Khung** 
+- **Mạch ThingBot**
+- **Pin** 
 - **Receiver**
 
-**\**
 
 Sử dụng dây 6 pin kết nối theo đúng vị trí chân header 6 pin của ThingBot đối với receiver của PS2. Bạn hãy lưu ý chân đầu và cuối của receiver và ThingBotShield nhé, bởi với cùng thứ tự cắm nhưng nếu lộn ngược lại thì sẽ không hoạt động.
 
@@ -179,10 +174,10 @@ cùng với đó là trong ThingEduBlock ta cần khởi tạo kết nối của
 
 **Giải thích:**
 
-Với 3 khối khởi tạo trên cùng, ta có thể thấy khối **Read PS2 receiver data (đọc dữ liệu từ PS2) **được đặt trong** vòng lặp forever **đó là bởi chúng ta sẽ cần đọc dữ liệu từ tay cầm thông qua** receiver** liên tục và vì thế chúng ta phải lặp lại khối đó**.**
+Với 3 khối khởi tạo trên cùng, ta có thể thấy khối **Read PS2 receiver data (đọc dữ liệu từ PS2)** được đặt trong **vòng lặp forever** đó là bởi chúng ta sẽ cần đọc dữ liệu từ tay cầm thông qua **receiver** liên tục và vì thế chúng ta phải lặp lại khối đó.
 
 **Với khối lệnh sau đó sẽ được hiểu như sau: Nếu (if...) phím "up" của PS2 được nhấn thì 2 khối bên dưới sẽ được thực thi không thì (else...) nếu (if...) phím "down" được nhấn thì 2 khối bên dưới sẽ được thực thi còn không thì sẽ thực hiện 2 khối cuối cùng.**
 
-**Code mẫu full:\
-![](/hoc-lieu/media/3544d89d3686174c.webp)\**
+**Code mẫu full:**\
+![](/hoc-lieu/media/3544d89d3686174c.webp)
 

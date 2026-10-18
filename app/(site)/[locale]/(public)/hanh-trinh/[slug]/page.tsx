@@ -116,6 +116,24 @@ export default async function NhipPage({
             </section>
           )}
 
+          {/* Thư viện khóa học chỉ có tiếng Việt — không hiện ở bản /en */}
+          {slug === "lam" && locale === "vi" && (
+            <section className="flex flex-col gap-4 rounded-xl border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 className="text-xl font-bold">Thư viện khóa học</h2>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  7 khóa robotics và IoT của Maker Việt: ThingBot, kit K12 Maker, VORC, CoBot, Đại sứ Robotics.
+                </p>
+              </div>
+              <Link
+                href="/khoa-hoc"
+                className="shrink-0 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
+              >
+                Mở thư viện
+              </Link>
+            </section>
+          )}
+
           {nhip.huong && (
             <section>
               <h2 className="text-xl font-bold">{t.nhan.baHuong}</h2>

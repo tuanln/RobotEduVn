@@ -22,9 +22,8 @@ Bước 2: Nhấn giữ nút flash (nút được khoanh đỏ trong hình dư�
 
 Bước 3: Nhả nút flash, tiến hành kết nối lại vào ThingEduBlock.
 
-**\**
 
-2.  **Tôi không thể upload được code cho ThingBot với 2 dòng lỗi đó là “Build failed Upload error” như hình dưới đây:  **                                                                                                                                                                                        
+2.  **Tôi không thể upload được code cho ThingBot với 2 dòng lỗi đó là “Build failed Upload error” như hình dưới đây:**                                                                                                                                                                                          
 
 ![](/hoc-lieu/media/67edf6eca85cc406.webp)
 

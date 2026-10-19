@@ -25,6 +25,55 @@ Bản v0 cũ (project `v0-robot-edu`, tiếng Anh, "Where Math is a Playground")
 
 ---
 
+## 19/10/2026 — Thư viện khóa học /khoa-hoc (học liệu Maker Việt) + Next 16.3.8
+
+**Việc:** ghép thư viện 7 khóa (48 trang) từ web makerviet (nội dung phục hồi
+từ Moodle cũ) vào robot.edu.vn theo hướng A: fumadocs-core/mdx headless, giao
+diện bằng component của site. Chỉ tiếng Việt — `/en/khoa-hoc` 404, KHÔNG vào
+ROUTES/TRANSLATED_ROUTES. Merge `7ee4dc9`.
+
+**Hạ tầng mới:**
+- Vercel Blob `robot-edu-vn-hoc-lieu` (`store_LrywO2cvC6IZ8mOx`, sin1, công khai):
+  19 tệp PDF/Word 54 MB dưới `khoa-hoc/…`, link tuyệt đối trong Markdown,
+  danh sách ở `lib/khoa-hoc/tep-blob.ts`. Ảnh 6,2 MB ở `public/hoc-lieu/media`.
+- Biến `BLOB_READ_WRITE_TOKEN` trên Vercel (cả 3 môi trường) do `vercel blob
+  create-store` tự thêm.
+- Next 16.1.6 → 16.3.8: bản cũ dính advisory critical (middleware bypass,
+  request smuggling, CSRF Server Actions…), và Turbopack 16.1 không đọc được
+  luật `condition.query` của fumadocs-mdx 15.4.
+
+**Nghiệm thu trên https://robot.edu.vn:**
+- `npm run check:khoa-hoc -- https://robot.edu.vn` → OK: 48 trang 200, 4.565
+  link nội bộ + neo, 19 tệp Blob 200, ảnh có src, không lộ `**`, `/en/khoa-hoc…`
+  404, tìm có dấu ra kết quả, API tìm trúng cache CDN (`x-vercel-cache: HIT`).
+- `npm run check:en -- https://robot.edu.vn` → không rò chữ Việt.
+- Sitemap 76 URL (28 + 48). Chrome: không lỗi console, mục đang đọc tô đúng.
+- 293 test, tsc, eslint sạch.
+
+**Bẫy:**
+1. `vercel blob create-store` GHI ĐÈ `.env.local` bằng biến kéo từ Vercel —
+   mất hết biến chỉ có ở máy. Sao lưu `.env.local` trước khi chạy.
+2. Next 16.3.8: `generateStaticParams` trả `[]` cho MỘT giá trị locale cha là
+   mất MỌI đường dẫn của route (cả 48 trang vi) → slug canh gác cho en.
+3. remark-image biến ảnh `public/` thành import tĩnh: `src` tới component là
+   object `{src,width,height}`; ảnh ngoài thì bị TẢI lúc build (host sập là
+   deploy hỏng) — test chặn ảnh ngoài.
+4. GET tìm kiếm của fumadocs là route động; `revalidate = false` vô tác dụng.
+   Trên Vercel `s-maxage` bị CDN tiêu thụ, client chỉ thấy `max-age`.
+5. `next dev` 16.3 tự sinh `AGENTS.md`/`CLAUDE.md` ở gốc repo — xoá, đừng commit.
+6. Nguồn Moodle viết chữ đậm sai (`**…: **`, `\**`, `**` dính ảnh, NBSP) —
+   đã sửa trong nội dung; cổng bắt `**` lộ ra.
+
+**Còn treo:**
+- makerviet.vercel.app chưa chuyển hướng về robot.edu.vn/khoa-hoc (chủ dự án
+  quyết số phận /lang, /truong-lang, /chia-se bên đó).
+- Nợ nhỏ từ đợt rà: link trong `<summary>` (nested-interactive), nhận trang
+  tổng quan theo tên, tên gốc "Docs" ghi cứng, twitter/description trang khóa
+  học, lastModified sitemap, `includeProcessedMarkdown` thừa, cây mục lục
+  serialize 2 lần, Sheet menu header thiếu Description (có từ trước).
+
+---
+
 ## 06/10/2026 — Song ngữ kế hoạch 2/3: 8 trang còn lại + khung trang
 
 Nhánh `feat/song-ngu-tam-trang`. Chủ dự án chụp `/en` thấy còn nhiều chữ tiếng Việt —

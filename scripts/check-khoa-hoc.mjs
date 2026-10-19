@@ -90,7 +90,12 @@ for (const p of ["/en/khoa-hoc", "/en/khoa-hoc/maker-viet/cobot", "/khoa-hoc/kho
 
 for (const q of ["lập trình", "mạch VIA", "động cơ", "ThingBot"]) {
   const r = await fetch(`${BASE}/api/khoa-hoc/tim?query=${encodeURIComponent(q)}`);
-  if (!/s-maxage=\d+/.test(r.headers.get("cache-control") ?? "")) errors.push(`API tìm thiếu Cache-Control s-maxage (CDN không giữ)`);
+  // Local: header còn nguyên s-maxage. Trên Vercel CDN "ăn" s-maxage và chỉ trả
+  // max-age cho trình duyệt → hỏi lần hai, phải trúng cache (x-vercel-cache HIT).
+  if (!/s-maxage=\d+/.test(r.headers.get("cache-control") ?? "")) {
+    const lan2 = await fetch(`${BASE}/api/khoa-hoc/tim?query=${encodeURIComponent(q)}`);
+    if (!/HIT|STALE/.test(lan2.headers.get("x-vercel-cache") ?? "")) errors.push(`API tìm "${q}" không được CDN giữ`);
+  }
   const kq = r.ok ? await r.json() : [];
   if (!Array.isArray(kq) || kq.length === 0) errors.push(`tìm "${q}" không ra kết quả (${r.status})`);
   else if (!kq.every((k) => k.url.startsWith("/khoa-hoc"))) errors.push(`tìm "${q}" trả URL ngoài /khoa-hoc`);

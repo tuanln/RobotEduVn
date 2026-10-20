@@ -56,7 +56,7 @@ Ngoại vi: **DHT Sensor**, **OLED**.
 ```text
 khi Arduino khởi động
   init dht (1) pin (4) model [dht11]
-  init oled width (128) height (64) I2C address [0x78 (0x3c)] chip [SSD1306]
+  init oled width (128) height (64) I2C address [0x78 (0x3c)]
   set oled text size [6x8] color [white] background color [black]
   đặt [số lần đo] thành (0)
 
@@ -84,7 +84,7 @@ vòng lặp Arduino
 - `clear oled` mỗi vòng, nếu không chữ mới đè lên chữ cũ thành mớ hỗn độn.
 - Nhớ đổi **background color** sang **black**. Để mặc định là chữ trắng trên nền trắng, màn sáng trắng mà không thấy chữ.
 - OLED không hiện được tiếng Việt có dấu, viết không dấu. Đây là giới hạn thật của phông chữ, nói thẳng với người học.
-- Màn 1,3" thường là chip **SH1106**: đổi ô `chip` trong khối khởi tạo.
+- Màn 1,3" thường dùng chip **SH1106**. Bản 0.4.0 chỉ chạy màn SSD1306 (0,96"); ô chọn chip SH1106 có ở bản sau.
 
 **Thử thách mở rộng:** ghi lại số đo mỗi 10 phút trong một buổi, vẽ biểu đồ nhiệt, ẩm trên giấy kẻ ô.
 
@@ -101,7 +101,7 @@ Ngoại vi: **DHT Sensor**, **OLED**. LED 1 trên bo làm đèn cảnh báo.
 ```text
 khi Arduino khởi động
   init dht (1) pin (4) model [dht11]
-  init oled … chip [SSD1306]
+  init oled width (128) height (64) I2C address [0x78 (0x3c)]
   set oled text size [6x8] color [white] background color [black]
 
 vòng lặp Arduino

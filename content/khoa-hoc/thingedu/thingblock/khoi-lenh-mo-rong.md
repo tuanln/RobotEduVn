@@ -10,10 +10,10 @@ Ngoại vi chỉ có ở **chế độ nạp**. Khi đã chọn bo ThingBot, b�
 |---|---|---|
 | DHT Sensor | DHT | Đo nhiệt độ, độ ẩm |
 | Ultrasonic | Ultrasonic | Đo khoảng cách bằng siêu âm HC-SR04 |
-| OLED | OLED | Màn hình OLED 0,96" (SSD1306) hoặc 1,3" (SH1106) |
+| OLED | OLED | Màn hình OLED 0,96" (SSD1306); màn 1,3" (SH1106) *(sau bản 0.4.0)* |
 | Serial | Serial | Gửi, nhận chữ qua cổng USB, xem ở khung Monitor |
 | MPU6050 Sensor | MPU6050 | Cảm biến gia tốc và con quay 6 trục |
-| Rotary Encoder | Encoder | Núm xoay có nút bấm |
+| Rotary Encoder | Encoder | Núm xoay có nút bấm *(sau bản 0.4.0)* |
 | Servo | Servo | Servo cắm thẳng vào chân GPIO (không qua cổng S) |
 | PCA9685 Module | PCA9685 | Module PWM 16 kênh gắn thêm |
 | Phone control | Phone | Cho app điện thoại ThingBot Remote điều khiển robot trong lúc chương trình chạy |
@@ -38,7 +38,7 @@ DHT11 cần khoảng 1–2 giây giữa hai lần đọc. Thêm `đợi (2) giâ
 |---|---|
 | `ultrasonic sensor pin TRIG (2) ECHO (3) read distance [cm]` | Khoảng cách tính bằng cm hoặc inch. Không cần khối khởi tạo |
 
-Trên ThingBot dùng TRIG **0**, ECHO **4**. Khi không có vật phía trước hoặc sóng dội không về, khối trả về 0, nên điều kiện "vật ở gần" nên viết là *khoảng cách > 0 **và** khoảng cách < 20*. Cảm biến HC-SR04 loại 5 V trả tín hiệu 5 V vào chân 3,3 V của ESP32-C3: nên dùng loại HC-SR04P (chạy được 3,3 V) hoặc thêm cầu chia áp ở chân ECHO.
+Trên ThingBot dùng TRIG **0**, ECHO **4**. Không có vật phía trước thì khối trả số lớn (khoảng 340 cm trở lên). Khối trả **0** khi cảm biến lỏng dây hoặc hỏng, nên điều kiện "vật ở gần" nên viết là *khoảng cách > 0 **và** khoảng cách < 20*: lỏng dây thì robot không tưởng nhầm là sắp đâm. Cảm biến HC-SR04 loại 5 V trả tín hiệu 5 V vào chân 3,3 V của ESP32-C3: nên dùng loại HC-SR04P (chạy được 3,3 V) hoặc thêm cầu chia áp ở chân ECHO.
 
 ## OLED — màn hình
 
@@ -46,14 +46,14 @@ Cắm màn OLED vào cổng I2C trên ThingBotShield (chung đường với chip
 
 | Khối | Ý nghĩa |
 |---|---|
-| `init oled width (128) height (64) I2C address [0x78 (0x3c)] chip [SSD1306]` | Khởi tạo. Màn 1,3" thường là chip **SH1106** |
+| `init oled width (128) height (64) I2C address [0x78 (0x3c)]` | Khởi tạo màn SSD1306. Sau bản 0.4.0 khối có thêm ô `chip [SSD1306]` để chọn **SH1106** cho màn 1,3" |
 | `set oled text size [6x8] color [white] background color [black]` | Cỡ chữ và màu. **Đổi nền sang black**, để mặc định là chữ trắng trên nền trắng |
 | `set oled cursor x: (0) y: (0)` | Vị trí bắt đầu in chữ (điểm ảnh) |
 | `oled print ( ) [no-warp]` | In chữ hoặc số. `no-warp` in tiếp trên cùng dòng, `warp` in xong xuống dòng |
 | `clear oled` | Xóa bộ đệm |
 | `refresh oled display` | Đẩy bộ đệm lên màn. **Thiếu khối này thì màn không hiện gì** |
 | `oled draw line / rect / circle / round rect / triangle …`, `oled fill …` | Vẽ hình viền hoặc tô kín |
-| `oled start scroll [right] …`, `oled stop scroll` | Cuộn chữ. Không có tác dụng với chip SH1106 |
+| `oled start scroll [right] …`, `oled stop scroll` | Cuộn chữ (không có tác dụng với chip SH1106) |
 
 Màn OLED không hiện được chữ tiếng Việt có dấu: viết không dấu.
 
@@ -76,7 +76,7 @@ Màn OLED không hiện được chữ tiếng Việt có dấu: viết không d
 | `mpu6050 [x] axis rotation (rad/s)` | Tốc độ quay theo trục |
 | `mpu6050 temperature (℃)` | Nhiệt độ của chip |
 
-## Encoder — núm xoay
+## Encoder — núm xoay *(sau bản 0.4.0)*
 
 | Khối | Ý nghĩa |
 |---|---|

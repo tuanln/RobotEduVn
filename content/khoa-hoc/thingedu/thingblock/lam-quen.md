@@ -31,6 +31,8 @@ Khi đã chọn ThingBot, bấm nút góc dưới trái để mở **Choose a Pe
 
 ![Thư viện ngoại vi: DHT, Rotary Encoder, MPU6050, OLED, PCA9685, Phone control, PS2, RGB LED Strip, Serial, Servo, Ultrasonic](/hoc-lieu/thingblock/anh/04-thu-vien-ngoai-vi.webp)
 
+*Ảnh chụp từ bản mới hơn 0.4.0 một chút: bản 0.4.0 chưa có thẻ Rotary Encoder.*
+
 Danh sách đầy đủ ở trang [Khối lệnh mở rộng](/khoa-hoc/thingedu/thingblock/khoi-lenh-mo-rong).
 
 ## Hai cách chạy chương trình

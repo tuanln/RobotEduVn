@@ -4,7 +4,7 @@ description: "Cài đặt ThingBlock, làm quen giao diện, các khối lệnh 
 nguon: "ThingEdu"
 ---
 
-ThingBlock là phần mềm lập trình kéo-thả khối lệnh của ThingEdu, dựng trên nền Scratch. Học sinh xếp khối như Scratch, còn ThingBlock tự đổi chương trình thành mã Arduino C++, biên dịch rồi nạp xuống bo **ThingBot**. ThingBlock miễn phí, mã nguồn mở (giấy phép MIT), chạy trên Windows, macOS và Linux.
+ThingBlock là phần mềm lập trình kéo-thả khối lệnh của ThingEdu, dựng trên nền Scratch. Học sinh xếp khối như Scratch, còn ThingBlock tự đổi chương trình thành mã Arduino C++, biên dịch rồi nạp xuống bo **ThingBot**. ThingBlock miễn phí, mã nguồn mở trên GitHub, chạy trên Windows, macOS và Linux.
 
 Khóa [Tài liệu người dùng ThingBot](/khoa-hoc/thingedu/thingbot) hướng dẫn lập trình bằng phần mềm cũ ThingEduBlock (dựa trên OpenBlock). Khóa này dành cho ThingBlock, phần mềm mới. Phần giới thiệu bo mạch và lắp ráp ThingBot ở khóa cũ vẫn dùng chung được.
 
@@ -23,4 +23,4 @@ Khóa [Tài liệu người dùng ThingBot](/khoa-hoc/thingedu/thingbot) hướn
 - Bo ThingBot (gồm mạch ThingBot và ThingBotShield) cùng một dây USB Type-C **truyền được dữ liệu**. Dây chỉ để sạc thì máy không nhận bo.
 - Kết nối Internet cho lần đầu dùng ThingBot, để tải gói bo ESP32.
 
-> Các trang trong khóa viết theo **ThingBlock 0.4.0** (phát hành 25/09/2026). Bản sau có thể đổi tên nút hoặc thêm khối.
+> Các trang trong khóa viết theo **ThingBlock 0.4.0** (phát hành 26/09/2026). Những chỗ ghi *(sau bản 0.4.0)* là tính năng đã có trong mã nguồn nhưng chưa vào bản cài đặt: ngoại vi Rotary Encoder và ô chọn chip SH1106 cho màn OLED. Bản sau có thể đổi tên nút hoặc thêm khối.

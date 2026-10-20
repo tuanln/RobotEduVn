@@ -39,7 +39,7 @@ Khối mũ, đứng đầu mỗi chồng khối. Chồng khối không có mũ t
 
 | Khối | Ý nghĩa | Chế độ |
 |---|---|---|
-| `đồng hồ bấm giờ` | Số giây kể từ lúc bo bật | Nạp, Live |
+| `đồng hồ bấm giờ` | Số giây đã trôi qua: khi nạp là tính từ lúc bo bật; ở Live là từ lúc bấm Run hoặc lần đặt lại gần nhất | Nạp, Live |
 | `đặt lại đồng hồ bấm giờ` | Đưa đồng hồ về 0. Ở chế độ nạp bản 0.4.0, khối này **chưa có tác dụng** | Live |
 | `phím … được bấm?`, `chuột được nhấn?`, `hỏi … và đợi`… | Đọc bàn phím, chuột, câu trả lời trên máy tính | Live |
 
@@ -70,7 +70,8 @@ Bấm **Tạo một biến**, đặt tên, rồi dùng:
 
 Lưu ý khi nạp chương trình:
 
-- Biến mặc định là **số nguyên**. Cảm biến DHT11 vốn trả số nguyên nên không sao.
+- Lúc tạo biến, ThingBlock hỏi **Variable type**: **Number** (số nguyên, mặc định), **Decimal** (số thập phân), **Text** (chữ). Chọn Decimal khi cần số lẻ như 0.5.
+- Ở bản 0.4.0, biến Decimal **trở lại thành số nguyên khi mở lại dự án** từ tệp. Với DHT11 không sao vì cảm biến vốn trả số nguyên.
 - Nên đặt tên biến không dấu (`nhietDo`) nếu muốn mã C++ ở khung Generated Code dễ đọc. Tên có dấu vẫn chạy, chỉ là bị đổi thành dạng mã hóa.
 - **Danh sách** (Tạo một Danh sách) chưa dùng được khi nạp ở bản 0.4.0: mã sinh ra không biên dịch được.
 

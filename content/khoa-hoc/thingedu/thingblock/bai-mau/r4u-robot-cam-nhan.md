@@ -37,7 +37,7 @@ vòng lặp Arduino
 
 **Chú thích cho Mentor**
 
-- Điều kiện `khoảng cách > 0` loại bỏ số 0 mà cảm biến trả về khi sóng không dội về. Thiếu nó, robot dừng khựng giữa đường trống. Để các em tự phát hiện rồi mới hỏi "số 0 nghĩa là gì".
+- Điều kiện `khoảng cách > 0` loại bỏ số 0 mà khối trả về khi cảm biến lỏng dây. Đường trống thì khối trả số lớn (trên 300 cm). Cho các em rút thử dây ECHO, xem số đo, rồi hỏi "vì sao phải có điều kiện lớn hơn 0".
 - Siêu âm **không thấy vật mềm và vật đặt chéo**: khăn, áo, tường nghiêng đều nuốt sóng. Cho người học thử với bìa cứng rồi với áo khoác.
 - 20 cm là khoảng để robot kịp dừng ở tốc độ 50. Chạy nhanh hơn thì phải tăng ngưỡng: quan hệ này đáng để các em tự đo.
 

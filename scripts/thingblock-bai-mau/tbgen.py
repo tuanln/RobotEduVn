@@ -64,7 +64,8 @@ def sonar(trig, echo): return B('ultrasonic_readDistance', fields={'TRIG': str(t
 def ser_begin(b): return B('serial_begin', fields={'BAUD': str(b)})
 def ser_print(v): return B('serial_print', {'VALUE': v})
 def ser_println(v): return B('serial_println', {'VALUE': v})
-oled_init = lambda: B('oled_init', {'W': whole(128), 'H': whole(64)}, {'ADDR': '0x3c', 'CHIP': 'SSD1306'})
+# Không ghi ô CHIP: ThingBlock 0.4.0 chưa có ô này (bản sau mặc định SSD1306).
+oled_init = lambda: B('oled_init', {'W': whole(128), 'H': whole(64)}, {'ADDR': '0x3c'})
 def oled_text(size): return B('oled_setText', fields={'SIZE': str(size), 'COLOUR': 'SSD1306_WHITE', 'BGCOLOR': 'SSD1306_BLACK'})
 def oled_cur(x, y): return B('oled_setCursor', {'X': num(x), 'Y': num(y)})
 def oled_print(v): return B('oled_print', {'DATA': v}, {'EOL': 'noWarp'})
@@ -164,6 +165,7 @@ class Project:
         stage['variableTypes'] = {vid: ('float' if n in float_vars else kind) for n, (vid, kind) in self.vars.items()}
         sprite['blocks'] = self.blocks
         sprite['variables'] = {}
+        proj['monitors'] = []  # mẫu gốc còn ô hiện biến "S" của dự án cũ
         proj['extensions'] = list(extensions)
         if board:
             proj['board'] = board

@@ -24,13 +24,13 @@ Có sẵn khi chọn bo ThingBot. Các khối tự khởi tạo mạch nên khô
 | `set tempo to (120) BPM` | Nhịp nhạc (số phách mỗi phút) |
 | `play note [C (Do)] octave [4] for (1) beats` | Còi phát nốt Đô…Si, quãng 3–6, trong số phách đã cho |
 | `rest for (1) beats` | Nghỉ (im lặng) theo phách |
-| `set buzzer to (0) pulse` | Bật/tắt còi: 0 là tắt, số khác 0 là kêu liên tục. Muốn ra nốt nhạc thì dùng `play note` |
+| `set buzzer to (0) pulse` | Ở bản 0.4.0 khối này không phát được tiếng (còi trên bo là còi thụ động, chỉ kêu tách một tiếng). Muốn còi kêu thì dùng `play note` |
 | `read switch` | Đúng khi nút **SW** trên ThingBotShield đang được bấm |
 | `init PS2 on ThingBot` | Khởi tạo bộ thu tay PS2 cắm cổng PS2 của ThingBotShield |
 
 Lưu ý:
 
-- Khi còi đang phát nốt, tín hiệu servo bị xáo trộn một chút. Đừng vừa phát nhạc vừa điều khiển servo chính xác.
+- **Nhạc và servo không chạy cùng lúc được.** Khi còi phát nốt, chip PCA9685 đổi tần số cho cả 16 kênh, servo nhận xung sai và giật về một phía. Phát nhạc xong rồi mới quay servo. Động cơ và LED không bị ảnh hưởng đáng kể.
 - "Tiến" hay "lùi" thực tế phụ thuộc cách cắm dây động cơ. Chạy thử, nếu bánh quay ngược thì đảo giắc cắm hoặc đổi forward/backward.
 
 ## Nhóm PS2 (chế độ nạp)

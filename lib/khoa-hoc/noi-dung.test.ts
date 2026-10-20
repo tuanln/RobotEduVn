@@ -27,8 +27,30 @@ function coTrang(url: string): boolean {
 }
 
 describe("nội dung thư viện khóa học", () => {
-  it("đủ 48 trang: 38 phần + 7 tổng quan khóa + 2 khu + 1 trang gốc", () => {
-    expect(md).toHaveLength(48);
+  it("đủ 60 trang: 48 trang Maker Việt + 12 trang ThingBlock", () => {
+    expect(md).toHaveLength(60);
+    expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/"))).toHaveLength(12);
+  });
+
+  it("trang ThingBlock ghi nguồn ThingEdu, trang chép từ Moodle thì không khai nguồn (mặc định Maker Việt)", () => {
+    for (const { p, text } of tatCa) {
+      const nguon = text.match(/^nguon: "(.+)"$/m)?.[1];
+      if (p.startsWith("/thingedu/thingblock/")) expect(nguon, p).toMatch(/^ThingEdu/);
+      else expect(nguon, p).toBeUndefined();
+    }
+  });
+
+  it("không có chuỗi dấu cách không ngắt (NBSP) dài từ Moodle — nó không xuống dòng, đẩy trang tràn ngang trên điện thoại", () => {
+    const tran = tatCa.filter(({ text }) => /\u00a0{5,}/.test(text)).map(({ p }) => p);
+    expect(tran).toEqual([]);
+  });
+
+  it("mỗi tệp bài mẫu .tb đều có trang dẫn tới, không tệp nào mồ côi", () => {
+    const thuMuc = join(PUBLIC, "hoc-lieu/thingblock/tep");
+    const tep = readdirSync(thuMuc).filter((n) => n.endsWith(".tb"));
+    expect(tep).toHaveLength(15);
+    const daDung = new Set(links.map(({ url }) => url));
+    expect(tep.filter((n) => !daDung.has(`/hoc-lieu/thingblock/tep/${n}`))).toEqual([]);
   });
 
   it("không còn link /files hay /media kiểu cũ của makerviet", () => {

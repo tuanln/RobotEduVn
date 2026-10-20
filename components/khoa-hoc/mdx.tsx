@@ -3,13 +3,18 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 import type { MDXComponents } from "mdx/types";
 import { cn } from "@/lib/utils";
+import { laTepTaiVe } from "@/lib/khoa-hoc/lien-ket";
 
 /**
  * Kiểu chữ cho bài học Markdown. Site không dùng @tailwindcss/typography nên
  * tự định kiểu từng thẻ, theo màu và bo góc của shadcn để hợp theme sáng/tối.
  */
 function A({ href = "", className, ...props }: ComponentProps<"a">) {
-  const cls = cn("font-medium text-primary underline underline-offset-4 hover:opacity-80", className);
+  // overflow-wrap:anywhere: link dài (URL, tên tệp PDF) xuống dòng thay vì đẩy trang tràn ngang trên điện thoại.
+  const cls = cn("font-medium text-primary underline underline-offset-4 [overflow-wrap:anywhere] hover:opacity-80", className);
+  if (laTepTaiVe(href)) {
+    return <a href={href} className={cls} download {...props} />;
+  }
   if (href.startsWith("/") || href.startsWith("#")) {
     return <Link href={href} className={cls} {...props} />;
   }
@@ -60,6 +65,13 @@ export const mdxKhoaHoc: MDXComponents = {
   ),
   th: (p) => <th className="border border-border bg-muted px-3 py-2 text-left font-semibold" {...p} />,
   td: (p) => <td className="border border-border px-3 py-2 align-top" {...p} />,
-  pre: (p) => <pre className="mt-4 overflow-x-auto rounded-lg border border-border bg-muted p-4 text-sm [&_code]:bg-transparent [&_code]:p-0" {...p} />,
+  // shiki gắn class "shiki …" vào <pre>: phải gộp class, để {...p} đè thì mất
+  // overflow-x-auto và dòng mã dài đẩy cả trang tràn ngang trên điện thoại.
+  pre: ({ className, ...p }) => (
+    <pre
+      className={cn("mt-4 overflow-x-auto rounded-lg border border-border bg-muted p-4 text-sm [&_code]:bg-transparent [&_code]:p-0", className)}
+      {...p}
+    />
+  ),
   code: (p) => <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-[0.9em]" {...p} />,
 };

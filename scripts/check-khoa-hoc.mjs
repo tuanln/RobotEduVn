@@ -1,6 +1,6 @@
 // Cổng kiểm thư viện khóa học trên một server đang chạy (local hoặc live):
 //   node scripts/check-khoa-hoc.mjs [http://localhost:3000]
-// - đủ 48 trang trong sitemap, trang nào cũng 200
+// - đủ 60 trang trong sitemap, trang nào cũng 200
 // - mọi href/src nội bộ và mọi tệp tải về trên Blob đều mở được
 // - mọi link neo #… trỏ tới id có thật
 // - /en/khoa-hoc… 404, nút đổi ngôn ngữ không dẫn sang bản tiếng Anh giả
@@ -28,7 +28,7 @@ const sitemap = await (await fetch(`${BASE}/sitemap.xml`)).text();
 const trang = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)]
   .map((m) => new URL(m[1]).pathname)
   .filter((p) => p === "/khoa-hoc" || p.startsWith("/khoa-hoc/"));
-if (trang.length !== 48) errors.push(`sitemap có ${trang.length} trang khóa học, cần 48`);
+if (trang.length !== 60) errors.push(`sitemap có ${trang.length} trang khóa học, cần 60`);
 if (/\/en\/khoa-hoc/.test(sitemap)) errors.push("sitemap khai /en/khoa-hoc");
 
 const html = new Map();

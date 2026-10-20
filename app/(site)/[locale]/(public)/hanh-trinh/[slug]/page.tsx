@@ -122,7 +122,7 @@ export default async function NhipPage({
               <div>
                 <h2 className="text-xl font-bold">Thư viện khóa học</h2>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  7 khóa robotics và IoT của Maker Việt: ThingBot, kit K12 Maker, VORC, CoBot, Đại sứ Robotics.
+                  8 khóa robotics và IoT: ThingBot, lập trình khối ThingBlock, kit K12 Maker, VORC, CoBot, Đại sứ Robotics.
                 </p>
               </div>
               <Link

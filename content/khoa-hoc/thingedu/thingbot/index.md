@@ -7,6 +7,8 @@ Tài liệu hướng dẫn dành cho người dùng ThingBot
 
 và những thông tin cơ bản về các cuộc thi
 
+> Phần mềm lập trình khối mới của ThingEdu là **ThingBlock**. Xem khóa [Lập trình khối với ThingBlock](/khoa-hoc/thingedu/thingblock): cài đặt, khối lệnh và 5 bài mẫu.
+
 ## Nội dung khóa học
 
 - [Giới thiệu chung](/khoa-hoc/thingedu/thingbot/gioi-thieu-chung)

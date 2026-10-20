@@ -1,9 +1,10 @@
 {
   "title": "ThingEdu · ThingBot",
-  "description": "Bo mạch ThingBot, OpenBlock, Arduino IDE và các cuộc thi",
+  "description": "Bo mạch ThingBot, phần mềm ThingBlock, OpenBlock, Arduino IDE và các cuộc thi",
   "root": true,
   "pages": [
     "index",
-    "thingbot"
+    "thingbot",
+    "thingblock"
   ]
 }

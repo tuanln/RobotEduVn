@@ -25,6 +25,50 @@ Bản v0 cũ (project `v0-robot-edu`, tiếng Anh, "Where Math is a Playground")
 
 ---
 
+## 21/10/2026 — Khóa "Lập trình khối với ThingBlock" (12 trang + 15 bài mẫu .tb)
+
+**Việc:** thêm khóa thứ 8 vào thư viện, `/khoa-hoc/thingedu/thingblock`: cài
+đặt, làm quen giao diện (hai chế độ nạp / Live), 3 trang khối lệnh, 5 bài mẫu
+K2/K3/K4/K6/R4U × V1–V3 (soạn từ lô thử 11/08 của The Lab, chỉnh theo
+ThingBlock 0.4.0). Thư viện 48 → 60 trang. Trang ThingBlock ghi nguồn
+"ThingEdu" qua frontmatter `nguon` (mặc định vẫn "Maker Việt").
+
+**Bài mẫu kiểm chứng thế nào:**
+- 15 tệp `.tb` sinh bằng `scripts/thingblock-bai-mau/samples.py` (tất định, chạy
+  lại ra đúng từng byte). KHÔNG sửa tay tệp .tb.
+- Mở từng tệp trong bản web ThingBlock dựng sạch từ upstream main (fce82d4),
+  chụp ảnh khối thật; 11 bài chế độ nạp biên dịch được cho `esp32c3` bằng
+  arduino-cli của app + thư viện của pack. 4 bài Live chỉ mở thử được (cần bo).
+- Chưa chạy trên ThingBot thật.
+
+**Lỗi ThingBlock 0.4.0 tìm thấy (chưa báo upstream):**
+1. Pack **RGB LED Strip** không biên dịch cho ESP32 core 3.3.11 (Adafruit_NeoPixel
+   vendored cũ: `RMT` undeclared) → bài đèn giao thông đổi sang module LED cắm
+   cổng S (`set servo to pulse 4095/0`).
+2. Biến kiểu float mất kiểu khi mở lại dự án: `Variable.toXML` (scratch-vm
+   `engine/variable.ts`) không ghi `dataType` → sinh `int`.
+3. Live: động cơ kẹp 0..100 (không lùi), mã chế độ chân gửi 0/1/2 trong khi
+   firmware ESP32 dùng 0x01/0x03/0x05, siêu âm đảo chân trig/echo, Stop không
+   tắt động cơ. Trang khóa học ghi rõ các giới hạn này.
+4. Danh sách sinh mã kiểu JS; khối tự tạo có tham số không truyền tham số;
+   `đặt lại đồng hồ bấm giờ` không làm gì khi nạp; nhãn vi "đống hồ".
+5. Mọi khối phần cứng chỉ có tiếng Anh (scratch-vm `locales/vi.json` rỗng).
+
+**Sửa kèm cho cả thư viện:** `<pre>` của shiki đè mất `overflow-x-auto`, link
+dài không xuống dòng và hai chuỗi NBSP từ Moodle làm 12 trang cũ tràn ngang ở
+390px → giờ 60/60 trang vừa màn điện thoại (đo bằng Chromium). Link tới tệp
+`/hoc-lieu/...` render `<a download>` thay vì next/link.
+
+**Rà soát độc lập:** không có lỗi nghiêm trọng; đã sửa 5 chỗ nội dung sai so với
+mã (Encoder và ô chip SH1106 chỉ có SAU bản 0.4.0 → đánh dấu; khối buzzer không
+phát tiếng; nhạc và servo không chạy cùng lúc; siêu âm không có vật trả ~340 cm
+chứ không phải 0; giấy phép không phải toàn MIT — editor là AGPL-3.0) và bỏ ô
+hiện biến "S" sót trong mẫu .tb.
+
+**Còn mở:** chân header ThingBotShield ngoài IO0/IO4 chưa xác nhận (bài dùng
+IO0, IO4); báo 5 lỗi trên cho đội ThingBlock; ảnh chụp lấy từ bản web (giao
+diện giống app desktop nhưng không có ảnh hộp thoại cài đặt của hệ điều hành).
+
 ## 19/10/2026 — Thư viện khóa học /khoa-hoc (học liệu Maker Việt) + Next 16.3.8
 
 **Việc:** ghép thư viện 7 khóa (48 trang) từ web makerviet (nội dung phục hồi

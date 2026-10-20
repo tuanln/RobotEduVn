@@ -10,7 +10,7 @@ import { TimKiem } from "@/components/khoa-hoc/tim-kiem";
 import { khoaHoc } from "@/lib/khoa-hoc/source";
 import { ogImages } from "@/lib/seo/metadata";
 
-// 48 trang đều dựng sẵn lúc build; slug lạ thì 404, không render theo yêu cầu.
+// Mọi trang đều dựng sẵn lúc build; slug lạ thì 404, không render theo yêu cầu.
 export const dynamicParams = false;
 
 type Props = { params: Promise<{ locale: string; slug?: string[] }> };
@@ -20,7 +20,7 @@ const SLUG_CANH_GAC = "__chi-co-tieng-viet__";
 /**
  * Bẫy Next 16.3.8: nếu generateStaticParams trả MẢNG RỖNG cho một giá trị của
  * segment cha (ở đây locale "en"), Next bỏ luôn MỌI đường dẫn của route, kể cả
- * 48 trang "vi" → toàn bộ /khoa-hoc 404 vì dynamicParams = false. Nên nhánh
+ * mọi trang "vi" → toàn bộ /khoa-hoc 404 vì dynamicParams = false. Nên nhánh
  * "en" trả một slug canh gác; layout gọi notFound() cho mọi locale khác "vi",
  * và middleware đã ép /en/khoa-hoc/* về 404 trước khi tới đây.
  */
@@ -114,7 +114,7 @@ export default async function TrangKhoaHoc({ params }: Props) {
           </nav>
         )}
 
-        <p className="mt-10 border-t border-border pt-4 text-sm text-muted-foreground">Nguồn học liệu: Maker Việt.</p>
+        <p className="mt-10 border-t border-border pt-4 text-sm text-muted-foreground">Nguồn học liệu: {page.data.nguon ?? "Maker Việt"}.</p>
       </article>
 
       {toc.length > 1 && (

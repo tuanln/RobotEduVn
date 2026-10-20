@@ -2,6 +2,8 @@
 title: "Kết nối với OpenBlock"
 ---
 
+> Trang này hướng dẫn phần mềm cũ ThingEduBlock (dựa trên OpenBlock). Với phần mềm mới ThingBlock, xem [Cài đặt ThingBlock](/khoa-hoc/thingedu/thingblock/cai-dat) và [Làm quen giao diện](/khoa-hoc/thingedu/thingblock/lam-quen).
+
 ## Giao diện cơ bản
 
 # 
@@ -46,7 +48,7 @@ Tương tự với những phần cứng khác, bạn hãy kết nối tới m�
 
   và chọn cổng ***Connect***
 
-  ![](/hoc-lieu/media/d2d077f2a54f40ae.webp)           
+  ![](/hoc-lieu/media/d2d077f2a54f40ae.webp)
 
 tiếp sau là ***Go to editor*** để có thể vào giao diện lập trình chính.
 

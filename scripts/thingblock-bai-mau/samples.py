@@ -1,4 +1,4 @@
-"""15 chương trình của 5 bài mẫu ThingBlock → public/hoc-lieu/thingblock/tep/<ma-bai>-v<n>.tb
+"""Bài kiểm tra ThingBot + 15 chương trình của 5 bài mẫu ThingBlock → public/hoc-lieu/thingblock/tep/<ma-bai>-v<n>.tb
 
 Chạy: python3 scripts/thingblock-bai-mau/samples.py. Sửa chương trình ở đây rồi sinh lại, đừng sửa tay tệp .tb.
 layout/*.tops.json là kích thước từng chồng khối đo trong ThingBlock, dùng để xếp khối khỏi chồng lên nhau.
@@ -34,9 +34,9 @@ def layout(name, count):
         row_h = max(row_h, t['h'])
     return pos
 
-def save(name, scripts, defs=(), float_vars=(), **kw):
+def save(name, scripts, defs=(), float_vars=(), at=None, **kw):
     p = Project(name)
-    pos = layout(name, len(scripts) + len(defs))
+    pos = at or layout(name, len(scripts) + len(defs))
     for s, (x, y) in zip(scripts, pos):
         p.script(s, x, y)
     for (dname, body), (x, y) in zip(defs, pos[len(scripts):]):
@@ -154,4 +154,20 @@ save('r4u-robot-cam-nhan-v3', [
                             go('forward', 'forward', 0))])])])]),
     ],
     **board('ultrasonic'))
+# ---- Kiểm tra ThingBot (trang Làm quen ThingBot) -----------------------------------
+# LED 1 sáng = chờ bấm SW. Bấm SW: LED 2 sáng, M1→M4 lần lượt chạy tiến 1 giây, servo S1 quay 0→180→90.
+def try_motor(m): return [ser_println(txt(f'M{m} chay tien')), motor(m, 'forward', 60), wait(1),
+                          motor(m, 'forward', 0), wait(0.5)]
+save('kiem-tra-thingbot', [
+    [BEGIN(), ser_begin(115200), note('C', 4, 0.5), note('E', 4, 0.5), note('G', 4, 1),
+     ser_println(txt('ThingBot san sang. Bam nut SW de kiem tra.'))],
+    [LOOP(), led(1, 100), wait_until(switch()), led(1, 0), led(2, 100),
+     call('thử động cơ'), call('thử servo'), led(2, 0), ser_println(txt('Xong. Bam SW de thu lai.'))]],
+    defs=[
+        ('thử động cơ', [*try_motor(1), *try_motor(2), *try_motor(3), *try_motor(4)]),
+        ('thử servo', [ser_println(txt('Servo S1: 0 - 180 - 90 do')), servo(1, 0), wait(1),
+                       servo(1, 180), wait(1), servo(1, 90), wait(1)]),
+    ],
+    at=[(40, 40), (560, 40), (1080, 40), (40, 420)],  # thử servo nằm dưới khối khởi động
+    **board('serial'))
 print('\n'.join(sorted(f for f in os.listdir(OUT) if f.endswith('.tb'))))

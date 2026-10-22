@@ -27,9 +27,9 @@ function coTrang(url: string): boolean {
 }
 
 describe("nội dung thư viện khóa học", () => {
-  it("đủ 60 trang: 48 trang Maker Việt + 12 trang ThingBlock", () => {
-    expect(md).toHaveLength(60);
-    expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/"))).toHaveLength(12);
+  it("đủ 62 trang: 48 trang Maker Việt + 14 trang ThingBlock", () => {
+    expect(md).toHaveLength(62);
+    expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/"))).toHaveLength(14);
   });
 
   it("trang ThingBlock ghi nguồn ThingEdu, trang chép từ Moodle thì không khai nguồn (mặc định Maker Việt)", () => {
@@ -48,7 +48,7 @@ describe("nội dung thư viện khóa học", () => {
   it("mỗi tệp bài mẫu .tb đều có trang dẫn tới, không tệp nào mồ côi", () => {
     const thuMuc = join(PUBLIC, "hoc-lieu/thingblock/tep");
     const tep = readdirSync(thuMuc).filter((n) => n.endsWith(".tb"));
-    expect(tep).toHaveLength(15);
+    expect(tep).toHaveLength(16);
     const daDung = new Set(links.map(({ url }) => url));
     expect(tep.filter((n) => !daDung.has(`/hoc-lieu/thingblock/tep/${n}`))).toEqual([]);
   });

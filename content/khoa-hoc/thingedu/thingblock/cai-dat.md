@@ -71,7 +71,7 @@ Thư mục dữ liệu của ThingBlock:
 ## Nối bo ThingBot với máy tính
 
 - Cắm dây USB Type-C vào mạch ThingBot. ThingBot dùng cổng USB có sẵn của chip ESP32-C3, nên trên Windows 10/11 và macOS thường **không cần cài driver**.
-- Nếu ThingBlock không thấy bo: thử dây khác (nhiều dây chỉ sạc được), thử cổng USB khác. Ngay sau khi mở ThingBlock, danh sách cổng có thể trống tới một phút trong lúc phần mềm khởi động. Chờ một chút rồi thử lại.
+- Nếu ThingBlock không thấy bo: thử dây khác (nhiều dây chỉ sạc được), thử cổng USB khác. Ngay sau khi mở ThingBlock, danh sách cổng có thể trống tới một phút trong lúc phần mềm khởi động. Chờ một chút rồi thử lại. Các lỗi khác xem [Sửa lỗi thường gặp](/khoa-hoc/thingedu/thingblock/sua-loi).
 - Động cơ và servo cần **nguồn pin**: bật công tắc nguồn trên ThingBotShield. Nguồn USB chỉ đủ cho mạch, không đủ cho động cơ.
 
 Tiếp theo: [Làm quen giao diện](/khoa-hoc/thingedu/thingblock/lam-quen).

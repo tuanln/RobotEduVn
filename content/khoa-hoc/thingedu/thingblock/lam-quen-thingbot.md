@@ -37,7 +37,7 @@ Hai đèn **LED 1**, **LED 2** trên bo điều khiển bằng `set led [1] (100
 
 Chạy chương trình này một lần với mỗi robot trước buổi học đầu, hoặc mỗi khi robot "không chịu chạy". Mất khoảng 15 phút.
 
-**Chuẩn bị:** robot đã lắp động cơ vào M1–M4 (xe 2 bánh thì chỉ M1, M2), một servo cắm cổng **S1** (dây nâu vào GND, dây đỏ vào 5V, dây vàng vào chân tín hiệu S1), pin đã sạc. **Kê robot lên** hộp hoặc giá để bánh quay tự do, không chạy trên mặt bàn.
+**Chuẩn bị:** robot đã lắp động cơ vào M1–M4 (xe 2 bánh thì chỉ M1, M2), một servo cắm cổng **S1** (dây nâu vào GND, dây đỏ vào 5V, dây cam hoặc vàng vào chân tín hiệu S1), pin đã sạc. **Kê robot lên** hộp hoặc giá để bánh quay tự do, không chạy trên mặt bàn.
 
 ![Chương trình kiểm tra: còi chào, đèn LED 1 chờ bấm SW, rồi lần lượt thử M1–M4 và servo S1](/hoc-lieu/thingblock/anh/kiem-tra-thingbot.webp)
 
@@ -78,8 +78,8 @@ vòng lặp Arduino
 **Các bước:**
 
 1. Mở tệp bằng **Tập tin → Load from your computer**. Dự án đã chọn sẵn bo ThingBot và ngoại vi Serial.
-2. Cắm USB, bấm **Connect**, chọn cổng của bo, bấm **Upload**, chờ báo *Your board is ready to go.*
-3. Mở khung **Monitor**, chọn tốc độ **115200**. Bật công tắc nguồn pin.
+2. Bật công tắc nguồn pin (động cơ chỉ chạy sau khi bấm SW nên bật trước vẫn an toàn). Cắm USB, bấm **Connect**, chọn cổng của bo, bấm **Upload**, chờ báo *Your board is ready to go.*
+3. Mở khung **Monitor**. Dòng chào có thể đã in trước khi bạn mở Monitor, không sao: các dòng sau sẽ hiện khi bấm SW.
 4. Bấm nút **SW**. Mỗi bánh quay 1 giây theo thứ tự M1 → M2 → M3 → M4, Monitor ghi bánh nào đang chạy. Sau đó servo quay về 0°, sang 180° rồi về giữa 90°.
 5. Ghi kết quả vào bảng dưới. Bấm SW lần nữa để thử lại.
 
@@ -89,7 +89,7 @@ vòng lặp Arduino
 |---|---|
 | Còi phát 3 nốt khi vừa nạp xong | Bo và chip PCA9685 chạy tốt |
 | LED 1 sáng, bấm SW thì LED 1 tắt, LED 2 sáng | Nút SW và hai LED tốt |
-| Monitor không hiện chữ | Chưa chọn đúng cổng hoặc tốc độ 115200 |
+| Bấm SW mà Monitor không hiện chữ | Chưa chọn đúng cổng của bo trong Monitor |
 | Monitor ghi "M2 chay tien" mà bánh không quay | Chưa bật công tắc, pin yếu, hoặc lỏng giắc M2 |
 | Bánh quay nhưng **ngược chiều tiến** | Đảo giắc cắm của động cơ đó, hoặc nhớ dùng `backward` cho bánh đó |
 | Servo không quay hoặc rung | Cắm ngược chiều chân, hoặc pin yếu (servo lớn MG996R kéo nhiều điện) |
@@ -108,7 +108,7 @@ Các bài mẫu trong khóa giả định **M1 là bánh trái, M2 là bánh ph�
 
 ## Xe 4 bánh mecanum
 
-Bánh mecanum có các con lăn xiên, nhờ đó xe đi ngang được mà không cần quay đầu. Bánh phải lắp **đúng vị trí** như hình ở trang [Về ThingBot](/khoa-hoc/thingedu/thingbot/ve-thingbot) (mục Bộ kit ThingBot 2024), nếu không xe chỉ tiến lùi được.
+Bánh mecanum có các con lăn xiên, nhờ đó xe đi ngang được mà không cần quay đầu. Bánh phải lắp **đúng vị trí** như hình ở trang [Về ThingBot](/khoa-hoc/thingedu/thingbot/ve-thingbot) (mục Bộ kit ThingBot 2024), nếu không xe vẫn tiến, lùi, xoay được nhưng không đi ngang được.
 
 Dùng phiếu ghi ở trên để biết cổng nào là bánh nào, rồi đặt chiều cho từng bánh theo bảng (**T** = `forward`, **L** = `backward`, cùng một tốc độ):
 

@@ -25,6 +25,27 @@ Bản v0 cũ (project `v0-robot-edu`, tiếng Anh, "Where Math is a Playground")
 
 ---
 
+## 22/10/2026 — ThingBlock: trang "Làm quen ThingBot" + "Sửa lỗi thường gặp" (62 trang, 16 tệp .tb)
+
+**Việc:** rà lại khóa ThingBlock theo góc người mới cầm ThingBot. Thêm 2 trang:
+- `lam-quen-thingbot`: bảng bộ phận ThingBotShield (ảnh đánh số 1–9 của khóa cũ)
+  ↔ khối lệnh, nguồn pin 2×18650, chương trình kiểm tra `kiem-tra-thingbot.tb`
+  (còi chào, LED 1 chờ SW, M1→M4 mỗi bánh 1 giây, servo S1 0/180/90, in Monitor)
+  + phiếu ghi bánh nào ở cổng nào, bảng chiều bánh cho xe mecanum.
+- `sua-loi`: kết nối/nạp, Live/Bluetooth, động cơ–servo–còi, cảm biến–OLED.
+Link thêm từ index, lam-quen, cai-dat, bai-mau và khóa ThingBot cũ.
+
+**Kiểm chứng:** tệp .tb mở được trong bản web ThingBlock, mã sinh ra biên dịch
+được cho esp32c3 bằng arduino-cli của app; một agent rà đối chiếu mã nguồn
+(blocks.ts/generator.ts), đã sửa 8 điểm (quyền Bluetooth macOS, Monitor dùng
+USB CDC nên baud không quyết định, địa chỉ OLED ghi đúng nhãn `0x78 (0x3c)`…).
+CHƯA chạy trên bo thật. Chân IO0/IO4 trên cổng 4 chân vẫn chờ xác nhận nhãn mạch.
+
+**Lưu ý:** `samples.py` chỉ tất định ở `project.json`; zip mang dấu giờ nên chạy
+lại thì 15 tệp cũ đổi byte — `git checkout` các tệp không đổi nội dung.
+
+---
+
 ## 21/10/2026 — Khóa "Lập trình khối với ThingBlock" (12 trang + 15 bài mẫu .tb)
 
 **Việc:** thêm khóa thứ 8 vào thư viện, `/khoa-hoc/thingedu/thingblock`: cài

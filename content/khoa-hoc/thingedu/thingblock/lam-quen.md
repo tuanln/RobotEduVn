@@ -85,3 +85,5 @@ ThingBlock có hai chế độ. Mỗi dự án chỉ dùng một chế độ, kh
 - **Tập tin → Mới**: dự án trống.
 
 Các bài mẫu trong khóa đều có tệp `.tb` để tải về và mở thẳng. Xem [5 bài mẫu](/khoa-hoc/thingedu/thingblock/bai-mau).
+
+Tiếp theo: [Làm quen ThingBot](/khoa-hoc/thingedu/thingblock/lam-quen-thingbot): bộ phận nào ứng với khối nào và chương trình kiểm tra bo.

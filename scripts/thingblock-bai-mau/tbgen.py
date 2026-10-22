@@ -34,6 +34,7 @@ def IFELSE(c, then, other): return B('control_if_else', {'CONDITION': c}, sub_={
 def FOREVER(*body): return B('control_forever', sub_={'SUBSTACK': list(body)})
 def REPEAT(n, *body): return B('control_repeat', {'TIMES': whole(n)}, sub_={'SUBSTACK': list(body)})
 def wait(s): return B('control_wait', {'DURATION': pos(s)})
+def wait_until(c): return B('control_wait_until', {'CONDITION': c})
 def call(p): return B('procedures_call', proc=p)
 def printv(v): return B('control_print', {'STRING': v})
 
@@ -55,6 +56,7 @@ def motor(m, d, s): return B('thingBotC3_setMotor', {'SPEED': num(s)}, {'MOTOR':
 def led(n, v): return B('thingBotC3_setLed', {'BRIGHTNESS': num(v)}, {'LED': f'LED_{n}'})
 def note(n, o, beats): return B('thingBotC3_playNote', {'BEATS': num(beats)}, {'NOTE': n, 'OCTAVE': str(o)})
 switch = lambda: B('thingBotC3_switch')
+def servo(n, deg): return B('thingBotC3_setServoAngle', {'ANGLE': num(deg)}, {'SERVO': str(n)})
 def sport(n, pulse): return B('thingBotC3_setServo', {'PULSE': num(pulse)}, {'SERVO': str(n)})
 # ngoại vi
 def dht_init(pin): return B('dht_init', {'NO': num(1)}, {'PIN': str(pin), 'MODEL': '11'})

@@ -6,7 +6,7 @@ import { khoaHoc } from "@/lib/khoa-hoc/source";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE.url;
 
-  // Thư viện khóa học: 60 trang chỉ tiếng Việt, không khai alternates.
+  // Thư viện khóa học: 62 trang chỉ tiếng Việt, không khai alternates.
   const khoaHocEntries = khoaHoc.getPages().map((page) => ({
     url: `${baseUrl}${page.url}`,
     changeFrequency: "monthly" as const,

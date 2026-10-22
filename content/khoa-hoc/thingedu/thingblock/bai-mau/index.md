@@ -33,6 +33,8 @@ Mỗi chương trình có ảnh khối và **tệp .tb** để tải về, mở 
 
 LED 1, LED 2, còi và nút **SW** có sẵn trên bo, không cần cắm thêm.
 
+Trước bài đầu tiên, chạy [chương trình kiểm tra ThingBot](/khoa-hoc/thingedu/thingblock/lam-quen-thingbot) với từng robot để biết bánh nào ở cổng nào và chắc động cơ, servo đều chạy.
+
 > **An toàn khi chạy Live**: bấm Stop **không** tắt động cơ. Các bài Live đều có đoạn `khi bấm phím phím trắng` để phanh: bấm phím cách là robot dừng. Kê robot lên giá hoặc đặt trên sàn, đừng chạy thử trên mặt bàn.
 
 *Nguồn: lô thử 5 bài mẫu của The Lab — Maker Việt × ThingEdu (11/08/2026), chỉnh lại theo ThingBlock 0.4.0.*

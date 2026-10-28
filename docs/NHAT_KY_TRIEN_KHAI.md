@@ -25,6 +25,14 @@ Bản v0 cũ (project `v0-robot-edu`, tiếng Anh, "Where Math is a Playground")
 
 ---
 
+## 28/10/2026 — Web mô phỏng ThingBot tại /mo-phong
+
+- `robot.edu.vn/mo-phong` = app Vite riêng **ThingEdu/thingbot-sim** (AGPL-3.0, 10 bài, khối ThingBlock thật), project Vercel `thingbot-sim`. Repo này KHÔNG chứa mã của nó: `next.config.ts` chuyển tiếp ngầm (`rewrites.beforeFiles`) sang `https://thingbot-sim.vercel.app/mo-phong/…`, `lib/i18n/rewrite.ts` cho middleware bỏ qua `/mo-phong` (nếu không bị gắn `/vi` rồi 404).
+- `?bai=N` mở thẳng bài N. Link đặt ở trang khóa ThingBlock (bảng 10 bài), Làm quen ThingBot (bài 1), R4U (bài 6, 9, 10). Link nên viết `/mo-phong?bai=N` không có `/` cuối — `/mo-phong/` bị Next 308 về `/mo-phong`.
+- Cập nhật web mô phỏng: build + deploy ở repo thingbot-sim (phải build tại máy vì cần checkout ThingBlock nhánh `feat/sim-m0`), robot.edu.vn không cần deploy lại.
+- Kiểm: `npm run check:khoa-hoc` (bắt cả link /mo-phong), và ở repo thingbot-sim `SIM_URL=https://robot.edu.vn/mo-phong npm run smoke`.
+- Bài làm của học sinh lưu localStorage theo tên miền: bài làm trên thingbot-sim.vercel.app không chuyển sang robot.edu.vn.
+
 ## 22/10/2026 — ThingBlock: trang "Làm quen ThingBot" + "Sửa lỗi thường gặp" (62 trang, 16 tệp .tb)
 
 **Việc:** rà lại khóa ThingBlock theo góc người mới cầm ThingBot. Thêm 2 trang:

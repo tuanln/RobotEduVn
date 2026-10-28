@@ -12,6 +12,8 @@ nguon: "ThingEdu, Maker Việt"
 
 **Chế độ:** nạp chương trình (cả V1, V2, V3). Chọn bo **ThingBot**, thêm ngoại vi **Ultrasonic**.
 
+> Thử trước trên mô phỏng, cùng cách đấu nối: [đọc cảm biến siêu âm](/mo-phong?bai=6), [lái bằng tay cầm PS2](/mo-phong?bai=9) và [xe tự tránh vật cản](/mo-phong?bai=10).
+
 > Dùng HC-SR04 loại 5 V thì chân ECHO trả 5 V vào chân 3,3 V của ESP32-C3. Hãy dùng loại HC-SR04P hoặc thêm cầu chia áp (hai điện trở) ở chân ECHO.
 
 ## V1 — Buổi 3: Phản ứng theo khoảng cách

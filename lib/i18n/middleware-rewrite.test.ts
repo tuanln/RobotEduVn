@@ -46,6 +46,12 @@ describe("rewriteTarget", () => {
     expect(rewriteTarget("/admin")).toBeNull();
   });
 
+  it("KHÔNG đụng vào web mô phỏng ThingBot — next.config chuyển tiếp nó sang project thingbot-sim", () => {
+    // Gắn /vi vào thì /vi/mo-phong khớp cây [locale] và 404, không tới được dòng rewrites của next.config.
+    expect(rewriteTarget("/mo-phong")).toBeNull();
+    expect(rewriteTarget("/mo-phong/")).toBeNull();
+  });
+
   it("KHÔNG đụng vào api và tài nguyên tĩnh", () => {
     expect(rewriteTarget("/api/gemini")).toBeNull();
     expect(rewriteTarget("/favicon.ico")).toBeNull();

@@ -19,6 +19,25 @@ Khóa [Tài liệu người dùng ThingBot](/khoa-hoc/thingedu/thingbot) hướn
 - [5 bài mẫu](/khoa-hoc/thingedu/thingblock/bai-mau) — Robot vũ công, Đèn giao thông, Nhiệt kế, Trạm khí tượng, Robot cảm nhận
 - [Sửa lỗi thường gặp](/khoa-hoc/thingedu/thingblock/sua-loi) — không thấy bo, nạp lỗi, Bluetooth, động cơ, cảm biến
 
+## Thử trên mô phỏng, chưa cần mạch
+
+[ThingBot Sim](/mo-phong?bai=1) là mạch ThingBot ảo chạy ngay trên trình duyệt (máy tính hoặc máy tính bảng), không cần cài gì. Học sinh xếp **đúng các khối ThingBlock**, bấm Chạy rồi xem tín hiệu đi từ nút bấm vào chip, qua chip PCA9685 tới đèn, servo và động cơ. Mỗi bài tự chấm và có gợi ý khi làm sai.
+
+| Bài | Nội dung |
+|---|---|
+| [1](/mo-phong?bai=1) | Làm quen ThingBot: tìm 13 bộ phận trên mạch |
+| [2](/mo-phong?bai=2) | Đèn nhấp nháy |
+| [3](/mo-phong?bai=3) | Nút bấm điều khiển đèn |
+| [4](/mo-phong?bai=4) | Màn hình OLED |
+| [5](/mo-phong?bai=5) | Servo quét |
+| [6](/mo-phong?bai=6) | Cảm biến khoảng cách (siêu âm) |
+| [7](/mo-phong?bai=7) | Động cơ DC |
+| [8](/mo-phong?bai=8) | Xe đi thẳng, rẽ |
+| [9](/mo-phong?bai=9) | Lái xe bằng tay cầm PS2 |
+| [10](/mo-phong?bai=10) | Dự án: xe tránh vật cản |
+
+Bài làm lưu trong trình duyệt của từng máy. Mô phỏng không nạp được xuống mạch thật: muốn chạy trên ThingBot, xếp lại các khối đó trong ThingBlock rồi bấm Nạp. Mã nguồn mở tại [ThingEdu/thingbot-sim](https://github.com/ThingEdu/thingbot-sim).
+
 ## Cần chuẩn bị
 
 - Máy tính Windows 10/11 (64-bit), máy Mac chip Apple (M1 trở lên) hoặc Linux 64-bit (Ubuntu/Debian/Fedora).

@@ -14,6 +14,8 @@ const BO_QUA = [
   "/sitemap.xml",
   "/robots.txt",
   "/opengraph-image",
+  // Web mô phỏng ThingBot: next.config.ts chuyển tiếp ngầm sang project Vercel thingbot-sim.
+  "/mo-phong",
 ];
 
 /**

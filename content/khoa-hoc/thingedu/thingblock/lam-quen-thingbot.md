@@ -6,6 +6,8 @@ nguon: "ThingEdu"
 
 Trang này dành cho buổi đầu cầm ThingBot: biết bộ phận nào điều khiển bằng khối nào, cấp nguồn đúng cách, rồi chạy một chương trình kiểm tra để chắc bo, động cơ và servo đều chạy **trước khi** học sinh bắt tay vào bài mẫu. Cách lắp khung xe xem video ở trang [Về ThingBot](/khoa-hoc/thingedu/thingbot/ve-thingbot).
 
+> Chưa có mạch trong tay? Bài [Làm quen ThingBot trên mô phỏng](/mo-phong?bai=1) cho học sinh bấm vào từng bộ phận của mạch ảo để biết nó làm gì.
+
 ## Bộ phận nào, khối nào
 
 ThingBot gồm hai mạch chồng lên nhau: mạch **ThingBot** (chip ESP32-C3, cổng USB Type-C) ở trên và mạch mở rộng **ThingBotShield** ở dưới. Hầu hết những thứ cần cắm đều nằm trên ThingBotShield.

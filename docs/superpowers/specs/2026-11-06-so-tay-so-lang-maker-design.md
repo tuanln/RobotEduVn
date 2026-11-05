@@ -67,11 +67,47 @@ Robot là chỗ ba mảng gặp nhau. Mỗi chặng chạm vào các mảng ở 
 
 Trích dẫn báo cáo WEF *Future of Jobs 2025* chỉ đưa lên trang **sau khi đã mở bản gốc đối chiếu** (xem mục 8).
 
+## 3b. Sân chơi: mang sản phẩm từ Làng ra ngoài
+
+Cuộc thi là **nhịp Chia sẻ ở quy mô lớn**. Ở Làng, em làm sản phẩm trong 7 buổi, mang ra Chợ Phiên buổi 8. Sau đó mang sản phẩm ấy, hoặc bản tốt hơn, tới một sân chơi bên ngoài. Trang không chỉ liệt kê cuộc thi. Mỗi cuộc thi được gắn với chặng nên tới, và với việc nên làm ở Làng trước khi đi.
+
+**Nguyên tắc chọn:**
+- Chỉ đưa những sân chơi có thật, có người Việt Nam tham gia.
+- Mỗi dòng ghi nguồn đã kiểm tra.
+- Không ghi ngày của mùa tới khi ban tổ chức chưa công bố. Chỉ ghi "thường diễn ra vào tháng…" dựa trên mùa gần nhất.
+
+| Sân chơi | Dạng | Ai dự | Thường diễn ra (mùa gần nhất) | Chặng nên tới | Chuẩn bị ở Làng | Nguồn |
+|---|---|---|---|---|---|---|
+| **FAnRoC** (FPT Schools AI & Robotics Challenge) | Robot thi đấu + AI | Học sinh phổ thông toàn quốc (độ tuổi từng bảng: cần xác nhận) | Phát động tháng 11, chung kết tháng 3. Mùa 2025–26 có hơn 1.700 đội | 3. Đấu Thủ | ThingBot, ThingBlock, tay cầm PS2, mô phỏng sân thi | [Báo Gia Lai](https://en.baogialai.com.vn/fanroc-2025-2026-finals-in-gia-lai-award-13-prizes-select-teams-for-national-round-post1678.amp) |
+| **Robotacon WRO** (World Robot Olympiad) | Robot theo nhiệm vụ | Tiểu học tới THPT, chia bảng theo tuổi | Chung kết quốc gia tháng 8 (2026: Quy Nhơn, 160 đội), sau đó thi quốc tế | 3. Đấu Thủ → 6 | Robot dò đường, lập trình nhiệm vụ | [QĐND](https://en.qdnd.vn/social-affairs/news/nearly-500-contestants-compete-at-robotacon-wro-2026-national-finals-594335) |
+| **VEX** (VIQRC dưới 15 tuổi, VRC dưới 19 tuổi) | Robot đối kháng theo mùa | Tiểu học, THCS, THPT | Khai mạc giải quốc gia tháng 10, chọn đội đi giải thế giới | 3 → 5 | Cơ khí, lái robot, sổ kỹ thuật | [Tiền Phong](https://tienphong.vn/robot-olympiad-2026-hang-tram-doi-thi-tranh-tai-nhieu-truong-hoc-dat-thanh-tich-cao-post1843532.tpo), [Đại biểu Nhân dân](https://daibieunhandan.vn/14-doi-tuyen-cua-viet-nam-se-tham-du-vex-robotics-world-championship-2026-10405941.html) |
+| **FTC Vietnam** (FIRST Tech Challenge) | Robot đối kháng theo mùa, tinh thần FIRST | Lớp 7–12 | Giải quốc gia khoảng tháng 1–2 | 5. Thợ Chế Tác | Thiết kế, gia công, lập trình, sổ kỹ thuật | [Tạp chí Công Thương](https://tapchicongthuong.vn/first-tech-challenge-vietnam-championship-2025--phan-thuong-khong-chi-gianh-cho-nha-vo-dich-133412.htm) |
+| **FIRST Global Challenge** | Olympic robot, một đội mỗi quốc gia | Học sinh THPT, chọn vào Đội tuyển Việt Nam | Mỗi năm một kỳ; đội 2023 được chọn qua Vietnam Robotics Challenge | 6. Đội tuyển VN | Toàn bộ chặng 3–5 | [first.global](https://first.global/2025-nations/vietnam-2025/) |
+| **FARC** (FPTU AI & Robotics Challenge) | AI + robot theo chủ đề xã hội | THPT | Mùa 2025: tháng 5–8, chủ đề nông nghiệp bền vững | 5. Thợ Chế Tác | Robot có AI, camera | [FPT](https://fpt.com/en/news/fpt-news/hang-tram-doi-thi-thpt-toan-quoc-xac-nhan-tham-chien-fptu-ai-robotics-challenge-2025) |
+| **Samsung Solve for Tomorrow** | Dự án STEM giải bài toán cộng đồng | Bảng A THCS, bảng B THPT | Tháng 4–10 | 4. Đại sứ (bảng A), 5 (bảng B) | Dự án kiểu BlueSilk: IoT, cảm biến, AI | [Samsung Newsroom](https://news.samsung.com/vn/khoi-dong-chuong-trinh-samsung-solve-for-tomorrow-2026-thuc-day-giao-duc-stem-gan-voi-phat-trien-xa-hoi-ben-vung) |
+| **NASA Space Apps Challenge** | Hackathon 48 giờ với dữ liệu mở của NASA | Mọi lứa tuổi theo đội (quy định cho người dưới 18 tuổi: cần xác nhận) | Đầu tháng 10. Năm 2025 Việt Nam có 4 điểm: Hà Nội, TP.HCM, Đà Nẵng, Ninh Bình | 5 → 7 | Lập trình, dùng agent AI, kể chuyện bằng dữ liệu | [Đại biểu Nhân dân](https://daibieunhandan.vn/ninh-binh-ghi-dau-an-tren-ban-do-su-kien-khoa-hoc-cong-nghe-quoc-te-10389341.html) |
+| **Technovation Girls** | App hoặc công cụ AI giải bài toán cộng đồng, dành cho nữ | Học sinh nữ | Tháng 8 tới tháng 5 (có điểm tổ chức ở Việt Nam hay không: cần xác nhận) | 4 → 5 | Agent AI, thiết kế app | [technovationchallenge.org](https://technovationchallenge.org/get-involved/students) |
+| **Robocon Việt Nam** | Robot đối kháng | Sinh viên đại học | Hằng năm | 7. Thợ Cả (thi, hoặc quay về huấn luyện) | Chuyển giao cho đội trẻ | [SGGP](https://www.sggp.org.vn/36-doi-tranh-tai-tai-robocon-viet-nam-2026-post854518.html) |
+
+**Cần anh xác nhận trước khi đưa lên trang:**
+1. Làng **hỗ trợ thật** sân chơi nào (dẫn đội, cho mượn sân, tập huấn)? Chỉ những sân đó được ghi "Làng đồng hành". Các sân còn lại ghi "sân chơi nên biết".
+2. Chữ **"VRC"** trong bộ học liệu Maker Việt là *Vietnam Robotics Challenge* (giải chọn đội FIRST Global) hay *VEX Robotics Competition*? Ngoài trang, hai giải này đều được gọi là VRC.
+3. Độ tuổi từng bảng của FAnRoC mùa 2026–27, và link thể lệ.
+
+**Trên trang:**
+- Thêm mục menu **"Sân chơi"** (`/san-choi`, chỉ có bản vi, giống thư viện khóa học).
+- Mỗi sân chơi là một thẻ. Lọc được theo chặng, hoặc theo dạng: robot, dự án, hackathon, AI.
+- Đầu trang có một sơ đồ: **Làng (Chơi → Làm → Chợ Phiên) → sân chơi trong nước → sân chơi quốc tế → trở về dẫn đội**. Đây chính là vòng "Rụng về cội" của bộ slide.
+- Dữ liệu nằm trong một tệp (`lib/content/san-choi.ts`). Mentor thêm sân chơi mới bằng cách góp bài như ở mục 6, không phải sửa giao diện.
+- Có test chặn sân chơi thiếu nguồn, như test mốc lịch sử đang có ở `lang-maker.test.ts`.
+
 ## 4. Bố cục trang
 
-### Menu (cả vi và en, 4 mục)
+### Menu
 
-**Hành trình · Khóa học · Làng Maker · Mô phỏng**
+**Hành trình · Sân chơi · Khóa học · Làng Maker · Mô phỏng**
+
+Sân chơi và Khóa học chỉ có trong menu vi. Menu en có 3 mục.
 
 - Nút "Bắt Đầu Ngay" dẫn tới khối "3 cách bắt đầu" trên trang chủ.
 - Chân trang: Góp bài, Dế Foundation ↗, Video, Công cụ.
@@ -161,14 +197,14 @@ Ba trang con `/hanh-trinh/choi`, `/lam`, `/chia-se` giữ nguyên.
 ## 6. Các đợt
 
 1. **Đợt 1, 06/11 → mở công khai 07/11**
-   - Phần việc: menu 4 mục và chuyển hướng; trang chủ mục 1–5; trang Hành trình mục 1–5; sửa Khóa học; ảnh A1, A5–A7; bản en tương ứng.
+   - Phần việc: menu và chuyển hướng; trang chủ mục 1–5; trang Hành trình mục 1–5; **trang Sân chơi với những sân anh đã xác nhận**; sửa Khóa học; ảnh A1, A5–A7; bản en tương ứng (trừ Sân chơi).
    - **Điều kiện xong:**
      - Phụ huynh từ trang chủ tới được "3 cách bắt đầu" và trang Hành trình trong 1 cú bấm.
      - Mọi bộ kiểm tra đều xanh.
      - Không trang nào tràn ngang ở bề rộng 390 px.
      - Link cũ không trả về 404.
 2. **Đợt 2, trong tháng 11**
-   - Phần việc: ảnh B, C, E, F; trang Hoạt động (FanRoc, VRC, FTC, FARC, FIRST Global, Đại sứ Robotics); bài workshop BlueSilk; bài "Dùng agent AI làm game"; mở đường góp bài A + B cho mentor; nút "Bài học" trong mô phỏng.
+   - Phần việc: ảnh B, C, E, F; ảnh và thành tích của Làng gắn vào từng thẻ Sân chơi; bài workshop BlueSilk; bài "Dùng agent AI làm game"; mở đường góp bài A + B cho mentor; nút "Bài học" trong mô phỏng.
    - **Điều kiện xong:** có ít nhất 1 bài do mentor khác góp đã lên trang.
 3. **Đợt 3, khi thing.ai.vn sẵn sàng**
    - Phần việc: chuyển ThingBlock, mô phỏng, Công cụ, Video sang thing.ai.vn và đặt chuyển hướng.

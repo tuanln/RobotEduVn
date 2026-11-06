@@ -13,10 +13,22 @@ describe("TRANG_CHU", () => {
     expect(emptyStringKeys(TRANG_CHU_EN)).toEqual([]);
   });
 
-  it("vi giữ nguyên chữ đang chạy", () => {
-    expect(TRANG_CHU_VI.hero.moTa).toBe(
-      "Ba nhịp lặp lại ở Làng Maker: chơi cho tò mò, bắt tay làm ra thứ chạy được, rồi kể lại cho người khác nghe.",
-    );
+  it("câu mở sổ tay số: robot là vật để nghĩ", () => {
+    expect(TRANG_CHU_VI.hero.tieuDe.join(" ")).toBe("Robot là vật để nghĩ cùng");
+    expect(TRANG_CHU_VI.hero.papert).toContain("Seymour Papert");
+  });
+
+  it("bốn hoạt động AI có thật, gắn chặng", () => {
+    for (const t of [TRANG_CHU_VI, TRANG_CHU_EN]) {
+      expect(t.baMang.vong).toHaveLength(3);
+      expect(t.baMang.hoatDongAI.ds).toHaveLength(4);
+      for (const hd of t.baMang.hoatDongAI.ds) expect(hd.chang).toMatch(/\d/);
+    }
+  });
+
+  it("khối FanRoc: bản vi dẫn tới Sân chơi, bản en không dẫn tới trang chỉ có bản Việt", () => {
+    expect(TRANG_CHU_VI.fanroc.href).toBe("/san-choi#fanroc");
+    expect(TRANG_CHU_EN.fanroc.href.startsWith("/en/")).toBe(true);
   });
 
   it("thật sự đã dịch", () => {

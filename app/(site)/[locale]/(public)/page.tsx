@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { getHubs, getVideos } from "@/lib/sheets";
-import { NHIP } from "@/lib/content/nhip";
 import { trangChu } from "@/lib/content/trang-chu";
+import { hanhTrinh } from "@/lib/content/hanh-trinh-8-chang";
 import { HeroSection } from "@/components/home/hero-section";
-import { LearningJourney } from "@/components/home/learning-journey";
-import { ImpactStats, type ImpactStat } from "@/components/home/impact-stats";
+import { ConMayTuoi } from "@/components/home/con-may-tuoi";
+import { ConDuong8Chang } from "@/components/home/con-duong-8-chang";
+import { BaMang } from "@/components/home/ba-mang";
+import { FanRoc } from "@/components/home/fanroc";
 import { PartnersSection } from "@/components/home/partners-section";
 import { CTASection } from "@/components/home/cta-section";
 import { localeOf } from "@/lib/i18n/params";
@@ -22,6 +23,10 @@ export async function generateMetadata({
   return { ...pageMetadata("home", locale, meta), title: { absolute: meta.title } };
 }
 
+/**
+ * Trang mở đầu sổ tay số (spec 2026-11-06 mục 4): câu mở → Con mấy tuổi?
+ * → Con đường 8 chặng → Một robot ba mảng → Mùa thi FanRoc → Đối tác → Lời mời.
+ */
 export default async function HomePage({
   params,
 }: {
@@ -29,36 +34,14 @@ export default async function HomePage({
 }) {
   const locale = await localeOf(params);
   const t = trangChu(locale);
-  const s = t.soLieu;
-  const [hubs, videos] = await Promise.all([getHubs(), getVideos()]);
-  const cities = new Set(hubs.map((h) => h.city).filter(Boolean));
-
-  // Số liệu suy ra từ dữ liệu thật để không bao giờ lệch với nội dung trên site.
-  const stats: ImpactStat[] = [
-    { value: hubs.length, label: s.hub.label, note: s.hub.note },
-    {
-      value: cities.size,
-      label: s.tinh.label,
-      // Tên tỉnh là dữ liệu tiếng Việt — trang en đánh dấu lang="vi".
-      note: [...cities].join(" · ") || s.tinh.chuaCo,
-      noteLang: cities.size > 0 && locale === "en" ? "vi" : undefined,
-    },
-    { value: videos.length, label: s.video.label, note: s.video.note },
-    { value: NHIP.length, label: s.nhip.label, note: s.nhip.note },
-  ];
 
   return (
     <>
       <HeroSection t={t.hero} locale={locale} />
-      <LearningJourney t={t.baNhip} locale={locale} />
-      <ImpactStats
-        stats={stats}
-        tieuDe={s.tieuDe}
-        phuDe={s.phuDe}
-        mucTieuDam={s.mucTieuDam}
-        mucTieuThan={s.mucTieuThan}
-        locale={locale}
-      />
+      <ConMayTuoi t={hanhTrinh(locale)} />
+      <ConDuong8Chang t={t.conDuong} locale={locale} />
+      <BaMang t={t.baMang} />
+      <FanRoc t={t.fanroc} />
       <PartnersSection t={t.doiTac} />
       <CTASection t={t.cta} locale={locale} />
     </>

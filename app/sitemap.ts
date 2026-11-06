@@ -33,5 +33,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...trang, ...khoaHocEntries.map((e) => ({ ...e, lastModified: new Date() }))];
+  // Sân chơi: trang chỉ tiếng Việt, không vào ROUTES nên khai tay ở đây.
+  const sanChoi = {
+    url: `${baseUrl}/san-choi`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  };
+
+  return [...trang, sanChoi, ...khoaHocEntries.map((e) => ({ ...e, lastModified: new Date() }))];
 }

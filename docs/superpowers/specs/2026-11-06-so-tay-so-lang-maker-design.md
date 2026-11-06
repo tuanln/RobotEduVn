@@ -256,3 +256,47 @@ Ba trang con `/hanh-trinh/choi`, `/lam`, `/chia-se` giữ nguyên.
 | Ảnh minh họa bị đọc như ảnh thật | Ghi "Ảnh minh họa"; thay dần bằng ảnh thật ở đợt 2 |
 | destem.foundation còn số liệu minh họa | Chỉ để link ở chân trang |
 | Đổi menu làm gãy link cũ | Chuyển hướng 308 kèm test cho từng đường dẫn |
+
+## 10. Bổ sung 07/11: lộ trình theo tuổi, Papert qua ví dụ thật, cuộc thi hợp triết lý
+
+Anh chốt thêm trong buổi 07/11: mục tiêu lớn của trang là **con đường tự vọc robot từ 6 tuổi**, robot chỉ là phương tiện, điều quan trọng nhất là con lớn lên thành người thế nào. Trang vẽ lộ trình và chỉ đường; khóa nào của mình thì để trên site, đồ nghề ngoài (GCompris, micro:bit, Tinkercad, App Inventor) thì dẫn sang trang gốc.
+
+### 10.1 Lộ trình theo tuổi (khối "Con mấy tuổi?" ở trang chủ)
+
+| Giai đoạn | Tuổi | Con lớn lên thế nào | Đồ nghề |
+|---|---|---|---|
+| Gieo hạt | 6–8 | Dám chạm, dám thử, không sợ sai | NEO One + GCompris tiếng Việt, trò chơi camera/giọng nói trên NEO, bài 1 `/mo-phong` |
+| Vươn cành | 8–11 | Biết tự sửa lỗi, kiên trì | ThingBlock + ThingBot, micro:bit (MakeCode), Tinkercad 3D |
+| Kết trái | 11–14 | Làm dự án thật, làm việc nhóm | ThingBot + cảm biến, Tinkercad Circuits, App Inventor, FanRoc, dự án kiểu BlueSilk |
+| Rụng về cội | 14–18 | Dẫn dắt, dạy lại em nhỏ | VIA + K12 Maker, sách điện tử VIA về AI, Arduino C, FTC/FGC, NASA Space Apps |
+
+Khối này thay "3 cách bắt đầu" ở trang chủ. Mỗi thẻ chặng ở trang Hành trình có dòng "Con lớn lên thế nào" đặt **trên** dòng đồ nghề.
+
+### 10.2 Papert qua cảnh thật ở Làng (`/hanh-trinh#vi-sao`)
+
+| Nguyên tắc | Cảnh ở Làng |
+|---|---|
+| Xưởng trước, lớp sau | Bé 6 tuổi chơi NEO One và lái ThingBot ngay buổi đầu |
+| Niềm vui khó | Robot chạy lệch thì con tự chỉnh tốc độ; buồng tằm BlueSilk nóng thì con sửa ngưỡng rơ-le |
+| Sàn thấp, trần cao, tường rộng | Cùng một ThingBot: 6 tuổi bấm nút, 10 tuổi lập trình khối, 15 tuổi viết Arduino |
+| Không làm hộ | Mentor hỏi "con thử gì rồi?"; dùng AI làm game nhưng con là người thiết kế |
+| Học bằng cách dạy | Chợ Phiên buổi 8; đội tuyển FGC về Làng dạy lại các em |
+
+Mục **Chuyện thật** (`#chuyen-that`): BlueSilk (sản phẩm các con làm ra) và Team Vietnam FGC. Số liệu FGC lấy từ fanpage Team Vietnam - FIRST Global (bài tổng kết 03/11/2025): FGC 2025 Panama, Huy chương Bạc Jackie Bezos Award, Top 12 chung cuộc, Storytelling Award, Social Media Award; FGC 2024 Athens; hoạt động Team Vietnam × Hope School. Ảnh: mã F1 (BlueSilk), G1–G3 (FGC), anh tự lưu vào `public/hoc-lieu/lang/`.
+
+### 10.3 Cuộc thi xếp theo mức hợp triết lý (`/san-choi`)
+
+Ba tiêu chí: học sinh tự làm (có luật chống làm hộ) · bài toán mở từ đời thật · đề cao chia sẻ, hợp tác.
+
+- **Rất hợp:** FGC, FTC, NASA Space Apps, Technovation Girls, Samsung Solve for Tomorrow, FanRoc (cửa vào).
+- **Hợp nếu giữ "không làm hộ":** WRO (Future Innovators đề mở; Robomission nhiệm vụ cố định), VEX, FARC.
+- **Để sau:** Robocon.
+
+Chọn theo tuổi: 6–10 Chợ Phiên ở Làng (không chấm điểm) · 10–14 FanRoc, WRO Future Innovators, Samsung bảng A · 14–18 FTC/FGC, NASA Space Apps, Technovation.
+
+### 10.4 Quyết định thi công 07/11 (anh yêu cầu làm luôn đợt 1 + 2, xem bản chạy trên máy)
+
+- **Không redirect `/triet-ly` và `/cong-dong/*` trong đợt này.** Các route đó nằm trong ROUTES + TRANSLATED_ROUTES; redirect sẽ làm cổng `check:en` (đòi HTTP 200) và sitemap sai. Chỉ bỏ khỏi menu; `#vi-sao` dẫn "Đọc sâu hơn" tới `/triet-ly`. Redirect làm ở đợt 3 cùng lúc dọn ROUTES.
+- `/san-choi` chỉ tiếng Việt, không vào ROUTES (cùng quy tắc `/khoa-hoc`).
+- Thang vai trò, tên đai, tỉ lệ Thợ Cả: giữ nguyên, chờ 7 quyết định ở mục 8.
+- Ảnh chưa có thì khung tự ẩn; ảnh A1 lấy từ `~/Downloads/Làng.jpeg`.

@@ -103,6 +103,13 @@ export const LM_VI: LangMakerTrangContent = {
       moTa: "Thứ được làm ra không phải mấy con robot này, mà là những người biết làm ra chúng.",
     },
   },
+  cacDiem: {
+    tieuDe: "Các điểm Làng Maker",
+    moTa: "Ba điểm đang mở cửa. Buổi đầu miễn phí, cuối tuần, 60–90 phút. Giờ sinh hoạt từng điểm: liên hệ trước khi tới.",
+    lienHe: "Liên hệ",
+    banDo: "Mở bản đồ",
+    xemTatCa: "Xem đầy đủ các điểm",
+  },
   cuaVao: {
     tieuDe: "Vào làng thế nào?",
     moTa: "Buổi đầu tiên miễn phí, và không cần biết gì trước.",

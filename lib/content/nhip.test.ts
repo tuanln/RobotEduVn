@@ -9,7 +9,7 @@ const TEN_PHAN_MEM = [
   "Arduino",
   "ThingBot",
   "NEO One",
-  "ThingEduBlock",
+  "ThingBlock",
   "GitHub",
 ];
 

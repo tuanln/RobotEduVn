@@ -41,8 +41,8 @@ export const CONG_CU_VI: CongCuContent = {
       nhip: "lam",
       type: "Robot giáo dục",
       origin: "Made in Vietnam (Rogo)",
-      desc: "Robot giáo dục đa năng, hỗ trợ lập trình bằng Python và khối. Tích hợp cảm biến, motor, LED. Giá cả hợp lý, phù hợp học sinh Việt Nam.",
-      features: ["Made in Vietnam", "Python + Khối", "Cảm biến", "Giá hợp lý"],
+      desc: "Robot giáo dục đa năng, lập trình bằng khối ThingBlock rồi lên Arduino C. Tích hợp cảm biến, motor, LED. Giá cả hợp lý, phù hợp học sinh Việt Nam.",
+      features: ["Made in Vietnam", "ThingBlock (khối) → Arduino", "Cảm biến", "Giá hợp lý"],
     },
     {
       name: "NEO One",

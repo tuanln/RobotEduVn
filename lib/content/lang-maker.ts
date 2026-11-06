@@ -185,7 +185,7 @@ export const MUOI_NAM: MocThoiGian[] = [
     nam: 2025,
     tieuDe: "Đồ nghề thành sản phẩm",
     chiTiet:
-      "ThingBot và phần mềm lập trình khối ThingEduBlock ra mắt, rồi bộ Kit ThingBot bản 2025–2026. Hành trình FIRST Global tiếp tục.",
+      "ThingBot và phần mềm lập trình khối ThingBlock ra mắt, rồi bộ Kit ThingBot bản 2025–2026. Hành trình FIRST Global tiếp tục.",
     nguon:
       "Video kênh MakerViet đăng 7/3/2025 và 25/12/2025 · thư mục FGC 2024, FGC 2025, lưu trữ Google Drive",
   },

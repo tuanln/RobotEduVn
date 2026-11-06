@@ -41,8 +41,8 @@ export const CONG_CU_EN: CongCuContent = {
       nhip: "lam",
       type: "Educational robot",
       origin: "Made in Vietnam (Rogo)",
-      desc: "A versatile educational robot, programmable in Python or with blocks. Built-in sensors, motors and LEDs. Affordable, and designed for Vietnamese students.",
-      features: ["Made in Vietnam", "Python + blocks", "Sensors", "Affordable"],
+      desc: "A versatile educational robot, programmed with ThingBlock blocks and then in Arduino C. Built-in sensors, motors and LEDs. Affordable, and designed for Vietnamese students.",
+      features: ["Made in Vietnam", "ThingBlock (blocks) → Arduino", "Sensors", "Affordable"],
     },
     {
       name: "NEO One",

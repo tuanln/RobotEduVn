@@ -52,5 +52,7 @@ export interface LangMakerTrangContent {
     canCu: string;
     doNghe: { tieuDe: string; moTa: string };
   };
+  /** #cac-diem: ba điểm Làng (gộp từ Maker Hub). Thiếu lịch thì ghi "Liên hệ", không "Đang cập nhật". */
+  cacDiem: { tieuDe: string; moTa: string; lienHe: string; banDo: string; xemTatCa: string };
   cuaVao: { tieuDe: string; moTa: string; timHub: string; batDauChoi: string };
 }

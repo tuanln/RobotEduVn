@@ -97,7 +97,7 @@ Ba hướng làm bên dưới là ba lối vào song song, không phải ba cấ
         title: "Điều khiển & tư duy máy tính",
         doing:
           "Ra lệnh cho máy làm đúng ý mình — vẽ một hình, đi một đoạn, lặp lại mười lần mà không sai bước nào.",
-        tools: ["KTurtle", "ThingEduBlock"],
+        tools: ["KTurtle", "ThingBlock"],
       },
       {
         title: "Lập trình",

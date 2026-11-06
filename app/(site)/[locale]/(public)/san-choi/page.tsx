@@ -11,6 +11,7 @@ import {
   type MucHop,
 } from "@/lib/content/san-choi";
 import { localeOf } from "@/lib/i18n/params";
+import { pathFor } from "@/lib/i18n/routes";
 import { ogImages } from "@/lib/seo/metadata";
 
 const META = {
@@ -59,7 +60,7 @@ export default async function SanChoiPage({
           <p className="mx-auto max-w-3xl text-center text-sm text-muted-foreground">
             Làng (Chơi → Làm → Chợ Phiên) → sân chơi trong nước → sân chơi quốc tế → trở về dẫn đội.
             Đó là vòng “Rụng về cội” của{" "}
-            <Link href="/hanh-trinh#tam-chang" className="font-medium text-primary hover:underline">
+            <Link href={`${pathFor("howWeLearn", "vi")}#tam-chang`} className="font-medium text-primary hover:underline">
               hành trình 8 chặng
             </Link>
             .
@@ -140,7 +141,7 @@ export default async function SanChoiPage({
         <p className="text-sm text-muted-foreground">
           Thiếu sân chơi nào? Mentor góp thêm một mục vào <code>lib/content/san-choi.ts</code> trên
           GitHub, kèm nguồn đã kiểm. Xem{" "}
-          <Link href="/cho-mentor" className="font-medium text-primary hover:underline">
+          <Link href={pathFor("forMentors", "vi")} className="font-medium text-primary hover:underline">
             cách góp bài
           </Link>
           .

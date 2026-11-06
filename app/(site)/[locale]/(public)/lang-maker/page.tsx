@@ -9,7 +9,7 @@ import {
   DO_NGHE_MUOI_NAM,
   TRICH_DAN_2017,
 } from "@/lib/content/lang-maker";
-import { HUBS } from "@/lib/content/hubs";
+import { HUBS, hubMapUrl } from "@/lib/content/hubs";
 import { langMakerTrang } from "@/lib/content/lang-maker-trang";
 import type { Manh } from "@/lib/content/lang-maker-trang/types";
 import { mailto } from "@/lib/content/cong-dong";
@@ -290,7 +290,45 @@ export default async function LangMakerPage({
           </div>
         </section>
 
-        {/* 5. Cửa vào */}
+        {/* 5. Các điểm Làng (gộp từ Maker Hub, spec 2026-11-06 mục 4) */}
+        <section id="cac-diem" className="mt-12 scroll-mt-20">
+          <h2 className="text-2xl font-bold">{t.cacDiem.tieuDe}</h2>
+          <p className="mt-2 text-sm text-muted-foreground">{t.cacDiem.moTa}</p>
+          <ul className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+            {HUBS.filter((h) => h.active).map((h) => (
+              <li key={h.id} className="rounded-2xl border border-border bg-card p-6">
+                <h3 className="font-bold" lang={duLieu}>
+                  {h.name}
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground" lang={duLieu}>
+                  {h.address}
+                </p>
+                <p className="mt-3 text-sm">
+                  {t.cacDiem.lienHe}:{" "}
+                  <a href={`mailto:${h.contact}`} className="font-medium text-primary hover:underline">
+                    {h.contact}
+                  </a>
+                </p>
+                <a
+                  href={hubMapUrl(h)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+                >
+                  <MapPin className="h-3.5 w-3.5" aria-hidden />
+                  {t.cacDiem.banDo}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-sm">
+            <Link href={pathFor("makerHubs", locale)} className="font-medium text-primary hover:underline">
+              {t.cacDiem.xemTatCa} &rarr;
+            </Link>
+          </p>
+        </section>
+
+        {/* 6. Cửa vào */}
         <section className="mt-12 rounded-2xl border border-border bg-card p-8 text-center">
           <h2 className="text-xl font-bold">{t.cuaVao.tieuDe}</h2>
           <p className="mt-2 text-sm text-muted-foreground">{t.cuaVao.moTa}</p>

@@ -87,8 +87,9 @@ describe("nội dung thư viện khóa học", () => {
     expect(hong).toEqual([]);
   });
 
-  it("chỉ link nội bộ tới /khoa-hoc và /hoc-lieu — không trỏ sang trang chỉ có ở makerviet", () => {
-    const la = links.filter(({ url }) => url.startsWith("/") && !/^\/(khoa-hoc|hoc-lieu)(\/|$)/.test(url));
+  it("chỉ link nội bộ tới /khoa-hoc, /hoc-lieu, /mo-phong — không trỏ sang trang chỉ có ở makerviet", () => {
+    // /mo-phong là web mô phỏng ThingBot, chuyển tiếp ngầm từ next.config.ts (có ?bai=N).
+    const la = links.filter(({ url }) => url.startsWith("/") && !/^\/(khoa-hoc|hoc-lieu|mo-phong)(\/|\?|$)/.test(url));
     expect(la).toEqual([]);
   });
 

@@ -230,7 +230,7 @@ export const LM_EN: LangMakerTrangContent = {
         moc: "2024–2025",
         tieuDe: "The kit becomes a product",
         chiTiet:
-          "ThingBot and the ThingEduBlock block-programming software launch, followed by the 2025–2026 ThingBot Kit. The FIRST Global journey goes on.",
+          "ThingBot and the ThingBlock block-programming software launch, followed by the 2025–2026 ThingBot Kit. The FIRST Global journey goes on.",
       },
       {
         moc: "2026",
@@ -244,6 +244,13 @@ export const LM_EN: LangMakerTrangContent = {
       tieuDe: "Ten years of making the kit",
       moTa: "What got made was never these robots — it was the people who know how to make them.",
     },
+  },
+  cacDiem: {
+    tieuDe: "Làng Maker locations",
+    moTa: "Three locations are open. The first session is free, on weekends, 60–90 minutes. Session times vary by location: get in touch before you come.",
+    lienHe: "Contact",
+    banDo: "Open map",
+    xemTatCa: "See all locations",
   },
   cuaVao: {
     tieuDe: "How do you join the village?",

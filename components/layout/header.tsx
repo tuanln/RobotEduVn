@@ -53,7 +53,7 @@ export function Header({ locale }: { locale: Locale }) {
           <LanguageSwitcher locale={locale} />
           <ThemeToggle t={t.theme} />
           <Button asChild>
-            <Link href={pathFor("howWeLearn", locale)}>
+            <Link href={`${pathFor("home", locale)}#bat-dau`}>
               {locale === "vi" ? "Bắt Đầu Ngay" : "Start Here"}
             </Link>
           </Button>
@@ -93,7 +93,7 @@ export function Header({ locale }: { locale: Locale }) {
               <div className="mt-4 px-4">
                 <Button asChild className="w-full">
                   <Link
-                    href={pathFor("howWeLearn", locale)}
+                    href={`${pathFor("home", locale)}#bat-dau`}
                     onClick={() => setOpen(false)}
                   >
                     {locale === "vi" ? "Bắt Đầu Ngay" : "Start Here"}

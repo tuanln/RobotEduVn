@@ -2,34 +2,38 @@ import { describe, expect, it } from "vitest";
 import { navItems } from "./nav";
 
 describe("navItems", () => {
-  it("tiếng Việt mười mục, tiếng Anh chín mục (Khóa Học chỉ có bản Việt)", () => {
-    expect(navItems("vi")).toHaveLength(10);
-    expect(navItems("en")).toHaveLength(9);
+  it("tiếng Việt năm mục, tiếng Anh ba mục (Sân Chơi, Khóa Học chỉ có bản Việt)", () => {
+    expect(navItems("vi")).toHaveLength(5);
+    expect(navItems("en")).toHaveLength(3);
   });
 
-  it("Khóa Học đứng ngay sau Cách Học, chỉ ở menu tiếng Việt", () => {
-    expect(navItems("vi")[2]).toEqual({ label: "Khóa Học", href: "/khoa-hoc" });
-    expect(navItems("en").map((i) => i.href)).not.toContain("/khoa-hoc");
-    expect(navItems("en").map((i) => i.href)).not.toContain("/en/khoa-hoc");
+  it("thứ tự menu tiếng Việt theo spec sổ tay số", () => {
+    expect(navItems("vi")).toEqual([
+      { label: "Hành Trình", href: "/hanh-trinh" },
+      { label: "Sân Chơi", href: "/san-choi" },
+      { label: "Khóa Học", href: "/khoa-hoc" },
+      { label: "Làng Maker", href: "/lang-maker" },
+      { label: "Mô Phỏng", href: "/mo-phong" },
+    ]);
   });
 
-  it("giữ nguyên nhãn và đường dẫn tiếng Việt đang chạy", () => {
-    const vi = navItems("vi");
-    expect(vi[0]).toEqual({ label: "Trang Chủ", href: "/" });
-    expect(vi[1]).toEqual({ label: "Cách Học", href: "/hanh-trinh" });
-    expect(vi[3]).toEqual({ label: "Làng Maker", href: "/lang-maker" });
-  });
-
-  it("bản tiếng Anh dùng đường dẫn có tiền tố /en", () => {
-    for (const item of navItems("en")) {
-      expect(item.href === "/en" || item.href.startsWith("/en/")).toBe(true);
+  it("menu tiếng Anh không dẫn tới trang chỉ có bản Việt", () => {
+    const hrefs = navItems("en").map((i) => i.href);
+    for (const cam of ["/khoa-hoc", "/en/khoa-hoc", "/san-choi", "/en/san-choi"]) {
+      expect(hrefs).not.toContain(cam);
     }
   });
 
-  it("giữ tên Làng Maker và Maker Hub nguyên tiếng Việt trong menu tiếng Anh", () => {
-    const labels = navItems("en").map((i) => i.label);
-    expect(labels).toContain("Làng Maker");
-    expect(labels).toContain("Maker Hub");
+  it("bản tiếng Anh dùng đường dẫn có tiền tố /en, trừ app mô phỏng dùng chung", () => {
+    for (const item of navItems("en")) {
+      expect(
+        item.href === "/mo-phong" || item.href === "/en" || item.href.startsWith("/en/"),
+      ).toBe(true);
+    }
+  });
+
+  it("giữ tên Làng Maker nguyên tiếng Việt trong menu tiếng Anh", () => {
+    expect(navItems("en").map((i) => i.label)).toContain("Làng Maker");
   });
 
   it("không nhãn nào bỏ trống", () => {

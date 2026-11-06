@@ -33,19 +33,21 @@ export const KHUNG_EN: KhungContent = {
       {
         tieuDe: "Explore",
         links: [
-          { label: "Làng Maker (the Maker Village)", route: "makerVillage" },
-          { label: "How We Learn", route: "howWeLearn" },
+          { label: "The 8-Stage Journey", route: "howWeLearn" },
+          { label: "Competitions (in Vietnamese)", href: "/san-choi" },
+          { label: "Courses (in Vietnamese)", href: "/khoa-hoc" },
           { label: "Papert’s Philosophy", route: "philosophy" },
           { label: "Tools", route: "tools" },
           { label: "Video Hub", route: "videos" },
         ],
       },
       {
-        tieuDe: "For Teachers",
+        tieuDe: "For Mentors",
         links: [
-          { label: "Curriculum Materials", route: "forMentors" },
-          { label: "Mentor Community", route: "community" },
-          { label: "Open a Maker Hub", route: "makerHubs" },
+          { label: "Contribute & Materials", route: "forMentors" },
+          { label: "Community", route: "community" },
+          { label: "Làng Maker Locations", route: "makerHubs" },
+          { label: "Dế Foundation ↗", href: "https://de-stem-foundation.vercel.app" },
         ],
       },
       {

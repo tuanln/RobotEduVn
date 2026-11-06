@@ -29,19 +29,21 @@ export const KHUNG_VI: KhungContent = {
       {
         tieuDe: "Khám Phá",
         links: [
-          { label: "Làng Maker", route: "makerVillage" },
-          { label: "Cách Học", route: "howWeLearn" },
+          { label: "Hành Trình 8 Chặng", route: "howWeLearn" },
+          { label: "Sân Chơi", href: "/san-choi" },
+          { label: "Khóa Học", href: "/khoa-hoc" },
           { label: "Triết Lý Papert", route: "philosophy" },
           { label: "Công Cụ & Thiết Bị", route: "tools" },
           { label: "Video Hub", route: "videos" },
         ],
       },
       {
-        tieuDe: "Cho Giáo Viên",
+        tieuDe: "Cho Mentor",
         links: [
-          { label: "Tài Liệu Giáo Trình", route: "forMentors" },
-          { label: "Cộng Đồng Mentor", route: "community" },
-          { label: "Đăng Ký Maker Hub", route: "makerHubs" },
+          { label: "Góp Bài & Tài Liệu", route: "forMentors" },
+          { label: "Cộng Đồng", route: "community" },
+          { label: "Các Điểm Làng Maker", route: "makerHubs" },
+          { label: "Dế Foundation ↗", href: "https://de-stem-foundation.vercel.app" },
         ],
       },
       {

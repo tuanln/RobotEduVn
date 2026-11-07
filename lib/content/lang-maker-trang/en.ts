@@ -198,10 +198,22 @@ export const LM_EN: LangMakerTrangContent = {
           "Maker Hanoi has stood with Team Vietnam since the 2017 FIRST Global Challenge: a place to practise, mechanics and coding taught from scratch, and the story told on VTV3. The FGC records continue, unbroken, in the community’s archive from 2018 to this day.",
       },
       {
+        moc: "May 2018",
+        tieuDe: "Mobile Maker goes to Hưng Yên",
+        chiTiet:
+          "A primary-school STEM and robotics conference in Hưng Yên: the whole commune hall watches the children build and program robots right at the table, parents and teachers standing around. The first mobile-workshop trip.",
+      },
+      {
         moc: "2018–2019",
         tieuDe: "Cuộc Đua Số (the Digital Race)",
         chiTiet:
           "A self-driving car competition becomes a real problem to solve, and the data source for the community’s line of autonomous cars.",
+      },
+      {
+        moc: "Jun–Aug 2019",
+        tieuDe: "UMI summer class and Mini FIRST",
+        chiTiet:
+          "Four days of UMI (U make it): every child builds and programs their own robot, and the class lines up with their creations at the end. In August, Mini FIRST: the first robot match for 6–10 year olds on a taped-out floor field.",
       },
       {
         moc: "2020",
@@ -242,6 +254,12 @@ export const LM_EN: LangMakerTrangContent = {
         tieuDe: "The kit becomes a product",
         chiTiet:
           "ThingBot and the ThingBlock block-programming software launch, followed by the 2025–2026 ThingBot Kit. The FIRST Global journey goes on.",
+      },
+      {
+        moc: "Apr–May 2025",
+        tieuDe: "A Maker Việt field in Thái Nguyên",
+        chiTiet:
+          "Thái Nguyên Robotics Contest and Thái Nguyên STEAM Challenge: the playing field carries the Maker Việt logo, and local secondary students compete in robotics and 3D-designed farm tools. Mobile Maker goes to the provinces again, this time alongside a provincial competition.",
       },
       {
         moc: "Oct 2025",

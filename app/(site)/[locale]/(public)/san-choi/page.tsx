@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AnhLang } from "@/components/common/anh-lang";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExternalLink } from "lucide-react";
@@ -113,6 +114,19 @@ export default async function SanChoiPage({
                     >
                       <h4 className="text-xl font-bold">{s.ten}</h4>
                       <p className="text-sm text-muted-foreground">{s.tenDayDu}</p>
+                      {s.anh && <AnhLang ma={s.anh} alt={`Làng Maker ở ${s.ten}`} className="mt-4" width={1200} height={800} />}
+                      {s.video && (
+                        <p className="mt-3 text-sm">
+                          <a
+                            href={`https://www.youtube.com/watch?v=${s.video.youtubeId}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-primary hover:underline"
+                          >
+                            ▶ {s.video.ten}
+                          </a>
+                        </p>
+                      )}
                       <dl className="mt-4 space-y-1.5 text-sm">
                         <Dong nhan="Dạng" gia={s.dang} />
                         <Dong nhan="Ai dự" gia={s.aiDu} />

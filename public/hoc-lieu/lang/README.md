@@ -44,3 +44,22 @@ Bổ sung 07/11/2026 (đợt 2), ảnh từ kho Dế STEM Foundation (`~/Ai-Code
 | GD-vuon-canh | Lớp học với laptop ở Maker Hanoi | slide 2022 |
 | GD-ket-trai | Học sinh trong phòng lab, Open STEM Day | delab/LAP09371.jpg |
 | GD-rung-ve-coi | Đội tuyển sửa robot tại FGC 2025 Panama | Drive FGC 2025/TeamVN |
+
+Bổ sung 07/11/2026 (đợt 3), ảnh từ Google Photos của anh Tuấn (album sự kiện, tải về 07/11/2026):
+
+| Mã | Ảnh | Album |
+|---|---|---|
+| A2 (thay) | Trẻ lắp robot giữa hội trường, phụ huynh và mentor vây quanh | Mobile Maker Hưng Yên 2018 |
+| A3 (thay) | Mentor kèm nhóm trẻ lắp robot | Mobile Maker Hưng Yên 2018 |
+| GD-gieo-hat (thay) | Trẻ 6–10 tuổi với robot trên sân băng dính | Mini First 2019 |
+| GD-vuon-canh (thay) | Hai bạn nhỏ lắp robot | UMI GM Day 1, 2019 |
+| GD-ket-trai (thay) | Học sinh với robot trên sân Maker Việt | Mobile Maker Thái Nguyên 2025 |
+| GD-rung-ve-coi (thay) | Đội tuyển với robot và giải | FGC 2022 Geneva |
+| MN-2018-05 | Mentor và robot trên sân khấu hội nghị STEM tiểu học | Mobile Maker Hưng Yên |
+| MN-2019-06 | Cả lớp UMI với robot vừa lắp | UMI GM Day 2 |
+| MN-2020 | Học sinh và mentor sửa robot bên sân VSC | VSC 2020 |
+| MN-2022-10 | Đội tuyển áo dài trước gian Việt Nam, Geneva | FGC 2022 |
+| MN-2025-05 | Sân Thái Nguyên Robotics Contest mang logo Maker Việt | Mobile Maker Thái Nguyên |
+| SC-fgc | Đội sửa robot ở khu pit Geneva | FGC 2022 |
+| SC-fanroc | Học sinh lắp robot trên sân FanRoc | Dế STEM Foundation |
+| LM-umi-coding, LM-gears | Bé lập trình trên laptop; tay bé và bánh răng (dự phòng, chưa dùng) | UMI 2019 |

@@ -152,6 +152,15 @@ export const MUOI_NAM: MocThoiGian[] = [
     video: { youtubeId: "Tf4hWFBRivY", ten: "Xem Café sáng VTV3 về đội tuyển (3 phút)" },
   },
   {
+    moc: "5/2018",
+    nam: 2018,
+    tieuDe: "Mobile Maker về Hưng Yên",
+    chiTiet:
+      "Hội nghị giáo dục STEM-Robotic cấp tiểu học ở Hưng Yên: cả hội trường xã xem các em lắp robot và lập trình ngay tại bàn, phụ huynh và thầy cô đứng quanh. Chuyến xưởng-di-động đầu tiên.",
+    nguon: "Album ảnh “Mobile Maker Hưng Yên” (26/5/2018), Google Photos",
+    anh: "MN-2018-05",
+  },
+  {
     moc: "2018–2019",
     nam: 2019,
     tieuDe: "Cuộc Đua Số",
@@ -160,11 +169,21 @@ export const MUOI_NAM: MocThoiGian[] = [
     nguon: `Slide “Maker Hanoi — Review”, lưu trữ Google Drive`,
   },
   {
+    moc: "6–8/2019",
+    nam: 2019,
+    tieuDe: "Lớp hè UMI và Mini FIRST",
+    chiTiet:
+      "Bốn ngày UMI (U make it): mỗi em tự lắp và tự lập trình một con robot, cuối buổi cả lớp xếp hàng cùng sản phẩm. Tháng 8, Mini FIRST: trận đấu robot đầu tiên cho trẻ 6–10 tuổi trên sân băng dính.",
+    nguon: "Album ảnh “UMI GM Day 1–4” (8–29/6/2019) và “Mini First” (17/8/2019), Google Photos",
+    anh: "MN-2019-06",
+  },
+  {
     moc: "2020",
     nam: 2020,
     tieuDe: "VIA — xe tự hành mã nguồn mở",
     chiTiet: `Maker Bot 2020 và dự án VIA: xe tự hành mở, kèm bộ mô phỏng, tập dữ liệu do cộng đồng đóng góp, và điều khiển bằng giọng nói tiếng Việt. Cùng năm có Vietnam STEAM Challenge.`,
-    nguon: `Slide “Maker Hanoi — Review” · thư mục Vietnam STEAM Challenge 2020, lưu trữ Google Drive`,
+    nguon: `Slide “Maker Hanoi — Review” · thư mục Vietnam STEAM Challenge 2020, lưu trữ Google Drive · album ảnh “VSC 2020” (25–26/7/2020), Google Photos`,
+    anh: "MN-2020",
   },
   {
     moc: "2021",
@@ -195,7 +214,8 @@ export const MUOI_NAM: MocThoiGian[] = [
     nam: 2022,
     tieuDe: "Đội tuyển Việt Nam ở Geneva",
     chiTiet: "FIRST Global Challenge 2022 tại Palexpo, Geneva.",
-    nguon: "Video kênh MakerViet, đăng 12 và 13/10/2022",
+    nguon: "Video kênh MakerViet, đăng 12 và 13/10/2022 · album ảnh “FGC 2022” (13–16/10/2022), Google Photos",
+    anh: "MN-2022-10",
   },
   {
     moc: "2023",
@@ -215,6 +235,15 @@ export const MUOI_NAM: MocThoiGian[] = [
     nguon:
       "Video kênh MakerViet đăng 7/3/2025 và 25/12/2025 · thư mục FGC 2024, FGC 2025, lưu trữ Google Drive",
     anh: "MN-2024",
+  },
+  {
+    moc: "4–5/2025",
+    nam: 2025,
+    tieuDe: "Sân Maker Việt lên Thái Nguyên",
+    chiTiet:
+      "Thái Nguyên Robotics Contest và Thái Nguyên STEAM Challenge: sân thi mang logo Maker Việt, học sinh phổ thông địa phương thi robot và thiết kế 3D nông cụ. Mobile Maker đi tỉnh lần nữa, lần này cùng cuộc thi của tỉnh.",
+    nguon: "Album ảnh “Mobile Maker Thái Nguyên” (13/4–18/5/2025), Google Photos",
+    anh: "MN-2025-05",
   },
   {
     moc: "10/2025",

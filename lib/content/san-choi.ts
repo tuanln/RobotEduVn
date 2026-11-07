@@ -27,6 +27,10 @@ export interface SanChoi {
   viSaoHop: string;
   link: string;
   nguon: string;
+  /** Mã ảnh `public/hoc-lieu/lang/<mã>.webp` của Làng ở sân này; thiếu tệp thì ẩn. */
+  anh?: string;
+  /** Video YouTube công khai của Làng ở sân này. */
+  video?: { youtubeId: string; ten: string };
 }
 
 export const MUC_HOP: Record<MucHop, { ten: string; moTa: string }> = {
@@ -58,6 +62,7 @@ export const SAN_CHOI: SanChoi[] = [
     viSaoHop: "Cửa vào: đội nhỏ, luật rõ, mọi em ở Làng đều có thể tới. Robot là của em, không phải của thầy.",
     link: "https://en.baogialai.com.vn/fanroc-2025-2026-finals-in-gia-lai-award-13-prizes-select-teams-for-national-round-post1678.amp",
     nguon: "Báo Gia Lai, bài về chung kết FanRoc 2025–2026 (kiểm 06/11/2026)",
+    anh: "SC-fanroc",
   },
   {
     ma: "fgc",
@@ -72,6 +77,8 @@ export const SAN_CHOI: SanChoi[] = [
     viSaoHop: "Tinh thần Gracious Professionalism: thi đấu hết mình nhưng tôn trọng đối thủ. Sổ kỹ thuật do học sinh tự viết.",
     link: "https://first.global/2025-nations/vietnam-2025/",
     nguon: "first.global, trang Vietnam 2025; fanpage Team Vietnam - FIRST Global, bài tổng kết 03/11/2025",
+    anh: "SC-fgc",
+    video: { youtubeId: "YCM-Dfv8YQ0", ten: "Đội tuyển Việt Nam tới Geneva, FGC 2022 (video 360)" },
   },
   {
     ma: "ftc",
@@ -86,6 +93,7 @@ export const SAN_CHOI: SanChoi[] = [
     viSaoHop: "Cùng tinh thần FIRST như FGC; giải thưởng không chỉ dành cho nhà vô địch mà cho cả cách làm.",
     link: "https://tapchicongthuong.vn/first-tech-challenge-vietnam-championship-2025--phan-thuong-khong-chi-gianh-cho-nha-vo-dich-133412.htm",
     nguon: "Tạp chí Công Thương, FTC Vietnam Championship 2025 (kiểm 06/11/2026)",
+    video: { youtubeId: "iewncoJbA-8", ten: "Chung kết Vietnam Robotics Challenge 2022, sân FIRST trong nước (video 360)" },
   },
   {
     ma: "nasa-space-apps",

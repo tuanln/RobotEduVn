@@ -24,7 +24,7 @@ Có sẵn khi chọn bo ThingBot. Các khối tự khởi tạo mạch nên khô
 | `set tempo to (120) BPM` | Nhịp nhạc (số phách mỗi phút) |
 | `play note [C (Do)] octave [4] for (1) beats` | Còi phát nốt Đô…Si, quãng 3–6, trong số phách đã cho |
 | `rest for (1) beats` | Nghỉ (im lặng) theo phách |
-| `set buzzer to (0) pulse` | Ở bản 0.4.0 khối này không phát được tiếng (còi trên bo là còi thụ động, chỉ kêu tách một tiếng). Muốn còi kêu thì dùng `play note` |
+| `set buzzer to (0) pulse` | Độ rộng xung cho còi. Ở bản 0.4.0 và 0.5.0 khối này không phát được tiếng (bỏ qua giá trị); từ bản 0.6 dùng đúng giá trị. Muốn phát nốt nhạc thì dùng `play note` |
 | `read switch` | Đúng khi nút **SW** trên ThingBotShield đang được bấm |
 | `init PS2 on ThingBot` | Khởi tạo bộ thu tay PS2 cắm cổng PS2 của ThingBotShield |
 
@@ -44,25 +44,25 @@ Tay cầm PS2 không dây đi kèm ThingBot nên nhóm này có sẵn.
 | `PS2 get joystick [LX]` | Vị trí cần analog LX, LY, RX, RY: 0–255, ở giữa khoảng 128 |
 | `init PS2 receiver pin DIN (2) DOUT (3) CS (4) CLK (5)` | Khởi tạo bộ thu PS2 cắm ở chân tự chọn. Với ThingBot dùng `init PS2 on ThingBot` |
 
-`init PS2 on ThingBot` chờ tới khi bộ thu trả lời. Nếu chưa cắm bộ thu, robot đứng yên ở bước này.
+`init PS2 on ThingBot` chờ tới khi bộ thu trả lời. Ở bản 0.4.0 và 0.5.0, chưa cắm bộ thu thì robot đứng yên mãi ở bước này. Từ bản 0.6 khối bỏ qua sau khoảng 10 giây và chương trình chạy tiếp; khối `init PS2 receiver pin …` cũng mặc định đúng chân cổng PS2 của ThingBot.
 
 ## ThingBot Telemetrix (chế độ chạy trực tiếp)
 
-Thêm bằng nút **Thêm phần mở rộng** khi chọn **No board**. Xem cách kết nối ở trang [Làm quen giao diện](/khoa-hoc/thingedu/thingblock/lam-quen).
+Thêm bằng nút **Thêm phần mở rộng** khi chọn **No board** (bản 0.6: **Không dùng mạch**). Xem cách kết nối ở trang [Làm quen giao diện](/khoa-hoc/thingedu/thingblock/lam-quen). *Telemetrix* là tên firmware chạy trên bo để nhận lệnh qua Bluetooth; app điện thoại ThingBot Remote dùng cùng giao thức này.
 
 ![Chương trình Live: đọc DHT11 và bật LED trên bo](/hoc-lieu/thingblock/anh/06-live-k4.webp)
 
 | Khối | Ý nghĩa |
 |---|---|
-| `motor [M1] speed (50)` | Tốc độ động cơ 0–100 (chỉ chạy tiến). 0 là dừng |
+| `motor [M1] speed (50)` | Tốc độ động cơ. Bản 0.4.0, 0.5.0: 0–100, chỉ chạy tiến. Từ bản 0.6: **−100 tới 100**, số âm là lùi. 0 là dừng |
 | `servo [S1] angle (90)` | Góc servo 0–180° |
 | `LED [LED 1] [on]` | Bật/tắt LED 1 hoặc LED 2 trên bo |
 | `buzzer frequency (50)` | Còi kêu, mức 0 (tắt) tới 100 |
 | `setup [DHT11] sensor on pin (4)` | Khai báo cảm biến DHT11/DHT22 ở chân |
 | `temperature (°C) on pin (4)` | Nhiệt độ đọc từ DHT |
 | `humidity (%) on pin (4)` | Độ ẩm đọc từ DHT |
-| `setup ultrasonic trigger (7) echo (8)` | Khai báo cảm biến siêu âm |
+| `setup ultrasonic trigger (7) echo (8)` | Khai báo cảm biến siêu âm. Bản 0.6 mặc định **trigger 0, echo 4** (đúng cổng IO0/IO4 của ThingBot, không đè chân PS2 và màn hình) |
 | `ultrasonic distance (cm)` | Khoảng cách đo bằng siêu âm |
 | `set pin (13) mode [OUTPUT]`, `digital write pin`, `digital read pin`, `analog read pin`, `PWM write pin` | Điều khiển chân trực tiếp |
 
-Ở bản 0.4.0, chế độ Live được kiểm chứng với động cơ chạy tiến, LED, còi và DHT. Các khối chân và siêu âm ở Live còn lỗi với firmware đi kèm: dùng chế độ nạp cho những việc đó. DHT cập nhật khoảng 3 giây một lần, và trong vài giây đầu khối nhiệt độ trả về 0 vì chưa có số đo nào.
+Ở bản 0.4.0 và 0.5.0, chế độ Live được kiểm chứng với động cơ chạy tiến, LED, còi và DHT; các khối chân và siêu âm còn lỗi với firmware đi kèm. Bản 0.6 dựng lại firmware Live: khối `set pin mode` chạy được, siêu âm mặc định đúng chân, Stop tắt mọi động cơ và còi, động cơ lùi được, và "tiến" quay cùng chiều với chương trình nạp (phải cài lại firmware Live một lần). DHT cập nhật khoảng 3 giây một lần, và trong vài giây đầu khối nhiệt độ trả về 0 vì chưa có số đo nào. Tổng hợp ở [Bản 0.6: có gì mới](/khoa-hoc/thingedu/thingblock/ban-0-6).

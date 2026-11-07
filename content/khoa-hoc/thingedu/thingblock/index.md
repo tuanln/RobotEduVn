@@ -1,25 +1,31 @@
 ---
 title: "Lập trình khối với ThingBlock"
-description: "Cài đặt ThingBlock, làm quen giao diện, các khối lệnh cho ThingBot và 5 bài mẫu từ K2 đến R4U"
+description: "Cài đặt ThingBlock 0.6, mô phỏng và bài học trong app, các khối lệnh cho ThingBot, điều khiển bằng điện thoại và 5 bài mẫu từ K2 đến R4U"
 nguon: "ThingEdu"
 ---
 
 ThingBlock là phần mềm lập trình kéo-thả khối lệnh của ThingEdu, dựng trên nền Scratch. Học sinh xếp khối như Scratch, còn ThingBlock tự đổi chương trình thành mã Arduino C++, biên dịch rồi nạp xuống bo **ThingBot**. ThingBlock miễn phí, mã nguồn mở trên GitHub, chạy trên Windows, macOS và Linux.
 
+> **Mới: ThingBlock 0.6** (bản thử 04/11/2026) có **mô phỏng ThingBot ngay trong app**, **14 bài học tự chấm**, **36 ví dụ có sẵn** (gồm 2 robot FanRoc), chế độ Live lùi được và dừng được, điều khiển từ điện thoại, lưu tệp và giao diện tiếng Việt. Xem [Bản 0.6: có gì mới](/khoa-hoc/thingedu/thingblock/ban-0-6). Bộ bài học thi **FanRoc 2026–2027 đang chuẩn bị, sắp ra**.
+
 Khóa [Tài liệu người dùng ThingBot](/khoa-hoc/thingedu/thingbot) hướng dẫn lập trình bằng phần mềm cũ ThingEduBlock (dựa trên OpenBlock). Khóa này dành cho ThingBlock, phần mềm mới. Phần giới thiệu bộ kit và video lắp ráp ThingBot ở khóa cũ vẫn dùng chung được; cách dùng từng bộ phận với ThingBlock xem ở trang [Làm quen ThingBot](/khoa-hoc/thingedu/thingblock/lam-quen-thingbot).
 
 ## Nội dung khóa học
 
+- [Bản 0.6: có gì mới](/khoa-hoc/thingedu/thingblock/ban-0-6) — mô phỏng trong app, 14 bài học, 36 ví dụ, Live sửa lỗi, điều khiển từ điện thoại
 - [Cài đặt ThingBlock](/khoa-hoc/thingedu/thingblock/cai-dat) — tải bản cài, mở lần đầu, tải gói bo ESP32
-- [Làm quen giao diện](/khoa-hoc/thingedu/thingblock/lam-quen) — chọn bo, hai chế độ chạy, lưu và mở dự án
+- [Làm quen giao diện](/khoa-hoc/thingedu/thingblock/lam-quen) — chọn bo, hai chế độ chạy, mô phỏng, lưu và mở dự án
 - [Làm quen ThingBot](/khoa-hoc/thingedu/thingblock/lam-quen-thingbot) — bộ phận nào ứng với khối nào, nguồn pin, chương trình kiểm tra bo, xe mecanum
 - [Khối lệnh cơ bản](/khoa-hoc/thingedu/thingblock/khoi-lenh-co-ban) — Sự kiện, Điều khiển, Phép toán, Biến, Khối của tôi, Arduino
 - [Khối lệnh ThingBot](/khoa-hoc/thingedu/thingblock/khoi-lenh-thingbot) — động cơ, servo, LED, còi, nút SW, tay PS2 và chế độ chạy trực tiếp
 - [Khối lệnh mở rộng](/khoa-hoc/thingedu/thingblock/khoi-lenh-mo-rong) — cảm biến DHT, siêu âm, màn OLED, Serial, MPU6050…
+- [Điều khiển bằng điện thoại](/khoa-hoc/thingedu/thingblock/dieu-khien-bang-dien-thoai) — khối Phone control, tải app ThingBot Remote (APK), lái qua Bluetooth
 - [5 bài mẫu](/khoa-hoc/thingedu/thingblock/bai-mau) — Robot vũ công, Đèn giao thông, Nhiệt kế, Trạm khí tượng, Robot cảm nhận
 - [Sửa lỗi thường gặp](/khoa-hoc/thingedu/thingblock/sua-loi) — không thấy bo, nạp lỗi, Bluetooth, động cơ, cảm biến
 
 ## Thử trên mô phỏng, chưa cần mạch
+
+Từ bản 0.6, ThingBlock có sẵn khung **Mô phỏng** và menu **Bài học** ngay trong app (xem [Bản 0.6: có gì mới](/khoa-hoc/thingedu/thingblock/ban-0-6)). Chưa cài ThingBlock thì dùng bản web dưới đây.
 
 [ThingBot Sim](/mo-phong?bai=1) là mạch ThingBot ảo chạy ngay trên trình duyệt (máy tính hoặc máy tính bảng), không cần cài gì. Học sinh xếp **đúng các khối ThingBlock**, bấm Chạy rồi xem tín hiệu đi từ nút bấm vào chip, qua chip PCA9685 tới đèn, servo và động cơ. Mỗi bài tự chấm và có gợi ý khi làm sai.
 
@@ -44,4 +50,4 @@ Bài làm lưu trong trình duyệt của từng máy. Mô phỏng không nạp 
 - Bo ThingBot (gồm mạch ThingBot và ThingBotShield) cùng một dây USB Type-C **truyền được dữ liệu**. Dây chỉ để sạc thì máy không nhận bo.
 - Kết nối Internet cho lần đầu dùng ThingBot, để tải gói bo ESP32.
 
-> Các trang trong khóa viết theo **ThingBlock 0.4.0** (phát hành 26/09/2026). Những chỗ ghi *(sau bản 0.4.0)* là tính năng đã có trong mã nguồn nhưng chưa vào bản cài đặt: ngoại vi Rotary Encoder và ô chọn chip SH1106 cho màn OLED. Bản sau có thể đổi tên nút hoặc thêm khối.
+> Các trang trong khóa viết theo **ThingBlock 0.4.0** (26/09/2026) và được cập nhật theo **0.5.0** (30/10/2026) và **0.6.0 bản thử** (04/11/2026). Chỗ nào ghi *(từ bản 0.5.0)* hay *(từ bản 0.6)* là tính năng chỉ có ở bản đó trở đi. Bản thử 0.6 còn lấy góp ý nên tên nút có thể đổi.

@@ -10,17 +10,17 @@ Ngoại vi chỉ có ở **chế độ nạp**. Khi đã chọn bo ThingBot, b�
 |---|---|---|
 | DHT Sensor | DHT | Đo nhiệt độ, độ ẩm |
 | Ultrasonic | Ultrasonic | Đo khoảng cách bằng siêu âm HC-SR04 |
-| OLED | OLED | Màn hình OLED 0,96" (SSD1306); màn 1,3" (SH1106) *(sau bản 0.4.0)* |
+| OLED | OLED | Màn hình OLED 0,96" (SSD1306); màn 1,3" (SH1106) *(từ bản 0.5.0)* |
 | Serial | Serial | Gửi, nhận chữ qua cổng USB, xem ở khung Monitor |
 | MPU6050 Sensor | MPU6050 | Cảm biến gia tốc và con quay 6 trục |
-| Rotary Encoder | Encoder | Núm xoay có nút bấm *(sau bản 0.4.0)* |
-| Servo | Servo | Servo cắm thẳng vào chân GPIO (không qua cổng S) |
+| Rotary Encoder | Encoder | Núm xoay có nút bấm *(từ bản 0.5.0)* |
+| Servo | Servo | Servo cắm thẳng vào chân GPIO (không qua cổng S) *(biên dịch được với ThingBot từ bản 0.6)* |
 | PCA9685 Module | PCA9685 | Module PWM 16 kênh gắn thêm |
-| Phone control | Phone | Cho app điện thoại ThingBot Remote điều khiển robot trong lúc chương trình chạy |
-| RGB LED Strip | RGB LED Strip | Dải LED màu NeoPixel |
+| Phone control | Phone | Cho app điện thoại ThingBot Remote điều khiển robot trong lúc chương trình chạy. Xem [Điều khiển bằng điện thoại](/khoa-hoc/thingedu/thingblock/dieu-khien-bang-dien-thoai) |
+| RGB LED Strip | RGB LED Strip | Dải LED màu NeoPixel *(biên dịch được với ThingBot từ bản 0.6)* |
 | PS2 Remote Control | PS2 | Có sẵn theo ThingBot, xem [Khối lệnh ThingBot](/khoa-hoc/thingedu/thingblock/khoi-lenh-thingbot) |
 
-> **RGB LED Strip chưa dùng được với ThingBot ở bản 0.4.0**: thư viện NeoPixel đi kèm không biên dịch được với nhân ESP32 mà ThingBlock cài. Tạm thời dùng LED thường hoặc module LED cắm cổng S.
+> **RGB LED Strip và Servo (chân GPIO) không dùng được với ThingBot ở bản 0.4.0 và 0.5.0**: thư viện đi kèm không biên dịch được với nhân ESP32 mà ThingBlock cài. Bản 0.6 đã sửa. Ở bản cũ, tạm dùng LED thường hoặc module LED cắm cổng S, và servo cắm cổng S1–S5 với khối nhóm ThingBot.
 
 ## DHT — nhiệt độ, độ ẩm
 
@@ -46,7 +46,7 @@ Cắm màn OLED vào cổng I2C trên ThingBotShield (chung đường với chip
 
 | Khối | Ý nghĩa |
 |---|---|
-| `init oled width (128) height (64) I2C address [0x78 (0x3c)]` | Khởi tạo màn SSD1306. Sau bản 0.4.0 khối có thêm ô `chip [SSD1306]` để chọn **SH1106** cho màn 1,3" |
+| `init oled width (128) height (64) I2C address [0x78 (0x3c)]` | Khởi tạo màn SSD1306. Từ bản 0.5.0 khối có thêm ô `chip [SSD1306]` để chọn **SH1106** cho màn 1,3" |
 | `set oled text size [6x8] color [white] background color [black]` | Cỡ chữ và màu. **Đổi nền sang black**, để mặc định là chữ trắng trên nền trắng |
 | `set oled cursor x: (0) y: (0)` | Vị trí bắt đầu in chữ (điểm ảnh) |
 | `oled print ( ) [no-warp]` | In chữ hoặc số. `no-warp` in tiếp trên cùng dòng, `warp` in xong xuống dòng |
@@ -76,7 +76,7 @@ Màn OLED không hiện được chữ tiếng Việt có dấu: viết không d
 | `mpu6050 [x] axis rotation (rad/s)` | Tốc độ quay theo trục |
 | `mpu6050 temperature (℃)` | Nhiệt độ của chip |
 
-## Encoder — núm xoay *(sau bản 0.4.0)*
+## Encoder — núm xoay *(từ bản 0.5.0)*
 
 | Khối | Ý nghĩa |
 |---|---|

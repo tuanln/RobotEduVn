@@ -40,7 +40,7 @@ Khối mũ, đứng đầu mỗi chồng khối. Chồng khối không có mũ t
 | Khối | Ý nghĩa | Chế độ |
 |---|---|---|
 | `đồng hồ bấm giờ` | Số giây đã trôi qua: khi nạp là tính từ lúc bo bật; ở Live là từ lúc bấm Run hoặc lần đặt lại gần nhất | Nạp, Live |
-| `đặt lại đồng hồ bấm giờ` | Đưa đồng hồ về 0. Ở chế độ nạp bản 0.4.0, khối này **chưa có tác dụng** | Live |
+| `đặt lại đồng hồ bấm giờ` | Đưa đồng hồ về 0. Ở chế độ nạp bản 0.4.0 và 0.5.0, khối này **chưa có tác dụng**; từ bản 0.6 chạy đúng | Nạp *(từ 0.6)*, Live |
 | `phím … được bấm?`, `chuột được nhấn?`, `hỏi … và đợi`… | Đọc bàn phím, chuột, câu trả lời trên máy tính | Live |
 
 Cảm biến thật của robot (khoảng cách, nhiệt độ…) nằm ở nhóm ThingBot và các ngoại vi.
@@ -71,15 +71,16 @@ Bấm **Tạo một biến**, đặt tên, rồi dùng:
 Lưu ý khi nạp chương trình:
 
 - Lúc tạo biến, ThingBlock hỏi **Variable type**: **Number** (số nguyên, mặc định), **Decimal** (số thập phân), **Text** (chữ). Chọn Decimal khi cần số lẻ như 0.5.
-- Ở bản 0.4.0, biến Decimal **trở lại thành số nguyên khi mở lại dự án** từ tệp. Với DHT11 không sao vì cảm biến vốn trả số nguyên.
+- Ở bản 0.4.0 và 0.5.0, biến Decimal **trở lại thành số nguyên khi mở lại dự án** từ tệp (với DHT11 không sao vì cảm biến vốn trả số nguyên). Bản 0.6 giữ đúng kiểu.
+- Ô nhập số (tốc độ, góc, độ sáng…) nhận khối biến từ bản 0.6; ở bản cũ bọc biến trong `làm tròn` thì kéo vào được.
 - Nên đặt tên biến không dấu (`nhietDo`) nếu muốn mã C++ ở khung Generated Code dễ đọc. Tên có dấu vẫn chạy, chỉ là bị đổi thành dạng mã hóa.
-- **Danh sách** (Tạo một Danh sách) chưa dùng được khi nạp ở bản 0.4.0: mã sinh ra không biên dịch được.
+- **Danh sách** (Tạo một Danh sách) chưa dùng được khi nạp, tới bản 0.6 vẫn vậy: mã sinh ra không biên dịch được.
 
 ## Khối của tôi
 
 Bấm **Tạo một khối** để gom một đoạn chương trình thành khối riêng, ví dụ `lái tay`. Khối `định nghĩa [lái tay]` chứa phần thân, còn khối `lái tay` dùng để gọi ở chỗ khác. Chương trình chính nhờ vậy đọc được như một câu.
 
-Ở chế độ nạp bản 0.4.0, khối tự tạo **chưa nhận tham số**: tạo khối không có ô nhập.
+Ở chế độ nạp bản 0.4.0 và 0.5.0, khối tự tạo **chưa nhận tham số**: tạo khối không có ô nhập. Từ bản 0.6, khối tự tạo có tham số sinh mã đúng.
 
 ## Nhóm Arduino
 

@@ -6,26 +6,31 @@ nguon: "ThingEdu"
 
 ## Tải bản cài
 
-Mở trang phát hành của ThingBlock: [github.com/ThingEdu/thingblock-desktop/releases/latest](https://github.com/ThingEdu/thingblock-desktop/releases/latest). Ở mục **Assets**, chọn tệp hợp với máy của bạn:
+Có hai bản để chọn:
 
-| Máy tính | Tệp cần tải (bản 0.4.0) | Dung lượng |
+- **Bản thử 0.6.0** (04/11/2026): có mô phỏng, bài học, ví dụ và các sửa lỗi lớn ở chế độ Live. Dùng bản này để học theo khóa và chuẩn bị FanRoc. Trang tải: [v0.6.0-preview-20261104](https://github.com/ThingEdu/thingblock-desktop/releases/tag/v0.6.0-preview-20261104).
+- **Bản ổn định 0.5.0** (30/10/2026): chưa có mô phỏng. Trang tải: [releases/latest](https://github.com/ThingEdu/thingblock-desktop/releases/latest).
+
+Ở mục **Assets** của trang tải, chọn tệp hợp với máy của bạn:
+
+| Máy tính | Bản thử 0.6.0 | Bản ổn định 0.5.0 |
 |---|---|---|
-| Windows 10/11, 64-bit | `ThingBlock_0.4.0_x64-setup.exe` | khoảng 85 MB |
-| Mac chip Apple (M1, M2, M3…) | `ThingBlock_0.4.0_aarch64.dmg` | khoảng 131 MB |
-| Ubuntu, Debian (64-bit) | `ThingBlock_0.4.0_amd64.deb` | khoảng 134 MB |
-| Fedora, openSUSE (64-bit) | `ThingBlock-0.4.0-1.x86_64.rpm` | khoảng 134 MB |
+| Windows 10/11, 64-bit | `ThingBlock_0.6.0-preview-20261104_x64-setup.exe` (78 MB) | `ThingBlock_0.5.0_x64-setup.exe` (78 MB) |
+| Mac chip Apple (M1, M2, M3…) | `ThingBlock_0.6.0-preview-20261104_aarch64.dmg` (125 MB) | `ThingBlock_0.5.0_aarch64.dmg` (124 MB) |
+| Ubuntu, Debian (64-bit) | `ThingBlock_0.6.0-preview-20261104_amd64.deb` (128 MB) | `ThingBlock_0.5.0_amd64.deb` (127 MB) |
+| Fedora, openSUSE (64-bit) | `ThingBlock-0.6.0-preview-20261104-1.x86_64.rpm` (127 MB) | `ThingBlock-0.5.0-1.x86_64.rpm` (127 MB) |
 
-Bản 0.4.0 **không có** bản cho Mac chip Intel và cho máy Linux ARM (Raspberry Pi, NEO One…).
+Cả hai bản **không có** bản cho Mac chip Intel và cho máy Linux ARM (Raspberry Pi, NEO One…). Bản 0.6 mở được tệp `.tb` lưu từ bản cũ.
 
 ## Cài trên Windows
 
-1. Mở tệp `ThingBlock_0.4.0_x64-setup.exe` vừa tải.
+1. Mở tệp `…_x64-setup.exe` vừa tải.
 2. Bản cài chưa được ký số nên Windows có thể hiện hộp **"Windows protected your PC"** (SmartScreen). Bấm **More info**, rồi **Run anyway**.
 3. Làm theo trình cài đặt, xong thì mở ThingBlock từ menu Start.
 
 ## Cài trên macOS
 
-1. Mở tệp `ThingBlock_0.4.0_aarch64.dmg`, kéo biểu tượng **ThingBlock** vào thư mục **Applications**.
+1. Mở tệp `…_aarch64.dmg`, kéo biểu tượng **ThingBlock** vào thư mục **Applications**.
 2. Lần đầu mở, macOS có thể chặn vì ứng dụng chưa được Apple chứng thực. Vào **Cài đặt hệ thống → Quyền riêng tư & Bảo mật**, kéo xuống mục Bảo mật và bấm **Vẫn mở** cho ThingBlock, rồi mở lại.
 
 ## Cài trên Linux
@@ -33,10 +38,10 @@ Bản 0.4.0 **không có** bản cho Mac chip Intel và cho máy Linux ARM (Rasp
 Với Ubuntu/Debian, mở Terminal ở thư mục chứa tệp vừa tải và chạy:
 
 ```bash
-sudo apt install ./ThingBlock_0.4.0_amd64.deb
+sudo apt install ./ThingBlock_0.6.0-preview-20261104_amd64.deb
 ```
 
-Với Fedora: `sudo dnf install ./ThingBlock-0.4.0-1.x86_64.rpm`.
+Với Fedora: `sudo dnf install ./ThingBlock-0.6.0-preview-20261104-1.x86_64.rpm`. Bản 0.5.0 thay tên tệp tương ứng.
 
 Để ThingBlock được dùng cổng USB của bo mà không cần quyền quản trị, thêm tài khoản của bạn vào nhóm `dialout`, rồi đăng xuất và đăng nhập lại:
 
@@ -49,16 +54,16 @@ sudo usermod -aG dialout $USER
 ![Màn hình ThingBlock khi mới mở, chưa chọn bo](/hoc-lieu/thingblock/anh/01-man-hinh-dau.webp)
 
 - Lần đầu mở, ThingBlock tự chép bộ công cụ biên dịch (khoảng 300 MB) vào thư mục dữ liệu của bạn. Việc này chạy ngầm một lần.
-- Phần giao diện và tên khối lõi hiện tiếng Việt theo ngôn ngữ của máy. Muốn đổi, vào **Settings → Language → Tiếng Việt**.
-- Các khối phần cứng (ThingBot, cảm biến, màn hình…) hiện **tiếng Anh**, kể cả khi giao diện đặt tiếng Việt. Các trang khối lệnh trong khóa này giải nghĩa từng khối.
+- Phần giao diện và tên khối lõi hiện tiếng Việt theo ngôn ngữ của máy. Muốn đổi, vào **Settings → Language → Tiếng Việt**. Từ bản 0.6, app nhớ ngôn ngữ và bo đã chọn cho lần mở sau.
+- Ở bản 0.5.0 trở về trước, các khối phần cứng (ThingBot, cảm biến, màn hình…) hiện **tiếng Anh** kể cả khi giao diện đặt tiếng Việt; bản 0.6 dịch cả khối phần cứng, menu, hộp thoại và bài học. Các trang khối lệnh trong khóa ghi chữ tiếng Anh trên khối kèm nghĩa, để dùng được với cả hai bản.
 
 ## Tải gói bo ESP32 cho ThingBot
 
 ThingBot dùng chip ESP32-C3. Bộ biên dịch cho ESP32 rất nặng (khoảng 1 GB) nên không có sẵn trong bản cài.
 
-1. Bấm **Select board** trên thanh menu và chọn **ThingBot**.
+1. Bấm **Select board** (bản 0.6: **Chọn mạch**) trên thanh menu và chọn **ThingBot**.
 2. ThingBlock mở hộp **Board package**, báo gói bo chưa được cài và hỏi có tải ngay không. Bấm **Download**.
-3. Chờ vài phút tới khi tải xong. Bước này cần Internet và chỉ làm một lần.
+3. Chờ vài phút tới khi tải xong. Bước này cần Internet và chỉ làm một lần. Bản 0.6 ghim lõi ESP32 bản 3.3.11 và cho phép đóng gói sẵn để sân thi không có mạng vẫn nạp được.
 
 Thư mục dữ liệu của ThingBlock:
 

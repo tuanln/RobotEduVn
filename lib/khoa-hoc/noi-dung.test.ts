@@ -27,9 +27,9 @@ function coTrang(url: string): boolean {
 }
 
 describe("nội dung thư viện khóa học", () => {
-  it("đủ 62 trang: 48 trang Maker Việt + 14 trang ThingBlock", () => {
-    expect(md).toHaveLength(62);
-    expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/"))).toHaveLength(14);
+  it("đủ 64 trang: 48 trang Maker Việt + 16 trang ThingBlock", () => {
+    expect(md).toHaveLength(64);
+    expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/"))).toHaveLength(16);
   });
 
   it("trang ThingBlock ghi nguồn ThingEdu, trang chép từ Moodle thì không khai nguồn (mặc định Maker Việt)", () => {

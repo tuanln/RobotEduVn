@@ -26,7 +26,7 @@ Bổ sung 07/11/2026 (nguồn: Drive của Làng, slide “ABC Maker Việt - L�
 | G2 | Robot của đội tuyển FGC 2025 (nhìn từ trên) | Drive FGC 2025/TeamVN |
 | MN-2016-05 | Bảng dụng cụ ở Maker Hanoi 2016 | Drive Picture/MakerHN |
 | MN-2022-05 | Học sinh xem robot, Mobile Maker Tour 2022 | slide 2022 |
-| MN-2022-06 | Chung kết VRC 2022 | slide 2022 |
+| MN-2016-12 | Đoàn quay phim truyền hình tại xưởng Maker Hanoi (slide không ghi ngày) | slide 2022 |
 | MN-2024 | Mạch ThingBot | public/hoc-lieu/media |
 
 Ảnh có mặt trẻ em (A2, G1/MN-2025, MN-2022-05, MN-2022-06) chỉ giữ khi đã có đồng ý của phụ huynh; chưa chắc thì xoá tệp, khung tự ẩn.

@@ -116,8 +116,9 @@ export const MUOI_NAM: MocThoiGian[] = [
     nam: 2016,
     tieuDe: "Truyền hình quốc gia tìm đến xưởng",
     chiTiet: `VTV đưa tin “Maker Hanoi — điểm đến của nhiều bạn trẻ yêu thích công nghệ”.`,
-    nguon: "vtv.vn, bản tin công nghệ 11/12/2016 (kiểm còn truy cập được 2026-09-06) · video “Maker Hanoi” kênh MakerViet, đăng 11/12/2016",
+    nguon: "vtv.vn, bản tin công nghệ 11/12/2016 (kiểm còn truy cập được 2026-09-06) · video “Maker Hanoi” kênh MakerViet, đăng 11/12/2016 · ảnh đoàn quay phim tại xưởng, slide “ABC Maker Việt - Làng Maker 2022” (slide không ghi ngày chụp)",
     video: { youtubeId: "gjGTnM7jmSI", ten: "Xem video Maker Hanoi, 11/12/2016 (3 phút)" },
+    anh: "MN-2016-12",
   },
   {
     moc: "5/2017",
@@ -187,8 +188,7 @@ export const MUOI_NAM: MocThoiGian[] = [
     nam: 2022,
     tieuDe: "Chung kết Vietnam Robotics Challenge",
     chiTiet: "Vòng chung kết VRC 2022, quay bằng camera 360 độ.",
-    nguon: "Video kênh MakerViet, đăng 28/6/2022 · ảnh trong slide “ABC Maker Việt - Làng Maker 2022”, lưu trữ Google Drive",
-    anh: "MN-2022-06",
+    nguon: "Video kênh MakerViet, đăng 28/6/2022",
   },
   {
     moc: "10/2022",

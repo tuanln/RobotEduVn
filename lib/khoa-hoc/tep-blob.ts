@@ -1,5 +1,6 @@
 /**
- * Tệp tải về của thư viện khóa học (54 MB PDF/Word + APK ThingBot Remote 87 MB) nằm trên Vercel Blob,
+ * Tệp tải về của thư viện khóa học (54 MB PDF/Word) nằm trên Vercel Blob,
+ * (APK ThingBot Remote sẽ thêm vào đây khi tải lên: khoa-hoc/thingbot-remote/ThingBot-KhoiLenhCay.apk)
  * kho công khai `robot-edu-vn-hoc-lieu` (sin1), không nằm trong git.
  * Tải lên một lần bằng `vercel blob put --pathname khoa-hoc/<đường dẫn>`;
  * nội dung Markdown trỏ thẳng tới URL dưới đây.
@@ -24,7 +25,6 @@ export const TEP_BLOB = [
   "9441fbebc230/team_vietnam_engineering_notebook__b%E1%BA%A3n_ti%E1%BA%BFng_vi%E1%BB%87t_.pdf",
   "95605dc846d5/FPTU-AI-ROBOTICS-CHALLENGE-2025-_-%C4%90%E1%BB%80-B%C3%80I-V%C3%80-LU%E1%BA%ACT-THI-%C4%90%E1%BA%A4U.docx.pdf",
   "ab6bec6ad760/engineering_notebook_fgc2022_r2045.pdf",
-  "thingbot-remote/ThingBot-KhoiLenhCay.apk",
   "word/cobot.docx",
   "word/dai-su-robotics.docx",
   "word/k12-maker-2023.docx",

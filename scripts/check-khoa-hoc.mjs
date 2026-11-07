@@ -81,7 +81,7 @@ for (const [p, h] of html) {
     }
   }
 }
-if (blobDaKiem.size !== 20) errors.push(`dùng ${blobDaKiem.size} tệp Blob, cần 20`);
+if (blobDaKiem.size !== 19) errors.push(`dùng ${blobDaKiem.size} tệp Blob, cần 19`);
 
 for (const p of ["/en/khoa-hoc", "/en/khoa-hoc/maker-viet/cobot", "/khoa-hoc/khong-co-trang-nay", "/khoa-hoc/__chi-co-tieng-viet__", "/en/khoa-hoc/__chi-co-tieng-viet__"]) {
   const s = await status(`${BASE}${p}`);

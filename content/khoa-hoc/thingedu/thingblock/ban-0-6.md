@@ -26,7 +26,7 @@ Mô phỏng chạy chính các khối của chế độ nạp (`khi Arduino kh�
 
 ## 2. Mười bốn bài học tự chấm
 
-Menu **Bài học** mở thư viện bài học. Mỗi bài dẫn từng bước ở cột trái, học sinh xếp khối, bấm Chạy, app chấm trên mô phỏng rồi báo *Giỏi lắm!* hoặc *Chưa đạt* kèm **Gợi ý**. Tiến độ được nhớ lại giữa các lần mở app.
+Menu **Bài học** mở thư viện bài học. Mỗi bài dẫn từng bước ở cột trái, học sinh xếp khối, bấm Chạy, app chấm trên mô phỏng rồi báo *Giỏi lắm!* hoặc *Chưa đạt* kèm **Gợi ý**. Tiến độ được nhớ lại giữa các lần mở app. Bài nào ứng với ví dụ nào xem cuối trang [36 ví dụ có sẵn](/khoa-hoc/thingedu/thingblock/vi-du).
 
 | Nhóm | Bài | Phút |
 |---|---|---|
@@ -39,7 +39,7 @@ Mười bài *ThingBot Sim* là chính 10 bài của [ThingBot Sim trên web](/m
 
 ## 3. Ba mươi sáu ví dụ có sẵn
 
-**Tập tin → Ví dụ…** mở thư viện ví dụ, lọc theo nhóm và tìm theo tên. Mở một ví dụ là có đủ bo, ngoại vi, khối và tên dự án; sửa rồi **Lưu thành…** là thành bài của mình. Ví dụ ghi rõ cắm gì vào đâu (DHT11 ở IO4, siêu âm TRIG IO0 / ECHO IO4, nút SW làm cản va…).
+**Tập tin → Ví dụ…** mở thư viện ví dụ, lọc theo nhóm và tìm theo tên. Mở một ví dụ là có đủ bo, ngoại vi, khối và tên dự án; sửa rồi **Lưu thành…** là thành bài của mình. Ví dụ ghi rõ cắm gì vào đâu (DHT11 ở IO4, siêu âm TRIG IO0 / ECHO IO4, nút SW làm cản va…). **Mỗi ví dụ có một trang hướng dẫn** (phần cứng, chương trình dịch ra chữ, chương trình làm gì, thử thách, tệp .tb): [36 ví dụ có sẵn](/khoa-hoc/thingedu/thingblock/vi-du).
 
 **K12 cơ bản (18 bài)** theo khung chương trình K1–K12 của ThingEdu:
 

@@ -27,9 +27,10 @@ function coTrang(url: string): boolean {
 }
 
 describe("nội dung thư viện khóa học", () => {
-  it("đủ 64 trang: 48 trang Maker Việt + 16 trang ThingBlock", () => {
-    expect(md).toHaveLength(64);
-    expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/"))).toHaveLength(16);
+  it("đủ 101 trang: 48 trang Maker Việt + 53 trang ThingBlock (16 + 37 trang ví dụ)", () => {
+    expect(md).toHaveLength(101);
+    expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/"))).toHaveLength(53);
+    expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/vi-du/"))).toHaveLength(37);
   });
 
   it("trang ThingBlock ghi nguồn ThingEdu, trang chép từ Moodle thì không khai nguồn (mặc định Maker Việt)", () => {
@@ -45,12 +46,23 @@ describe("nội dung thư viện khóa học", () => {
     expect(tran).toEqual([]);
   });
 
-  it("mỗi tệp bài mẫu .tb đều có trang dẫn tới, không tệp nào mồ côi", () => {
-    const thuMuc = join(PUBLIC, "hoc-lieu/thingblock/tep");
-    const tep = readdirSync(thuMuc).filter((n) => n.endsWith(".tb"));
-    expect(tep).toHaveLength(16);
+  it("mỗi tệp .tb (16 bài mẫu + 36 ví dụ) đều có trang dẫn tới, không tệp nào mồ côi", () => {
     const daDung = new Set(links.map(({ url }) => url));
-    expect(tep.filter((n) => !daDung.has(`/hoc-lieu/thingblock/tep/${n}`))).toEqual([]);
+    for (const [thuMuc, soTep] of [["tep", 16], ["vi-du", 36]] as const) {
+      const tep = readdirSync(join(PUBLIC, "hoc-lieu/thingblock", thuMuc)).filter((n) => n.endsWith(".tb"));
+      expect(tep, thuMuc).toHaveLength(soTep);
+      expect(tep.filter((n) => !daDung.has(`/hoc-lieu/thingblock/${thuMuc}/${n}`))).toEqual([]);
+    }
+  });
+
+  it("mỗi trang ví dụ dẫn tới đúng tệp .tb cùng tên và mở được ví dụ trong ThingBlock 0.6", () => {
+    const viDu = tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/vi-du/") && !p.endsWith("/index.md"));
+    for (const { p, text } of viDu) {
+      const ma = p.slice("/thingedu/thingblock/vi-du/".length, -3);
+      expect(text, p).toContain(`](/hoc-lieu/thingblock/vi-du/${ma}.tb)`);
+      expect(text, p).toContain("**Tập tin → Ví dụ… →");
+      expect(text, p).toContain("## Thử thách");
+    }
   });
 
   it("không còn link /files hay /media kiểu cũ của makerviet", () => {

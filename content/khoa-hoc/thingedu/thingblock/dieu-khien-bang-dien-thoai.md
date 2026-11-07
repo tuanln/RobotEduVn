@@ -35,9 +35,9 @@ App **ThingBot Remote** (tên kho: ThingBot Joystick) do Maker Việt × ThingEd
 | v0.2.0 Bảng widget | 21/09/2026 | `ThingBot-BangWidget.apk` | Bản trước, khối lệnh dạng danh sách phẳng |
 | v0.1.0 Joystick | 07/09/2026 | `ThingBotJoystick.apk` | Lưu trữ, năm màn hình cố định, không nên dùng để dạy |
 
-Tải ở trang phát hành [github.com/ThingEdu/thingbot-remote/releases](https://github.com/ThingEdu/thingbot-remote/releases). Trên điện thoại:
+📥 **Tải bản v0.3.0:** [ThingBot-KhoiLenhCay.apk](https://lrywo2cvc6iz8mox.public.blob.vercel-storage.com/khoa-hoc/thingbot-remote/ThingBot-KhoiLenhCay.apk) (87 MB, đúng tệp của bản phát hành 21/09/2026). Các bản cũ ở trang phát hành [github.com/ThingEdu/thingbot-remote/releases](https://github.com/ThingEdu/thingbot-remote/releases). Trên điện thoại:
 
-1. Mở link, chọn bản v0.3.0, bấm vào tệp `.apk` để tải.
+1. Mở link tải ở trên bằng trình duyệt của điện thoại; tệp `.apk` sẽ vào thư mục Tải xuống.
 2. Android hỏi *Cài ứng dụng không rõ nguồn gốc*: cho phép với trình duyệt đang dùng. APK chưa ký kho nên Play Protect có thể hỏi thêm một lần, chọn **Vẫn cài đặt**.
 3. Mở app, cấp quyền **Bluetooth** và **Vị trí** (Android cần quyền vị trí để quét Bluetooth LE).
 

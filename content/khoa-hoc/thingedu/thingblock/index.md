@@ -6,7 +6,7 @@ nguon: "ThingEdu"
 
 ThingBlock là phần mềm lập trình kéo-thả khối lệnh của ThingEdu, dựng trên nền Scratch. Học sinh xếp khối như Scratch, còn ThingBlock tự đổi chương trình thành mã Arduino C++, biên dịch rồi nạp xuống bo **ThingBot**. ThingBlock miễn phí, mã nguồn mở trên GitHub, chạy trên Windows, macOS và Linux.
 
-> **Mới: ThingBlock 0.6** (bản thử 04/11/2026) có **mô phỏng ThingBot ngay trong app**, **14 bài học tự chấm**, **36 ví dụ có sẵn** (gồm 2 robot FanRoc), chế độ Live lùi được và dừng được, điều khiển từ điện thoại, lưu tệp và giao diện tiếng Việt. Xem [Bản 0.6: có gì mới](/khoa-hoc/thingedu/thingblock/ban-0-6). Bộ bài học thi **FanRoc 2026–2027 đang chuẩn bị, sắp ra**.
+> **Mới: ThingBlock 0.6** (bản thử 04/11/2026) có **mô phỏng ThingBot ngay trong app**, **14 bài học tự chấm**, **36 ví dụ có sẵn** (gồm 2 robot FanRoc, mỗi ví dụ có [trang hướng dẫn riêng](/khoa-hoc/thingedu/thingblock/vi-du)), chế độ Live lùi được và dừng được, điều khiển từ điện thoại, lưu tệp và giao diện tiếng Việt. Xem [Bản 0.6: có gì mới](/khoa-hoc/thingedu/thingblock/ban-0-6). Bộ bài học thi **FanRoc 2026–2027 đang chuẩn bị, sắp ra**.
 
 Khóa [Tài liệu người dùng ThingBot](/khoa-hoc/thingedu/thingbot) hướng dẫn lập trình bằng phần mềm cũ ThingEduBlock (dựa trên OpenBlock). Khóa này dành cho ThingBlock, phần mềm mới. Phần giới thiệu bộ kit và video lắp ráp ThingBot ở khóa cũ vẫn dùng chung được; cách dùng từng bộ phận với ThingBlock xem ở trang [Làm quen ThingBot](/khoa-hoc/thingedu/thingblock/lam-quen-thingbot).
 
@@ -20,6 +20,7 @@ Khóa [Tài liệu người dùng ThingBot](/khoa-hoc/thingedu/thingbot) hướn
 - [Khối lệnh ThingBot](/khoa-hoc/thingedu/thingblock/khoi-lenh-thingbot) — động cơ, servo, LED, còi, nút SW, tay PS2 và chế độ chạy trực tiếp
 - [Khối lệnh mở rộng](/khoa-hoc/thingedu/thingblock/khoi-lenh-mo-rong) — cảm biến DHT, siêu âm, màn OLED, Serial, MPU6050…
 - [Điều khiển bằng điện thoại](/khoa-hoc/thingedu/thingblock/dieu-khien-bang-dien-thoai) — khối Phone control, tải app ThingBot Remote (APK), lái qua Bluetooth
+- [36 ví dụ có sẵn](/khoa-hoc/thingedu/thingblock/vi-du) — hướng dẫn từng ví dụ của menu Tập tin → Ví dụ…: 10 mô phỏng, 18 K12, 2 FanRoc, 6 bài nhạc; 14 bài học tự chấm
 - [5 bài mẫu](/khoa-hoc/thingedu/thingblock/bai-mau) — Robot vũ công, Đèn giao thông, Nhiệt kế, Trạm khí tượng, Robot cảm nhận
 - [Sửa lỗi thường gặp](/khoa-hoc/thingedu/thingblock/sua-loi) — không thấy bo, nạp lỗi, Bluetooth, động cơ, cảm biến
 

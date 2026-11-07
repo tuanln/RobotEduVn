@@ -25,9 +25,22 @@ Bổ sung 07/11/2026 (nguồn: Drive của Làng, slide “ABC Maker Việt - L�
 | G1, MN-2025 | Đội tuyển Việt Nam FGC 2025 Panama trước banner FIRST Global | Drive FGC 2025/TeamVN |
 | G2 | Robot của đội tuyển FGC 2025 (nhìn từ trên) | Drive FGC 2025/TeamVN |
 | MN-2016-05 | Bảng dụng cụ ở Maker Hanoi 2016 | Drive Picture/MakerHN |
-| MN-2020 | Xe tự hành VIA (ảnh dựng) | slide 2022 |
 | MN-2022-05 | Học sinh xem robot, Mobile Maker Tour 2022 | slide 2022 |
 | MN-2022-06 | Chung kết VRC 2022 | slide 2022 |
 | MN-2024 | Mạch ThingBot | public/hoc-lieu/media |
 
 Ảnh có mặt trẻ em (A2, G1/MN-2025, MN-2022-05, MN-2022-06) chỉ giữ khi đã có đồng ý của phụ huynh; chưa chắc thì xoá tệp, khung tự ẩn.
+
+Bổ sung 07/11/2026 (đợt 2), ảnh từ kho Dế STEM Foundation (`~/Ai-Code/de-stem-foundation/public`, đã công bố trên de-stem-foundation.vercel.app):
+
+| Mã | Ảnh | Nguồn |
+|---|---|---|
+| A2 (thay) | Học sinh lắp robot trên sân thi, áo đỏ Làng Maker | target/students-parents.png |
+| A3 | Cả nhóm Làng Maker chụp chung | programs/langmaker.jpg |
+| A4 (thay) | Học sinh xem robot chạy trên sân, Open STEM Day | report/LAP09567.jpg |
+| G2 (thay) | Robot thi đấu FIRST Global của đội tuyển | programs/robotics.jpg |
+| MN-2026 | Áo 10 năm Làng Maker 2016–2026 | home/vision2.png |
+| GD-gieo-hat | Robot bìa các-tông của các em | Drive Picture/maker |
+| GD-vuon-canh | Lớp học với laptop ở Maker Hanoi | slide 2022 |
+| GD-ket-trai | Học sinh trong phòng lab, Open STEM Day | delab/LAP09371.jpg |
+| GD-rung-ve-coi | Đội tuyển sửa robot tại FGC 2025 Panama | Drive FGC 2025/TeamVN |

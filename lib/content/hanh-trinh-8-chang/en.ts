@@ -41,7 +41,7 @@ export const HANH_TRINH_EN: HanhTrinhContent = {
         "Lesson 1 on the simulator, no robot needed",
       ],
       link: { label: "Try the simulator", href: "/mo-phong" },
-      anh: "A2",
+      anh: "GD-gieo-hat",
     },
     {
       ma: "vuon-canh",
@@ -54,7 +54,7 @@ export const HANH_TRINH_EN: HanhTrinhContent = {
         "Tinkercad: drawing the 3D part you need",
       ],
       link: { label: "ThingBlock course (in Vietnamese)", href: "/khoa-hoc/thingedu/thingblock" },
-      anh: "A1",
+      anh: "GD-vuon-canh",
     },
     {
       ma: "ket-trai",
@@ -67,7 +67,7 @@ export const HANH_TRINH_EN: HanhTrinhContent = {
         "FanRoc and BlueSilk-style projects",
       ],
       link: { label: "Competitions (in Vietnamese)", href: "/san-choi" },
-      anh: "F1",
+      anh: "GD-ket-trai",
     },
     {
       ma: "rung-ve-coi",
@@ -80,7 +80,7 @@ export const HANH_TRINH_EN: HanhTrinhContent = {
         "FTC, FIRST Global, NASA Space Apps",
       ],
       link: { label: "Maker Việt courses (in Vietnamese)", href: "/khoa-hoc/maker-viet" },
-      anh: "G1",
+      anh: "GD-rung-ve-coi",
     },
   ],
   tamChang: {

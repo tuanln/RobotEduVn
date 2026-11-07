@@ -164,7 +164,6 @@ export const MUOI_NAM: MocThoiGian[] = [
     tieuDe: "VIA — xe tự hành mã nguồn mở",
     chiTiet: `Maker Bot 2020 và dự án VIA: xe tự hành mở, kèm bộ mô phỏng, tập dữ liệu do cộng đồng đóng góp, và điều khiển bằng giọng nói tiếng Việt. Cùng năm có Vietnam STEAM Challenge.`,
     nguon: `Slide “Maker Hanoi — Review” · thư mục Vietnam STEAM Challenge 2020, lưu trữ Google Drive`,
-    anh: "MN-2020",
   },
   {
     moc: "2021",
@@ -232,6 +231,7 @@ export const MUOI_NAM: MocThoiGian[] = [
     tieuDe: "Ba Maker Hub mở cửa",
     chiTiet:
       "190 Xã Đàn và 29 Dương Khuê ở Hà Nội, FPT Shop Quang Trung ở Thanh Hoá. Điều viết ra năm 2017 bắt đầu có địa chỉ.",
+    anh: "MN-2026",
     nguon: "Danh sách Maker Hub đang hoạt động của chính website này",
   },
 ];

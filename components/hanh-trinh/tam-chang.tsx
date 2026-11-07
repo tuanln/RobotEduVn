@@ -1,3 +1,4 @@
+import { AnhLang } from "@/components/common/anh-lang";
 import type { HanhTrinhContent } from "@/lib/content/hanh-trinh-8-chang";
 
 const MAU: Record<string, string> = {
@@ -31,6 +32,8 @@ export function TamChang({ t }: { t: HanhTrinhContent }) {
             <span className="text-xs font-semibold uppercase tracking-wider">{t.nhan.doNghe}:</span>{" "}
             {g.doNghe.join(" · ")}
           </p>
+          {/* Ảnh giai đoạn (mã GD-*): thiếu tệp thì ẩn. */}
+          <AnhLang ma={g.anh} alt={`${g.ten}, ${g.tuoi}`} className="mt-5 max-w-md" width={1200} height={800} />
 
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
             {t.chang

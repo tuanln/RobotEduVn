@@ -4,7 +4,7 @@ import { HANH_TRINH_EN } from "./en";
 import { HANH_TRINH_VI } from "./vi";
 import type { HanhTrinhContent } from "./types";
 
-const MA_ANH = /^[A-Z]\d?$/;
+const MA_ANH = /^[A-Z]\d?$|^GD-[a-z-]+$/; // A2, G1… cho chuyện thật; GD-<giai đoạn> cho ảnh bốn giai đoạn
 const BAN = { vi: HANH_TRINH_VI, en: HANH_TRINH_EN } as const;
 
 function maAnh(t: HanhTrinhContent): string[] {

@@ -26,6 +26,10 @@ export interface MocThoiGian {
   chiTiet: string;
   /** Căn cứ. Bắt buộc, không được rỗng. */
   nguon: string;
+  /** Mã ảnh `public/hoc-lieu/lang/<mã>.webp` (xem anh-lang.ts); thiếu tệp thì khung tự ẩn. */
+  anh?: string;
+  /** Video YouTube công khai gắn với mốc (phóng sự truyền hình, video kênh MakerViet). */
+  video?: { youtubeId: string; ten: string };
 }
 
 /**
@@ -89,6 +93,15 @@ export const MUOI_NAM: MocThoiGian[] = [
     tieuDe: "Một cái xưởng chung mở cửa ở Hà Nội",
     chiTiet: `Maker Hanoi ra đời, là thành viên mạng lưới FabLab toàn cầu và hoạt động phi lợi nhuận. Khẩu hiệu từ ngày đầu: đóng góp của bạn, chúng ta cùng chia sẻ.`,
     nguon: `Slide “Maker Hanoi — Review”, lưu trữ Google Drive · hồ sơ fablabs.io`,
+    anh: "MN-2016-05",
+  },
+  {
+    moc: "8/2016",
+    nam: 2016,
+    tieuDe: "ABC Maker lên sóng Café sáng VTV3",
+    chiTiet: "Bộ kit ABC Maker và lớp học robot cho trẻ em của Maker Hanoi được giới thiệu trong chương trình Café sáng của VTV3.",
+    nguon: "Video “ABC Maker - Cafe Sang VTV3” trên YouTube, đăng 29/8/2016 (kiểm 07/11/2026)",
+    video: { youtubeId: "sLAIq9-YYbQ", ten: "Xem phóng sự Café sáng VTV3 (6 phút)" },
   },
   {
     moc: "3/12/2016",
@@ -103,7 +116,16 @@ export const MUOI_NAM: MocThoiGian[] = [
     nam: 2016,
     tieuDe: "Truyền hình quốc gia tìm đến xưởng",
     chiTiet: `VTV đưa tin “Maker Hanoi — điểm đến của nhiều bạn trẻ yêu thích công nghệ”.`,
-    nguon: "vtv.vn, bản tin công nghệ 11/12/2016 (kiểm còn truy cập được 2026-09-06)",
+    nguon: "vtv.vn, bản tin công nghệ 11/12/2016 (kiểm còn truy cập được 2026-09-06) · video “Maker Hanoi” kênh MakerViet, đăng 11/12/2016",
+    video: { youtubeId: "gjGTnM7jmSI", ten: "Xem video Maker Hanoi, 11/12/2016 (3 phút)" },
+  },
+  {
+    moc: "5/2017",
+    nam: 2017,
+    tieuDe: "Lập trình cho trẻ em: UMI",
+    chiTiet: "Chương trình UMI (U make it) của Maker Hanoi: trẻ em tự làm và tự lập trình sản phẩm của mình.",
+    nguon: "Video “Lập trình cho trẻ em - UMI - Maker Hanoi” kênh MakerViet, đăng 3/5/2017 (kiểm 07/11/2026)",
+    video: { youtubeId: "nUmXpgED6Hk", ten: "Xem video UMI (4 phút)" },
   },
   {
     moc: "6/2017",
@@ -120,12 +142,13 @@ export const MUOI_NAM: MocThoiGian[] = [
     nguon: `Slide “Maker Hanoi — Review”, lưu trữ Google Drive`,
   },
   {
-    moc: "2018",
+    moc: "2017–2018",
     nam: 2018,
     tieuDe: "Bước ra sân quốc tế",
     chiTiet:
-      "Hồ sơ FIRST Global Challenge bắt đầu từ năm này và có liên tục cho tới nay trong lưu trữ của cộng đồng.",
-    nguon: "Thư mục FIRST ROBOTIC/FGC 2018 đến FGC 2026, lưu trữ Google Drive",
+      "Maker Hanoi đồng hành với Đội tuyển Việt Nam từ mùa FIRST Global Challenge 2017: chỗ tập, hướng dẫn cơ khí và lập trình từ đầu, rồi kể câu chuyện trên VTV3. Hồ sơ FGC có liên tục từ 2018 tới nay trong lưu trữ của cộng đồng.",
+    nguon: "Slide “Maker Viet”, lưu trữ Google Drive · video “Café sáng với VTV3 - FRIT Team”, đăng 28/6/2017 · thư mục FIRST ROBOTIC/FGC 2018 đến FGC 2026",
+    video: { youtubeId: "Tf4hWFBRivY", ten: "Xem Café sáng VTV3 về đội tuyển (3 phút)" },
   },
   {
     moc: "2018–2019",
@@ -141,13 +164,15 @@ export const MUOI_NAM: MocThoiGian[] = [
     tieuDe: "VIA — xe tự hành mã nguồn mở",
     chiTiet: `Maker Bot 2020 và dự án VIA: xe tự hành mở, kèm bộ mô phỏng, tập dữ liệu do cộng đồng đóng góp, và điều khiển bằng giọng nói tiếng Việt. Cùng năm có Vietnam STEAM Challenge.`,
     nguon: `Slide “Maker Hanoi — Review” · thư mục Vietnam STEAM Challenge 2020, lưu trữ Google Drive`,
+    anh: "MN-2020",
   },
   {
     moc: "2021",
     nam: 2021,
     tieuDe: "Vietnam STEAM Challenge mùa hai",
     chiTiet: "Sân thi đấu trong nước tiếp tục, giữa hai năm dịch.",
-    nguon: "Thư mục Vietnam STEAM Challenge 2021, lưu trữ Google Drive",
+    nguon: "Thư mục Vietnam STEAM Challenge 2021, lưu trữ Google Drive · video “Vietnam Robotics Challenge - Những hình ảnh cuộc thi từ 2020” kênh MakerViet",
+    video: { youtubeId: "-bEW37WDVYo", ten: "Xem hình ảnh cuộc thi từ 2020 (2 phút)" },
   },
   {
     moc: "5/2022",
@@ -155,14 +180,16 @@ export const MUOI_NAM: MocThoiGian[] = [
     tieuDe: "Mang xưởng đi tỉnh",
     chiTiet:
       "Mobile Maker Tour đến Quy Nhơn — tổ hợp không gian khoa học ExploraScience và khuôn viên Fschool.",
-    nguon: "Video kênh MakerViet, đăng 28 và 31/5/2022",
+    nguon: "Video kênh MakerViet, đăng 28 và 31/5/2022 · ảnh trong slide “ABC Maker Việt - Làng Maker 2022”, lưu trữ Google Drive",
+    anh: "MN-2022-05",
   },
   {
     moc: "6/2022",
     nam: 2022,
     tieuDe: "Chung kết Vietnam Robotics Challenge",
     chiTiet: "Vòng chung kết VRC 2022, quay bằng camera 360 độ.",
-    nguon: "Video kênh MakerViet, đăng 28/6/2022",
+    nguon: "Video kênh MakerViet, đăng 28/6/2022 · ảnh trong slide “ABC Maker Việt - Làng Maker 2022”, lưu trữ Google Drive",
+    anh: "MN-2022-06",
   },
   {
     moc: "10/2022",
@@ -188,6 +215,16 @@ export const MUOI_NAM: MocThoiGian[] = [
       "ThingBot và phần mềm lập trình khối ThingBlock ra mắt, rồi bộ Kit ThingBot bản 2025–2026. Hành trình FIRST Global tiếp tục.",
     nguon:
       "Video kênh MakerViet đăng 7/3/2025 và 25/12/2025 · thư mục FGC 2024, FGC 2025, lưu trữ Google Drive",
+    anh: "MN-2024",
+  },
+  {
+    moc: "10/2025",
+    nam: 2025,
+    tieuDe: "Đội tuyển Việt Nam ở Panama",
+    chiTiet:
+      "FIRST Global Challenge 2025 tại Panama City. Đội tuyển Việt Nam mang theo robot tự lắp và cuốn sổ kỹ thuật tự viết; sau giải, đội về Làng dạy lại các em nhỏ.",
+    nguon: "Thư mục FIRST ROBOTIC/FGC 2025/TeamVN, lưu trữ Google Drive · bài tổng kết fanpage Team Vietnam - FIRST Global, 03/11/2025",
+    anh: "MN-2025",
   },
   {
     moc: "2026",

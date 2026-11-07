@@ -158,6 +158,12 @@ export const LM_EN: LangMakerTrangContent = {
           "Maker Hanoi is born — a member of the global FabLab network, run as a non-profit. Its motto from day one: your contributions, we share.",
       },
       {
+        moc: "Aug 2016",
+        tieuDe: "ABC Maker on VTV3’s morning show",
+        chiTiet:
+          "The ABC Maker kit and Maker Hanoi’s robot classes for children are featured on VTV3’s breakfast show.",
+      },
+      {
         moc: "3 Dec 2016",
         tieuDe: "The first IoT festival, made by the community itself",
         chiTiet:
@@ -168,6 +174,11 @@ export const LM_EN: LangMakerTrangContent = {
         tieuDe: "National television comes to the workshop",
         chiTiet:
           "VTV runs a story calling Maker Hanoi “a destination for young people who love technology”.",
+      },
+      {
+        moc: "May 2017",
+        tieuDe: "Coding for children: UMI",
+        chiTiet: "Maker Hanoi’s UMI (U make it) programme: children build and program their own products.",
       },
       {
         moc: "June 2017",
@@ -181,10 +192,10 @@ export const LM_EN: LangMakerTrangContent = {
         chiTiet: "The second festival, held at Lương Yên Coworking.",
       },
       {
-        moc: "2018",
+        moc: "2017–2018",
         tieuDe: "Onto the international stage",
         chiTiet:
-          "The FIRST Global Challenge records start this year and continue, unbroken, in the community’s archive to this day.",
+          "Maker Hanoi has stood with Team Vietnam since the 2017 FIRST Global Challenge: a place to practise, mechanics and coding taught from scratch, and the story told on VTV3. The FGC records continue, unbroken, in the community’s archive from 2018 to this day.",
       },
       {
         moc: "2018–2019",
@@ -231,6 +242,12 @@ export const LM_EN: LangMakerTrangContent = {
         tieuDe: "The kit becomes a product",
         chiTiet:
           "ThingBot and the ThingBlock block-programming software launch, followed by the 2025–2026 ThingBot Kit. The FIRST Global journey goes on.",
+      },
+      {
+        moc: "Oct 2025",
+        tieuDe: "Team Vietnam in Panama",
+        chiTiet:
+          "FIRST Global Challenge 2025 in Panama City. Team Vietnam brought a robot they built and an engineering notebook they wrote; after the games, the team came back to the village to teach the younger ones.",
       },
       {
         moc: "2026",

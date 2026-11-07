@@ -10,6 +10,7 @@ import {
   TRICH_DAN_2017,
 } from "@/lib/content/lang-maker";
 import { HUBS, hubMapUrl } from "@/lib/content/hubs";
+import { AnhLang } from "@/components/common/anh-lang";
 import { langMakerTrang } from "@/lib/content/lang-maker-trang";
 import type { Manh } from "@/lib/content/lang-maker-trang/types";
 import { mailto } from "@/lib/content/cong-dong";
@@ -261,6 +262,21 @@ export default async function LangMakerPage({
                 <p className="mt-1 text-sm text-muted-foreground">
                   {t.muoiNam.moc[i].chiTiet}
                 </p>
+                {moc.anh && (
+                  <AnhLang ma={moc.anh} alt={t.muoiNam.moc[i].tieuDe} className="mt-3 max-w-md" width={800} height={600} />
+                )}
+                {moc.video && (
+                  <p className="mt-2 text-sm">
+                    <a
+                      href={`https://www.youtube.com/watch?v=${moc.video.youtubeId}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-primary hover:underline"
+                    >
+                      ▶ <span lang={duLieu}>{moc.video.ten}</span>
+                    </a>
+                  </p>
+                )}
                 <p className="mt-2 text-xs text-muted-foreground/70">
                   {t.muoiNam.canCu} <span lang={duLieu}>{moc.nguon}</span>
                 </p>

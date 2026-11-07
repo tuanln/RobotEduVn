@@ -6,26 +6,26 @@ nguon: "ThingEdu"
 
 Từ bản 0.6, ThingBlock có sẵn **36 ví dụ** ở menu **Tập tin → Ví dụ…**, chia bốn nhóm. Mỗi ví dụ dưới đây có một trang hướng dẫn để dùng ngay trong lớp: phần cứng cần cắm, chương trình dịch ra chữ để đọc không cần mở máy, chương trình làm gì, và ba thử thách mở rộng. Tệp `.tb` của từng ví dụ tải được ngay trên trang (cho bản 0.5.0 hoặc để gửi cho học sinh).
 
-**Lộ trình gợi ý:** mười bài **Mô phỏng** trước (không cần mạch), rồi **K12 cơ bản** theo mức 1 → 2 → 3, xen các bài **Âm nhạc** cho buổi nhẹ. Hai robot **FanRoc** dành cho đội chuẩn bị thi. Muốn được chấm từng bước, làm **14 bài học tự chấm** ở menu **Bài học** (danh sách ở cuối trang).
+**Lộ trình gợi ý:** mười bài **Mô phỏng** trước, làm online ngay tại [robot.edu.vn/mo-phong](/mo-phong?bai=1) trên máy tính bảng hoặc máy tính, không cần cài gì và không cần mạch (đây là bài làm quen cho các hoạt động ở Làng), rồi **K12 cơ bản** theo mức 1 → 2 → 3, xen các bài **Âm nhạc** cho buổi nhẹ. Hai robot **FanRoc** dành cho đội chuẩn bị thi. Muốn được chấm từng bước, làm **14 bài học tự chấm** ở menu **Bài học** (danh sách ở cuối trang).
 
 > Bản 0.6.0 đang là bản thử (pre-release 04/11/2026); bản ổn định 0.5.0 chưa có menu Ví dụ và khung Mô phỏng. Xem [Bản 0.6: có gì mới](/khoa-hoc/thingedu/thingblock/ban-0-6) và [Cài đặt](/khoa-hoc/thingedu/thingblock/cai-dat).
 
 ## Mô phỏng ThingBot Sim (10 ví dụ)
 
-Mười bài nền tảng, mỗi bài một khối mới, chạy được ngay trên khung **Mô phỏng** không cần mạch. Cùng nội dung với mười bài ở [robot.edu.vn/mo-phong](/mo-phong) và với mười bài học tự chấm *ThingBot Sim 1–10* ở menu **Bài học**.
+Mười bài nền tảng, mỗi bài một khối mới. Cùng một bài có ba chỗ làm: **online** tại [robot.edu.vn/mo-phong](/mo-phong?bai=1) (trình duyệt, máy tính bảng, không cài gì: dùng cho buổi làm quen ở Làng), **bài học tự chấm** *ThingBot Sim 1–10* ở menu Bài học của ThingBlock 0.6, và **ví dụ** mở sẵn trong app để sửa tiếp. Cột *Online* dưới đây trỏ thẳng tới bài trên trình duyệt.
 
-| # | Ví dụ | Mức | Phần cứng ngoài mạch | Khái niệm |
-|---|---|---|---|---|
-| 1 | [Làm quen ThingBot](/khoa-hoc/thingedu/thingblock/vi-du/sim-01-lam-quen-thingbot) | 1 | không | Khung chương trình: khởi động chạy một lần, vòng lặp chạy mãi |
-| 2 | [Đèn nhấp nháy](/khoa-hoc/thingedu/thingblock/vi-du/sim-02-den-nhap-nhay) | 1 | không | Bật, chờ, tắt, chờ: nhấp nháy bằng vòng lặp |
-| 3 | [Nút bấm điều khiển đèn](/khoa-hoc/thingedu/thingblock/vi-du/sim-03-nut-bam-bat-den) | 1 | không | Đọc nút, `nếu … thì … nếu không thì` |
-| 4 | [Màn hình OLED](/khoa-hoc/thingedu/thingblock/vi-du/sim-04-man-hinh-oled) | 1 | Màn OLED I2C | Khởi động OLED, in chữ, đặt con trỏ, hiện lên màn |
-| 5 | [Servo quét](/khoa-hoc/thingedu/thingblock/vi-du/sim-05-servo-quet) | 1 | Servo S1 | Servo quay tới góc trong thời gian cho trước |
-| 6 | [Cảm biến khoảng cách](/khoa-hoc/thingedu/thingblock/vi-du/sim-06-cam-bien-khoang-cach) | 2 | Cảm biến siêu âm: TRIG IO0, ECHO IO4 | Cảm biến siêu âm, so sánh `<` |
-| 7 | [Động cơ DC](/khoa-hoc/thingedu/thingblock/vi-du/sim-07-dong-co-m1) | 2 | Động cơ M1 | Động cơ DC: chiều tiến/lùi, tốc độ phần trăm |
-| 8 | [Xe đi thẳng – rẽ](/khoa-hoc/thingedu/thingblock/vi-du/sim-08-xe-di-thang-re) | 2 | Động cơ M1 (bánh trái), M2 (bánh phải) | Hai bánh cùng chiều đi thẳng, dừng bằng tốc độ 0 |
-| 9 | [Tay cầm điều khiển](/khoa-hoc/thingedu/thingblock/vi-du/sim-09-tay-cam-ps2) | 2 | Bộ thu tay cầm PS2 ở cổng PS2; Động cơ M1, M2 | Tay PS2: khởi động, đọc dữ liệu mỗi vòng, hỏi nút |
-| 10 | [Dự án: xe tránh vật cản](/khoa-hoc/thingedu/thingblock/vi-du/sim-10-xe-tranh-vat-can) | 2 | Cảm biến siêu âm: TRIG IO0, ECHO IO4; Động cơ M1, M2 | Dự án ghép: cảm biến + động cơ, né vật cản |
+| # | Ví dụ | Mức | Phần cứng ngoài mạch | Khái niệm | Online |
+|---|---|---|---|---|---|
+| 1 | [Làm quen ThingBot](/khoa-hoc/thingedu/thingblock/vi-du/sim-01-lam-quen-thingbot) | 1 | không | Khung chương trình: khởi động chạy một lần, vòng lặp chạy mãi | [Bài 1](/mo-phong?bai=1) |
+| 2 | [Đèn nhấp nháy](/khoa-hoc/thingedu/thingblock/vi-du/sim-02-den-nhap-nhay) | 1 | không | Bật, chờ, tắt, chờ: nhấp nháy bằng vòng lặp | [Bài 2](/mo-phong?bai=2) |
+| 3 | [Nút bấm điều khiển đèn](/khoa-hoc/thingedu/thingblock/vi-du/sim-03-nut-bam-bat-den) | 1 | không | Đọc nút, `nếu … thì … nếu không thì` | [Bài 3](/mo-phong?bai=3) |
+| 4 | [Màn hình OLED](/khoa-hoc/thingedu/thingblock/vi-du/sim-04-man-hinh-oled) | 1 | Màn OLED I2C | Khởi động OLED, in chữ, đặt con trỏ, hiện lên màn | [Bài 4](/mo-phong?bai=4) |
+| 5 | [Servo quét](/khoa-hoc/thingedu/thingblock/vi-du/sim-05-servo-quet) | 1 | Servo S1 | Servo quay tới góc trong thời gian cho trước | [Bài 5](/mo-phong?bai=5) |
+| 6 | [Cảm biến khoảng cách](/khoa-hoc/thingedu/thingblock/vi-du/sim-06-cam-bien-khoang-cach) | 2 | Cảm biến siêu âm: TRIG IO0, ECHO IO4 | Cảm biến siêu âm, so sánh `<` | [Bài 6](/mo-phong?bai=6) |
+| 7 | [Động cơ DC](/khoa-hoc/thingedu/thingblock/vi-du/sim-07-dong-co-m1) | 2 | Động cơ M1 | Động cơ DC: chiều tiến/lùi, tốc độ phần trăm | [Bài 7](/mo-phong?bai=7) |
+| 8 | [Xe đi thẳng – rẽ](/khoa-hoc/thingedu/thingblock/vi-du/sim-08-xe-di-thang-re) | 2 | Động cơ M1 (bánh trái), M2 (bánh phải) | Hai bánh cùng chiều đi thẳng, dừng bằng tốc độ 0 | [Bài 8](/mo-phong?bai=8) |
+| 9 | [Tay cầm điều khiển](/khoa-hoc/thingedu/thingblock/vi-du/sim-09-tay-cam-ps2) | 2 | Bộ thu tay cầm PS2 ở cổng PS2; Động cơ M1, M2 | Tay PS2: khởi động, đọc dữ liệu mỗi vòng, hỏi nút | [Bài 9](/mo-phong?bai=9) |
+| 10 | [Dự án: xe tránh vật cản](/khoa-hoc/thingedu/thingblock/vi-du/sim-10-xe-tranh-vat-can) | 2 | Cảm biến siêu âm: TRIG IO0, ECHO IO4; Động cơ M1, M2 | Dự án ghép: cảm biến + động cơ, né vật cản | [Bài 10](/mo-phong?bai=10) |
 
 ## K12 cơ bản (18 ví dụ)
 
@@ -91,22 +91,22 @@ LED 1, LED 2, còi và nút **SW** có sẵn trên mạch. Chạy động cơ ph
 
 Khác với ví dụ (mở ra là có chương trình hoàn chỉnh), **bài học** dẫn từng bước: em kéo khối theo hướng dẫn, bấm **Chạy**, mạch ảo tự kiểm tra (đèn có sáng, servo có đúng góc, OLED có đúng chữ…) rồi mới cho sang bước sau. Có gợi ý khi kẹt. Tiến độ lưu trên máy.
 
-| Nhóm | Bài | Phút | Ví dụ tương ứng |
-|---|---|---|---|
-| Làm quen | ThingBot Sim 1: Làm quen ThingBot | 10 | [Làm quen ThingBot](/khoa-hoc/thingedu/thingblock/vi-du/sim-01-lam-quen-thingbot) |
-| Đầu ra | Bật tắt đèn | 10 | [Đèn nhấp nháy](/khoa-hoc/thingedu/thingblock/vi-du/sim-02-den-nhap-nhay) |
-| Đầu ra | Đèn nhấp nháy | 10 | [Đèn nhấp nháy](/khoa-hoc/thingedu/thingblock/vi-du/sim-02-den-nhap-nhay) |
-| Đầu ra | Màn hình OLED chào em | 15 | [Màn hình OLED](/khoa-hoc/thingedu/thingblock/vi-du/sim-04-man-hinh-oled) |
-| Đầu ra | ThingBot Sim 2: Đèn nhấp nháy | 15 | [Đèn nhấp nháy](/khoa-hoc/thingedu/thingblock/vi-du/sim-02-den-nhap-nhay) |
-| Động cơ | Servo ba cách quay | 15 | [Servo quét](/khoa-hoc/thingedu/thingblock/vi-du/sim-05-servo-quet) |
-| Động cơ | ThingBot Sim 5: Servo quét | 15 | [Servo quét](/khoa-hoc/thingedu/thingblock/vi-du/sim-05-servo-quet) |
-| Động cơ | ThingBot Sim 7: Động cơ DC | 15 | [Động cơ DC](/khoa-hoc/thingedu/thingblock/vi-du/sim-07-dong-co-m1) |
-| Động cơ | ThingBot Sim 8: Xe đi thẳng và rẽ | 20 | [Xe đi thẳng – rẽ](/khoa-hoc/thingedu/thingblock/vi-du/sim-08-xe-di-thang-re) |
-| Đầu vào | ThingBot Sim 3: Nút bấm điều khiển đèn | 15 | [Nút bấm điều khiển đèn](/khoa-hoc/thingedu/thingblock/vi-du/sim-03-nut-bam-bat-den) |
-| Đầu vào | ThingBot Sim 4: Màn hình OLED | 15 | [Màn hình OLED](/khoa-hoc/thingedu/thingblock/vi-du/sim-04-man-hinh-oled) |
-| Đầu vào | ThingBot Sim 6: Cảm biến khoảng cách | 20 | [Cảm biến khoảng cách](/khoa-hoc/thingedu/thingblock/vi-du/sim-06-cam-bien-khoang-cach) |
-| Đầu vào | ThingBot Sim 9: Tay cầm điều khiển | 20 | [Tay cầm điều khiển](/khoa-hoc/thingedu/thingblock/vi-du/sim-09-tay-cam-ps2) |
-| Đầu vào | ThingBot Sim 10: Xe tránh vật cản | 25 | [Dự án: xe tránh vật cản](/khoa-hoc/thingedu/thingblock/vi-du/sim-10-xe-tranh-vat-can) |
+| Nhóm | Bài | Phút | Ví dụ tương ứng | Online |
+|---|---|---|---|---|
+| Làm quen | ThingBot Sim 1: Làm quen ThingBot | 10 | [Làm quen ThingBot](/khoa-hoc/thingedu/thingblock/vi-du/sim-01-lam-quen-thingbot) | [Bài 1](/mo-phong?bai=1) |
+| Đầu ra | Bật tắt đèn | 10 | [Đèn nhấp nháy](/khoa-hoc/thingedu/thingblock/vi-du/sim-02-den-nhap-nhay) | – |
+| Đầu ra | Đèn nhấp nháy | 10 | [Đèn nhấp nháy](/khoa-hoc/thingedu/thingblock/vi-du/sim-02-den-nhap-nhay) | – |
+| Đầu ra | Màn hình OLED chào em | 15 | [Màn hình OLED](/khoa-hoc/thingedu/thingblock/vi-du/sim-04-man-hinh-oled) | – |
+| Đầu ra | ThingBot Sim 2: Đèn nhấp nháy | 15 | [Đèn nhấp nháy](/khoa-hoc/thingedu/thingblock/vi-du/sim-02-den-nhap-nhay) | [Bài 2](/mo-phong?bai=2) |
+| Động cơ | Servo ba cách quay | 15 | [Servo quét](/khoa-hoc/thingedu/thingblock/vi-du/sim-05-servo-quet) | – |
+| Động cơ | ThingBot Sim 5: Servo quét | 15 | [Servo quét](/khoa-hoc/thingedu/thingblock/vi-du/sim-05-servo-quet) | [Bài 5](/mo-phong?bai=5) |
+| Động cơ | ThingBot Sim 7: Động cơ DC | 15 | [Động cơ DC](/khoa-hoc/thingedu/thingblock/vi-du/sim-07-dong-co-m1) | [Bài 7](/mo-phong?bai=7) |
+| Động cơ | ThingBot Sim 8: Xe đi thẳng và rẽ | 20 | [Xe đi thẳng – rẽ](/khoa-hoc/thingedu/thingblock/vi-du/sim-08-xe-di-thang-re) | [Bài 8](/mo-phong?bai=8) |
+| Đầu vào | ThingBot Sim 3: Nút bấm điều khiển đèn | 15 | [Nút bấm điều khiển đèn](/khoa-hoc/thingedu/thingblock/vi-du/sim-03-nut-bam-bat-den) | [Bài 3](/mo-phong?bai=3) |
+| Đầu vào | ThingBot Sim 4: Màn hình OLED | 15 | [Màn hình OLED](/khoa-hoc/thingedu/thingblock/vi-du/sim-04-man-hinh-oled) | [Bài 4](/mo-phong?bai=4) |
+| Đầu vào | ThingBot Sim 6: Cảm biến khoảng cách | 20 | [Cảm biến khoảng cách](/khoa-hoc/thingedu/thingblock/vi-du/sim-06-cam-bien-khoang-cach) | [Bài 6](/mo-phong?bai=6) |
+| Đầu vào | ThingBot Sim 9: Tay cầm điều khiển | 20 | [Tay cầm điều khiển](/khoa-hoc/thingedu/thingblock/vi-du/sim-09-tay-cam-ps2) | [Bài 9](/mo-phong?bai=9) |
+| Đầu vào | ThingBot Sim 10: Xe tránh vật cản | 25 | [Dự án: xe tránh vật cản](/khoa-hoc/thingedu/thingblock/vi-du/sim-10-xe-tranh-vat-can) | [Bài 10](/mo-phong?bai=10) |
 
 Bài *Bật tắt đèn*, *Đèn nhấp nháy*, *Màn hình OLED chào em*, *Servo ba cách quay* là bốn bài gốc của ThingBlock (không có trong /mo-phong); mười bài *ThingBot Sim* là bản tự chấm của mười bài mô phỏng.
 

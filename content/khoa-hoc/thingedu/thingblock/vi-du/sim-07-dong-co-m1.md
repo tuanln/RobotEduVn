@@ -10,6 +10,8 @@ nguon: "ThingEdu"
 
 **Chạy thử trên:** khung **Mô phỏng** (không cần mạch) hoặc ThingBot thật.
 
+**Làm quen online, không cần cài gì:** bài này là [Bài 7 trên ThingBot Sim](/mo-phong?bai=7), mạch ảo chạy trên trình duyệt máy tính hoặc máy tính bảng, tự chấm và có gợi ý. Ở Làng, học sinh làm bài online trước, rồi mới mở ThingBlock.
+
 **Mở ví dụ:** ThingBlock 0.6 → **Tập tin → Ví dụ… → Mô phỏng ThingBot Sim → Động cơ DC**. Bản 0.5.0 không có menu Ví dụ: tải tệp rồi mở bằng **Tập tin → Load from your computer**. 📥 [Tải sim-07-dong-co-m1.tb](/hoc-lieu/thingblock/vi-du/sim-07-dong-co-m1.tb)
 
 > ThingBot Sim · Bài 7: Động cơ DC

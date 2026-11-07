@@ -10,6 +10,8 @@ nguon: "ThingEdu"
 
 **Chạy thử trên:** khung **Mô phỏng** (không cần mạch) hoặc ThingBot thật.
 
+**Làm quen online, không cần cài gì:** bài này là [Bài 10 trên ThingBot Sim](/mo-phong?bai=10), mạch ảo chạy trên trình duyệt máy tính hoặc máy tính bảng, tự chấm và có gợi ý. Ở Làng, học sinh làm bài online trước, rồi mới mở ThingBlock.
+
 **Mở ví dụ:** ThingBlock 0.6 → **Tập tin → Ví dụ… → Mô phỏng ThingBot Sim → Dự án: xe tránh vật cản**. Bản 0.5.0 không có menu Ví dụ: tải tệp rồi mở bằng **Tập tin → Load from your computer**. 📥 [Tải sim-10-xe-tranh-vat-can.tb](/hoc-lieu/thingblock/vi-du/sim-10-xe-tranh-vat-can.tb)
 
 > ThingBot Sim · Bài 10: Dự án: xe tránh vật cản

@@ -345,7 +345,15 @@ export default async function LangMakerPage({
                 <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
               </Link>
             </Button>
+            <Button asChild size="lg" variant="outline">
+              {/* /mo-phong là mạch ThingBot ảo (thingbot-sim), không có bản /en: cùng một link cho hai ngôn ngữ. */}
+              <Link href="/mo-phong?bai=1">
+                {t.cuaVao.thuMoPhong}
+                <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+              </Link>
+            </Button>
           </div>
+          <p className="mt-3 text-xs text-muted-foreground">{t.cuaVao.thuMoPhongMoTa}</p>
         </section>
       </div>
     </div>

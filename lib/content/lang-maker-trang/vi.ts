@@ -115,5 +115,7 @@ export const LM_VI: LangMakerTrangContent = {
     moTa: "Buổi đầu tiên miễn phí, và không cần biết gì trước.",
     timHub: "Tìm Maker Hub gần bạn",
     batDauChoi: "Bắt đầu từ nhịp Chơi",
+    thuMoPhong: "Thử mạch robot ảo online",
+    thuMoPhongMoTa: "Chưa tới làng cũng làm quen được: 10 bài ThingBot Sim chạy ngay trên trình duyệt máy tính hoặc máy tính bảng, không cài gì, không cần robot. Đây là bài khởi động cho các hoạt động ở Làng.",
   },
 };

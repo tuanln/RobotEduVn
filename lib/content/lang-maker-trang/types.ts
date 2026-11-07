@@ -54,5 +54,6 @@ export interface LangMakerTrangContent {
   };
   /** #cac-diem: ba điểm Làng (gộp từ Maker Hub). Thiếu lịch thì ghi "Liên hệ", không "Đang cập nhật". */
   cacDiem: { tieuDe: string; moTa: string; lienHe: string; banDo: string; xemTatCa: string };
-  cuaVao: { tieuDe: string; moTa: string; timHub: string; batDauChoi: string };
+  /** thuMoPhong: nút thứ ba trỏ /mo-phong?bai=1 (mạch ThingBot ảo, làm quen trước buổi đầu, không cài gì). */
+  cuaVao: { tieuDe: string; moTa: string; timHub: string; batDauChoi: string; thuMoPhong: string; thuMoPhongMoTa: string };
 }

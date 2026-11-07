@@ -257,5 +257,7 @@ export const LM_EN: LangMakerTrangContent = {
     moTa: "The first session is free, and no experience is needed.",
     timHub: "Find a Maker Hub near you",
     batDauChoi: "Start with the Play beat",
+    thuMoPhong: "Try the online robot simulator",
+    thuMoPhongMoTa: "Get a head start before your first visit: 10 ThingBot Sim lessons run in the browser on a laptop or tablet, nothing to install, no robot needed. They are the warm-up for every Village activity.",
   },
 };

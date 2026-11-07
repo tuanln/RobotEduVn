@@ -2,9 +2,13 @@ import { describe, expect, it } from "vitest";
 import { navItems } from "./nav";
 
 describe("navItems", () => {
-  it("tiếng Việt năm mục, tiếng Anh ba mục (Sân Chơi, Khóa Học chỉ có bản Việt)", () => {
-    expect(navItems("vi")).toHaveLength(5);
+  it("tiếng Việt bốn mục (Mô Phỏng nằm trong Khóa Học), tiếng Anh ba mục (Sân Chơi, Khóa Học chỉ có bản Việt)", () => {
+    expect(navItems("vi")).toHaveLength(4);
     expect(navItems("en")).toHaveLength(3);
+  });
+
+  it("menu tiếng Việt không còn mục Mô Phỏng riêng — nó là mục đầu của Khóa Học", () => {
+    expect(navItems("vi").map((i) => i.href)).not.toContain("/mo-phong");
   });
 
   it("thứ tự menu tiếng Việt theo spec sổ tay số", () => {
@@ -13,7 +17,6 @@ describe("navItems", () => {
       { label: "Sân Chơi", href: "/san-choi" },
       { label: "Khóa Học", href: "/khoa-hoc" },
       { label: "Làng Maker", href: "/lang-maker" },
-      { label: "Mô Phỏng", href: "/mo-phong" },
     ]);
   });
 

@@ -53,6 +53,6 @@ nếu không thì
 - Nút ○ bấm còi, nút □ bật đèn.
 - Dùng cần analog để tốc độ theo độ đẩy: ví dụ K12 số 17.
 
-← [Xe đi thẳng – rẽ](/khoa-hoc/thingedu/thingblock/vi-du/sim-08-xe-di-thang-re) · [Danh sách ví dụ](/khoa-hoc/thingedu/thingblock/vi-du) · [Dự án: xe tránh vật cản](/khoa-hoc/thingedu/thingblock/vi-du/sim-10-xe-tranh-vat-can) →
+← [Xe đi thẳng – rẽ](/khoa-hoc/thingedu/thingblock/vi-du/sim-08-xe-di-thang-re) · [Danh sách ví dụ](/khoa-hoc/thingedu/thingblock/vi-du) · [Dự án: dây chuyền phân loại trứng](/khoa-hoc/thingedu/thingblock/vi-du/sim-10-day-chuyen-phan-loai) →
 
 *Nguồn: ví dụ có sẵn trong ThingBlock 0.6 (kho ThingEdu/thingblock-editor, nhánh develop, 04/11/2026); lời hướng dẫn của Làng Maker.*

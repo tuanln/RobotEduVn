@@ -9,11 +9,11 @@ Mạch ThingBot ảo chạy trên máy tính hoặc máy tính bảng, không c�
 
 | Bài | Nội dung | Bài | Nội dung |
 |---|---|---|---|
-| [1](/mo-phong?bai=1) | Làm quen ThingBot: 13 bộ phận trên mạch | [6](/mo-phong?bai=6) | Cảm biến khoảng cách (siêu âm) |
+| [1](/mo-phong?bai=1) | Làm quen ThingBot: 13 bộ phận trên mạch | [6](/mo-phong?bai=6) | Mắt hồng ngoại: nhận bóng FanRoc sáng, tối |
 | [2](/mo-phong?bai=2) | Đèn nhấp nháy | [7](/mo-phong?bai=7) | Động cơ DC |
 | [3](/mo-phong?bai=3) | Nút bấm điều khiển đèn | [8](/mo-phong?bai=8) | Xe đi thẳng, rẽ |
 | [4](/mo-phong?bai=4) | Màn hình OLED | [9](/mo-phong?bai=9) | Lái xe bằng tay cầm PS2 |
-| [5](/mo-phong?bai=5) | Servo quét | [10](/mo-phong?bai=10) | Dự án: xe tránh vật cản |
+| [5](/mo-phong?bai=5) | Servo quét | [10](/mo-phong?bai=10) | Dự án: dây chuyền phân loại trứng |
 
 → [Mở mô phỏng, bắt đầu từ bài 1](/mo-phong?bai=1). Làm xong 10 bài thì sang khóa ThingBlock; mỗi bài có [trang hướng dẫn và tệp ví dụ](/khoa-hoc/thingedu/thingblock/vi-du) để mở trong ThingBlock 0.6.
 

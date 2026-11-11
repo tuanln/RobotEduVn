@@ -32,6 +32,11 @@ const nextConfig: NextConfig = {
       { source: "/hanh-trinh/lap-trinh", destination: "/hanh-trinh/lam", permanent: true },
       { source: "/hanh-trinh/iot-robot", destination: "/hanh-trinh/lam", permanent: true },
       { source: "/gioi-thieu", destination: "/lang-maker", permanent: true },
+      // ThingBot Sim bài 6, 10 viết lại (11/2026): siêu âm → mắt hồng ngoại, xe tránh vật cản → dây chuyền phân loại trứng
+      { source: "/khoa-hoc/thingedu/thingblock/vi-du/sim-06-cam-bien-khoang-cach", destination: "/khoa-hoc/thingedu/thingblock/vi-du/sim-06-mat-hong-ngoai", permanent: true },
+      { source: "/khoa-hoc/thingedu/thingblock/vi-du/sim-10-xe-tranh-vat-can", destination: "/khoa-hoc/thingedu/thingblock/vi-du/sim-10-day-chuyen-phan-loai", permanent: true },
+      { source: "/hoc-lieu/thingblock/vi-du/sim-06-cam-bien-khoang-cach.tb", destination: "/hoc-lieu/thingblock/vi-du/sim-06-mat-hong-ngoai.tb", permanent: true },
+      { source: "/hoc-lieu/thingblock/vi-du/sim-10-xe-tranh-vat-can.tb", destination: "/hoc-lieu/thingblock/vi-du/sim-10-day-chuyen-phan-loai.tb", permanent: true },
     ];
   },
 };

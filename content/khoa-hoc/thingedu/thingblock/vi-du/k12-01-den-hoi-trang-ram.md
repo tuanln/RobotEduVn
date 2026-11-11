@@ -52,6 +52,6 @@ lặp lại (3) lần        ← Rồi đung đưa chậm 3 lần.
 - Thêm đoạn lặp thứ ba: nháy nhanh dần (0,8 → 0,4 → 0,2 giây).
 - Cho còi kêu một nốt mỗi khi đổi đèn (khối `chơi nốt`, xem ví dụ 2).
 
-← [Dự án: xe tránh vật cản](/khoa-hoc/thingedu/thingblock/vi-du/sim-10-xe-tranh-vat-can) · [Danh sách ví dụ](/khoa-hoc/thingedu/thingblock/vi-du) · [Người hùng quanh em: còi báo động](/khoa-hoc/thingedu/thingblock/vi-du/k12-02-coi-bao-dong) →
+← [Dự án: dây chuyền phân loại trứng](/khoa-hoc/thingedu/thingblock/vi-du/sim-10-day-chuyen-phan-loai) · [Danh sách ví dụ](/khoa-hoc/thingedu/thingblock/vi-du) · [Người hùng quanh em: còi báo động](/khoa-hoc/thingedu/thingblock/vi-du/k12-02-coi-bao-dong) →
 
 *Nguồn: ví dụ có sẵn trong ThingBlock 0.6 (kho ThingEdu/thingblock-editor, nhánh develop, 04/11/2026); lời hướng dẫn của Làng Maker.*

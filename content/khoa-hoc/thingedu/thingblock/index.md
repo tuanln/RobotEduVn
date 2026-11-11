@@ -37,11 +37,11 @@ Từ bản 0.6, ThingBlock có sẵn khung **Mô phỏng** và menu **Bài học
 | [3](/mo-phong?bai=3) | Nút bấm điều khiển đèn |
 | [4](/mo-phong?bai=4) | Màn hình OLED |
 | [5](/mo-phong?bai=5) | Servo quét |
-| [6](/mo-phong?bai=6) | Cảm biến khoảng cách (siêu âm) |
+| [6](/mo-phong?bai=6) | Mắt hồng ngoại: nhận bóng FanRoc sáng, tối |
 | [7](/mo-phong?bai=7) | Động cơ DC |
 | [8](/mo-phong?bai=8) | Xe đi thẳng, rẽ |
 | [9](/mo-phong?bai=9) | Lái xe bằng tay cầm PS2 |
-| [10](/mo-phong?bai=10) | Dự án: xe tránh vật cản |
+| [10](/mo-phong?bai=10) | Dự án: dây chuyền phân loại trứng |
 
 Bài làm lưu trong trình duyệt của từng máy. Mô phỏng không nạp được xuống mạch thật: muốn chạy trên ThingBot, xếp lại các khối đó trong ThingBlock rồi bấm Nạp. Mã nguồn mở tại [ThingEdu/thingbot-sim](https://github.com/ThingEdu/thingbot-sim).
 

@@ -44,6 +44,6 @@ vòng lặp Arduino
 - Tăng dần tốc độ 20 → 40 → 60 → 80 → 100, mỗi mức 1 giây, rồi dừng 2 giây.
 - Thêm nút SW: bấm mới chạy, nhả thì dừng.
 
-← [Cảm biến khoảng cách](/khoa-hoc/thingedu/thingblock/vi-du/sim-06-cam-bien-khoang-cach) · [Danh sách ví dụ](/khoa-hoc/thingedu/thingblock/vi-du) · [Xe đi thẳng – rẽ](/khoa-hoc/thingedu/thingblock/vi-du/sim-08-xe-di-thang-re) →
+← [Mắt hồng ngoại](/khoa-hoc/thingedu/thingblock/vi-du/sim-06-mat-hong-ngoai) · [Danh sách ví dụ](/khoa-hoc/thingedu/thingblock/vi-du) · [Xe đi thẳng – rẽ](/khoa-hoc/thingedu/thingblock/vi-du/sim-08-xe-di-thang-re) →
 
 *Nguồn: ví dụ có sẵn trong ThingBlock 0.6 (kho ThingEdu/thingblock-editor, nhánh develop, 04/11/2026); lời hướng dẫn của Làng Maker.*

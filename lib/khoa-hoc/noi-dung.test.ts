@@ -27,8 +27,8 @@ function coTrang(url: string): boolean {
 }
 
 describe("nội dung thư viện khóa học", () => {
-  it("đủ 101 trang: 48 trang Maker Việt + 53 trang ThingBlock (16 + 37 trang ví dụ)", () => {
-    expect(md).toHaveLength(101);
+  it("đủ 102 trang: 48 trang Maker Việt + trang ThingBot FanRoc Challenge + 53 trang ThingBlock (16 + 37 trang ví dụ)", () => {
+    expect(md).toHaveLength(102);
     expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/"))).toHaveLength(53);
     expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/vi-du/"))).toHaveLength(37);
   });
@@ -36,7 +36,7 @@ describe("nội dung thư viện khóa học", () => {
   it("trang ThingBlock ghi nguồn ThingEdu, trang chép từ Moodle thì không khai nguồn (mặc định Maker Việt)", () => {
     for (const { p, text } of tatCa) {
       const nguon = text.match(/^nguon: "(.+)"$/m)?.[1];
-      if (p.startsWith("/thingedu/thingblock/")) expect(nguon, p).toMatch(/^ThingEdu/);
+      if (p.startsWith("/thingedu/thingblock/") || p === "/thingedu/thingbot/fanroc-challenge.md") expect(nguon, p).toMatch(/^ThingEdu/);
       else expect(nguon, p).toBeUndefined();
     }
   });

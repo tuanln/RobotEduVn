@@ -122,7 +122,7 @@ Hướng dẫn và tải app ở trang [Điều khiển bằng điện thoại](
 
 ## Chuẩn bị cho FanRoc 2026–2027
 
-Bộ nội dung thi FanRoc 2026–2027 (bài học lái và cơ cấu, robot mẫu, luật, sân mô phỏng) **đang được chuẩn bị, sắp ra**. Có sẵn từ hôm nay: hai ví dụ FanRoc trong ThingBlock 0.6 và game mô phỏng sân thi [ThingBot FanRoc Game](https://github.com/ThingEdu/thingbot-sim/releases/tag/fanroc-v0.1.0) (macOS, Windows). Xem thêm ở trang [Các cuộc thi](/khoa-hoc/thingedu/thingbot/cac-cuoc-thi).
+Bộ nội dung thi FanRoc 2026–2027 (bài học lái và cơ cấu, robot mẫu, luật, sân mô phỏng) **đang được chuẩn bị, sắp ra**. Có sẵn từ hôm nay: hai ví dụ FanRoc trong ThingBlock 0.6 và game sân thi ảo [ThingBot FanRoc Challenge](/khoa-hoc/thingedu/thingbot/fanroc-challenge) (macOS, Windows). Xem thêm ở trang [Các cuộc thi](/khoa-hoc/thingedu/thingbot/cac-cuoc-thi).
 
 ## Góp ý cho bản thử
 

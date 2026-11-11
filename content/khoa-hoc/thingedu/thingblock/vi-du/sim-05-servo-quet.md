@@ -42,6 +42,6 @@ quay servo [S1] tới góc (180) độ trong (1) giây
 - Đổi 1 giây thành 0,2 giây rồi 5 giây.
 - Hai servo S1, S2 quét ngược chiều nhau *cùng lúc* (cần cặp **bắt đầu quay servo** + **chờ các servo quay xong**, xem bài học *Servo ba cách quay*).
 
-← [Màn hình OLED](/khoa-hoc/thingedu/thingblock/vi-du/sim-04-man-hinh-oled) · [Danh sách ví dụ](/khoa-hoc/thingedu/thingblock/vi-du) · [Cảm biến khoảng cách](/khoa-hoc/thingedu/thingblock/vi-du/sim-06-cam-bien-khoang-cach) →
+← [Màn hình OLED](/khoa-hoc/thingedu/thingblock/vi-du/sim-04-man-hinh-oled) · [Danh sách ví dụ](/khoa-hoc/thingedu/thingblock/vi-du) · [Mắt hồng ngoại](/khoa-hoc/thingedu/thingblock/vi-du/sim-06-mat-hong-ngoai) →
 
 *Nguồn: ví dụ có sẵn trong ThingBlock 0.6 (kho ThingEdu/thingblock-editor, nhánh develop, 04/11/2026); lời hướng dẫn của Làng Maker.*

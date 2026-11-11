@@ -21,11 +21,11 @@ Mười bài nền tảng, mỗi bài một khối mới. Cùng một bài có b
 | 3 | [Nút bấm điều khiển đèn](/khoa-hoc/thingedu/thingblock/vi-du/sim-03-nut-bam-bat-den) | 1 | không | Đọc nút, `nếu … thì … nếu không thì` | [Bài 3](/mo-phong?bai=3) |
 | 4 | [Màn hình OLED](/khoa-hoc/thingedu/thingblock/vi-du/sim-04-man-hinh-oled) | 1 | Màn OLED I2C | Khởi động OLED, in chữ, đặt con trỏ, hiện lên màn | [Bài 4](/mo-phong?bai=4) |
 | 5 | [Servo quét](/khoa-hoc/thingedu/thingblock/vi-du/sim-05-servo-quet) | 1 | Servo S1 | Servo quay tới góc trong thời gian cho trước | [Bài 5](/mo-phong?bai=5) |
-| 6 | [Cảm biến khoảng cách](/khoa-hoc/thingedu/thingblock/vi-du/sim-06-cam-bien-khoang-cach) | 2 | Cảm biến siêu âm: TRIG IO0, ECHO IO4 | Cảm biến siêu âm, so sánh `<` | [Bài 6](/mo-phong?bai=6) |
+| 6 | [Mắt hồng ngoại](/khoa-hoc/thingedu/thingblock/vi-du/sim-06-mat-hong-ngoai) | 2 | Mắt hồng ngoại IO4; đèn L1 | Mắt hồng ngoại nhận bóng sáng/tối, ngưỡng, so sánh `<` (cần ThingBlock 0.8) | [Bài 6](/mo-phong?bai=6) |
 | 7 | [Động cơ DC](/khoa-hoc/thingedu/thingblock/vi-du/sim-07-dong-co-m1) | 2 | Động cơ M1 | Động cơ DC: chiều tiến/lùi, tốc độ phần trăm | [Bài 7](/mo-phong?bai=7) |
 | 8 | [Xe đi thẳng – rẽ](/khoa-hoc/thingedu/thingblock/vi-du/sim-08-xe-di-thang-re) | 2 | Động cơ M1 (bánh trái), M2 (bánh phải) | Hai bánh cùng chiều đi thẳng, dừng bằng tốc độ 0 | [Bài 8](/mo-phong?bai=8) |
 | 9 | [Tay cầm điều khiển](/khoa-hoc/thingedu/thingblock/vi-du/sim-09-tay-cam-ps2) | 2 | Bộ thu tay cầm PS2 ở cổng PS2; Động cơ M1, M2 | Tay PS2: khởi động, đọc dữ liệu mỗi vòng, hỏi nút | [Bài 9](/mo-phong?bai=9) |
-| 10 | [Dự án: xe tránh vật cản](/khoa-hoc/thingedu/thingblock/vi-du/sim-10-xe-tranh-vat-can) | 2 | Cảm biến siêu âm: TRIG IO0, ECHO IO4; Động cơ M1, M2 | Dự án ghép: cảm biến + động cơ, né vật cản | [Bài 10](/mo-phong?bai=10) |
+| 10 | [Dự án: dây chuyền phân loại trứng](/khoa-hoc/thingedu/thingblock/vi-du/sim-10-day-chuyen-phan-loai) | 2 | Mắt hồng ngoại IO4; Động cơ M1 (băng chuyền); Servo S1 (cần gạt) | Dự án ghép: mắt + động cơ + servo, phân loại theo sáng/tối (cần ThingBlock 0.8) | [Bài 10](/mo-phong?bai=10) |
 
 ## K12 cơ bản (18 ví dụ)
 
@@ -104,9 +104,9 @@ Khác với ví dụ (mở ra là có chương trình hoàn chỉnh), **bài h�
 | Động cơ | ThingBot Sim 8: Xe đi thẳng và rẽ | 20 | [Xe đi thẳng – rẽ](/khoa-hoc/thingedu/thingblock/vi-du/sim-08-xe-di-thang-re) | [Bài 8](/mo-phong?bai=8) |
 | Đầu vào | ThingBot Sim 3: Nút bấm điều khiển đèn | 15 | [Nút bấm điều khiển đèn](/khoa-hoc/thingedu/thingblock/vi-du/sim-03-nut-bam-bat-den) | [Bài 3](/mo-phong?bai=3) |
 | Đầu vào | ThingBot Sim 4: Màn hình OLED | 15 | [Màn hình OLED](/khoa-hoc/thingedu/thingblock/vi-du/sim-04-man-hinh-oled) | [Bài 4](/mo-phong?bai=4) |
-| Đầu vào | ThingBot Sim 6: Cảm biến khoảng cách | 20 | [Cảm biến khoảng cách](/khoa-hoc/thingedu/thingblock/vi-du/sim-06-cam-bien-khoang-cach) | [Bài 6](/mo-phong?bai=6) |
+| Đầu vào | ThingBot Sim 6: Mắt hồng ngoại | 20 | [Mắt hồng ngoại](/khoa-hoc/thingedu/thingblock/vi-du/sim-06-mat-hong-ngoai) | [Bài 6](/mo-phong?bai=6) |
 | Đầu vào | ThingBot Sim 9: Tay cầm điều khiển | 20 | [Tay cầm điều khiển](/khoa-hoc/thingedu/thingblock/vi-du/sim-09-tay-cam-ps2) | [Bài 9](/mo-phong?bai=9) |
-| Đầu vào | ThingBot Sim 10: Xe tránh vật cản | 25 | [Dự án: xe tránh vật cản](/khoa-hoc/thingedu/thingblock/vi-du/sim-10-xe-tranh-vat-can) | [Bài 10](/mo-phong?bai=10) |
+| Đầu vào | ThingBot Sim 10: Dây chuyền phân loại trứng | 25 | [Dự án: dây chuyền phân loại trứng](/khoa-hoc/thingedu/thingblock/vi-du/sim-10-day-chuyen-phan-loai) | [Bài 10](/mo-phong?bai=10) |
 
 Bài *Bật tắt đèn*, *Đèn nhấp nháy*, *Màn hình OLED chào em*, *Servo ba cách quay* là bốn bài gốc của ThingBlock (không có trong /mo-phong); mười bài *ThingBot Sim* là bản tự chấm của mười bài mô phỏng.
 

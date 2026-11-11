@@ -12,7 +12,7 @@ nguon: "ThingEdu"
 
 **Làm quen online, không cần cài gì:** bài này là [Bài 6 trên ThingBot Sim](/mo-phong?bai=6), mạch ảo chạy trên trình duyệt máy tính hoặc máy tính bảng, tự chấm và có gợi ý. Ở Làng, học sinh làm bài online trước, rồi mới mở ThingBlock.
 
-**Mở ví dụ:** ThingBlock 0.6 → **Tập tin → Ví dụ… → Mô phỏng ThingBot Sim → Cảm biến khoảng cách**. Bản 0.5.0 không có menu Ví dụ: tải tệp rồi mở bằng **Tập tin → Load from your computer**. 📥 [Tải sim-06-cam-bien-khoang-cach.tb](/hoc-lieu/thingblock/vi-du/sim-06-cam-bien-khoang-cach.tb)
+**Mở ví dụ:** ThingBlock 0.6 → **Tập tin → Ví dụ… → Mô phỏng ThingBot Sim → Cảm biến khoảng cách**. Bản 0.5.0 không có menu Ví dụ, và **bản 0.8 thay ví dụ này bằng *ThingBot Sim 6: Mắt hồng ngoại*** (xem [Bản 0.8](/khoa-hoc/thingedu/thingblock/ban-0-8)): ở hai bản đó, tải tệp rồi mở bằng **Tập tin → Load from your computer**. 📥 [Tải sim-06-cam-bien-khoang-cach.tb](/hoc-lieu/thingblock/vi-du/sim-06-cam-bien-khoang-cach.tb)
 
 > ThingBot Sim · Bài 6: Cảm biến khoảng cách
 > Cảm biến siêu âm cắm TRIG IO0, ECHO IO4. Vật gần hơn ngưỡng thì đèn sáng, xa thì tắt.

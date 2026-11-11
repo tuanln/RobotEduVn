@@ -1,6 +1,6 @@
 ---
 title: "Cài đặt ThingBlock"
-description: "Tải bản cài cho Windows, macOS, Linux; mở lần đầu và tải gói bo ESP32 cho ThingBot"
+description: "Tải bản cài cho Windows, macOS, Linux; mở lần đầu khi bản cài chưa ký số, cấp quyền camera cho Camera AI và tải gói bo ESP32 cho ThingBot"
 nguon: "ThingEdu"
 ---
 
@@ -8,40 +8,43 @@ nguon: "ThingEdu"
 
 Có hai bản để chọn:
 
-- **Bản thử 0.6.0** (04/11/2026): có mô phỏng, bài học, ví dụ và các sửa lỗi lớn ở chế độ Live. Dùng bản này để học theo khóa và chuẩn bị FanRoc. Trang tải: [v0.6.0-preview-20261104](https://github.com/ThingEdu/thingblock-desktop/releases/tag/v0.6.0-preview-20261104).
-- **Bản ổn định 0.5.0** (30/10/2026): chưa có mô phỏng. Trang tải: [releases/latest](https://github.com/ThingEdu/thingblock-desktop/releases/latest).
+- **Bản thử 0.8.0** (12/11/2026): có Camera AI, mạch CoBot, cảm biến màu, mô phỏng, bài học, ví dụ và các sửa lỗi lớn ở chế độ Live. Dùng bản này để học theo khóa và chuẩn bị FanRoc. Trang tải: [ThingEdu/thingblock-desktop/releases](https://github.com/ThingEdu/thingblock-desktop/releases), tìm bản ghi `0.8.0-preview-20261112` (bản thử đánh dấu *Pre-release*). Bản thử trước đó là [0.6.0](/khoa-hoc/thingedu/thingblock/ban-0-6) (04/11/2026).
+- **Bản ổn định 0.5.0** (30/10/2026): chưa có mô phỏng, Camera AI, CoBot. Trang tải: [releases/latest](https://github.com/ThingEdu/thingblock-desktop/releases/latest).
 
-Ở mục **Assets** của trang tải, chọn tệp hợp với máy của bạn:
+Ở mục **Assets** của trang tải, chọn tệp hợp với máy của bạn. Tên tệp bắt đầu bằng `ThingBlock_` và số bản (ví dụ `ThingBlock_0.5.0_x64-setup.exe`, `ThingBlock_0.6.0-preview-20261104_aarch64.dmg`):
 
-| Máy tính | Bản thử 0.6.0 | Bản ổn định 0.5.0 |
-|---|---|---|
-| Windows 10/11, 64-bit | `ThingBlock_0.6.0-preview-20261104_x64-setup.exe` (78 MB) | `ThingBlock_0.5.0_x64-setup.exe` (78 MB) |
-| Mac chip Apple (M1, M2, M3…) | `ThingBlock_0.6.0-preview-20261104_aarch64.dmg` (125 MB) | `ThingBlock_0.5.0_aarch64.dmg` (124 MB) |
-| Ubuntu, Debian (64-bit) | `ThingBlock_0.6.0-preview-20261104_amd64.deb` (128 MB) | `ThingBlock_0.5.0_amd64.deb` (127 MB) |
-| Fedora, openSUSE (64-bit) | `ThingBlock-0.6.0-preview-20261104-1.x86_64.rpm` (127 MB) | `ThingBlock-0.5.0-1.x86_64.rpm` (127 MB) |
+| Máy tính | Chọn tệp |
+|---|---|
+| Windows 10/11, 64-bit | đuôi `_x64-setup.exe` |
+| Mac chip Apple (M1, M2, M3…) | đuôi `_aarch64.dmg` |
+| Ubuntu, Debian (64-bit) | đuôi `_amd64.deb` |
+| Fedora, openSUSE (64-bit) | đuôi `.x86_64.rpm` |
 
-Cả hai bản **không có** bản cho Mac chip Intel và cho máy Linux ARM (Raspberry Pi, NEO One…). Bản 0.6 mở được tệp `.tb` lưu từ bản cũ.
+Tệp nặng khoảng 80 MB (Windows) tới 130 MB (macOS, Linux). **Không có** bản cho Mac chip Intel và cho máy Linux ARM (Raspberry Pi, NEO One…). Bản mới mở được tệp `.tb` lưu từ bản cũ.
+
+> **Bản cài chưa được ký số.** Ký số là cách nhà làm phần mềm "đóng dấu" để máy tính biết tệp là thật. ThingBlock chưa mua dấu này, nên Windows và macOS sẽ **cảnh báo một lần** khi mở. Đó là cảnh báo chung cho mọi phần mềm chưa ký, không phải vi-rút. Làm theo hai mục dưới để mở tiếp.
 
 ## Cài trên Windows
 
 1. Mở tệp `…_x64-setup.exe` vừa tải.
-2. Bản cài chưa được ký số nên Windows có thể hiện hộp **"Windows protected your PC"** (SmartScreen). Bấm **More info**, rồi **Run anyway**.
+2. Windows hiện hộp **"Windows protected your PC"** (SmartScreen). Bấm **More info**, rồi **Run anyway**.
 3. Làm theo trình cài đặt, xong thì mở ThingBlock từ menu Start.
 
 ## Cài trên macOS
 
 1. Mở tệp `…_aarch64.dmg`, kéo biểu tượng **ThingBlock** vào thư mục **Applications**.
-2. Lần đầu mở, macOS có thể chặn vì ứng dụng chưa được Apple chứng thực. Vào **Cài đặt hệ thống → Quyền riêng tư & Bảo mật**, kéo xuống mục Bảo mật và bấm **Vẫn mở** cho ThingBlock, rồi mở lại.
+2. Lần đầu, **đừng nhấp đúp**: vào Applications, **nhấp chuột phải vào ThingBlock rồi chọn Mở**, và bấm **Mở** lần nữa trong hộp cảnh báo. Chỉ phải làm một lần.
+3. Nếu lỡ nhấp đúp và macOS chặn: vào **Cài đặt hệ thống → Quyền riêng tư & Bảo mật**, kéo xuống mục Bảo mật và bấm **Vẫn mở** cho ThingBlock, rồi mở lại.
 
 ## Cài trên Linux
 
-Với Ubuntu/Debian, mở Terminal ở thư mục chứa tệp vừa tải và chạy:
+Với Ubuntu/Debian, mở Terminal ở thư mục chứa tệp vừa tải và chạy (thay đúng tên tệp đã tải):
 
 ```bash
-sudo apt install ./ThingBlock_0.6.0-preview-20261104_amd64.deb
+sudo apt install ./ThingBlock_<bản>_amd64.deb
 ```
 
-Với Fedora: `sudo dnf install ./ThingBlock-0.6.0-preview-20261104-1.x86_64.rpm`. Bản 0.5.0 thay tên tệp tương ứng.
+Với Fedora: `sudo dnf install ./ThingBlock-<bản>.x86_64.rpm`.
 
 Để ThingBlock được dùng cổng USB của bo mà không cần quyền quản trị, thêm tài khoản của bạn vào nhóm `dialout`, rồi đăng xuất và đăng nhập lại:
 
@@ -55,15 +58,27 @@ sudo usermod -aG dialout $USER
 
 - Lần đầu mở, ThingBlock tự chép bộ công cụ biên dịch (khoảng 300 MB) vào thư mục dữ liệu của bạn. Việc này chạy ngầm một lần.
 - Phần giao diện và tên khối lõi hiện tiếng Việt theo ngôn ngữ của máy. Muốn đổi, vào **Settings → Language → Tiếng Việt**. Từ bản 0.6, app nhớ ngôn ngữ và bo đã chọn cho lần mở sau.
-- Ở bản 0.5.0 trở về trước, các khối phần cứng (ThingBot, cảm biến, màn hình…) hiện **tiếng Anh** kể cả khi giao diện đặt tiếng Việt; bản 0.6 dịch cả khối phần cứng, menu, hộp thoại và bài học. Các trang khối lệnh trong khóa ghi chữ tiếng Anh trên khối kèm nghĩa, để dùng được với cả hai bản.
+- Ở bản 0.5.0 trở về trước, các khối phần cứng (ThingBot, cảm biến, màn hình…) hiện **tiếng Anh** kể cả khi giao diện đặt tiếng Việt; từ bản 0.6 dịch cả khối phần cứng, menu, hộp thoại và bài học. Các trang khối lệnh trong khóa ghi chữ tiếng Anh trên khối kèm nghĩa, để dùng được với cả hai bản.
+- Cùng với app có **ThingBlock Link**, chương trình nhỏ chạy ngầm để biên dịch, nạp và chấm bài học. Bản cài tự mở nó; nếu menu Bài học báo *cần ứng dụng ThingBlock Link*, mở ThingBlock lại.
+
+## Cho phép dùng camera (Camera AI) *(từ bản 0.8)*
+
+Camera AI cần webcam. Lần đầu chạy khối `bật camera` hoặc bấm **Camera** ở khung Sân chơi, máy hỏi có cho ThingBlock dùng camera không: chọn **Cho phép**. Hình ảnh chỉ xử lý trên máy, không gửi đi đâu.
+
+Lỡ chọn *Không cho phép* thì bật lại:
+
+- **macOS**: Cài đặt hệ thống → Quyền riêng tư & Bảo mật → **Camera**, bật công tắc cạnh ThingBlock, rồi mở lại app.
+- **Windows**: Settings → Privacy & security → **Camera**, bật *Let desktop apps access your camera*.
+
+Máy không có webcam thì chọn **Chuột (không cần webcam)** ở ô Chọn camera, hoặc dùng điện thoại làm camera. Xem [Camera AI](/khoa-hoc/thingedu/thingblock/camera-ai).
 
 ## Tải gói bo ESP32 cho ThingBot
 
-ThingBot dùng chip ESP32-C3. Bộ biên dịch cho ESP32 rất nặng (khoảng 1 GB) nên không có sẵn trong bản cài.
+ThingBot (và CoBot) dùng chip ESP32-C3. Bộ biên dịch cho ESP32 rất nặng (khoảng 1 GB) nên không có sẵn trong bản cài.
 
-1. Bấm **Select board** (bản 0.6: **Chọn mạch**) trên thanh menu và chọn **ThingBot**.
+1. Bấm **Select board** (từ bản 0.6: **Chọn mạch**) trên thanh menu và chọn **ThingBot** (hoặc **CoBot**).
 2. ThingBlock mở hộp **Board package**, báo gói bo chưa được cài và hỏi có tải ngay không. Bấm **Download**.
-3. Chờ vài phút tới khi tải xong. Bước này cần Internet và chỉ làm một lần. Bản 0.6 ghim lõi ESP32 bản 3.3.11 và cho phép đóng gói sẵn để sân thi không có mạng vẫn nạp được.
+3. Chờ vài phút tới khi tải xong. Bước này cần Internet và chỉ làm một lần. Từ bản 0.6, ThingBlock ghim lõi ESP32 bản 3.3.11 và cho phép đóng gói sẵn để sân thi không có mạng vẫn nạp được.
 
 Thư mục dữ liệu của ThingBlock:
 

@@ -10,9 +10,9 @@ Mỗi bài mẫu đi qua ba buổi theo nhịp **7+1**:
 - **V2 (buổi 5)**: thêm đúng một khái niệm mới (khối lặp, điều kiện, biến…).
 - **V3 (buổi 7)**: sản phẩm hoàn chỉnh, nạp xuống bo để chạy độc lập khi trưng bày ở buổi Make & Share.
 
-Mỗi chương trình có ảnh khối và **tệp .tb** để tải về, mở bằng **Tập tin → Load from your computer**. Cả 11 chương trình chế độ nạp đã được biên dịch thử cho ThingBot bằng ThingBlock 0.4.0 và mở được ở bản 0.6.
+Mỗi chương trình có ảnh khối và **tệp .tb** để tải về, mở bằng **Tập tin → Load from your computer**. Cả 11 chương trình chế độ nạp đã được biên dịch thử cho ThingBot bằng ThingBlock 0.4.0 và mở được ở bản 0.6 trở lên.
 
-> **Từ bản 0.6, ThingBlock có sẵn 36 ví dụ** ở **Tập tin → Ví dụ…** (18 bài K12 cơ bản, 2 robot FanRoc, 6 bài nhạc, 10 bài mô phỏng) và **14 bài học tự chấm** ở menu **Bài học**, chạy thử ngay trên khung Mô phỏng. Mỗi ví dụ có trang hướng dẫn ở [36 ví dụ có sẵn](/khoa-hoc/thingedu/thingblock/vi-du). Năm bài dưới đây khác ở chỗ đi theo ba buổi V1–V2–V3 và có lời dẫn cho mentor.
+> **Từ bản 0.6, ThingBlock có sẵn ví dụ** ở **Tập tin → Ví dụ…** (18 bài K12 cơ bản, 2 robot FanRoc, 6 bài nhạc, 10 bài mô phỏng; bản 0.8 thêm 5 bài CoBot và 11 trò Camera AI, tổng 52) và **bài học tự chấm** ở menu **Bài học** (14 bài ở 0.6, 19 bài ở 0.8), chạy thử ngay trên khung Mô phỏng. Mỗi ví dụ ThingBot có trang hướng dẫn ở [Ví dụ có sẵn](/khoa-hoc/thingedu/thingblock/vi-du). Năm bài dưới đây khác ở chỗ đi theo ba buổi V1–V2–V3 và có lời dẫn cho mentor.
 
 | Bài | Thiết bị | Khái niệm chính | Chế độ |
 |---|---|---|---|

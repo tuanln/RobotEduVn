@@ -4,6 +4,8 @@ description: "ThingBlock 0.6 (bản thử 04/11/2026): mô phỏng ThingBot tron
 nguon: "ThingEdu"
 ---
 
+> Đã có bản mới hơn: [Bản 0.8: có gì mới](/khoa-hoc/thingedu/thingblock/ban-0-8) (12/11/2026) thêm Camera AI, mạch CoBot, cảm biến màu, 19 bài học và 52 ví dụ. Trang này giữ lại để biết bản 0.6 đã thay đổi gì so với 0.5.0.
+
 ThingBlock 0.6 là bản chuẩn bị cho mùa thi **FanRoc 2026–2027**. Lần đầu tiên học sinh có thể học, làm bài và chạy thử chương trình **ngay trong ThingBlock mà chưa cần mạch**, rồi mang đúng chương trình đó nạp xuống ThingBot thật.
 
 | | Bản thử 0.6.0 | Bản ổn định 0.5.0 |

@@ -57,7 +57,7 @@ export const SAN_CHOI: SanChoi[] = [
     aiDu: "Học sinh phổ thông toàn quốc",
     thoiGian: "Phát động tháng 11, chung kết tháng 3. Mùa 2025–26 có hơn 1.700 đội",
     chang: "3. Đấu Thủ Làng",
-    chuanBi: "ThingBot, ThingBlock 0.6 (có sẵn 2 ví dụ robot FanRoc), tay cầm PS2 hoặc app điện thoại, game mô phỏng sân ThingBot FanRoc Game. Bộ bài học mùa 2026–27 sắp ra",
+    chuanBi: "ThingBot, ThingBlock 0.6 trở lên (có sẵn 2 ví dụ robot FanRoc), tay cầm PS2 hoặc app điện thoại, game mô phỏng sân ThingBot FanRoc Game. Bộ bài học mùa 2026–27 sắp ra",
     mucHop: "rat-hop",
     viSaoHop: "Cửa vào: đội nhỏ, luật rõ, mọi em ở Làng đều có thể tới. Robot là của em, không phải của thầy.",
     link: "https://en.baogialai.com.vn/fanroc-2025-2026-finals-in-gia-lai-award-13-prizes-select-teams-for-national-round-post1678.amp",

@@ -15,7 +15,7 @@ Mạch ThingBot ảo chạy trên máy tính hoặc máy tính bảng, không c�
 | [4](/mo-phong?bai=4) | Màn hình OLED | [9](/mo-phong?bai=9) | Lái xe bằng tay cầm PS2 |
 | [5](/mo-phong?bai=5) | Servo quét | [10](/mo-phong?bai=10) | Dự án: xe tránh vật cản |
 
-→ [Mở mô phỏng, bắt đầu từ bài 1](/mo-phong?bai=1). Làm xong 10 bài thì sang khóa ThingBlock; mỗi bài có [trang hướng dẫn và tệp ví dụ](/khoa-hoc/thingedu/thingblock/vi-du) để mở trong ThingBlock 0.6.
+→ [Mở mô phỏng, bắt đầu từ bài 1](/mo-phong?bai=1). Làm xong 10 bài thì sang khóa ThingBlock; mỗi bài có [trang hướng dẫn và tệp ví dụ](/khoa-hoc/thingedu/thingblock/vi-du) để mở trong ThingBlock 0.6 trở lên.
 
 ## ThingEdu · ThingBot
 

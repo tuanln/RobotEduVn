@@ -8,7 +8,7 @@ Mùa thi **FanRoc 2026–2027** (FPT Schools AI & Robotics Challenge) đang đư
 
 Bộ nội dung luyện thi của Làng Maker **đang chuẩn bị, sắp ra**: bài học lái robot và cơ cấu nâng, gắp, xả; robot mẫu; luật chơi từng nhiệm vụ; sân mô phỏng để tập khi chưa có sân thật. Có sẵn từ hôm nay để bắt đầu:
 
-- **Hai ví dụ FanRoc trong ThingBlock 0.6** (*Tập tin → Ví dụ… → FanRoc*), mỗi ví dụ có trang hướng dẫn: [Robot thi đấu bước 1: lái và nâng](/khoa-hoc/thingedu/thingblock/vi-du/k12-18-ftc-khoi-dong) (lái xe tăng hai cần, cơ cấu nâng, chế độ chậm) và [Robot FanRoc hoàn chỉnh](/khoa-hoc/thingedu/thingblock/vi-du/k12-20-robot-fanroc) (tay PS2, 4 động cơ, 3 servo: con lăn, nâng, tay, kẹp, cửa xả).
+- **Hai ví dụ FanRoc trong ThingBlock** (từ bản 0.6) (*Tập tin → Ví dụ… → FanRoc*), mỗi ví dụ có trang hướng dẫn: [Robot thi đấu bước 1: lái và nâng](/khoa-hoc/thingedu/thingblock/vi-du/k12-18-ftc-khoi-dong) (lái xe tăng hai cần, cơ cấu nâng, chế độ chậm) và [Robot FanRoc hoàn chỉnh](/khoa-hoc/thingedu/thingblock/vi-du/k12-20-robot-fanroc) (tay PS2, 4 động cơ, 3 servo: con lăn, nâng, tay, kẹp, cửa xả).
 - **ThingBot FanRoc Game**: game mô phỏng sân thi 3D cho macOS và Windows, lái robot mẫu bằng bàn phím, có bảng điểm và giải đấu 8 đội. Tải ở [github.com/ThingEdu/thingbot-sim/releases/tag/fanroc-v0.1.0](https://github.com/ThingEdu/thingbot-sim/releases/tag/fanroc-v0.1.0) (ứng dụng chưa ký số, mở theo hướng dẫn trên trang tải).
 - **Lái bằng điện thoại** thay hoặc cùng tay PS2: [Điều khiển bằng điện thoại](/khoa-hoc/thingedu/thingblock/dieu-khien-bang-dien-thoai).
 - Giới hạn phần cứng theo luật mùa trước: tối đa 4 động cơ DC và 5 servo, vừa đúng bốn cổng M và năm cổng S của ThingBot.

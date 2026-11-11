@@ -114,5 +114,5 @@ Hai bài học *ThingBot Sim 6: Mắt hồng ngoại* và *ThingBot Sim 10: Dây
 ## Các ngoại vi khác
 
 - **Servo**: `set servo pin (9) to (90) degrees`, servo cắm thẳng vào chân GPIO. Servo cắm cổng S1–S5 thì dùng khối của nhóm ThingBot.
-- **PCA9685**: khởi tạo, đặt góc từng kênh hoặc mọi kênh, đặt tần số và giá trị PWM, dành cho module PCA9685 gắn thêm. ThingBot đã có sẵn một chip PCA9685 cho động cơ và cổng S nên thường không cần.
+- **PCA9685**: khởi tạo, đặt góc từng kênh hoặc mọi kênh, đặt tần số và giá trị PWM, dành cho module PCA9685 gắn thêm. ThingBot đã có sẵn một mạch công suất như vậy cho động cơ và cổng S nên thường không cần.
 - **Phone control**: `allow phone control, board name (ThingBot)`, đặt trong `khi Arduino khởi động`. Bo phát Bluetooth để app ThingBot Remote lái robot trong lúc chương trình vẫn chạy.

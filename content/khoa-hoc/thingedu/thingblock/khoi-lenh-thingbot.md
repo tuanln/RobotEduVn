@@ -30,7 +30,7 @@ Có sẵn khi chọn bo ThingBot. Các khối tự khởi tạo mạch nên khô
 
 Lưu ý:
 
-- **Nhạc và servo không chạy cùng lúc được.** Khi còi phát nốt, chip PCA9685 đổi tần số cho cả 16 kênh, servo nhận xung sai và giật về một phía. Phát nhạc xong rồi mới quay servo. Động cơ và LED không bị ảnh hưởng đáng kể.
+- **Nhạc và servo không chạy cùng lúc được.** Khi còi phát nốt, mạch công suất đổi tần số cho cả 16 kênh, servo nhận xung sai và giật về một phía. Phát nhạc xong rồi mới quay servo. Động cơ và LED không bị ảnh hưởng đáng kể.
 - "Tiến" hay "lùi" thực tế phụ thuộc cách cắm dây động cơ. Chạy thử, nếu bánh quay ngược thì đảo giắc cắm hoặc đổi forward/backward.
 
 ## Nhóm PS2 (chế độ nạp)

@@ -10,7 +10,7 @@ Có hai cách để điện thoại nói chuyện với ThingBot. Cả hai dùng
 |---|---|---|
 | Trên bo chạy gì | **Chương trình của học sinh** (nạp từ ThingBlock) + một khối cho phép điện thoại | Chỉ firmware Live, không có chương trình riêng |
 | Điện thoại làm gì | Lái, bấm còi, bật đèn, quay servo **cùng lúc** với các khối tự động của robot | Điều khiển mọi thứ bằng tay |
-| Cần | ThingBlock 0.4.0 trở lên (nên 0.6), app ThingBot Remote | Cài firmware Live từ hộp kết nối, app ThingBot Remote |
+| Cần | ThingBlock 0.4.0 trở lên (nên 0.6 trở lên), app ThingBot Remote | Cài firmware Live từ hộp kết nối, app ThingBot Remote |
 
 Trang này hướng dẫn cách thứ nhất.
 

@@ -21,9 +21,11 @@ Bấm **Select board** (bản 0.6: **Chọn mạch**). Hộp **Choose a Device**
 
 ![Hộp chọn bo: No board, Arduino Uno, Arduino Nano, ESP32, ESP32-C3, ThingBot, VIA Banh Mi](/hoc-lieu/thingblock/anh/02-chon-bo.webp)
 
-*Ảnh chụp bản 0.4.0. Từ bản 0.6 hộp này chỉ còn **Không dùng mạch**, **ThingBot** và **VIA Bánh Mì**; Arduino Uno, Nano, ESP32, ESP32-C3 được ẩn đi nhưng dự án cũ lưu trên các bo đó vẫn mở và nạp được.*
+*Ảnh chụp bản 0.4.0. Từ bản 0.6 hộp này chỉ còn **Không dùng mạch**, **ThingBot** và **VIA Bánh Mì**; bản 0.8 thêm **CoBot** (robot dò đường, xem [Mạch CoBot](/khoa-hoc/thingedu/thingblock/cobot)). Arduino Uno, Nano, ESP32, ESP32-C3 được ẩn đi nhưng dự án cũ lưu trên các bo đó vẫn mở và nạp được.*
 
-Chọn thẻ **ThingBot**. Cột danh mục có thêm các nhóm **Arduino**, **ThingBot** và **PS2**, nút trên menu đổi thành **Board: ThingBot**. Bản 0.6 mở thêm khung **Mô phỏng** ở bên phải: mạch ThingBot ảo chạy chính chương trình chế độ nạp, bấm **Chạy** là thấy đèn, servo, động cơ, OLED chuyển động mà chưa cần cắm bo (xem [Bản 0.6: có gì mới](/khoa-hoc/thingedu/thingblock/ban-0-6)).
+Chọn thẻ **ThingBot**. Cột danh mục có thêm các nhóm **Arduino**, **ThingBot** và **PS2**, nút trên menu đổi thành **Board: ThingBot**. Từ bản 0.6 có thêm khung **Mô phỏng** ở bên phải: mạch ThingBot ảo chạy chính chương trình chế độ nạp, bấm **Chạy** là thấy đèn, servo, động cơ, OLED chuyển động mà chưa cần cắm bo (xem [Bản 0.6: có gì mới](/khoa-hoc/thingedu/thingblock/ban-0-6)). Chọn CoBot thì khung này báo *chưa có mô phỏng*: phải nạp xuống robot để chạy thử.
+
+**Không chọn mạch** cũng làm được việc *(từ bản 0.8)*: thêm phần mở rộng **Camera AI** là khung bên phải đổi thành **Sân chơi**, webcam nhìn bàn tay và đầu của em để chơi trò chơi. Xem [Camera AI](/khoa-hoc/thingedu/thingblock/camera-ai).
 
 ![Danh mục khối sau khi chọn ThingBot](/hoc-lieu/thingblock/anh/03-da-chon-thingbot.webp)
 
@@ -33,7 +35,7 @@ Khi đã chọn ThingBot, bấm nút góc dưới trái để mở **Choose a Pe
 
 ![Thư viện ngoại vi: DHT, Rotary Encoder, MPU6050, OLED, PCA9685, Phone control, PS2, RGB LED Strip, Serial, Servo, Ultrasonic](/hoc-lieu/thingblock/anh/04-thu-vien-ngoai-vi.webp)
 
-*Thẻ Rotary Encoder có từ bản 0.5.0.*
+*Thẻ Rotary Encoder có từ bản 0.5.0. Bản 0.8 thêm thẻ **Colour Sensor (I2C)** (cảm biến màu) và **Cobot IR sensors** (mắt hồng ngoại dò line, cắm được vào cổng cảm biến của ThingBot).*
 
 Danh sách đầy đủ ở trang [Khối lệnh mở rộng](/khoa-hoc/thingedu/thingblock/khoi-lenh-mo-rong).
 
@@ -86,7 +88,8 @@ ThingBlock có hai chế độ. Mỗi dự án chỉ dùng một chế độ, kh
 - **Tập tin → Lưu về máy tính** (bản 0.4.0, 0.5.0): lưu dự án thành tệp đuôi **.tb** vào thư mục tải về. Tên tệp lấy theo ô tên dự án trên thanh menu.
 - **Tập tin → Lưu** và **Lưu thành…** *(từ bản 0.6)*: Lưu hỏi nơi lưu lần đầu rồi ghi đè đúng tệp đó những lần sau (⌘S / Ctrl+S), xong báo *Đã lưu: đường dẫn*. Lưu thành… luôn hỏi. Thanh tiêu đề hiện tên tệp.
 - **Tập tin → Load from your computer**: mở tệp `.tb`. Dự án nhớ cả bo và các ngoại vi đã thêm, nên mở ra là có đủ nhóm khối. Bản 0.6 hỏi trước nếu dự án đang mở có thay đổi chưa lưu.
-- **Tập tin → Ví dụ…** *(từ bản 0.6)*: 36 dự án có sẵn, lọc theo nhóm K12 cơ bản, FanRoc, Âm nhạc, Mô phỏng ThingBot Sim. Danh sách ở [Bản 0.6: có gì mới](/khoa-hoc/thingedu/thingblock/ban-0-6).
+- **Tập tin → Ví dụ…** *(từ bản 0.6)*: dự án có sẵn, lọc theo nhóm K12 cơ bản, FanRoc, Âm nhạc, Mô phỏng ThingBot Sim (36 ví dụ); bản 0.8 thêm nhóm CoBot và Camera AI (52 ví dụ). Danh sách ở [Ví dụ có sẵn](/khoa-hoc/thingedu/thingblock/vi-du).
+- **Bài học** (menu trên cùng) *(từ bản 0.6)*: bài dẫn từng bước, app tự chấm trên mô phỏng. Bản 0.8 có 19 bài, gồm 4 bài Camera AI và bài *Từ điển điện tử cho người mới*.
 - **Tập tin → Mới**: dự án trống, bản 0.6 đặt tên *ThingBlock Project*.
 
 Các bài mẫu trong khóa đều có tệp `.tb` để tải về và mở thẳng. Xem [5 bài mẫu](/khoa-hoc/thingedu/thingblock/bai-mau).

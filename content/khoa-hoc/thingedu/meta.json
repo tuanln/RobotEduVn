@@ -1,6 +1,6 @@
 {
   "title": "ThingEdu · ThingBot",
-  "description": "ThingBlock 0.6 (mô phỏng, bài học, ví dụ, điều khiển từ điện thoại), bo mạch ThingBot, OpenBlock (phần mềm cũ), Arduino IDE và các cuộc thi (FanRoc 2026–2027 sắp ra)",
+  "description": "ThingBlock 0.8 (Camera AI, CoBot, mô phỏng, bài học, ví dụ, điều khiển từ điện thoại), bo mạch ThingBot, OpenBlock (phần mềm cũ), Arduino IDE và các cuộc thi (FanRoc 2026–2027 sắp ra)",
   "root": true,
   "pages": [
     "index",

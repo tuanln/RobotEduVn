@@ -26,7 +26,7 @@ ThingBot gồm hai mạch chồng lên nhau: mạch **ThingBot** (chip ESP32-C3,
 | 8 | Hai cổng 4 chân có chân GPIO | Cảm biến: DHT11, siêu âm (chân **IO0**, **IO4**) |
 | 9 | Còi nhỏ | `play note [C (Do)] octave [4] for (1) beats` |
 
-Hai đèn **LED 1**, **LED 2** trên bo điều khiển bằng `set led [1] (100)`. Động cơ, servo, LED và còi đều được điều khiển qua chip PCA9685, nối với ESP32-C3 bằng đường I2C (chân 8 và 9). Vì vậy đừng dùng chân 8, 9 cho cảm biến.
+Hai đèn **LED 1**, **LED 2** trên bo điều khiển bằng `set led [1] (100)`. Động cơ, servo, LED và còi đều được điều khiển qua **mạch công suất** (một con chip riêng trên mạch), nối với ESP32-C3 bằng đường I2C (chân 8 và 9). Vì vậy đừng dùng chân 8, 9 cho cảm biến.
 
 ## Nguồn điện
 
@@ -89,7 +89,7 @@ vòng lặp Arduino
 
 | Thấy gì | Nghĩa là |
 |---|---|
-| Còi phát 3 nốt khi vừa nạp xong | Bo và chip PCA9685 chạy tốt |
+| Còi phát 3 nốt khi vừa nạp xong | Bo và mạch công suất chạy tốt |
 | LED 1 sáng, bấm SW thì LED 1 tắt, LED 2 sáng | Nút SW và hai LED tốt |
 | Bấm SW mà Monitor không hiện chữ | Chưa chọn đúng cổng của bo trong Monitor |
 | Monitor ghi "M2 chay tien" mà bánh không quay | Chưa bật công tắc, pin yếu, hoặc lỏng giắc M2 |

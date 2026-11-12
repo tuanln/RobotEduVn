@@ -27,9 +27,9 @@ function coTrang(url: string): boolean {
 }
 
 describe("nội dung thư viện khóa học", () => {
-  it("đủ 102 trang: 48 trang Maker Việt + trang ThingBot FanRoc Challenge + 53 trang ThingBlock (16 + 37 trang ví dụ)", () => {
-    expect(md).toHaveLength(102);
-    expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/"))).toHaveLength(53);
+  it("đủ 105 trang: 48 trang Maker Việt + trang ThingBot FanRoc Challenge + 56 trang ThingBlock (19 + 37 trang ví dụ)", () => {
+    expect(md).toHaveLength(105);
+    expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/"))).toHaveLength(56);
     expect(tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/vi-du/"))).toHaveLength(37);
   });
 
@@ -55,7 +55,7 @@ describe("nội dung thư viện khóa học", () => {
     }
   });
 
-  it("mỗi trang ví dụ dẫn tới đúng tệp .tb cùng tên và mở được ví dụ trong ThingBlock 0.6", () => {
+  it("mỗi trang ví dụ dẫn tới đúng tệp .tb cùng tên và mở được ví dụ trong ThingBlock 0.6 trở lên", () => {
     const viDu = tatCa.filter(({ p }) => p.startsWith("/thingedu/thingblock/vi-du/") && !p.endsWith("/index.md"));
     for (const { p, text } of viDu) {
       const ma = p.slice("/thingedu/thingblock/vi-du/".length, -3);

@@ -1,10 +1,10 @@
 ---
 title: "Khối lệnh mở rộng"
-description: "Các ngoại vi thêm vào ThingBot: cảm biến DHT, siêu âm, màn OLED, Serial, MPU6050, núm xoay, servo chân thường, PCA9685, điều khiển bằng điện thoại"
+description: "Các ngoại vi thêm vào ThingBot: cảm biến DHT, siêu âm, màn OLED, Serial, MPU6050, núm xoay, servo chân thường, cảm biến màu, mắt hồng ngoại dò line, điều khiển bằng điện thoại"
 nguon: "ThingEdu"
 ---
 
-Ngoại vi chỉ có ở **chế độ nạp**. Khi đã chọn bo ThingBot, bấm nút góc dưới trái, chọn **Add** trên thẻ ngoại vi. Dự án lưu lại danh sách ngoại vi nên lần sau mở tệp không phải thêm lại.
+Ngoại vi chỉ có ở **chế độ nạp**. Khi đã chọn bo ThingBot, bấm nút góc dưới trái, chọn **Add** trên thẻ ngoại vi. Dự án lưu lại danh sách ngoại vi nên lần sau mở tệp không phải thêm lại. Khối **Camera AI** (webcam, không cần mạch) không phải ngoại vi: xem trang [Camera AI](/khoa-hoc/thingedu/thingblock/camera-ai). Khối riêng của mạch **CoBot** xem trang [Mạch CoBot](/khoa-hoc/thingedu/thingblock/cobot).
 
 | Thẻ trong thư viện | Nhóm khối | Dùng để |
 |---|---|---|
@@ -18,6 +18,8 @@ Ngoại vi chỉ có ở **chế độ nạp**. Khi đã chọn bo ThingBot, b�
 | PCA9685 Module | PCA9685 | Module PWM 16 kênh gắn thêm |
 | Phone control | Phone | Cho app điện thoại ThingBot Remote điều khiển robot trong lúc chương trình chạy. Xem [Điều khiển bằng điện thoại](/khoa-hoc/thingedu/thingblock/dieu-khien-bang-dien-thoai) |
 | RGB LED Strip | RGB LED Strip | Dải LED màu NeoPixel *(biên dịch được với ThingBot từ bản 0.6)* |
+| Colour Sensor (I2C) | Cảm biến màu | Đọc đỏ, xanh lá, xanh dương, độ sáng và tên màu đang thấy *(từ bản 0.8)* |
+| Cobot IR sensors | Cobot IR | Mắt hồng ngoại dò line, đọc số 0–4095; dùng trong bài ThingBot Sim 6 và 10 *(từ bản 0.8)* |
 | PS2 Remote Control | PS2 | Có sẵn theo ThingBot, xem [Khối lệnh ThingBot](/khoa-hoc/thingedu/thingblock/khoi-lenh-thingbot) |
 
 > **RGB LED Strip và Servo (chân GPIO) không dùng được với ThingBot ở bản 0.4.0 và 0.5.0**: thư viện đi kèm không biên dịch được với nhân ESP32 mà ThingBlock cài. Bản 0.6 đã sửa. Ở bản cũ, tạm dùng LED thường hoặc module LED cắm cổng S, và servo cắm cổng S1–S5 với khối nhóm ThingBot.
@@ -85,8 +87,32 @@ Màn OLED không hiện được chữ tiếng Việt có dấu: viết không d
 | `reset encoder position` | Đặt lại về 0 |
 | `encoder button pressed?` | Đúng khi núm đang được nhấn |
 
+## Cảm biến màu (I2C) *(từ bản 0.8)*
+
+Thẻ **Colour Sensor (I2C)**. Cắm vào cổng **I2C** trên ThingBotShield (dùng chung được với màn OLED và MPU6050, khác địa chỉ). Trên CoBot cảm biến có sẵn dưới gầm xe. Cảm biến có ba "con ngươi" đỏ, xanh lá, xanh dương, như ba loại tế bào nhìn màu trong mắt người, và một con ngươi đo độ sáng chung.
+
+| Khối | Ý nghĩa |
+|---|---|
+| `khởi động cảm biến màu` | Đặt trong `khi Arduino khởi động` |
+| `cảm biến màu đọc [đỏ]` | Số đo của một kênh: đỏ, xanh lá, xanh dương hoặc độ sáng. Số càng lớn, màu đó càng nhiều |
+| `cảm biến màu thấy màu [đỏ]?` | Đúng/sai. Màu nhận được: đen, đỏ, xanh lá, xanh dương, vàng, trắng |
+| `tên màu cảm biến thấy` | Chữ (ví dụ `đỏ`) để in lên OLED hay Monitor |
+
+Mẹo: cảm biến đọc màu của **ánh sáng hắt về**, nên để vật sát cảm biến và chiếu sáng đều. Quá tối thì màu nào cũng thành *đen*; trên CoBot, bật `đèn trắng` trước khi đọc. Màu lạ (cam, tím, hồng) sẽ bị xếp vào một trong sáu màu trên. Khung **Mã Arduino** của khối này có chú thích tiếng Việt giải thích quy tắc đoán màu.
+
+## Cobot IR: mắt hồng ngoại dò line *(từ bản 0.8)*
+
+Thẻ **Cobot IR sensors**. Mắt dò line là mô-đun ba chân (VCC, GND, OUT) cùng loại với bốn mắt dưới gầm CoBot; với ThingBot, cắm một mắt vào **cổng cảm biến** có chân IO4 (hoặc IO0). Mắt có một đèn hồng ngoại và một "con ngươi" đo ánh sáng hắt về: nền sáng cho số lớn, vạch đen cho số nhỏ.
+
+| Khối | Ý nghĩa |
+|---|---|
+| `đọc mắt hồng ngoại [1 · IO4]` | Số 0–4095 của mắt ở chân đã chọn (1 · IO4, 2 · IO3, 3 · IO1, 4 · IO0, theo cách đánh số của CoBot) |
+| `[bật] đèn hồng ngoại Cobot` | Bật, tắt đèn hồng ngoại cấp cho mắt (trên xe CoBot) |
+
+Hai bài học *ThingBot Sim 6: Mắt hồng ngoại* và *ThingBot Sim 10: Dây chuyền phân loại trứng* dùng khối này; khung Mô phỏng có thanh **Bóng** (chọn bóng FanRoc trắng, vàng, đỏ, xanh dương, đen đặt trước mắt) và **băng chuyền trứng**. Chi tiết ở [Bản 0.8: có gì mới](/khoa-hoc/thingedu/thingblock/ban-0-8).
+
 ## Các ngoại vi khác
 
 - **Servo**: `set servo pin (9) to (90) degrees`, servo cắm thẳng vào chân GPIO. Servo cắm cổng S1–S5 thì dùng khối của nhóm ThingBot.
-- **PCA9685**: khởi tạo, đặt góc từng kênh hoặc mọi kênh, đặt tần số và giá trị PWM, dành cho module PCA9685 gắn thêm. ThingBot đã có sẵn một chip PCA9685 cho động cơ và cổng S nên thường không cần.
+- **PCA9685**: khởi tạo, đặt góc từng kênh hoặc mọi kênh, đặt tần số và giá trị PWM, dành cho module PCA9685 gắn thêm. ThingBot đã có sẵn một mạch công suất như vậy cho động cơ và cổng S nên thường không cần.
 - **Phone control**: `allow phone control, board name (ThingBot)`, đặt trong `khi Arduino khởi động`. Bo phát Bluetooth để app ThingBot Remote lái robot trong lúc chương trình vẫn chạy.
